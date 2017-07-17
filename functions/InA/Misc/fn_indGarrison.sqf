@@ -111,7 +111,7 @@ _allRoads = _loc nearRoads _rad;
 	};
 } forEach _allRoads;
 
-if (count _allRoads < 3) exitWith {hint "no roads nearby";};
+if (count _allRoads < 3) exitWith { /*hint "no roads nearby";*/};
 
 for "_i" from 1 to _parkedTrucks do {
 	

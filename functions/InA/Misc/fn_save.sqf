@@ -110,8 +110,6 @@ _export pushBack _allVehicles;
 
 // ---------- Save to database ----------
 
-_export = str _export;
-
 _null = ["save", "data", _export] call FF7_fnc_extSerialize;
 
 ["SAVED", "Map state has been saved to the database."] remoteExec ["FF7_fnc_formatHint", 0];

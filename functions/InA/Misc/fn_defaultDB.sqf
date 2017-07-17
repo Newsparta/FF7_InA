@@ -40,8 +40,6 @@ _export pushBack _allVehicles;
 
 // ---------- End ----------
 
-_export = str _export;
-
-_null = ["save",_export] call FF7_fnc_extSerialize;
+_null = ["save", "data", _export] call FF7_fnc_extSerialize;
 
 ["SAVE", "Database has been reset."] remoteExec ["FF7_fnc_formatHint", 0];

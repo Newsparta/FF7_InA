@@ -61,7 +61,7 @@ _export pushBack _dumpInventory;
 
 // ---------- Logistics ----------
 
-_export pushBack ([str LogV, str LogM, str LogF]);
+_export pushBack ([LogV, LogM, LogF]);
 
 // ---------- Vehicles ----------
 

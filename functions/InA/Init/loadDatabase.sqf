@@ -3,7 +3,7 @@ waitUntil { sleep 1; initialized;};
 
 // ---------- Load database ----------
 
-_data = ["load"] call FF7_fnc_extSerialize;
+_data = ["load", "data"] call FF7_fnc_extSerialize;
 
 // ---------- Region data ----------
 

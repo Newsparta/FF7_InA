@@ -9,8 +9,6 @@ utilityVehicles = [];
 
 waitUntil {sleep 1; initialized};
 
-// ---------- Build kit lite control loop ----------
-
 [] spawn {
 private ["_added"];
 
@@ -43,17 +41,19 @@ _added = false;
 
 // ---------- Resource control loop ----------
 
-while {true} do {
-	
-	sleep (2 + (random 2));
+sleep 2;
+[] spawn {
+	while {true} do {
+		if (LogF > 1000) then {
+			LogF = 1000;
+		};
+		if (LogM > 1000) then {
+			LogM = 1000;
+		};
+		if (LogV > 10) then {
+			LogV = 10;
+		};
 
-	if (LogF > 1000) then {
-		LogF = 1000;
-	};
-	if (LogM > 1000) then {
-		LogM = 1000;
-	};
-	if (LogV > 10) then {
-		LogV = 10;
+		sleep (2 + (random 2));
 	};
 };

@@ -1,71 +1,94 @@
-/* ----------
-Function: FF7_fnc_extSerialize
+/*  Function: FF7_fnc_extSerialize
 
-Description:
-    A function to save or load data from a database
+	Description:
+		A function to save or load data from a database
 
-Parameters:
-    - Save or load (string)
+	Syntax:
+		_response = [func, key(, data)] call FF7_fnc_extSerial
 
-Optional:
-    - Data to save (String)
+			{ func : string }    Must be either "load" or "save"
+			{ key  : string }    User-supplied string to identify the data.
+			{ data : array  }    (optional) Array of strings of data to be saved.
 
-Example:
-   
-    ["save", _someString] call FF7_fnc_extSerialize;
+	Returns:
+		Array 		Parsed SQF array of the data stored by key
 
-Returns:
-    String
+	Example 1: (Write)
+		_response = ["save", "somekey", ["some", ["arbitrary",["data"]]]] call FF7_fnc_extSerialize;
 
-Author:
-    [FF7] Newsparta & [FF7] Bliss 
+	Example 2: (Load)
+		_response = ["load", "somekey"] call FF7_fnc_extSerialize;
+
+	Author:
+		[FF7] Newsparta & [FF7] Bliss 
+
 ---------- */
-// ---------- Parameters ----------
 
-params ["_func",["_import", "", [""]]];
 
-// ---------- Main ----------
+// Input Parameterization
+// __func       (String)       Serialize function
+// __key		(String)       Unique key
+// __data       (Array)        Data to send
+//
+//      |  Private Name     | Default Value     | Expected Types    | Expected Array Count |
+params [[   "__func"         ,""                 ,[""]              ,[]                    ], 
+        [   "__key"          ,""                 ,[""]              ,[]                    ],
+        [   "__data"         ,[]                 ,[[]]              ,[]                    ]];
 
-_key = "data";
-_return = "";
-_data = "";
+// Local Declerations
+private     _call_string    = "";
+private     _data_string    = "";
+private     _response       = "";
+private     _return         = nil;
 
-	// ---------- Save data ----------
+// ---------- Save data ----------
+if (__func == "save") then {
 
-	if (_func == "save") then {
-
-		_data = ["003","data", _import] joinString ":";
-
-		_return = "extSerialize" callExtension _data;
-
-		if (_return == "ERROR") exitWith {
-			["ERROR", "Error saving to database"] remoteExec ["FF7_fnc_formatHint", 0];
-		};
-
-	// ---------- Load data ----------
-	} else {
-
-		_call = str formatText
-		[
-			"002:%1",
-			_key
-		];
-
-		while {true} do {
-
-			_return = "extSerialize" callExtension _call;
-
-			if (_return == "ERROR") exitWith {
-				["ERROR", "Error loading from database"] remoteExec ["FF7_fnc_formatHint", 0];
-
-				sleep 2;
-			};
-
-			if (_return == "ENDOFDATA") exitWith {/*done*/};
-			
-			_data = [_data, _return] joinString "";
-		};
-
-		_data = ParseSimpleArray _data;
+	if (0 == count __data) exitWith {
+		["ERROR", "Error saving to database"] remoteExec ["FF7_fnc_formatHint", 0];
+		diag_log format ["ERROR (fn_save.sqf): __data array was empty."];
 	};
-	_data
+
+	_call_string = ["003", __key, str __data] joinString ":";
+
+	_response = "extSerialize" callExtension _call_string;
+
+	if (_response == "ERROR") exitWith {
+		["ERROR", "Error saving to database"] remoteExec ["FF7_fnc_formatHint", 0];
+		diag_log format ["ERROR (fn_save.sqf): _response was ""ERROR""."];
+	};
+
+	_return = [_response];
+
+
+// ---------- Load data ----------
+} else { if (__func == "load") then {
+
+	_call_string = ["002", __key] joinString ":";
+
+	while {true} do {
+
+		_response = "extSerialize" callExtension _call_string;
+
+		if (_response == "ERROR") exitWith {
+			["ERROR", "Error loading from database"] remoteExec ["FF7_fnc_formatHint", 0];
+			diag_log format ["ERROR (fn_save.sqf): _response was ""ERROR""."];
+
+			sleep 2;
+		};
+
+		if (_response == "ENDOFDATA") exitWith {/*done*/};
+		
+		_data_string = [_data_string, _response] joinString "";
+	};
+	_return = parseSimpleArray _data_string;
+
+
+// ---------- Unknown Func ----------
+
+} else {
+    ["ERROR", "Unknown function passed to extSerialize"] remoteExec ["FF7_fnc_formatHint", 0];
+	diag_log format ["ERROR (fn_save.sqf): Unknown function ""%1"" called with key ""%2"".", __func, __key];
+}; };
+
+_return

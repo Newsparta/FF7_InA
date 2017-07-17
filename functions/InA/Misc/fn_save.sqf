@@ -61,7 +61,7 @@ _export pushBack _dumpInventory;
 
 // ---------- Logistics ----------
 
-_export pushBack ([str LogV, str LogM, str LogF]);
+_export pushBack ([LogV, LogM, LogF]);
 
 // ---------- Vehicles ----------
 
@@ -112,6 +112,6 @@ _export pushBack _allVehicles;
 
 _export = str _export;
 
-_null = ["save",_export] call FF7_fnc_extSerialize;
+_null = ["save", "data", _export] call FF7_fnc_extSerialize;
 
 ["SAVED", "Map state has been saved to the database."] remoteExec ["FF7_fnc_formatHint", 0];

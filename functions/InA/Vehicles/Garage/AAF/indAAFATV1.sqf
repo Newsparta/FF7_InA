@@ -4,7 +4,7 @@ if (vehicleParked) exitWith {
 
 _afford = false;
 
-if (LogV >= 1) then {
+if (LogV >= 0) then {
 	if (LogM >= 0) then {
 		if (LogF >= 50) then {
 			_afford = true;
@@ -30,7 +30,7 @@ if (_afford) then {
 	
 	playerVehicles pushBack _veh;
 	
-	LogV = LogV - 1;
+	LogV = LogV - 0;
 	LogM = LogM - 0;
 	LogF = LogF - 50;
 

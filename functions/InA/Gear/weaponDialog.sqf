@@ -1046,7 +1046,7 @@ gearRequisition =
 			
 				case 0:
 				{
-					_item = "hgun_P07_khk_F";
+					_item = "hgun_P07_F";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};

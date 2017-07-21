@@ -61,7 +61,7 @@ ambientSitrep3 =
 ];
 
 // ---------- War torn region ----------
-/*
+
 _array = nearestObjects 
 [
 	mapCenter, 
@@ -72,10 +72,10 @@ _array = nearestObjects
 		"Land_u_Barracks_V2_F",
 		"Land_Barracks_01_grey_F",
 		"Land_Barracks_01_dilapidated_F",
-		"Land_Airport_01_hangar_F",
-		"Land_Hangar_F",
 		"Land_Radar_F",
 		"Land_Radar_Small_F",
+		"Land_LampAirport_F",
+		"Land_Airport_Tower_F",
 		"Land_Airport_01_controlTower_F",
 		"Land_Airport_02_controlTower_F",
 		"Land_Airport_01_terminal_F",
@@ -102,32 +102,42 @@ _array = nearestObjects
 {
 	_x setDamage 1;
 } forEach _array;
-*/
+
 // ---------- Spawn ambient arty controller ----------
-/*
+
 [] spawn {
 	while {true} do {
 	
 		sleep (4 + (random 4));
-	
-		if !(commJammed) then {
-			{
-			
-				if (_x distance (getMarkerPos "respawn_west") > 750) then {
-					_knowsAbout = (independent knowsAbout _x);
-					
-					if (random 100 < (0.003125 * (_knowsAbout * 0.25))) then {
-					
-						[getPosATL _x, (100 + random 50), 1] spawn InA_fnc_mortarStrike;
-						
-						[getPosATL _x, (150 + random 50), (5 + (random 15)), 60] spawn InA_fnc_mortarStrike;
-						
-						sleep params_mortarTimeout;
-					
-					};
-				};
 
-			} forEach (allPlayers - entities "HeadlessClient_F");
+		_knownPlayers = [];
+	
+		{
+		
+			if (_x distance (getMarkerPos "respawn_west") > 750) then {
+
+				_knowsAbout = (independent knowsAbout _x);
+				
+				if (_knowsAbout >= 3) then {
+					_knownPlayers pushBack _x;
+				};
+		
+			};
+		} forEach (allPlayers - entities "HeadlessClient_F");
+
+		if (count _knownPlayers > 0) then {
+			if (random 100 < 0.01) then {
+
+				_target = selectRandom _knownPlayers;
+
+				sleep 60;
+
+				[getPosATL _target, (100 + random 50), 1] spawn InA_fnc_mortarStrike;
+					
+				[getPosATL _target, (150 + random 50), (5 + (random 15)), 60] spawn InA_fnc_mortarStrike;
+					
+				sleep params_mortarTimeout;
+			};
 		};
 	};
-};*/
+};

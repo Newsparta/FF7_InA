@@ -32,6 +32,8 @@ else
 
 // ---------- Base init ----------
 
+baseType = "";
+
 InA_sitrep = true;
 
 InA_fob_location = [0,0,0];
@@ -69,6 +71,7 @@ call compile preprocessFileLineNumbers "export\enemyTheme.sqf";
 
 _null = execVM "missions\missionControl.sqf";
 _null = execVM "missions\eventsHandler.sqf";
+_null = execVM "functions\InA\Init\baseAttack.sqf";
 
 // ---------- Map wipe ----------
 

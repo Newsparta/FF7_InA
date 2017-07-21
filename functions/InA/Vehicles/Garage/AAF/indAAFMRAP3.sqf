@@ -24,6 +24,7 @@ if (_afford) then {
 	clearItemCargoGlobal _veh;
 	
 	playerVehicles pushBack _veh;
+	utilitySmallVehicles pushBack _veh;
 	
 	LogV = LogV - 2;
 	LogM = LogM - 50;

@@ -40,7 +40,7 @@ if (_i == 720) exitWith {
 
 ["HQ", "Headquarters", format ["Insurgent activity in the surrounding region seems to suggest they may be preparing to move on %1.", _location]] remoteExec ["FF7_fnc_globalHintStruct", 0];
 
-sleep 300;
+sleep 400;
 
 spawnCenter = _loc;
 spawnBorderLand = _rad;
@@ -51,10 +51,10 @@ private ["_i","_pos","_group"];
 
 _i = 0;
 
-while {_i = _i + 60; _i <= 600} do {
+while {_i = _i + 60; _i <= 900} do {
 	scopeName "attackLoop";
 
-	if (({(side _x) == resistance} count allUnits) < 80) then {
+	if (({(side _x) == resistance} count allUnits) < 100) then {
 		_accepted = false;
 		while {!_accepted} do {
 
@@ -91,25 +91,25 @@ while {_i = _i + 60; _i <= 600} do {
 		[units _group] call InA_fnc_insCustomize;
 	};
 	
-	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.025)) then {
+	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.25)) then {
 		[spawnCenter, spawnBorderLand, spawnWaypointMax, 1, 0,"COMBAT","FULL"] spawn InA_fnc_insLightCarAttack;
 	};
-	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.025)) then {
+	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.25)) then {
 		[spawnCenter, spawnBorderLand, spawnWaypointMax, 1, 0,"COMBAT","FULL"] spawn InA_fnc_insMediumCarAttack;
 	};
-	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.025)) then {
+	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.25)) then {
 		[spawnCenter, spawnBorderLand, spawnWaypointMax, 1, 0,"COMBAT","FULL"] spawn InA_fnc_insMediumTruckTransport;
 	};
-	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.00625)) then {
+	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.0625)) then {
 		[spawnCenter, spawnBorderLand, spawnWaypointMax, 1, 0,"COMBAT","FULL"] spawn InA_fnc_insApcTransport;
 	};
-	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.00625)) then {
+	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.0625)) then {
 		[spawnCenter, spawnBorderLand, spawnWaypointMax, 1, 0,"COMBAT","FULL"] spawn InA_fnc_insTankAttack;
 	};
-	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.00625)) then {
+	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.0625)) then {
 		[spawnCenter, spawnBorderLand, spawnWaypointMax, 1, 0,"COMBAT","FULL"] spawn InA_fnc_insIfvTransport;
 	};
-	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.00625)) then {
+	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.0625)) then {
 		[spawnCenter, spawnBorderLand, spawnWaypointMax, 1, 0,"COMBAT","FULL"] spawn InA_fnc_insLightHeliAttack;
 	};
 	

@@ -5,7 +5,7 @@ if (_hasMap) then {
 	
 	player switchMove "AinvPercMstpSrasWrflDnon_Putdown_AmovPercMstpSrasWrflDnon";
 	
-	_map = createVehicle ["Land_Map_blank_F", 
+	_map = createVehicle ["Land_Map_Malden_F", 
 	[
 		getPosATL player select 0,
 		getPosATL player select 1,

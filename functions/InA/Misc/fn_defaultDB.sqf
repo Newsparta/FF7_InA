@@ -38,6 +38,14 @@ _allVehicles = [];
 
 _export pushBack _allVehicles;
 
+// ---------- Check build vehicles ----------
+
+_export pushBack [];
+
+// ---------- Base type (14) ----------
+
+_export pushBack [];
+
 // ---------- End ----------
 
 _null = ["save", "data", _export] call FF7_fnc_extSerialize;

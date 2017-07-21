@@ -1,10 +1,10 @@
 _export = [];
 
-// ---------- Region stability ----------
+// ---------- Region stability (0)----------
 
 _export pushBack ([] call InA_fnc_regionCheck);
 
-// ---------- Armory inventory ----------
+// ---------- Armory inventory (1-10) ----------
 
 _launcherInventory = [];
 _explosiveInventory = [];
@@ -59,11 +59,11 @@ _export pushBack _medicalInventory;
 _export pushBack _miscInventory;
 _export pushBack _dumpInventory;
 
-// ---------- Logistics ----------
+// ---------- Logistics (11) ----------
 
 _export pushBack ([LogV, LogM, LogF]);
 
-// ---------- Vehicles ----------
+// ---------- Vehicles/strategic (12) ----------
 
 _allVehicles = [];
 
@@ -107,6 +107,20 @@ _buildingArray = nearestObjects [InA_fob_location,["Strategic"],100];
 } forEach _buildingArray;
 
 _export pushBack _allVehicles;
+
+// ---------- Check build vehicles (13) ----------
+
+_buildVehicles = [];
+
+{
+	_buildVehicles pushBack (typeOf _x);
+} forEach utilityVehicles;
+
+_export pushBack _buildVehicles;
+
+// ---------- Base type (14) ----------
+
+_export pushBack [baseType];
 
 // ---------- Save to database ----------
 

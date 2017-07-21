@@ -117,6 +117,8 @@ engineerCostCheck =
 			clearMagazineCargoGlobal _box;
 			clearWeaponCargoGlobal _box;
 			clearBackpackCargoGlobal _box;
+
+			utilityVehicles pushBack _box;
 			
 		} remoteExec ["BIS_fnc_call", 2];
 		

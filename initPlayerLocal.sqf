@@ -1,4 +1,4 @@
-// ---------- Mission Mechanics (4.1.7a) ----------
+// ---------- Mission Mechanics (4.1.7b) ----------
 
 player createDiarySubject ["missionMechanics","Mission Mechanics"];
 
@@ -108,7 +108,7 @@ player createDiaryRecord	[
 								]
 							];
 							
-// ---------- Mission Mechanics (4.1.7a) ----------
+// ---------- Patch Notes (4.1.7b) ----------
 
 player createDiarySubject ["patchNotes","Patch Notes"];
 
@@ -116,42 +116,7 @@ player createDiaryRecord	[
 								"patchNotes",
 								[
 									"Misc.",
-									"- Insurgent vehicle usage was edited.<br/><br/>- M72's were added to Army, Marines, NATO, and AAF<br/><br/>- NLAW's were exchanged for AT4's for NATO and AAF<br/><br/>- some vehicles slipped the loot net, they are no more.<br/><br/>- ATV's and light vehicles were spread around the factions<br/><br/>- A single helicopter can be sheltered inside the hangar (use hangar station) when not in use to reduce helipad clutter.<br/><br/>- More supplies at each drop.<br/><br/>- Insurgent loadouts edited and now dependant on supplier.<br/><br/>- CSAT was removed... lets all agree that was awkward and never talk about it ever again."
-								]
-							];
-player createDiaryRecord	[
-								"patchNotes",
-								[
-									"FOB",
-									"FOB actions were added for squad leaders. You can now designate one FOB on the map and all fortifications built inside of it will preserved."
-								]
-							];
-player createDiaryRecord	[
-								"patchNotes",
-								[
-									"Map Events",
-									"Map events, which are basically side missions, have been added. They will happen randomly and count as completed objectives if finished, but will adversly affect the map state if nothing is done.<br/><br/>Region defence - insurgents will now move on any regions that are not volatile, you will have to move to and defend the region that it specifies. If nothing is done or you fail to defend the region, the region will become volatile."
-								]
-							];
-player createDiaryRecord	[
-								"patchNotes",
-								[
-									"AI Spawning",
-									"The way in which AI spawns was pretty much left over from the old mechanics of the game and have been updated. The enemy will still react to you if you are spotted but they should hopefully behave more reasonably and the regions should not be quite so crazy."
-								]
-							];
-player createDiaryRecord	[
-								"patchNotes",
-								[
-									"Regions",
-									"Region volatility mechanics were drastically edited. Each region you stabalize will take approximately 2 weeks to become volatile again, this should hopefully allow for securing more of the island and not have to constantly stabalize the regions next to the base.<br/><br/>New regions were added and overall regions were edited to be centered around population centers better. In addition there should be smoother transition between zones (except for the obvious entrance lag), which allows for more zones and overlapping zones to better capture towns and villages."
-								]
-							];
-player createDiaryRecord	[
-								"patchNotes",
-								[
-									"Database",
-									"2 options were added to the headquarters to make use of a save/load feature.<br/><br/>Reset DB - This will reset the database to default values and will allow you to completey start over without loading in a saved map state when the server restarts<br/><br/>Save - This will save the current state of the map, including all vehicles at base, all gear in the boxes, current supplies, and region stability. This will ONLY be loaded ONCE on the mission restart."
+									"- Defence mission probabilities edited.<br/>- ATV's cost 0 logistics<br/>- (some)military buildings on the map should now be destroyed from the rebellion<br/>- Insurgents were issued portable shooty tubes"
 								]
 							];
 
@@ -165,7 +130,7 @@ player createDiaryRecord	[
 	
 	sleep 60;
 	
-	["(4.1.6)<br/>2017-07-15", "If you have not already read the patch notes, please do so."] call FF7_fnc_formatHint;
+	["(4.1.7b)<br/>2017-07-18", "If you have not already read the patch notes, please do so."] call FF7_fnc_formatHint;
 };
 
 // ---------- Run only on player... ----------
@@ -204,15 +169,94 @@ call compile preprocessFileLineNumbers "functions\InA\Interact\conversationStruc
 
 // ---------- Initialize player ----------
 
-// ---------- Remove all gear from player ----------
+// ---------- Initial gear ----------
 
-removeAllWeapons player;
-removeAllItems player;
-removeBackpack player;
-removeAllAssignedItems player;
-removeVest player;
-removeUniform player;
-removeHeadgear player;
+[clientOwner, "baseType"] remoteExec ["publicVariableClient", 2, false];
+
+sleep 0.2;
+
+switch (baseType) do {
+	case "Army":
+	{
+		removeAllWeapons player;
+		removeAllItems player;
+		removeBackpack player;
+		removeAllAssignedItems player;
+		removeVest player;
+		removeUniform player;
+		removeHeadgear player;
+
+		player forceAddUniform "VSM_Multicam_Crye_Camo";
+		player addMagazine "rhsusf_mag_15Rnd_9x19_JHP";
+		player addWeapon "rhsusf_weap_m9",
+	};
+	case "Marines":
+	{
+		removeAllWeapons player;
+		removeAllItems player;
+		removeBackpack player;
+		removeAllAssignedItems player;
+		removeVest player;
+		removeUniform player;
+		removeHeadgear player;
+
+		player forceAddUniform "rhs_uniform_FROG01_wd";
+		player addMagazine "rhsusf_mag_15Rnd_9x19_JHP";
+		player addWeapon "rhsusf_weap_m9",
+	};
+	case "Nato":
+	{
+		removeAllWeapons player;
+		removeAllItems player;
+		removeBackpack player;
+		removeAllAssignedItems player;
+		removeVest player;
+		removeUniform player;
+		removeHeadgear player;
+
+		player forceAddUniform "U_B_CombatUniform_mcam";
+		player addMagazine "16Rnd_9x21_Mag";
+		player addWeapon "hgun_P07_F",
+	};
+	case "AAF":
+	{
+		removeAllWeapons player;
+		removeAllItems player;
+		removeBackpack player;
+		removeAllAssignedItems player;
+		removeVest player;
+		removeUniform player;
+		removeHeadgear player;
+
+		player forceAddUniform "U_I_CombatUniform";
+		player addMagazine "rhsusf_mag_15Rnd_9x19_JHP";
+		player addWeapon "hgun_P07_F",
+	};
+	case "Russia":
+	{
+		removeAllWeapons player;
+		removeAllItems player;
+		removeBackpack player;
+		removeAllAssignedItems player;
+		removeVest player;
+		removeUniform player;
+		removeHeadgear player;
+
+		player forceAddUniform "rhs_uniform_emr_patchless";
+		player addMagazine "rhs_mag_9x18_8_57N181S";
+		player addWeapon "rhs_weap_makarov_pm",
+	};
+	default
+	{
+		removeAllWeapons player;
+		removeAllItems player;
+		removeBackpack player;
+		removeAllAssignedItems player;
+		removeVest player;
+		removeUniform player;
+		removeHeadgear player;
+	};
+};
 
 // ---------- Add actions to base ----------
 

@@ -1,7 +1,7 @@
 // ---------- Basics ----------
 author					= "FoxForce";
 onLoadName				= "InA [Malden]";
-onLoadMission			= "FoxForce - Invade, no Annex 4.1.7a";
+onLoadMission			= "FoxForce - Invade, no Annex 4.1.7b";
 loadScreen				= "img\malden_noannex_load_512.paa";
 overviewText			= "FoxForce COOP";
 onLoadIntroTime			= 0;

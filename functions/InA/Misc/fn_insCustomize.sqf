@@ -34,8 +34,8 @@ private ["_aimingShake","_aimingSpeed","_endurance","_spotDistance","_spotTime",
 	_aimingShake	= random [0.6, 0.7, 0.8];
 	_aimingSpeed	= random [0.6, 0.7, 0.8];
 	_endurance		= 1;
-	_spotDistance	= random [0.6, 0.8, 1];
-	_spotTime		= random [0.6, 0.8, 1];
+	_spotDistance	= 1;
+	_spotTime		= 1;
 	_courage		= random [0.6, 0.8, 1];
 	_reloadSpeed	= random [0.4, 0.6, 0.8];
 	_commanding		= 1;

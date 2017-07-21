@@ -22,7 +22,7 @@
 					{
 						case 0:
 						{
-							ctrlSetText [1000, "1"];
+							ctrlSetText [1000, "0"];
 							ctrlSetText [1001, "50"];
 							ctrlSetText [1002, "0"];
 						};
@@ -262,7 +262,7 @@
 					{
 						case 0:
 						{
-							ctrlSetText [1000, "1"];
+							ctrlSetText [1000, "0"];
 							ctrlSetText [1001, "50"];
 							ctrlSetText [1002, "0"];
 						};
@@ -490,7 +490,7 @@
 					{
 						case 0:
 						{
-							ctrlSetText [1000, "1"];
+							ctrlSetText [1000, "0"];
 							ctrlSetText [1001, "50"];
 							ctrlSetText [1002, "0"];
 						};
@@ -646,7 +646,7 @@
 					{	
 						case 0:
 						{
-							ctrlSetText [1000, "1"];
+							ctrlSetText [1000, "0"];
 							ctrlSetText [1001, "50"];
 							ctrlSetText [1002, "0"];
 						};
@@ -790,7 +790,7 @@
 					{
 						case 0:
 						{
-							ctrlSetText [1000, "1"];
+							ctrlSetText [1000, "0"];
 							ctrlSetText [1001, "50"];
 							ctrlSetText [1002, "0"];
 						};

@@ -1,15 +1,50 @@
-
-waitUntil { sleep 1; initialized;};
+sleep 5;
 
 // ---------- Load database ----------
 
 _data = ["load", "data"] call FF7_fnc_extSerialize;
 
+if ((count (_data select 0)) < 1) exitWith {};
+
+// ---------- Set base type ----------
+
+_baseType = _data select 14 select 0;
+
+switch (_baseType) do {
+	case "Army": 
+	{
+		_handle = []execVM "functions\InA\Themes\baseTransportArmy.sqf";
+		waitUntil {scriptDone _handle;};
+	};
+	case "Marines": 
+	{
+		_handle = []execVM "functions\InA\Themes\baseTransportMarines.sqf";
+		waitUntil {scriptDone _handle;};
+	};
+	case "Nato": 
+	{
+		_handle = []execVM "functions\InA\Themes\baseTransportNato.sqf";
+		waitUntil {scriptDone _handle;};
+	};
+	case "AAF": 
+	{
+		_handle = []execVM "functions\InA\Themes\baseTransportAAF.sqf";
+		waitUntil {scriptDone _handle;};
+	};
+	case "Russia": 
+	{
+		_handle = []execVM "functions\InA\Themes\baseTransportRussia.sqf";
+		waitUntil {scriptDone _handle;};
+	};
+	default 
+	{
+
+	};
+};
+
 // ---------- Region data ----------
 
 _regionData = _data select 0;
-
-if (count _regionData < 1) exitWith {};
 
 {
 	call compile format
@@ -66,6 +101,7 @@ LogF = (_logisticsData select 2);
 // ---------- Vehicle data ----------
 
 _vehicleData = _data select 12;
+_utilityVehicles = _data select 13;
 
 {
 	_veh = createVehicle [(_x select 0), (_x select 2), [], 0, "CAN_COLLIDE"];
@@ -74,6 +110,10 @@ _vehicleData = _data select 12;
 	clearMagazineCargoGlobal _veh;
 	clearWeaponCargoGlobal _veh;
 	clearItemCargoGlobal _veh;
+
+	if ((_x select 0) in _utilityVehicles) then {
+		utilityVehicles pushBack _veh;
+	};
 	
 	playerVehicles pushBack _veh;
 } forEach _vehicleData;

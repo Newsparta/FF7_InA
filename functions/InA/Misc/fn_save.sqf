@@ -36,9 +36,10 @@ _array =
 	_inventory = _x select 1;
 
 	{
-		{_inventory pushBack _x;} forEach (magazineCargo _box);
-		{_inventory pushBack _x;} forEach (weaponCargo _box);
-		{_inventory pushBack _x;} forEach (itemCargo _box);
+		{ _inventory pushBack _x; } forEach (magazineCargo _x);
+		{ _inventory pushBack _x; } forEach (weaponCargo _x);
+		{ _inventory pushBack _x; } forEach (itemCargo _x);
+
 	} forEach everyBackpack _box;
 
 	{_inventory pushBack _x;} forEach (backpackCargo _box);

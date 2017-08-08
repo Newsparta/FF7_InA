@@ -259,7 +259,7 @@ while {true} do {
 				};
 			};
 			
-			_affectTimer = _affectTimer - (0.0034 + (.0001 * (count (call BIS_fnc_listPlayers))));
+			_affectTimer = _affectTimer - (0.0034 + (.0001 * ({(side _x == west) && ((_x distance _loc) < _rad)} count allUnits)));
 			
 			if (_affectTimer < 0) then {
 				_affectTimer = 0;

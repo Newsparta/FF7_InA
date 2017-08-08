@@ -25,7 +25,7 @@ for [{_i = 0}, {_i < (count _list)}, {_i = _i + 1}] do {
 			
 			if (_instability%1 < 0.5) then {
 			 _mkr = createMarker ['region%1', getMarkerPos 'ambient%1'];
-			'region%1' setMarkerColor 'ColorCIV';
+			'region%1' setMarkerColor 'ColorWEST';
 			'region%1' setMarkerShape 'ELLIPSE';
 			'region%1' setMarkerBrush 'BDiagonal';
 			'region%1' setMarkerSize [%2, %2];

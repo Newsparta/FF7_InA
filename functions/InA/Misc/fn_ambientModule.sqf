@@ -87,7 +87,7 @@ while {true} do {
 			_reward = false;
 			_affect = false;
 			_affectTimer = 0.25;
-			_ambMult = 0.75;
+			_ambMult = 0.25;
 		};
 		if ((_instability >= 0.5) && {_instability < 0.9}) then {
 

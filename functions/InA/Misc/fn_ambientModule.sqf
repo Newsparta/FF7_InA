@@ -28,13 +28,14 @@ Author:
 params ["_loc","_name",["_rad", 1000, [0]],["_size", "small", [""]]];
 	
 // ---------- Main ----------
-private ["_instability","_reward","_affect","_affectTimer","_i","_ambMult","_patrols","_groups","_group","_pos","_car","_nme"];
+private ["_instability","_reward","_affect","_didSomething","_affectTimer","_i","_ambMult","_patrols","_groups","_group","_pos","_car","_nme"];
 
 sleep random 3;
 
 _instability = (0.5 + (random 0.5));
 _reward = false;
 _affect = false;
+_didSomething = false;
 _affectTimer = 1;
 _i = 0;
 _ambMult = 0.75;
@@ -86,6 +87,7 @@ while {true} do {
 
 			_reward = false;
 			_affect = false;
+			_didSomething = false;
 			_affectTimer = 0.25;
 			_ambMult = 0.25;
 		};
@@ -93,6 +95,7 @@ while {true} do {
 
 			_reward = false;
 			_affect = false;
+			_didSomething = false;
 			_affectTimer = 0.75;
 			_ambMult = 1.25;
 		};
@@ -100,6 +103,7 @@ while {true} do {
 			
 			_reward = true;
 			_affect = false;
+			_didSomething = false;
 			_affectTimer = 1;
 			_ambMult = 1.75;
 		};
@@ -215,10 +219,10 @@ while {true} do {
 					_nme = {(side _x == resistance) && ((_x distance _loc) < _rad)} count allUnits;
 					
 					if (_affect) then {
-						if (_nme > 10) then {
+						if (_nme > 15) then {
 							_instability = random 0.5;
 						};
-						if (_nme > 20) then {
+						if (_nme > 25) then {
 							_instability = (0.5 + (random 0.5));
 						};
 						call compile format
@@ -270,6 +274,17 @@ while {true} do {
 						civTol = civTol + 0.1;
 						_reward = false;
 					};
+				};
+				
+				_nme = {(side _x == resistance) && ((_x distance _loc) < _rad)} count allUnits;
+				
+				if ((!_didSomething) and {_nme <= 15}) then {
+				
+					_didSomething = true;
+					
+					sleep 3;
+					
+					[format ["%1", _name], "The region appears pacified."] remoteExec ["FF7_fnc_formatHint", 0, false];
 				};
 			};
 		};

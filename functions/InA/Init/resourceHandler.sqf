@@ -5,6 +5,7 @@ LogV = 0;
 LogF = 0;
 LogM = 0;
 buildInventory = 60;
+playerVehicles = [];
 utilityVehicles = [];
 utilitySmallVehicles = [];
 
@@ -36,9 +37,20 @@ _added = false;
 			
 			if ((!alive _x) || {isNull _x}) then {
 				utilityVehicles = utilityVehicles - [_x];
+
+				if (_x in playerVehicles) then {
+					playerVehicles = playerVehicles - [_x];
+				}
 			};
 			
 		} forEach utilityVehicles;
+
+		{
+			if ((!alive _x) || {isNull _x}) then {
+				playerVehicles = playerVehicles - [_x];
+			};
+
+		} forEach playerVehicles;
 
 		// ---------- Small build kit ----------
 		/*

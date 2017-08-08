@@ -86,7 +86,14 @@ _array =
 	_box = _x select 0;
 	_inventory = _x select 1;
 
-	{_box addItemCargoGlobal [_x, 1];} forEach _inventory;
+	{
+		// Special case for backpacks
+		if(_x isKindOf "bag_base") then {
+			_box addBackpackCargoGlobal [_x, 1];
+		} else {
+			_box addItemCargoGlobal [_x, 1];
+		};
+	} forEach _inventory;
 
 } forEach _array;
 

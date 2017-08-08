@@ -94,4 +94,4 @@ params ["_kit"];
 	} forEach _selections;
 	_ctrl lbSetCurSel 0;
 	ctrlSetText [1001, (format ["%1",buildInventory])];
-}, [], 99, true, true, "", "((_target distance _this) < 8)"]] remoteExec ["addAction", 0, false];
+}, [], 99, true, true, "", "((_target distance _this) < 8)"]] remoteExec ["addAction", 0, true];

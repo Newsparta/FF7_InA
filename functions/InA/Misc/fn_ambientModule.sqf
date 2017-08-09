@@ -221,10 +221,13 @@ while {true} do {
 					if (_affect) then {
 						if (_nme > 15) then {
 							_instability = random 0.5;
+							if (_nme > 25) then {
+								_instability = (0.5 + (random 0.5));
+							};
+						} else {
+							_instability = 0;
 						};
-						if (_nme > 25) then {
-							_instability = (0.5 + (random 0.5));
-						};
+						
 						call compile format
 						[
 							"instability%1 = %2",

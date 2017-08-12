@@ -1,4 +1,4 @@
-private ["_door","_pilots","_wp","_team"];
+private ["_door","_pilots","_wp","_team","_delayScale"];
 // ---------- Logistics transport init ----------
 
 waitUntil {sleep 1; initialized};
@@ -6,16 +6,25 @@ waitUntil {sleep 1; initialized};
 logiVeh = ObjNull;
 ordnanceDisposedOf = 0;
 extraSupplies = 0;
+_delayScale = 0;
 
 // ---------- Control loop ----------
 
 while {true} do {
 
-	logiETA = (5400 + (random 3600));
+	if (count (allPlayers - entities "HeadlessClient_F") < 1) then {
+		_delayScale = 0;
+	};
+	
+	logiETA = ((5400 + (random 3600)) + _delayScale);
 	logiDaytime = daytime;
 	sleep logiETA;
 
 	if (count (allPlayers - entities "HeadlessClient_F") > 0) then {
+
+		// ---------- Time Delay ----------
+
+		_delayScale = _delayScale + 3600;
 	
 		// ---------- Helicopter spawns ----------
 		

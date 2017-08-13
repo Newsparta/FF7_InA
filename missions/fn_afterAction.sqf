@@ -6,6 +6,7 @@ if (afterActionReport) then {
 
 	// ---------- Cleanup ----------
 	
+	/*
 	_location = text (nearestLocations [mission, 
 	[
 		"NameCity",
@@ -13,6 +14,7 @@ if (afterActionReport) then {
 		"NameCityCapital"
 		
 	], 2000] select 0);
+	*/
 
 	[mission,2500] call InA_fnc_cleanup;
 
@@ -32,13 +34,15 @@ if (afterActionReport) then {
 		
 		if (mainObjective select 1 > 0) then {
 		
-			["HQ", "Headquarters", format ["You neutralized an insurgent presence near %1.",_location]] remoteExec ["FF7_fnc_globalHintStruct", 0];
-			
+			//["HQ", "Headquarters", format ["You neutralized an insurgent presence near %1.",_location]] remoteExec ["FF7_fnc_globalHintStruct", 0];
+			["HQ", "Headquarters", "You have disrupted major insurgent operations in the theater"] remoteExec ["FF7_fnc_globalHintStruct", 0];
+
 			sleep 5;
 		} else {
 		
-			["HQ", "Headquarters", format ["You failed to neutralize the insurgents near %1.",_location]] remoteExec ["FF7_fnc_globalHintStruct", 0];
-			
+			//["HQ", "Headquarters", format ["You failed to neutralize the insurgents near %1.",_location]] remoteExec ["FF7_fnc_globalHintStruct", 0];
+			["HQ", "Headquarters", "insurgent operations appear to be only marginally affected by your efforts"] remoteExec ["FF7_fnc_globalHintStruct", 0];
+
 			sleep 5;		
 		};
 	
@@ -68,7 +72,7 @@ if (afterActionReport) then {
 			sleep 5;
 		};
 		
-		LogV = LogV + 2;
+		LogV = LogV + 3;
 		["HQ", "Headquarters", "You have been commended for your success against the insurgents."] remoteExec ["FF7_fnc_globalHintStruct", 0];
 	} else {
 	

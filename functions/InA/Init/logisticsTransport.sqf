@@ -130,8 +130,8 @@ while {true} do {
 		
 			sleep 60;
 			
-			LogF = LogF + (floor random [350,400,450]);
-			LogM = LogM + (floor random [275,300,325]) + extraSupplies;
+			LogF = LogF + (floor random [250,300,350]);
+			LogM = LogM + (floor random [175,200,225]) + extraSupplies;
 			
 			if (extraSupplies > 0) then {
 				extraSupplies = 0;

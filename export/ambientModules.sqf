@@ -126,7 +126,7 @@ _array = nearestObjects
 		} forEach (allPlayers - entities "HeadlessClient_F");
 
 		if (count _knownPlayers > 0) then {
-			if (random 100 < 0.01) then {
+			if (random 100 < 0.05) then {
 
 				_target = selectRandom _knownPlayers;
 

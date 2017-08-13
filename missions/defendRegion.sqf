@@ -22,7 +22,7 @@ _mkr = createMarker ["defend", _loc];
 "defend" setMarkerType "mil_objective";
 "defend" setMarkerText "Imminent Incursion";
 
-waitUntil {_i = _i + 1; if (_i == 720) exitWith {true;}; sleep (5 + (random 5)); {_x distance _loc < 1500} count (allPlayers - entities "HeadlessClient_F") > 0};
+waitUntil {_i = _i + 1; if (_i == 720) exitWith {true;}; sleep (5 + (random 5)); {_x distance _loc < 750} count (allPlayers - entities "HeadlessClient_F") > 0};
 
 deleteMarker "defend";
 
@@ -38,9 +38,11 @@ if (_i == 720) exitWith {
 	];
 };
 
-["HQ", "Headquarters", format ["Insurgent activity in the surrounding region seems to suggest they may be preparing to move on %1.", _location]] remoteExec ["FF7_fnc_globalHintStruct", 0];
+["HQ", "Headquarters", format ["Insurgents around %1 will likely begin their assault in the next few minutes.", _location]] remoteExec ["FF7_fnc_globalHintStruct", 0];
 
-sleep 400;
+sleep 300;
+
+["HQ", "Headquarters", format ["Maintain control of %1 until enemy activity subsides.", _location]] remoteExec ["FF7_fnc_globalHintStruct", 0];
 
 spawnCenter = _loc;
 spawnBorderLand = _rad;
@@ -54,7 +56,7 @@ _i = 0;
 while {_i = _i + 60; _i <= 900} do {
 	scopeName "attackLoop";
 
-	if (({(side _x) == resistance} count allUnits) < 100) then {
+	if (({(side _x) == resistance} count allUnits) < 120) then {
 		_accepted = false;
 		while {!_accepted} do {
 
@@ -130,6 +132,10 @@ while {_i = _i + 60; _i <= 900} do {
 	if (_i == 900) then {
 		
 		compObj = compObj + 1;
+
+		LogV = LogV + 1;
+
+		civTol = civTol + 0.1;
 		
 		["HQ", "Headquarters", "Enemy activity appears to be subsiding."] remoteExec ["FF7_fnc_globalHintStruct", 0];
 	};

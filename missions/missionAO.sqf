@@ -27,6 +27,8 @@ while {!_accepted} do {
 	};
 };
 
+[mission] call InA_fnc_spotCheck;
+
 // ---------- Objective Spawns ----------
 private ["_bank"];
 

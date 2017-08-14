@@ -24,7 +24,7 @@ Author:
 
 // ---------- PARAMETERS ----------
 
-params ["_cen", ["_rad", 1500, [0]]];
+params ["_cen", ["_rad", 2000, [0]]];
 
 // ---------- MAIN ----------
 private ["_q","_w"];

@@ -32,8 +32,8 @@ for [{_i = 0}, {_i < (count _list)}, {_i = _i + 1}] do {
 			_mkr = createMarker ['text%1', getMarkerPos 'ambient%1'];
 			'text%1' setMarkerColor 'ColorBlack';
 			'text%1' setMarkerShape 'ICON';
-			'text%1' setMarkerType 'mil_unknown';
-			'text%1' setMarkerText 'Region Stable';
+			'text%1' setMarkerType 'mil_dot';
+			'text%1' setMarkerText 'Stable';
 			};
 			if ((_instability%1 > 0.5) and (_instability%1 < 0.9)) then {
 			 _mkr = createMarker ['region%1', getMarkerPos 'ambient%1'];
@@ -45,7 +45,7 @@ for [{_i = 0}, {_i < (count _list)}, {_i = _i + 1}] do {
 			'text%1' setMarkerColor 'ColorBlack';
 			'text%1' setMarkerShape 'ICON';
 			'text%1' setMarkerType 'mil_warning';
-			'text%1' setMarkerText 'Region Destabalizing';
+			'text%1' setMarkerText 'Destabalizing';
 			};
 			if (_instability%1 > 0.9) then {
 			 _mkr = createMarker ['region%1', getMarkerPos 'ambient%1'];
@@ -57,7 +57,7 @@ for [{_i = 0}, {_i < (count _list)}, {_i = _i + 1}] do {
 			'text%1' setMarkerColor 'ColorRed';
 			'text%1' setMarkerShape 'ICON';
 			'text%1' setMarkerType 'mil_warning';
-			'text%1' setMarkerText 'Volatile Region';
+			'text%1' setMarkerText 'Volatile';
 			};
 			
 			[] spawn {

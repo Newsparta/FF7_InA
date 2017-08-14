@@ -121,7 +121,7 @@ while {true} do {
 			
 			if ({_x distance _loc < _rad} count (allPlayers - entities "HeadlessClient_F") > 0) then {
 	
-				if (random 100 < (0.8 + (0.8 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
+				if (random 100 < (0.7 + (0.7 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
 					[
 						_loc, 
 						_rad + 500, 
@@ -137,7 +137,7 @@ while {true} do {
 						1
 					] spawn InA_fnc_insLightCarAttack;
 				};
-				if (random 100 < (0.003125 + (0.003125 * _ambMult))) then {
+				if (random 100 < (0.02 + (0.02 * _ambMult))) then {
 					[
 						_loc, 
 						_rad + 1000, 
@@ -153,7 +153,7 @@ while {true} do {
 						1
 					] spawn InA_fnc_insMediumTruckTransport;
 				};
-				if (random 100 < (0.003125 + (0.003125 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
+				if (random 100 < (0.0125 + (0.025 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
 					[
 						_loc, 
 						_rad + 1000, 
@@ -161,7 +161,7 @@ while {true} do {
 						1
 					] spawn InA_fnc_insApcTransport;
 				};
-				if (random 100 < (0.003125 + (0.003125 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
+				if (random 100 < (0.006250 + (0.0125 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
 					[
 						_loc, 
 						_rad + 1000, 
@@ -169,7 +169,7 @@ while {true} do {
 						1
 					] spawn InA_fnc_insIfvTransport;
 				};
-				if (random 100 < (0.004 + (0.004 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
+				if (random 100 < (0.008 + (0.008 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
 					[
 						_loc, 
 						_rad + 2500, 
@@ -177,7 +177,7 @@ while {true} do {
 						1
 					] spawn InA_fnc_insLightHeliAttack;
 				};
-				if (random 100 < (0.003125 + (0.003125 * _ambMult))) then {
+				if (random 100 < (0.006250 + (0.006250 * _ambMult))) then {
 					[
 						_loc, 
 						_rad + 1000, 
@@ -185,7 +185,7 @@ while {true} do {
 						1
 					] spawn InA_fnc_insTankAttack;
 				};
-				if (random 100 < (0.003125 + (0.003125 * _ambMult))) then {
+				if (random 100 < (0.006250 + (0.006250 * _ambMult))) then {
 					[
 						_loc, 
 						_rad + 2500, 
@@ -287,7 +287,7 @@ while {true} do {
 					
 					sleep 3;
 					
-					[format ["%1", _name], "The region appears pacified."] remoteExec ["FF7_fnc_formatHint", 0, false];
+					[format ["%1", _name], "The region appears to be pacified."] remoteExec ["FF7_fnc_formatHint", 0, false];
 				};
 			};
 		};

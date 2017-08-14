@@ -1,4 +1,4 @@
-// ---------- Mission Mechanics (4.1.7b) ----------
+// ---------- Mission Mechanics (4.1.7c) ----------
 
 player createDiarySubject ["missionMechanics","Mission Mechanics"];
 
@@ -108,7 +108,7 @@ player createDiaryRecord	[
 								]
 							];
 							
-// ---------- Patch Notes (4.1.7b) ----------
+// ---------- Patch Notes (4.1.7c) ----------
 
 player createDiarySubject ["patchNotes","Patch Notes"];
 
@@ -116,7 +116,7 @@ player createDiaryRecord	[
 								"patchNotes",
 								[
 									"Misc.",
-									"- Defence mission probabilities edited.<br/>- ATV's cost 0 logistics<br/>- (some)military buildings on the map should now be destroyed from the rebellion<br/>- Insurgents were issued portable shooty tubes"
+									"- Tweaks to enemy spawn RNG <br/>- Defence missions are more explicit<br/>- Region markers edited<br/>- Supplies drops scale ETA, if one drops the next will be delayed longer, this pattern repeats for as long as people are on and reverts back to the standard drop time when everyone is off.<br/>- Supplies received was drastically reduced (keep in mind main AO's give bonus supplies if you complete enough objectives, this may take multiple AO's depending on RNG)<br/>"
 								]
 							];
 
@@ -130,7 +130,7 @@ player createDiaryRecord	[
 	
 	sleep 60;
 	
-	["(4.1.7b)<br/>2017-07-18", "If you have not already read the patch notes, please do so."] call FF7_fnc_formatHint;
+	["(4.1.7c)<br/>2017-08-13", "If you have not already read the patch notes, please do so."] call FF7_fnc_formatHint;
 };
 
 // ---------- Run only on player... ----------

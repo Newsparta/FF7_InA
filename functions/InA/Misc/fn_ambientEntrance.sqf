@@ -10,18 +10,18 @@ _groups = 0;
 
 if (_size == "small") then {
 	
-	_patrols = (5 + (random 5));
+	_patrols = (6 + (random 4));
 	_groups = (1 + (random 2));
 };
-if ((_size == "medium") && (_rad < 1000)) then {
+if (_size == "medium") then {
 
 	_patrols = (8 + (random 5));
-	_groups = (2 + (random 2));
+	_groups = (3 + (random 2));
 };
 if (_size == "large") then {
 
 	_patrols = (20 + (random 10));
-	_groups = (3 + (random 3));
+	_groups = (4 + (random 3));
 };
 
 [_loc,_rad, _patrols, _groups] spawn InA_fnc_ambientCivilians;

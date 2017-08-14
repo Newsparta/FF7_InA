@@ -29,6 +29,41 @@ _net setPos [_pos select 0, _pos select 1, 0];
 _veh = createVehicle [(selectRandom INS_STATIC_AAA_OPF), [_pos select 0, _pos select 1, 0], [], 0, "CAN_COLLIDE"];
 _target = _veh;
 
+clearBackpackCargoGlobal _veh;
+clearMagazineCargoGlobal _veh;
+clearWeaponCargoGlobal _veh;
+clearItemCargoGlobal _veh;	
+_group = [
+	_pos, 
+	INDEPENDENT, 
+	[
+		(selectRandom INS_INF_SINGLE),
+		(selectRandom INS_INF_SINGLE)
+	]
+] call BIS_fnc_spawnGroup;
+		(units _group select 0) assignAsDriver _veh;
+		(units _group select 1) assignAsGunner _veh;
+[units _group] call InA_fnc_insCustomize;
+[_group,_pos,_veh] spawn {
+	while {true} do {
+		scopeName "guardAAA";
+		if (spotted) then {
+			_wp = (_this select 0) addWaypoint [(_this select 1),0];
+			_wp waypointAttachVehicle (_this select 3);
+			_wp setWaypointType "GETIN";
+		
+			[(_this select 0), (_this select 1)] call BIS_fnc_taskDefend;
+			breakOut "guardAAA";
+		};
+		
+		if (!alive (_this select 3) || count units (_this select 0) < 2) then {
+			
+			breakOut "guardAAA";
+		};
+	sleep 3;
+	};
+};
+
 _loc = getPosATL _veh;
 
 spawnedObj pushBack ["AAA", _loc];

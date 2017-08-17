@@ -27,4 +27,50 @@ while {true} do {
 			["HQ", "Headquarters", "Your superiors have decommissioned the vehicles for you."] remoteExec ["FF7_fnc_globalHintStruct", 0];
 		};
 	};
+	
+	_landArray = nearestObjects [getMarkerPos "respawn_west",["LandVehicle"],750];
+	_airArray = nearestObjects [getMarkerPos "respawn_west",["Air"],750];
+	_array = 
+	[
+		launcherCrate,
+		explosiveCrate,
+		ammoCrate,
+		weaponCrate,
+		weaponCrate_2,
+		grenadeCrate,
+		equipmentCrate,
+		medicalCrate,
+		miscCrate,
+		gearDump,
+	];
+
+	_banned = [];
+	if (supplier == "BLU") then {
+		{_banned pushBack _x} forEach INS_RIFLE_BLU;
+		{_banned pushBack _x} forEach INS_GL_BLU;
+		{_banned pushBack _x} forEach INS_MG_BLU;
+		{_banned pushBack _x} forEach INS_AT_BLU;
+		{_banned pushBack _x} forEach INS_AA_BLU;
+	} else {
+		{_banned pushBack _x} forEach INS_RIFLE_OPF;
+		{_banned pushBack _x} forEach INS_GL_OPF;
+		{_banned pushBack _x} forEach INS_MG_OPF;
+		{_banned pushBack _x} forEach INS_AT_OPF;
+		{_banned pushBack _x} forEach INS_AA_OPF;
+	};
+
+	{
+		_inv = getMagazineCargo _x;
+		_obj = _x;
+		{
+			if (_x in _banned) then {
+				if (_x isKindOf "CA_Magazine") then {
+					_obj removeMagazineGlobal _x;
+				} else {
+					_obj removeWeaponGlobal _x;
+				};
+			};
+		} forEach _inv;
+	} forEach (_landArray + _airArray + _array);
+	
 };

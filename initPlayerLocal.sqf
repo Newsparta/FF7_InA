@@ -130,7 +130,7 @@ player createDiaryRecord	[
 	
 	sleep 60;
 	
-	["(4.1.7c)<br/>2017-08-13", "If you have not already read the patch notes, please do so."] call FF7_fnc_formatHint;
+	["(4.1.7c)<br/>2017-08-17", "Latest patch date"] call FF7_fnc_formatHint;
 };
 
 // ---------- Run only on player... ----------

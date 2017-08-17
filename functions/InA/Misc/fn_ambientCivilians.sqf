@@ -172,7 +172,37 @@ for "_i" from 1 to _carsParked do {
 
 			_car = createVehicle [(selectRandom civ_cars), _road, [], 0, "CAN_COLLIDE"];
 			_car setDir _dir;
-			_car setPos [(getPosASL _car select 0) + 4.5, getPosASL _car select 1, 0];		
+			_car setPos [(getPosASL _car select 0) + 4.5, getPosASL _car select 1, 0];
+
+			[_car] spawn {
+				_car = _this select 0;
+				_val = random 1;
+				while {true} do {
+					scopeName format ["civCar%1",_val];
+
+					sleep (2 + (random 2));
+
+					if (!isNull (driver _car)) then {
+
+						_theif = driver _car;
+
+						if (isPlayer _theif) then {
+
+							_nameTheif = name _theif;
+
+							civTol = civTol - 0.1;
+
+							["Civility", (format ["<t color='#CC2222'>%1</t> just stole a civilian vehicle.</t>", _nameTheif])] remoteExec ["FF7_fnc_formatHint", 0];
+
+						};
+
+						breakOut format ["civCar%1",_val];
+					};
+					if (!alive _car) then {
+						breakOut format ["civCar%1",_val];
+					};
+				};
+			};		
 		};
 		
 		clearBackpackCargoGlobal _car;

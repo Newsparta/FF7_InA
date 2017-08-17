@@ -116,7 +116,7 @@ while {true} do {
 			_i = _i + 1;
 			
 			if (_i >= 225) then {
-				_ambMult = 0.75;
+				_ambMult = 0.25;
 			};
 			
 			if ({_x distance _loc < _rad} count (allPlayers - entities "HeadlessClient_F") > 0) then {

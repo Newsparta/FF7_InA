@@ -47,7 +47,12 @@ if (_check == "type") then {
 			} remoteExec ["BIS_fnc_call", 2];
 		
 			_type = "marked on your map where they saw interesting things.";
-			["INTERACTION",format ["This person %1",_type]] call FF7_fnc_formatHint;	
+			["INTERACTION",format ["This person %1",_type]] call FF7_fnc_formatHint;
+
+			sleep 3;
+
+			_name = name player;
+			["Intel", (format ["<t color='#30CC21'>%1</t> aquired intel from a civilian</t>", _name])] remoteExec ["FF7_fnc_formatHint", 0];
 		
 		} else {
 		
@@ -60,7 +65,12 @@ if (_check == "type") then {
 			};
 		
 			_type = format ["they saw, %1", _objectives];
-			["INTERACTION",format ["This person tells you %1",_type]] call FF7_fnc_formatHint;	
+			["INTERACTION",format ["This person tells you %1",_type]] call FF7_fnc_formatHint;
+
+			sleep 3;
+
+			_name = name player;
+			["Intel", (format ["<t color='#30CC21'>%1</t> aquired intel from a civilian</t>", _name])] remoteExec ["FF7_fnc_formatHint", 0];
 		
 		};
 	} else {
@@ -88,7 +98,12 @@ if (_check == "type") then {
 			} remoteExec ["BIS_fnc_call", 2];
 		
 			_type = "marked on your map where they saw interesting things.";
-			["INTERACTION",format ["This person %1",_type]] call FF7_fnc_formatHint;	
+			["INTERACTION",format ["This person %1",_type]] call FF7_fnc_formatHint;
+
+			sleep 3;
+
+			_name = name player;
+			["Intel", (format ["<t color='#30CC21'>%1</t> aquired intel from a civilian</t>", _name])] remoteExec ["FF7_fnc_formatHint", 0];	
 		
 		} else {
 		
@@ -102,6 +117,11 @@ if (_check == "type") then {
 		
 			_type = format ["they saw, %1", _objectives];
 			["INTERACTION",format ["This person tells you %1",_type]] call FF7_fnc_formatHint;	
+
+			sleep 3;
+
+			_name = name player;
+			["Intel", (format ["<t color='#30CC21'>%1</t> aquired intel from a civilian</t>", _name])] remoteExec ["FF7_fnc_formatHint", 0];
 		
 		};
 	};
@@ -153,6 +173,11 @@ if (_check == "loc") then {
 			_loc = "marked on your map to show you where activity was noticed.";
 			["INTERACTION",format ["This person %1",_loc]] call FF7_fnc_formatHint;
 
+			sleep 3;
+
+			_name = name player;
+			["Intel", (format ["<t color='#30CC21'>%1</t> aquired intel from a civilian</t>", _name])] remoteExec ["FF7_fnc_formatHint", 0];
+
 		} else {
 			_location = text (nearestLocations [mission, 
 			[
@@ -163,7 +188,13 @@ if (_check == "loc") then {
 			], 2000] select 0);
 			
 			_loc = format ["the enemy may be near %1", _location];
-			["INTERACTION",format ["This person tells you %1",_loc]] call FF7_fnc_formatHint;		
+			["INTERACTION",format ["This person tells you %1",_loc]] call FF7_fnc_formatHint;	
+
+			sleep 3;
+
+			_name = name player;
+			["Intel", (format ["<t color='#30CC21'>%1</t> aquired intel from a civilian</t>", _name])] remoteExec ["FF7_fnc_formatHint", 0];
+
 		};
 	} else {
 
@@ -201,6 +232,11 @@ if (_check == "loc") then {
 			_loc = "marked on your map to show you where activity was noticed.";
 			["INTERACTION",format ["This person %1",_loc]] call FF7_fnc_formatHint;
 
+			sleep 3;
+
+			_name = name player;
+			["Intel", (format ["<t color='#30CC21'>%1</t> aquired intel from a civilian</t>", _name])] remoteExec ["FF7_fnc_formatHint", 0];
+
 		} else {
 			_location = text (nearestLocations [mission, 
 			[
@@ -211,7 +247,13 @@ if (_check == "loc") then {
 			], 2000] select 0);
 			
 			_loc = format ["the enemy may be near %1", _location];
-			["INTERACTION",format ["This person tells you %1",_loc]] call FF7_fnc_formatHint;		
+			["INTERACTION",format ["This person tells you %1",_loc]] call FF7_fnc_formatHint;
+
+			sleep 3;
+
+			_name = name player;
+			["Intel", (format ["<t color='#30CC21'>%1</t> aquired intel from a civilian</t>", _name])] remoteExec ["FF7_fnc_formatHint", 0];
+
 		};
 	};
 	
@@ -246,6 +288,11 @@ if (_check == "man") then {
 			_man = "definitely insurgents amassing in the jungles";
 			["INTERACTION",format ["This person tells you there were %1",_man]] call FF7_fnc_formatHint;		
 		};
+
+		sleep 3;
+
+		_name = name player;
+		["Intel", (format ["<t color='#30CC21'>%1</t> aquired intel from a civilian</t>", _name])] remoteExec ["FF7_fnc_formatHint", 0];
 		
 	} else {
 		_total = mission nearEntities ["Man", 1500];
@@ -262,6 +309,11 @@ if (_check == "man") then {
 			_man = "a very large number of insurgents somewhere.";
 			["INTERACTION",format ["This person tells you there were %1",_man]] call FF7_fnc_formatHint;		
 		};
+
+		sleep 3;
+
+		_name = name player;
+		["Intel", (format ["<t color='#30CC21'>%1</t> aquired intel from a civilian</t>", _name])] remoteExec ["FF7_fnc_formatHint", 0];
 	};
 	
 	intelMan = ["man", 1];

@@ -243,7 +243,7 @@ if (_instability >= 0.9) then {
 
 					sleep (2 + (random 2));
 
-					if ((behavior leader (_this select 0)) == "COMBAT") then {
+					if ((behaviour leader (_this select 0)) == "COMBAT") then {
 						_wp = (_this select 0) addWaypoint [(_this select 1),0];
 						_wp waypointAttachVehicle (_this select 3);
 						_wp setWaypointType "GETIN";

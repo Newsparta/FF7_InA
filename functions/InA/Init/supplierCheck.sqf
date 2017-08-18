@@ -41,7 +41,7 @@ while {true} do {
 		equipmentCrate,
 		medicalCrate,
 		miscCrate,
-		gearDump,
+		gearDump
 	];
 
 	_banned = [];

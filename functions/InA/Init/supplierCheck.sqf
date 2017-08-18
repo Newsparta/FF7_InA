@@ -60,7 +60,7 @@ while {true} do {
 	};
 
 	{
-		_inv = getMagazineCargo _x;
+		_inv = ((getMagazineCargo _x) + (getWeaponCargo _x));
 		_obj = _x;
 		{
 			if (_x in _banned) then {

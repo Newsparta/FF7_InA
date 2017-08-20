@@ -45,17 +45,72 @@ equipUniform =
 			
 				case 0:
 				{
-					player forceAddUniform "U_B_CombatUniform_mcam";
+					player forceAddUniform "MNP_CombatUniform_Scorpion_A";
 				};
 
 				case 1:
 				{
-					player forceAddUniform "U_B_CombatUniform_mcam_vest";
+					player forceAddUniform "MNP_CombatUniform_Scorpion_B";
 				};
 				
 				case 2:
 				{
-					player forceAddUniform "U_B_CombatUniform_mcam_tshirt";
+					player forceAddUniform "U_B_CTRG_1";
+				};
+
+				case 3:
+				{
+					player forceAddUniform "U_B_CTRG_3";
+				};
+
+				case 4:
+				{
+					player forceAddUniform "MNP_CombatUniform_Germany";
+				};
+
+				case 5:
+				{
+					player forceAddUniform "MNP_CombatUniform_Germany_S";
+				};
+
+				case 6:
+				{
+					player forceAddUniform "MNP_CombatUniform_Canada";
+				};
+
+				case 7:
+				{
+					player forceAddUniform "MNP_CombatUniform_Canada_S";
+				};
+
+				case 8:
+				{
+					player forceAddUniform "MNP_CombatUniform_NOR_A";
+				};
+
+				case 9:
+				{
+					player forceAddUniform "MNP_CombatUniform_NOR_B";
+				};
+
+				case 10:
+				{
+					player forceAddUniform "MNP_CombatUniform_Fin_A";
+				};
+
+				case 11:
+				{
+					player forceAddUniform "MNP_CombatUniform_Fin_B";
+				};
+
+				case 12:
+				{
+					player forceAddUniform "MNP_CombatUniform_Australia";
+				};
+
+				case 13:
+				{
+					player forceAddUniform "MNP_CombatUniform_Australia_S";
 				};
 			};
 		};
@@ -110,9 +165,20 @@ switch (baseType) do {
 	case "Nato":
 	{
 		_items = [
-			"MTP",
-			"MTP (rolled)",
-			"MTP (tee)"
+			"United States Army (normal)",
+			"United States Army (rolled)",
+			"British Army (normal)",
+			"British Army (rolled)",
+			"Bundeswehr (normal)",
+			"Bundeswehr (rolled)",
+			"Canadian Army (normal)",
+			"Canadian Army (rolled)",
+			"Norwegian Army (normal)",
+			"Norwegian Army (rolled)",
+			"Finnish Army (normal)",
+			"Finnish Army (rolled)",
+			"Australian Army (normal)",
+			"Australian Army (rolled)"
 		];
 	};
 	case "AAF":

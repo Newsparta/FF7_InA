@@ -222,7 +222,7 @@ private ["_pos","_group"];
 				
 				sleep (2 + (random 2));
 				
-				if (_virgin && {({alive _x} count (nearestObjects [_target, ["Land_MetalBarrel_F"], 250])) < 8}) then {
+				if (_virgin && {({alive _x} count (nearestObjects [_target, ["Land_MetalBarrel_F"], 250])) < 12}) then {
 					
 					signalArray pushBack _target;
 					signalType pushBack "fuelDepot";

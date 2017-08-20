@@ -86,8 +86,8 @@ sleep 2;
 		if (LogF > 1000) then {
 			LogF = 1000;
 		};
-		if (LogM > 1000) then {
-			LogM = 1000;
+		if (LogM > 600) then {
+			LogM = 600;
 		};
 		if (LogV > 10) then {
 			LogV = 10;

@@ -52,7 +52,7 @@ equipUniform =
 		case "Nato":
 		{
 			switch (_id) do {
-			
+
 				case 0:
 				{
 					player addHeadGear (["H_HelmetB_light_desert","H_HelmetB_light_grass","H_HelmetB_light_snakeskin"] call BIS_fnc_selectRandom);
@@ -60,13 +60,34 @@ equipUniform =
 				
 				case 1:
 				{
-					player addHeadGear (["H_HelmetB_desert","H_HelmetB_grass","H_HelmetB_snakeskin"] call BIS_fnc_selectRandom);
-				};
-				
-				case 2:
-				{
 					player addHeadGear (["H_HelmetSpecB_paint2","H_HelmetSpecB_paint1","H_HelmetSpecB_snakeskin"] call BIS_fnc_selectRandom);
 				};
+
+				case 2:
+				{
+					player addHeadGear "MNP_Helmet_Scorpion";
+				};
+
+				case 3:
+				{
+					player addHeadGear "MNP_Helmet_Germany";
+				};
+
+				case 4:
+				{
+					player addHeadGear "MNP_Helmet_Canada_T";
+				};
+
+				case 5:
+				{
+					player addHeadGear "MNP_Helmet_FIN_T";
+				};
+
+				case 6:
+				{
+					player addHeadGear "MNP_Helmet_Australia";
+				};
+				
 			};
 		};
 		
@@ -128,8 +149,12 @@ switch (baseType) do {
 	{
 		_items = [
 			"Light Combat Helmet",
-			"Combat Helmet",
-			"Enhanced Combat Helmet"
+			"Enhanced Combat Helmet",
+			"United States Army (MICH camo)",
+			"Bundeswehr (MICH camo)",
+			"Canadian Army (MICH camo)",
+			"Finnish Army (MICH camo)",
+			"Australian Army (MICH camo)"
 		];
 	};
 	case "AAF":

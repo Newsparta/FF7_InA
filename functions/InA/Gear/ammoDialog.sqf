@@ -99,6 +99,7 @@ gearItemChange =
 					// 9mm Magazine
 					Multiplier = 0;
 				};
+
 				case 1:
 				{
 					// 5.56mm 30Rnd Magazine
@@ -110,173 +111,191 @@ gearItemChange =
 					// 5.56mm 30Rnd Tracer
 					Multiplier = 0;
 				};
-				
+
 				case 3:
+				{
+					// 6.8mm 30Rnd Magazine
+					Multiplier = 1.5;
+				};
+				
+				case 4:
+				{
+					// 6.8mm 30Rnd Tracer
+					Multiplier = 1.5;
+				};
+				
+				case 5:
 				{
 					// 5.56mm 200Rnd Belt
 					Multiplier = 5;
 				};
 				
-				case 4:
+				case 6:
 				{
 					// 5.56mm 100Rnd Belt
 					Multiplier = 2.5;
 				};
 				
-				case 5:
+				case 7:
 				{
 					// 7.62mm 100Rnd Belt
 					Multiplier = 5;
 				};
 				
-				case 6:
+				case 8:
 				{
 					// 7.62mm 50Rnd Belt
 					Multiplier = 2.5;
 				};
 				
-				case 7:
+				case 9:
 				{
 					// 7.62mm 20Rnd Magazine
 					Multiplier = 1;
 				};
 				
-				case 8:
+				case 10:
 				{
-					// 7.62mm 5Rnd Magazine
+					// .300 5Rnd Magazine
 					Multiplier = 0.25;
 				};
+
+				case 11:
+				{
+					// .50 10Rnd Magazine
+					Multiplier = 5;
+				};
 				
-				case 9:
+				case 12:
 				{
 					// M3 Heat
 					Multiplier = 10;
 				};
 				
-				case 10:
+				case 13:
 				{
 					// M3 HEDP
 					Multiplier = 10;
 				};
 				
-				case 11:
+				case 14:
 				{
 					// M3 HE
 					Multiplier = 10;
 				};
 				
-				case 12:
+				case 15:
 				{
 					// M3 SMOKE
 					Multiplier = 8;
 				};
 				
-				case 13:
+				case 16:
 				{
 					// Javelin
 					Multiplier = 20;
 				};
 				
-				case 14:
+				case 17:
 				{
 					// Stinger
 					Multiplier = 20;
 				};
 				
-				case 15:
+				case 18:
 				{
 					// 40mm HE
 					Multiplier = 2;
 				};
 				
-				case 16:
+				case 19:
 				{
 					// 40mm 3Rnd HE
 					Multiplier = 2;
 				};
 				
-				case 17:
+				case 20:
 				{
 					// 40mm Smoke
 					Multiplier = 1;
 				};
 				
-				case 18:
+				case 21:
 				{
 					// 40mm Flare
 					Multiplier = 1;
 				};
 				
-				case 19:
+				case 22:
 				{
 					// 40mm HuntIR
 					Multiplier = 5;
 				};
 				
-				case 20:
+				case 23:
 				{
 					// M67
 					Multiplier = 2;
 				};
 				
-				case 21:
+				case 24:
 				{
 					// RGN
 					Multiplier = 1;
 				};
 				
-				case 22:
+				case 25:
 				{
 					// Smoke White
 					Multiplier = 1;
 				};
 				
-				case 23:
+				case 26:
 				{
 					// Smoke Blue
 					Multiplier = 1;
 				};
 				
-				case 24:
+				case 27:
 				{
 					// Smoke Green
 					Multiplier = 1;
 				};
 				
-				case 25:
+				case 28:
 				{
 					// M14 Incendiary
 					Multiplier = 2;
 				};
 				
-				case 26:
+				case 29:
 				{
 					// VS-50 AP Mine
 					Multiplier = 5;
 				};
 				
-				case 27:
+				case 30:
 				{
 					// M4A1 Slam Mine
 					Multiplier = 5;
 				};
 				
-				case 28:
+				case 31:
 				{
 					// M18A1 Claymore Mine
 					Multiplier = 5;
 				};
 				
-				case 29:
+				case 32:
 				{
 					// M15 AT Mine
 					Multiplier = 10;
 				};
 				
-				case 30:
+				case 33:
 				{
 					// M112 Demolition Block
-					Multiplier = 2;
+					Multiplier = 1;
 				};
 			};
 		};
@@ -337,7 +356,205 @@ gearItemChange =
 					// 7.62mm 5Rnd Magazine
 					Multiplier = 0.25;
 				};
+
+				case 9:
+				{
+					// .50 10Rnd Magazine
+					Multiplier = 5;
+				};
 				
+				case 10:
+				{
+					// M3 Heat
+					Multiplier = 10;
+				};
+				
+				case 11:
+				{
+					// M3 HEDP
+					Multiplier = 10;
+				};
+				
+				case 12:
+				{
+					// M3 HE
+					Multiplier = 10;
+				};
+				
+				case 13:
+				{
+					// M3 SMOKE
+					Multiplier = 8;
+				};
+				
+				case 14:
+				{
+					// Javelin
+					Multiplier = 20;
+				};
+				
+				case 15:
+				{
+					// Stinger
+					Multiplier = 20;
+				};
+				
+				case 16:
+				{
+					// 40mm HE
+					Multiplier = 2;
+				};
+				
+				case 17:
+				{
+					// 40mm 3Rnd HE
+					Multiplier = 2;
+				};
+				
+				case 18:
+				{
+					// 40mm Smoke
+					Multiplier = 1;
+				};
+
+				case 19:
+				{
+					// 40mm Flare
+					Multiplier = 1;
+				};
+				
+				case 20:
+				{
+					// 40mm HuntIR
+					Multiplier = 5;
+				};
+				
+				case 21:
+				{
+					// M67
+					Multiplier = 2;
+				};
+				
+				case 22:
+				{
+					// RGN
+					Multiplier = 1;
+				};
+				
+				case 23:
+				{
+					// Smoke White
+					Multiplier = 1;
+				};
+				
+				case 24:
+				{
+					// Smoke Blue
+					Multiplier = 1;
+				};
+				
+				case 25:
+				{
+					// Smoke Green
+					Multiplier = 1;
+				};
+				
+				case 26:
+				{
+					// M14 Incendiary
+					Multiplier = 2;
+				};
+				
+				case 27:
+				{
+					// VS-50 AP Mine
+					Multiplier = 5;
+				};
+				
+				case 28:
+				{
+					// M4A1 Slam Mine
+					Multiplier = 5;
+				};
+				
+				case 29:
+				{
+					// M18A1 Claymore Mine
+					Multiplier = 5;
+				};
+				
+				case 30:
+				{
+					// M15 AT Mine
+					Multiplier = 10;
+				};
+				
+				case 31:
+				{
+					// M112 Demolition Block
+					Multiplier = 1;
+				};
+			};
+		};
+		
+		case "Nato":
+		{
+			switch (_id) do {
+			
+				case 0:
+				{
+					// 9mm
+					Multiplier = 0;
+				};
+				
+				case 1:
+				{
+					// 5.56mm 30Rnd
+					Multiplier = 0;
+				};
+				
+				case 2:
+				{
+					// 5.56mm 30Rnd tracer
+					Multiplier = 0;
+				};
+
+				case 3:
+				{
+					// 5.56mm  200Rnd Belt
+					Multiplier = 6;
+				};
+				
+				case 4:
+				{
+					// 5.56mm 100Rnd Belt
+					Multiplier = 6;
+				};
+				
+				case 5:
+				{
+					// .338 Belt
+					Multiplier = 6.5;
+				};
+				
+				case 6:
+				{
+					// 7.62mm 20Rnd
+					Multiplier = 1;
+				};
+
+				case 7:
+				{
+					// 7.62mm 10Rnd
+					Multiplier = 0.5;
+				};
+
+				case 8:
+				{
+					// .50 10Rnd
+					Multiplier = 5;
+				};
+
 				case 9:
 				{
 					// M3 Heat
@@ -364,272 +581,116 @@ gearItemChange =
 				
 				case 13:
 				{
-					// Javelin
-					Multiplier = 20;
-				};
-				
-				case 14:
-				{
-					// Stinger
-					Multiplier = 20;
-				};
-				
-				case 15:
-				{
-					// 40mm HE
-					Multiplier = 2;
-				};
-				
-				case 16:
-				{
-					// 40mm 3Rnd HE
-					Multiplier = 2;
-				};
-				
-				case 17:
-				{
-					// 40mm Smoke
-					Multiplier = 1;
-				};
-
-				case 18:
-				{
-					// 40mm Flare
-					Multiplier = 1;
-				};
-				
-				case 19:
-				{
-					// 40mm HuntIR
-					Multiplier = 5;
-				};
-				
-				case 20:
-				{
-					// M67
-					Multiplier = 2;
-				};
-				
-				case 21:
-				{
-					// RGN
-					Multiplier = 1;
-				};
-				
-				case 22:
-				{
-					// Smoke White
-					Multiplier = 1;
-				};
-				
-				case 23:
-				{
-					// Smoke Blue
-					Multiplier = 1;
-				};
-				
-				case 24:
-				{
-					// Smoke Green
-					Multiplier = 1;
-				};
-				
-				case 25:
-				{
-					// M14 Incendiary
-					Multiplier = 2;
-				};
-				
-				case 26:
-				{
-					// VS-50 AP Mine
-					Multiplier = 5;
-				};
-				
-				case 27:
-				{
-					// M4A1 Slam Mine
-					Multiplier = 5;
-				};
-				
-				case 28:
-				{
-					// M18A1 Claymore Mine
-					Multiplier = 5;
-				};
-				
-				case 29:
-				{
-					// M15 AT Mine
-					Multiplier = 10;
-				};
-				
-				case 30:
-				{
-					// M112 Demolition Block
-					Multiplier = 2;
-				};
-			};
-		};
-		
-		case "Nato":
-		{
-			switch (_id) do {
-			
-				case 0:
-				{
-					// 9mm
-					Multiplier = 0;
-				};
-				
-				case 1:
-				{
-					// 6.5mm 30Rnd
-					Multiplier = 0;
-				};
-				
-				case 2:
-				{
-					//6.5mm 30Rnd tracer
-					Multiplier = 0;
-				};
-
-				case 3:
-				{
-					// 6.5mm Belt
-					Multiplier = 6;
-				};
-				
-				case 4:
-				{
-					// 6.5mm Belt
-					Multiplier = 6;
-				};
-				
-				case 5:
-				{
-					// .338 Belt
-					Multiplier = 6.5;
-				};
-				
-				case 6:
-				{
-					// 7.62mm 20Rnd
-					Multiplier = 1;
-				};
-				
-				case 7:
-				{
 					// Titan AT
 					Multiplier = 20;
 				};
 				
-				case 8:
+				case 14:
 				{
 					// Titan AP
 					Multiplier = 20;
 				};
 				
-				case 9:
+				case 15:
 				{
 					// Titan AA
 					Multiplier = 20;
 				};
 				
-				case 10:
+				case 16:
 				{
 					// 40mm HE
 					Multiplier = 2;
 				};
 				
-				case 11:
+				case 17:
 				{
 					// 40mm 3Rnd HE
 					Multiplier = 2;
 				};
 				
-				case 12:
+				case 18:
 				{
 					// 40mm Smoke
 					Multiplier = 1;
 				};
 				
-				case 13:
+				case 19:
 				{
 					// 40mm Flare
 					Multiplier = 1;
 				};
 				
-				case 14:
+				case 20:
 				{
 					// 40mm HuntIR
 					Multiplier = 5;
 				};
 				
-				case 15:
+				case 21:
 				{
 					// M67
 					Multiplier = 2;
 				};
 				
-				case 16:
+				case 22:
 				{
 					// RGN
 					Multiplier = 1;
 				};
 				
-				case 17:
+				case 23:
 				{
 					// Smoke White
 					Multiplier = 1;
 				};
 				
-				case 18:
+				case 24:
 				{
 					// Smoke Blue
 					Multiplier = 1;
 				};
 				
-				case 19:
+				case 25:
 				{
 					// Smoke Green
 					Multiplier = 1;
 				};
 				
-				case 20:
+				case 26:
 				{
 					// M14 Incendiary
 					Multiplier = 2;
 				};
 				
-				case 21:
+				case 27:
 				{
 					// VS-50 AP Mine
 					Multiplier = 5;
 				};
 				
-				case 22:
+				case 28:
 				{
 					// M4A1 Slam Mine
 					Multiplier = 5;
 				};
 				
-				case 23:
+				case 29:
 				{
 					// M18A1 Claymore Mine
 					Multiplier = 5;
 				};
 				
-				case 24:
+				case 30:
 				{
 					// M15 AT Mine
 					Multiplier = 10;
 				};
 				
-				case 25:
+				case 31:
 				{
 					// M112 Demolition Block
-					Multiplier = 2;
+					Multiplier = 1;
 				};
 			};
 		};
@@ -682,8 +743,8 @@ gearItemChange =
 				
 				case 7:
 				{
-					// 12.7mm 5Rnd
-					Multiplier = 2.5;
+					// .50 10Rnd Magazine
+					Multiplier = 5;
 				};
 				
 				case 8:
@@ -797,7 +858,7 @@ gearItemChange =
 				case 26:
 				{
 					// M112 Demolition Block
-					Multiplier = 2;
+					Multiplier = 1;
 				};
 			};
 		};
@@ -941,7 +1002,7 @@ gearItemChange =
 				case 22:
 				{
 					// M112 Demolition Block
-					Multiplier = 2;
+					Multiplier = 1;
 				};
 			};
 		};
@@ -976,197 +1037,218 @@ gearRequisition =
 					_itemType = "magazine";
 					call magazineCostCheck;
 				};
-				
+
 				case 3:
 				{
-					_item = "rhs_200rnd_556x45_M_SAW";
+					_item = "hlc_30rnd_68x43_FMJ";
 					_itemType = "magazine";
 					call magazineCostCheck;
 				};
 				
 				case 4:
 				{
-					_item = "rhsusf_100Rnd_556x45_soft_pouch";
+					_item = "hlc_30rnd_68x43_Tracer";
 					_itemType = "magazine";
 					call magazineCostCheck;
 				};
 				
 				case 5:
 				{
-					_item = "rhsusf_100Rnd_762x51_m80a1epr";
+					_item = "rhs_200rnd_556x45_M_SAW";
 					_itemType = "magazine";
 					call magazineCostCheck;
 				};
 				
 				case 6:
 				{
-					_item = "rhsusf_50Rnd_762x51_m80a1epr";
+					_item = "rhsusf_100Rnd_556x45_soft_pouch";
 					_itemType = "magazine";
 					call magazineCostCheck;
 				};
 				
 				case 7:
 				{
-					_item = "rhsusf_20Rnd_762x51_m118_special_Mag";
+					_item = "rhsusf_100Rnd_762x51_m80a1epr";
 					_itemType = "magazine";
 					call magazineCostCheck;
 				};
 				
 				case 8:
 				{
-					_item = "rhsusf_5Rnd_762x51_m118_special_Mag";
+					_item = "rhsusf_50Rnd_762x51_m80a1epr";
 					_itemType = "magazine";
 					call magazineCostCheck;
 				};
 				
 				case 9:
 				{
-					_item = "tf47_m3maaws_HEAT";
-					_itemType = "launcher";
+					_item = "rhsusf_20Rnd_762x51_m118_special_Mag";
+					_itemType = "magazine";
 					call magazineCostCheck;
 				};
 				
 				case 10:
 				{
-					_item = "tf47_m3maaws_HEDP";
-					_itemType = "launcher";
+					_item = "rhsusf_5Rnd_300winmag_xm2010";
+					_itemType = "magazine";
 					call magazineCostCheck;
 				};
-				
+
 				case 11:
 				{
-					_item = "tf47_m3maaws_HE";
-					_itemType = "launcher";
+					_item = "rhsusf_mag_10Rnd_STD_50BMG_M33";
+					_itemType = "magazine";
 					call magazineCostCheck;
 				};
 				
 				case 12:
 				{
-					_item = "tf47_m3maaws_SMOKE";
+					_item = "tf47_m3maaws_HEAT";
 					_itemType = "launcher";
 					call magazineCostCheck;
 				};
 				
 				case 13:
 				{
-					_item = "rhs_fgm148_magazine_AT";
+					_item = "tf47_m3maaws_HEDP";
 					_itemType = "launcher";
 					call magazineCostCheck;
 				};
 				
 				case 14:
 				{
-					_item = "rhs_fim92_mag";
+					_item = "tf47_m3maaws_HE";
 					_itemType = "launcher";
 					call magazineCostCheck;
 				};
 				
 				case 15:
 				{
-					_item = "1Rnd_HE_Grenade_shell";
-					_itemType = "grenade";
-					call itemCostCheck;
+					_item = "tf47_m3maaws_SMOKE";
+					_itemType = "launcher";
+					call magazineCostCheck;
 				};
 				
 				case 16:
 				{
-					_item = "3Rnd_HE_Grenade_shell";
-					_itemType = "grenade";
-					call itemCostCheck;
+					_item = "rhs_fgm148_magazine_AT";
+					_itemType = "launcher";
+					call magazineCostCheck;
 				};
 				
 				case 17:
 				{
-					_item = "1Rnd_Smoke_Grenade_shell";
-					_itemType = "grenade";
-					call itemCostCheck;
+					_item = "rhs_fim92_mag";
+					_itemType = "launcher";
+					call magazineCostCheck;
 				};
 				
 				case 18:
 				{
-					_item = "UGL_FlareWhite_F";
+					_item = "1Rnd_HE_Grenade_shell";
 					_itemType = "grenade";
 					call itemCostCheck;
 				};
 				
 				case 19:
 				{
-					_item = "ACE_HuntIR_M203";
+					_item = "3Rnd_HE_Grenade_shell";
 					_itemType = "grenade";
 					call itemCostCheck;
 				};
 				
 				case 20:
 				{
-					_item = "HandGrenade";
+					_item = "1Rnd_Smoke_Grenade_shell";
 					_itemType = "grenade";
 					call itemCostCheck;
 				};
 				
 				case 21:
 				{
-					_item = "MiniGrenade";
+					_item = "UGL_FlareWhite_F";
 					_itemType = "grenade";
 					call itemCostCheck;
 				};
 				
 				case 22:
 				{
-					_item = "SmokeShell";
+					_item = "ACE_HuntIR_M203";
 					_itemType = "grenade";
 					call itemCostCheck;
 				};
 				
 				case 23:
 				{
-					_item = "SmokeShellBlue";
+					_item = "HandGrenade";
 					_itemType = "grenade";
 					call itemCostCheck;
 				};
 				
 				case 24:
 				{
-					_item = "SmokeShellGreen";
+					_item = "MiniGrenade";
 					_itemType = "grenade";
 					call itemCostCheck;
 				};
 				
 				case 25:
 				{
-					_item = "ACE_M14";
+					_item = "SmokeShell";
 					_itemType = "grenade";
 					call itemCostCheck;
 				};
 				
 				case 26:
 				{
+					_item = "SmokeShellBlue";
+					_itemType = "grenade";
+					call itemCostCheck;
+				};
+				
+				case 27:
+				{
+					_item = "SmokeShellGreen";
+					_itemType = "grenade";
+					call itemCostCheck;
+				};
+				
+				case 28:
+				{
+					_item = "ACE_M14";
+					_itemType = "grenade";
+					call itemCostCheck;
+				};
+				
+				case 29:
+				{
 					_item = "APERSMine_Range_Mag";
 					_itemType = "explosive";
 					call itemCostCheck;
 				};
 				
-				case 27:
+				case 30:
 				{
 					_item = "SLAMDirectionalMine_Wire_Mag";
 					_itemType = "explosive";
 					call itemCostCheck;
 				};
 				
-				case 28:
+				case 31:
 				{
 					_item = "ClaymoreDirectionalMine_Remote_Mag";
 					_itemType = "explosive";
 					call itemCostCheck;
 				};
 				
-				case 29:
+				case 32:
 				{
 					_item = "ATMine_Range_Mag";
 					_itemType = "explosive";
 					call itemCostCheck;
 				};
 				
-				case 30:
+				case 33:
 				{
 					_item = "DemoCharge_Remote_Mag";
 					_itemType = "explosive";
@@ -1241,7 +1323,237 @@ gearRequisition =
 					_itemType = "magazine";
 					call magazineCostCheck;
 				};
+
+				case 9:
+				{
+					_item = "rhsusf_mag_10Rnd_STD_50BMG_M33";
+					_itemType = "magazine";
+					call magazineCostCheck;
+				};
 				
+				case 10:
+				{
+					_item = "tf47_m3maaws_HEAT";
+					_itemType = "launcher";
+					call magazineCostCheck;
+				};
+				
+				case 11:
+				{
+					_item = "tf47_m3maaws_HEDP";
+					_itemType = "launcher";
+					call magazineCostCheck;
+				};
+				
+				case 12:
+				{
+					_item = "tf47_m3maaws_HE";
+					_itemType = "launcher";
+					call magazineCostCheck;
+				};
+				
+				case 13:
+				{
+					_item = "tf47_m3maaws_SMOKE";
+					_itemType = "launcher";
+					call magazineCostCheck;
+				};
+				
+				case 14:
+				{
+					_item = "rhs_fgm148_magazine_AT";
+					_itemType = "launcher";
+					call magazineCostCheck;
+				};
+				
+				case 15:
+				{
+					_item = "rhs_fim92_mag";
+					_itemType = "launcher";
+					call magazineCostCheck;
+				};
+				
+				case 16:
+				{
+					_item = "1Rnd_HE_Grenade_shell";
+					_itemType = "grenade";
+					call itemCostCheck;
+				};
+				
+				case 17:
+				{
+					_item = "3Rnd_HE_Grenade_shell";
+					_itemType = "grenade";
+					call itemCostCheck;
+				};
+				
+				case 18:
+				{
+					_item = "1Rnd_Smoke_Grenade_shell";
+					_itemType = "grenade";
+					call itemCostCheck;
+				};
+				
+				case 19:
+				{
+					_item = "UGL_FlareWhite_F";
+					_itemType = "grenade";
+					call itemCostCheck;
+				};
+				
+				case 20:
+				{
+					_item = "ACE_HuntIR_M203";
+					_itemType = "grenade";
+					call itemCostCheck;
+				};
+				
+				case 21:
+				{
+					_item = "HandGrenade";
+					_itemType = "grenade";
+					call itemCostCheck;
+				};
+				
+				case 22:
+				{
+					_item = "MiniGrenade";
+					_itemType = "grenade";
+					call itemCostCheck;
+				};
+				
+				case 23:
+				{
+					_item = "SmokeShell";
+					_itemType = "grenade";
+					call itemCostCheck;
+				};
+				
+				case 24:
+				{
+					_item = "SmokeShellBlue";
+					_itemType = "grenade";
+					call itemCostCheck;
+				};
+				
+				case 25:
+				{
+					_item = "SmokeShellGreen";
+					_itemType = "grenade";
+					call itemCostCheck;
+				};
+				
+				case 26:
+				{
+					_item = "ACE_M14";
+					_itemType = "grenade";
+					call itemCostCheck;
+				};
+				
+				case 27:
+				{
+					_item = "APERSMine_Range_Mag";
+					_itemType = "explosive";
+					call itemCostCheck;
+				};
+				
+				case 28:
+				{
+					_item = "SLAMDirectionalMine_Wire_Mag";
+					_itemType = "explosive";
+					call itemCostCheck;
+				};
+				
+				case 29:
+				{
+					_item = "ClaymoreDirectionalMine_Remote_Mag";
+					_itemType = "explosive";
+					call itemCostCheck;
+				};
+				
+				case 30:
+				{
+					_item = "ATMine_Range_Mag";
+					_itemType = "explosive";
+					call itemCostCheck;
+				};
+				
+				case 31:
+				{
+					_item = "DemoCharge_Remote_Mag";
+					_itemType = "explosive";
+					call itemCostCheck;
+				};
+			};
+		};
+		
+		case "Nato":
+		{
+			switch (_id) do {
+			
+				case 0:
+				{
+					_item = "16Rnd_9x21_Mag";
+					_itemType = "magazine";
+					call magazineCostCheck;
+				};
+				
+				case 1:
+				{
+					_item = "30Rnd_556x45_Stanag";
+					_itemType = "magazine";
+					call magazineCostCheck;
+				};
+				
+				case 2:
+				{
+					_item = "30Rnd_556x45_Stanag_Tracer_Red";
+					_itemType = "magazine";
+					call magazineCostCheck;
+				};
+
+				case 3:
+				{
+					_item = "rhs_200rnd_556x45_M_SAW";
+					_itemType = "magazine";
+					call magazineCostCheck;
+				};
+				
+				case 4:
+				{
+					_item = "rhsusf_100Rnd_556x45_soft_pouch";
+					_itemType = "magazine";
+					call magazineCostCheck;
+				};
+				
+				case 5:
+				{
+					_item = "130Rnd_338_Mag";
+					_itemType = "magazine";
+					call magazineCostCheck;
+				};
+				
+				case 6:
+				{
+					_item = "20Rnd_762x51_Mag";
+					_itemType = "magazine";
+					call magazineCostCheck;
+				};
+
+				case 7:
+				{
+					_item = "rhsusf_10Rnd_762x51_m118_special_Mag";
+					_itemType = "magazine";
+					call magazineCostCheck;
+				};
+
+				case 8:
+				{
+					_item = "rhsusf_mag_10Rnd_STD_50BMG_M33";
+					_itemType = "magazine";
+					call magazineCostCheck;
+				};
+
 				case 9:
 				{
 					_item = "tf47_m3maaws_HEAT";
@@ -1272,312 +1584,131 @@ gearRequisition =
 				
 				case 13:
 				{
-					_item = "rhs_fgm148_magazine_AT";
-					_itemType = "launcher";
-					call magazineCostCheck;
-				};
-				
-				case 14:
-				{
-					_item = "rhs_fim92_mag";
-					_itemType = "launcher";
-					call magazineCostCheck;
-				};
-				
-				case 15:
-				{
-					_item = "1Rnd_HE_Grenade_shell";
-					_itemType = "grenade";
-					call itemCostCheck;
-				};
-				
-				case 16:
-				{
-					_item = "3Rnd_HE_Grenade_shell";
-					_itemType = "grenade";
-					call itemCostCheck;
-				};
-				
-				case 17:
-				{
-					_item = "1Rnd_Smoke_Grenade_shell";
-					_itemType = "grenade";
-					call itemCostCheck;
-				};
-				
-				case 18:
-				{
-					_item = "UGL_FlareWhite_F";
-					_itemType = "grenade";
-					call itemCostCheck;
-				};
-				
-				case 19:
-				{
-					_item = "ACE_HuntIR_M203";
-					_itemType = "grenade";
-					call itemCostCheck;
-				};
-				
-				case 20:
-				{
-					_item = "HandGrenade";
-					_itemType = "grenade";
-					call itemCostCheck;
-				};
-				
-				case 21:
-				{
-					_item = "MiniGrenade";
-					_itemType = "grenade";
-					call itemCostCheck;
-				};
-				
-				case 22:
-				{
-					_item = "SmokeShell";
-					_itemType = "grenade";
-					call itemCostCheck;
-				};
-				
-				case 23:
-				{
-					_item = "SmokeShellBlue";
-					_itemType = "grenade";
-					call itemCostCheck;
-				};
-				
-				case 24:
-				{
-					_item = "SmokeShellGreen";
-					_itemType = "grenade";
-					call itemCostCheck;
-				};
-				
-				case 25:
-				{
-					_item = "ACE_M14";
-					_itemType = "grenade";
-					call itemCostCheck;
-				};
-				
-				case 26:
-				{
-					_item = "APERSMine_Range_Mag";
-					_itemType = "explosive";
-					call itemCostCheck;
-				};
-				
-				case 27:
-				{
-					_item = "SLAMDirectionalMine_Wire_Mag";
-					_itemType = "explosive";
-					call itemCostCheck;
-				};
-				
-				case 28:
-				{
-					_item = "ClaymoreDirectionalMine_Remote_Mag";
-					_itemType = "explosive";
-					call itemCostCheck;
-				};
-				
-				case 29:
-				{
-					_item = "ATMine_Range_Mag";
-					_itemType = "explosive";
-					call itemCostCheck;
-				};
-				
-				case 30:
-				{
-					_item = "DemoCharge_Remote_Mag";
-					_itemType = "explosive";
-					call itemCostCheck;
-				};
-			};
-		};
-		
-		case "Nato":
-		{
-			switch (_id) do {
-			
-				case 0:
-				{
-					_item = "16Rnd_9x21_Mag";
-					_itemType = "magazine";
-					call magazineCostCheck;
-				};
-				
-				case 1:
-				{
-					_item = "30Rnd_65x39_caseless_mag";
-					_itemType = "magazine";
-					call magazineCostCheck;
-				};
-				
-				case 2:
-				{
-					_item = "30Rnd_65x39_caseless_mag_Tracer";
-					_itemType = "magazine";
-					call magazineCostCheck;
-				};
-
-				case 3:
-				{
-					_item = "200Rnd_65x39_cased_Box";
-					_itemType = "magazine";
-					call magazineCostCheck;
-				};
-				
-				case 4:
-				{
-					_item = "200Rnd_65x39_cased_Box_Tracer";
-					_itemType = "magazine";
-					call magazineCostCheck;
-				};
-				
-				case 5:
-				{
-					_item = "130Rnd_338_Mag";
-					_itemType = "magazine";
-					call magazineCostCheck;
-				};
-				
-				case 6:
-				{
-					_item = "20Rnd_762x51_Mag";
-					_itemType = "magazine";
-					call magazineCostCheck;
-				};
-				
-				case 7:
-				{
 					_item = "Titan_AT";
 					_itemType = "launcher";
 					call magazineCostCheck;
 				};
 				
-				case 8:
+				case 14:
 				{
 					_item = "Titan_AP";
 					_itemType = "launcher";
 					call magazineCostCheck;
 				};
 				
-				case 9:
+				case 15:
 				{
 					_item = "Titan_AA";
 					_itemType = "launcher";
 					call magazineCostCheck;
 				};
 				
-				case 10:
+				case 16:
 				{
 					_item = "1Rnd_HE_Grenade_shell";
 					_itemType = "grenade";
 					call itemCostCheck;
 				};
 				
-				case 11:
+				case 17:
 				{
 					_item = "3Rnd_HE_Grenade_shell";
 					_itemType = "grenade";
 					call itemCostCheck;
 				};
 				
-				case 12:
+				case 18:
 				{
 					_item = "1Rnd_Smoke_Grenade_shell";
 					_itemType = "grenade";
 					call itemCostCheck;
 				};
 				
-				case 13:
+				case 19:
 				{
 					_item = "UGL_FlareWhite_F";
 					_itemType = "grenade";
 					call itemCostCheck;
 				};
 				
-				case 14:
+				case 20:
 				{
 					_item = "ACE_HuntIR_M203";
 					_itemType = "grenade";
 					call itemCostCheck;
 				};
 				
-				case 15:
+				case 21:
 				{
 					_item = "HandGrenade";
 					_itemType = "grenade";
 					call itemCostCheck;
 				};
 				
-				case 16:
+				case 22:
 				{
 					_item = "MiniGrenade";
 					_itemType = "grenade";
 					call itemCostCheck;
 				};
 				
-				case 17:
+				case 23:
 				{
 					_item = "SmokeShell";
 					_itemType = "grenade";
 					call itemCostCheck;
 				};
 				
-				case 18:
+				case 24:
 				{
 					_item = "SmokeShellBlue";
 					_itemType = "grenade";
 					call itemCostCheck;
 				};
 				
-				case 19:
+				case 25:
 				{
 					_item = "SmokeShellGreen";
 					_itemType = "grenade";
 					call itemCostCheck;
 				};
 				
-				case 20:
+				case 26:
 				{
 					_item = "ACE_M14";
 					_itemType = "grenade";
 					call itemCostCheck;
 				};
 				
-				case 21:
+				case 27:
 				{
 					_item = "APERSMine_Range_Mag";
 					_itemType = "explosive";
 					call itemCostCheck;
 				};
 				
-				case 22:
+				case 28:
 				{
 					_item = "SLAMDirectionalMine_Wire_Mag";
 					_itemType = "explosive";
 					call itemCostCheck;
 				};
 				
-				case 23:
+				case 29:
 				{
 					_item = "ClaymoreDirectionalMine_Remote_Mag";
 					_itemType = "explosive";
 					call itemCostCheck;
 				};
 				
-				case 24:
+				case 30:
 				{
 					_item = "ATMine_Range_Mag";
 					_itemType = "explosive";
 					call itemCostCheck;
 				};
 				
-				case 25:
+				case 31:
 				{
 					_item = "DemoCharge_Remote_Mag";
 					_itemType = "explosive";
@@ -1641,7 +1772,7 @@ gearRequisition =
 				
 				case 7:
 				{
-					_item = "5Rnd_127x108_Mag";
+					_item = "rhsusf_mag_10Rnd_STD_50BMG_M33";
 					_itemType = "magazine";
 					call magazineCostCheck;
 				};
@@ -1973,12 +2104,15 @@ switch (baseType) do {
 			"9mm 15Rnd Magazine",
 			"5.56mm 30Rnd Magazine",
 			"5.56mm 30Rnd Tracer",
+			"6.8mm 30Rnd Magazine",
+			"6.8mm 30Rnd Tracer",
 			"5.56mm 200Rnd Belt",
 			"5.56mm 100Rnd Belt",
 			"7.62mm 100Rnd Belt",
 			"7.62mm 50Rnd Belt",
 			"7.62mm 20Rnd Magazine",
-			"7.62mm 5Rnd Magazine",
+			".300 5Rnd Magazine",
+			".50BMG 10Rnd Magazine",
 			"FFV751 HEAT",
 			"FFV502 HEDP",
 			"FFV441 HE",
@@ -2045,12 +2179,18 @@ switch (baseType) do {
 	{
 		_items =	[
 			"9mm 16Rnd Magazine",
-			"6.5mm 30Rnd Magazine",
-			"6.5mm 30Rnd Tracer",
-			"6.5mm 200Rnd Belt",
-			"6.5mm 200Rnd Tracer",
+			"5.56mm 30Rnd Magazine",
+			"5.56mm 30Rnd Tracer",
+			"5.56mm 200Rnd Belt",
+			"5.56mm 100Rnd Belt",
 			".338 130Rnd Belt",
 			"7.62mm 20Rnd Magazine",
+			"7.62mm 10Rnd Magazine",
+			".50BMG 10Rnd Magazine",
+			"FFV751 HEAT",
+			"FFV502 HEDP",
+			"FFV441 HE",
+			"FFV469 SMOKE",
 			"Titan AT",
 			"Titan AP",
 			"Titan AA",
@@ -2083,7 +2223,7 @@ switch (baseType) do {
 			"6.5mm 200Rnd Tracer",
 			"9.3mm 150Rnd Belt",
 			"7.62mm 20Rnd Magazine",
-			"12.7mm 5Rnd Magazine",
+			".50BMG 10Rnd Magazine",
 			"Titan AT",
 			"Titan AP",
 			"Titan AA",

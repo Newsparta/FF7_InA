@@ -51,7 +51,7 @@ gearRestricted = false;
 			removeUniform player;
 			removeHeadgear player;
 
-			player forceAddUniform "U_B_CombatUniform_mcam";
+			player forceAddUniform "MNP_CombatUniform_Scorpion_A";
 			player addMagazine "16Rnd_9x21_Mag";
 			player addWeapon "hgun_P07_F",
 		};

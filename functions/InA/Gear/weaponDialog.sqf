@@ -70,110 +70,110 @@ gearItemChange =
 				};
 				case 1:
 				{
-					// M4A1
+					// ACR-E Carbine
 					Multiplier = 0;
 				};
 				
 				case 2:
 				{
-					// M16A4
-					Multiplier = 1;
+					// ACR-E SBR
+					Multiplier = 10;
 				};
 				
 				case 3:
 				{
-					// HK416
-					Multiplier = 1;
+					// ACR-E Mid
+					Multiplier = 10;
 				};
 				
 				case 4:
 				{
-					// M4A1 Block II
-					Multiplier = 1;
+					// ACR-E Long
+					Multiplier = 15;
 				};
 				
 				case 5:
 				{
-					// M4A1(320)
-					Multiplier = 4;
+					// ACR-E 6.8mm Mid
+					Multiplier = 10;
 				};
 				
 				case 6:
 				{
-					// HK416(320)
-					Multiplier = 4;
+					// ACR-E 6.8mm Long
+					Multiplier = 15;
 				};
 				
 				case 7:
 				{
-					// HK4A1 Block II(320)
-					Multiplier = 4;
+					// M4A1 (320)
+					Multiplier = 15;
 				};
 				
 				case 8:
 				{
-					// M27 IAR
-					Multiplier = 4;
+					// M249
+					Multiplier = 20;
 				};
 				
 				case 9:
 				{
-					// M249
-					Multiplier = 10;
+					// M240B
+					Multiplier = 20;
 				};
 				
 				case 10:
 				{
-					// M240B
-					Multiplier = 15;
+					// M14
+					Multiplier = 20;
 				};
 				
 				case 11:
 				{
-					// M14
-					Multiplier = 15;
+					// SR-25
+					Multiplier = 20;
 				};
 				
 				case 12:
 				{
-					// M24
-					Multiplier = 15;
+					// M2010
+					Multiplier = 20;
 				};
-				
+
 				case 13:
 				{
-					// Mk 11
-					Multiplier = 15;
+					// M107
+					Multiplier = 100;
 				};
 				
 				case 14:
 				{
 					// M136 HEAT
-					Multiplier = 15;
+					Multiplier = 10;
 				};
 				
 				case 15:
 				{
 					// M136 HEDP
-					Multiplier = 15;
+					Multiplier = 10;
 				};
 				
 				case 16:
 				{
 					// M136 HP
-					Multiplier = 15;
+					Multiplier = 10;
 				};
 				
 				case 17:
 				{
 					// M72A7
-					Multiplier = 10;
+					Multiplier = 5;
 				};
 				
 				case 18:
 				{
 					// M3 MAAWS
-					Multiplier = 50;
+					Multiplier = 75;
 				};
 				
 				case 19:
@@ -208,112 +208,100 @@ gearItemChange =
 				case 2:
 				{
 					// M16A4
-					Multiplier = 1;
+					Multiplier = 10;
 				};
-				
+
 				case 3:
 				{
-					// HK416
-					Multiplier = 1;
+					// M27 IAR
+					Multiplier = 10;
 				};
 				
 				case 4:
 				{
-					// M4A1 Block II
-					Multiplier = 1;
+					// M4A1 (320)
+					Multiplier = 15;
 				};
 				
 				case 5:
 				{
-					// M4A1(320)
-					Multiplier = 4;
+					// M16A4 (203)
+					Multiplier = 15;
 				};
 				
 				case 6:
 				{
-					// HK416(320)
-					Multiplier = 4;
+					// M249
+					Multiplier = 20;
 				};
 				
 				case 7:
 				{
-					// HK4A1 Block II(320)
-					Multiplier = 4;
+					// M240B
+					Multiplier = 20;
 				};
 				
 				case 8:
 				{
-					// M27 IAR
-					Multiplier = 4;
+					// M14
+					Multiplier = 20;
 				};
 				
 				case 9:
 				{
-					// M249
-					Multiplier = 10;
+					// SR-25
+					Multiplier = 20;
 				};
 				
 				case 10:
 				{
-					// M240B
-					Multiplier = 15;
+					// M40A5
+					Multiplier = 20;
 				};
-				
+
 				case 11:
 				{
-					// M14
-					Multiplier = 15;
+					// M107
+					Multiplier = 100;
 				};
 				
 				case 12:
 				{
-					// M24
-					Multiplier = 15;
+					// M136 HEAT
+					Multiplier = 10;
 				};
 				
 				case 13:
 				{
-					// Mk 11
-					Multiplier = 15;
+					// M136 HEDP
+					Multiplier = 10;
 				};
 				
 				case 14:
 				{
-					// M136 HEAT
-					Multiplier = 15;
+					// M136 HP
+					Multiplier = 10;
 				};
 				
 				case 15:
 				{
-					// M136 HEDP
-					Multiplier = 15;
+					// M72A7
+					Multiplier = 5;
 				};
 				
 				case 16:
 				{
-					// M136 HP
-					Multiplier = 15;
+					// M3 MAAWS
+					Multiplier = 75;
 				};
 				
 				case 17:
-				{
-					// M72A7
-					Multiplier = 10;
-				};
-				
-				case 18:
-				{
-					// M3 MAAWS
-					Multiplier = 50;
-				};
-				
-				case 19:
 				{
 					// FGM-148
 					Multiplier = 100;
 				};
 				
-				case 20:
+				case 18:
 				{
 					// FIM-92F
 					Multiplier = 100;
@@ -333,83 +321,119 @@ gearItemChange =
 				
 				case 1:
 				{
-					// MXC
+					// M4A1
 					Multiplier = 0;
 				};
 				
 				case 2:
 				{
-					// MX
-					Multiplier = 1;
-				};
-				
-				case 3:
-				{
-					// MX (3GL)
-					Multiplier = 4;
-				};
-				
-				case 4:
-				{
-					// Stoner 99 LMG
+					// HK416 D10
 					Multiplier = 10;
 				};
-				
+
+				case 3:
+				{
+					// HK416 D14.5
+					Multiplier = 10;
+				};
+
+				case 4:
+				{
+					// ACR-E Carbine
+					Multiplier = 10;
+				};
+
 				case 5:
 				{
-					// GD LWMMG
-					Multiplier = 15;
+					// ACR-E Mid
+					Multiplier = 10;
 				};
-				
+
 				case 6:
 				{
-					// MXM
+					// ACR-E Long
 					Multiplier = 15;
 				};
 				
 				case 7:
 				{
-					// M14
+					// M4A1 (M320)
 					Multiplier = 15;
 				};
-				
+
 				case 8:
 				{
-					// SIG SG556
+					// HK416 (M320)
 					Multiplier = 15;
 				};
 				
 				case 9:
 				{
-					// M136 HEAT
-					Multiplier = 15;
+					// M249 LMG
+					Multiplier = 20;
 				};
 				
 				case 10:
 				{
-					// M136 HEDP
-					Multiplier = 15;
+					// GD LWMMG
+					Multiplier = 20;
 				};
 				
 				case 11:
 				{
-					// M136 HP
-					Multiplier = 15;
+					// M14
+					Multiplier = 20;
 				};
 				
 				case 12:
 				{
-					// M72A7
-					Multiplier = 10;
+					// M40A5
+					Multiplier = 20;
 				};
 				
 				case 13:
+				{
+					// M107 Barret
+					Multiplier = 100;
+				};
+				
+				case 14:
+				{
+					// M136 HEAT
+					Multiplier = 10;
+				};
+				
+				case 15:
+				{
+					// M136 HEDP
+					Multiplier = 10;
+				};
+				
+				case 16:
+				{
+					// M136 HP
+					Multiplier = 10;
+				};
+				
+				case 17:
+				{
+					// M72A7
+					Multiplier = 5;
+				};
+
+				case 18:
+				{
+					// M3 MAAWS
+					Multiplier = 75;
+				};
+				
+				case 19:
 				{
 					// TITAN AT
 					Multiplier = 100;
 				};
 				
-				case 14:
+				case 20:
 				{
 					// TITAN AA
 					Multiplier = 100;
@@ -429,101 +453,77 @@ gearItemChange =
 				
 				case 1:
 				{
-					// F2000 C
+					// HK416 D10
 					Multiplier = 0;
 				};
 				
 				case 2:
 				{
-					// F2000
-					Multiplier = 1;
+					// HK416 D14.5
+					Multiplier = 10;
 				};
 				
 				case 3:
 				{
-					// TAR-21
-					Multiplier = 1;
+					// HK416 (M320)
+					Multiplier = 10;
 				};
 				
 				case 4:
 				{
-					// F2000 (GL)
-					Multiplier = 4;
+					// Stoner 99 LMG
+					Multiplier = 20;
 				};
 				
 				case 5:
 				{
-					// TAR-21 (GL)
-					Multiplier = 4;
+					// HK 121
+					Multiplier = 20;
 				};
 				
 				case 6:
 				{
-					// Stoner 99 LMG
-					Multiplier = 10;
+					// M14 EBR
+					Multiplier = 20;
 				};
 				
 				case 7:
 				{
-					// HK 121
-					Multiplier = 15;
+					// M107 Barret
+					Multiplier = 100;
 				};
 				
 				case 8:
 				{
-					// M14 EBR
-					Multiplier = 15;
+					// M136 HEAT
+					Multiplier = 10;
 				};
 				
 				case 9:
 				{
-					// GM6 Lynx
-					Multiplier = 20;
+					// M136 HEDP
+					Multiplier = 10;
 				};
 				
 				case 10:
 				{
-					// M136 HEAT
-					Multiplier = 15;
+					// M136 HP
+					Multiplier = 10;
 				};
 				
 				case 11:
 				{
-					// M136 HEDP
-					Multiplier = 15;
+					// M72A7
+					Multiplier = 5;
 				};
 				
 				case 12:
 				{
-					// M136 HP
-					Multiplier = 15;
+					// TITAN AT
+					Multiplier = 100;
 				};
 				
 				case 13:
-				{
-					// M72A7
-					Multiplier = 10;
-				};
-				
-				case 14:
-				{
-					// TITAN AT
-					Multiplier = 100;
-				};
-				
-				case 15:
-				{
-					// TITAN AA
-					Multiplier = 100;
-				};
-				
-				case 16:
-				{
-					// TITAN AT
-					Multiplier = 100;
-				};
-				
-				case 17:
 				{
 					// TITAN AA
 					Multiplier = 100;
@@ -597,13 +597,13 @@ gearItemChange =
 				case 10:
 				{
 					// RPG 26
-					Multiplier = 20;
+					Multiplier = 10;
 				};
 				
 				case 11:
 				{
 					// RShG-2
-					Multiplier = 25;
+					Multiplier = 10;
 				};
 				
 				case 12:
@@ -638,91 +638,91 @@ gearRequisition =
 				};
 				case 1:
 				{
-					_item = "rhs_weap_m4a1_carryhandle_pmag";
+					_item = "hlc_rifle_ACR_Carb_tan";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 2:
 				{
-					_item = "rhs_weap_m16a4_pmag";
+					_item = "hlc_rifle_ACR_SBR_tan";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 3:
 				{
-					_item = "rhs_weap_hk416d145";
+					_item = "hlc_rifle_ACR_mid_tan";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 4:
 				{
-					_item = "rhs_weap_m4a1_blockII_bk";
+					_item = "hlc_rifle_ACR_full_tan";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 5:
 				{
-					_item = "rhs_weap_m4a1_m320";
+					_item = "hlc_rifle_ACR68_mid_tan";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 6:
 				{
-					_item = "rhs_weap_hk416d145_m320";
+					_item = "hlc_rifle_ACR68_full_tan";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 7:
 				{
-					_item = "rhs_weap_m4a1_blockII_M203_bk";
+					_item = "rhs_weap_m4a1_m320";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 8:
 				{
-					_item = "rhs_weap_m27iar";
+					_item = "rhs_weap_m249_pip_S";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 9:
 				{
-					_item = "rhs_weap_m249_pip_S";
+					_item = "rhs_weap_m240B_CAP";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 10:
 				{
-					_item = "rhs_weap_m240B_CAP";
+					_item = "rhs_weap_m14ebrri";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 11:
 				{
-					_item = "rhs_weap_m14ebrri";
+					_item = "rhs_weap_sr25";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 12:
 				{
-					_item = "rhs_weap_m24sws";
+					_item = "rhs_weap_XM2010_sa";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
-				
+
 				case 13:
 				{
-					_item = "rhs_weap_sr25";
+					_item = "rhs_weap_M107_w";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
@@ -804,42 +804,181 @@ gearRequisition =
 				
 				case 3:
 				{
-					_item = "rhs_weap_hk416d145";
+					_item = "rhs_weap_m27iar";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 4:
 				{
-					_item = "rhs_weap_m4a1_blockII_bk";
+					_item = "rhs_weap_m4a1_m320";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 5:
 				{
-					_item = "rhs_weap_m4a1_m320";
+					_item = "rhs_weap_m16a4_carryhandle_M203";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 6:
 				{
-					_item = "rhs_weap_hk416d145_m320";
+					_item = "rhs_weap_m249_pip_S";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 7:
 				{
-					_item = "rhs_weap_m4a1_blockII_M203_bk";
+					_item = "rhs_weap_m240B_CAP";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 8:
 				{
-					_item = "rhs_weap_m27iar";
+					_item = "rhs_weap_m14ebrri";
+					_itemType = "weapon";
+					call weaponCostCheck;
+				};
+				
+				case 9:
+				{
+					_item = "rhs_weap_sr25";
+					_itemType = "weapon";
+					call weaponCostCheck;
+				};
+				
+				case 10:
+				{
+					_item = "rhs_weap_m40a5_wd";
+					_itemType = "weapon";
+					call weaponCostCheck;
+				};
+
+				case 11:
+				{
+					_item = "rhs_weap_m16a4_carryhandle_M203";
+					_itemType = "weapon";
+					call weaponCostCheck;
+				};
+				
+				case 12:
+				{
+					_item = "tf47_at4_heat";
+					_itemType = "launcher";
+					call weaponCostCheck;
+				};
+				
+				case 13:
+				{
+					_item = "tf47_at4_HEDP";
+					_itemType = "launcher";
+					call weaponCostCheck;
+				};
+				
+				case 14:
+				{
+					_item = "tf47_at4_HP";
+					_itemType = "launcher";
+					call weaponCostCheck;
+				};
+				
+				case 15:
+				{
+					_item = "rhs_weap_m72a7";
+					_itemType = "launcher";
+					call weaponCostCheck;
+				};
+				
+				case 16:
+				{
+					_item = "tf47_m3maaws";
+					_itemType = "launcher";
+					call weaponCostCheck;
+				};
+				
+				case 17:
+				{
+					_item = "rhs_weap_fgm148";
+					_itemType = "launcher";
+					call weaponCostCheck;
+				};
+				
+				case 18:
+				{
+					_item = "rhs_weap_fim92";
+					_itemType = "launcher";
+					call weaponCostCheck;
+				};
+			};
+		};
+		
+		case "Nato":
+		{
+			switch (_id) do {
+			
+				case 0:
+				{
+					_item = "hgun_P07_F";
+					_itemType = "weapon";
+					call weaponCostCheck;
+				};
+				
+				case 1:
+				{
+					_item = "rhs_weap_m4a1_carryhandle_pmag";
+					_itemType = "weapon";
+					call weaponCostCheck;
+				};
+				
+				case 2:
+				{
+					_item = "rhs_weap_hk416d10";
+					_itemType = "weapon";
+					call weaponCostCheck;
+				};
+
+				case 3:
+				{
+					_item = "rhs_weap_hk416d145";
+					_itemType = "weapon";
+					call weaponCostCheck;
+				};
+
+				case 4:
+				{
+					_item = "hlc_rifle_ACR_Carb_tan";
+					_itemType = "weapon";
+					call weaponCostCheck;
+				};
+
+				case 5:
+				{
+					_item = "hlc_rifle_ACR_mid_tan";
+					_itemType = "weapon";
+					call weaponCostCheck;
+				};
+
+				case 6:
+				{
+					_item = "hlc_rifle_ACR_full_tan";
+					_itemType = "weapon";
+					call weaponCostCheck;
+				};
+				
+				case 7:
+				{
+					_item = "rhs_weap_m4a1_m320";
+					_itemType = "weapon";
+					call weaponCostCheck;
+				};
+
+				case 8:
+				{
+					_item = "rhs_weap_hk416d145_m320";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
@@ -853,7 +992,7 @@ gearRequisition =
 				
 				case 10:
 				{
-					_item = "rhs_weap_m240B_CAP";
+					_item = "MMG_02_sand_F";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
@@ -867,14 +1006,14 @@ gearRequisition =
 				
 				case 12:
 				{
-					_item = "rhs_weap_m24sws";
+					_item = "rhs_weap_m40a5_wd";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 13:
 				{
-					_item = "rhs_weap_sr25";
+					_item = "rhs_weap_M107_w";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
@@ -906,7 +1045,7 @@ gearRequisition =
 					_itemType = "launcher";
 					call weaponCostCheck;
 				};
-				
+
 				case 18:
 				{
 					_item = "tf47_m3maaws";
@@ -916,123 +1055,12 @@ gearRequisition =
 				
 				case 19:
 				{
-					_item = "rhs_weap_fgm148";
-					_itemType = "launcher";
-					call weaponCostCheck;
-				};
-				
-				case 20:
-				{
-					_item = "rhs_weap_fim92";
-					_itemType = "launcher";
-					call weaponCostCheck;
-				};
-			};
-		};
-		
-		case "Nato":
-		{
-			switch (_id) do {
-			
-				case 0:
-				{
-					_item = "hgun_P07_F";
-					_itemType = "weapon";
-					call weaponCostCheck;
-				};
-				
-				case 1:
-				{
-					_item = "arifle_MXC_F";
-					_itemType = "weapon";
-					call weaponCostCheck;
-				};
-				
-				case 2:
-				{
-					_item = "arifle_MX_F";
-					_itemType = "weapon";
-					call weaponCostCheck;
-				};
-				
-				case 3:
-				{
-					_item = "arifle_MX_GL_F";
-					_itemType = "weapon";
-					call weaponCostCheck;
-				};
-				
-				case 4:
-				{
-					_item = "LMG_Mk200_F";
-					_itemType = "weapon";
-					call weaponCostCheck;
-				};
-				
-				case 5:
-				{
-					_item = "MMG_02_sand_F";
-					_itemType = "weapon";
-					call weaponCostCheck;
-				};
-				
-				case 6:
-				{
-					_item = "arifle_MXM_F";
-					_itemType = "weapon";
-					call weaponCostCheck;
-				};
-				
-				case 7:
-				{
-					_item = "srifle_DMR_06_olive_F";
-					_itemType = "weapon";
-					call weaponCostCheck;
-				};
-				
-				case 8:
-				{
-					_item = "srifle_DMR_03_woodland_F";
-					_itemType = "weapon";
-					call weaponCostCheck;
-				};
-				
-				case 9:
-				{
-					_item = "tf47_at4_heat";
-					_itemType = "launcher";
-					call weaponCostCheck;
-				};
-				
-				case 10:
-				{
-					_item = "tf47_at4_HEDP";
-					_itemType = "launcher";
-					call weaponCostCheck;
-				};
-				
-				case 11:
-				{
-					_item = "tf47_at4_HP";
-					_itemType = "launcher";
-					call weaponCostCheck;
-				};
-				
-				case 12:
-				{
-					_item = "rhs_weap_m72a7";
-					_itemType = "launcher";
-					call weaponCostCheck;
-				};
-				
-				case 13:
-				{
 					_item = "launch_B_Titan_short_tna_F";
 					_itemType = "launcher";
 					call weaponCostCheck;
 				};
 				
-				case 14:
+				case 20:
 				{
 					_item = "launch_B_Titan_tna_F";
 					_itemType = "launcher";
@@ -1053,103 +1081,89 @@ gearRequisition =
 				
 				case 1:
 				{
-					_item = "arifle_Mk20C_F";
+					_item = "rhs_weap_hk416d10";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 2:
 				{
-					_item = "arifle_Mk20_F";
+					_item = "rhs_weap_hk416d145";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 3:
 				{
-					_item = "arifle_TRG21_F";
+					_item = "rhs_weap_hk416d145_m320";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 4:
 				{
-					_item = "arifle_Mk20_GL_F";
+					_item = "LMG_Mk200_F";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 5:
 				{
-					_item = "arifle_TRG21_GL_F";
+					_item = "MMG_01_tan_F";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 6:
 				{
-					_item = "LMG_Mk200_F";
+					_item = "srifle_EBR_F";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 7:
 				{
-					_item = "MMG_01_tan_F";
+					_item = "rhs_weap_M107_w";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
 				
 				case 8:
 				{
-					_item = "srifle_EBR_F";
-					_itemType = "weapon";
-					call weaponCostCheck;
-				};
-				
-				case 9:
-				{
-					_item = "srifle_GM6_F";
-					_itemType = "weapon";
-					call weaponCostCheck;
-				};
-				
-				case 10:
-				{
 					_item = "tf47_at4_heat";
 					_itemType = "launcher";
 					call weaponCostCheck;
 				};
 				
-				case 11:
+				case 9:
 				{
 					_item = "tf47_at4_HEDP";
 					_itemType = "launcher";
 					call weaponCostCheck;
 				};
 				
-				case 12:
+				case 10:
 				{
 					_item = "tf47_at4_HP";
 					_itemType = "launcher";
 					call weaponCostCheck;
 				};
 				
-				case 13:
+				case 11:
 				{
 					_item = "rhs_weap_m72a7";
 					_itemType = "launcher";
 					call weaponCostCheck;
 				};
 				
-				case 14:
+				case 12:
 				{
 					_item = "launch_B_Titan_short_tna_F";
 					_itemType = "launcher";
 					call weaponCostCheck;
 				};
 				
-				case 15:
+				case 13:
 				{
 					_item = "launch_B_Titan_tna_F";
 					_itemType = "launcher";
@@ -1269,19 +1283,19 @@ switch (baseType) do {
 	{
 		_items =	[
 			"M9",
-			"M4A1",
-			"M16A4",
-			"HK416",
-			"M4A1 Block II",
+			"ACR-E Carbine",
+			"ACR-E SBR",
+			"ACR-E (mid)",
+			"ACR-E (long)",
+			"ACR-E 6.8mm (mid)",
+			"ACR-E 6.8mm (long)",
 			"M4A1 (M320)",
-			"HK416 (M320)",
-			"M4A1 Block II (M203)",
-			"M27 IAR",
 			"M249",
 			"M240B",
 			"M14",
-			"M24",
-			"Mk 11 Mod 0",
+			"SR-25",
+			"M2010 ESR",
+			"M107 Barret",
 			"M136 (HEAT)",
 			"M136 (HEDP)",
 			"M136 (HP)",
@@ -1298,17 +1312,15 @@ switch (baseType) do {
 			"M9",
 			"M4A1",
 			"M16A4",
-			"HK416",
-			"M4A1 Block II",
-			"M4A1 (M320)",
-			"HK416 (M320)",
-			"M4A1 Block II (M203)",
 			"M27 IAR",
+			"M4A1 (M320)",
+			"M16A4 (M203)",
 			"M249",
 			"M240B",
 			"M14",
-			"M24",
-			"Mk 11 Mod 0",
+			"SR-25",
+			"M40A5",
+			"M107 Barret",
 			"M136 (HEAT)",
 			"M136 (HEDP)",
 			"M136 (HP)",
@@ -1323,18 +1335,24 @@ switch (baseType) do {
 	{
 		_items =	[
 			"P99",
-			"MXC",
-			"MX",
-			"MX (3GL)",
-			"Stoner 99 LMG",
+			"M4A1",
+			"HK416 D10",
+			"HK416 D14.5",
+			"ACR-E Carbine",
+			"ACR-E (mid)",
+			"ACR-E (long)",
+			"M4A1 (M320)",
+			"HK416 (M320)",
+			"M249 LMG",
 			"GD LWMMG",
-			"MXM",
 			"M14",
-			"SIG SG556",
+			"M40A5",
+			"M107 Barret",
 			"M136 (HEAT)",
 			"M136 (HEDP)",
 			"M136 (HP)",
 			"M72A7",
+			"M3 MAAWS",
 			"TITAN AT",
 			"TITAN AA"
 		];	
@@ -1344,15 +1362,13 @@ switch (baseType) do {
 	{
 		_items =	[
 			"P99",
-			"F2000 C",
-			"F2000",
-			"TAR-21",
-			"F2000 (GL)",
-			"TAR-21 (GL)",
+			"HK416 D10",
+			"HK416 D14.5",
+			"HK416 (M320)",
 			"Stoner 99 LMG",
 			"HK121",
-			"Mk14 Mod 1 EBR",
-			"GM6 Lynx",
+			"M14",
+			"M107 Barret",
 			"M136 (HEAT)",
 			"M136 (HEDP)",
 			"M136 (HP)",

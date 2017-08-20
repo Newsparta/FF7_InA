@@ -90,22 +90,72 @@ equipUniform =
 			
 				case 0:
 				{
-					player addVest "V_Chestrig_oli";
+					player addVest "MNP_Vest_Scorpion_1";
 				};
 				
 				case 1:
 				{
-					player addVest "V_PlateCarrier1_rgr";
+					player addVest "MNP_Vest_Scorpion_2";
 				};
 				
 				case 2:
 				{
-					player addVest "V_PlateCarrier2_rgr";
+					player addVest "V_PlateCarrierL_CTRG";
 				};
 				
 				case 3:
 				{
-					player addVest "V_PlateCarrierGL_rgr";
+					player addVest "V_PlateCarrierH_CTRG";
+				};
+
+				case 4:
+				{
+					player addVest "MNP_Vest_Germany";
+				};
+
+				case 5:
+				{
+					player addVest "MNP_Vest_Germany_2";
+				};
+
+				case 6:
+				{
+					player addVest "MNP_Vest_Canada_T";
+				};
+
+				case 7:
+				{
+					player addVest "MNP_Vest_Canada_T2";
+				};
+
+				case 8:
+				{
+					player addVest "MNP_Vest_NOR_1";
+				};
+
+				case 9:
+				{
+					player addVest "MNP_Vest_NOR_2";
+				};
+
+				case 10:
+				{
+					player addVest "MNP_Vest_FIN_1";
+				};
+
+				case 11:
+				{
+					player addVest "MNP_Vest_FIN_2";
+				};
+
+				case 12:
+				{
+					player addVest "MNP_Vest_Australia";
+				};
+
+				case 13:
+				{
+					player addVest "MNP_Vest_Australia_B";
 				};
 			};
 		};
@@ -194,10 +244,20 @@ switch (baseType) do {
 	case "Nato":
 	{
 		_items = [
-			"Chest Rig",
-			"Carrier Rig (light)",
-			"Carrier Rig",
-			"Carrier Rig (heavy)"
+			"United States Army (1)",
+			"United States Army (2)",
+			"British Army (1)",
+			"British Army (2)",
+			"Bundeswehr (1)",
+			"Bundeswehr (2)",
+			"Canadian Army (1)",
+			"Canadian Army (2)",
+			"Norwegian Army (1)",
+			"Norwegian Army (2)",
+			"Finnish Army (1)",
+			"Finnish Army (2)",
+			"Australian Army (1)",
+			"Australian Army (2)"
 		];
 	};
 	case "AAF":

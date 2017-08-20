@@ -157,7 +157,18 @@
 					{
 						case 0:
 						{
-							[[], "functions\InA\Vehicles\Garage\Army\bluforArmyATV1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 0;
+								mCost = 0;
+								fCost = 50;
+
+								vehicleType = "B_Quadbike_01_F";
+								vehiclePaint = ["Blufor",1];
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 1:

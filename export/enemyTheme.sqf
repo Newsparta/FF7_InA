@@ -253,39 +253,37 @@
 	
 	INS_RIFLE_OPF = 
 	[
-		["rhs_weap_akm","rhs_30Rnd_762x39mm"],
-		["rhs_weap_akms","rhs_30Rnd_762x39mm"],
-		["rhs_weap_ak74_2","rhs_30Rnd_545x39_AK"],
-		["rhs_weap_ak74m","rhs_30Rnd_545x39_AK"],
-		["rhs_weap_aks74_2","rhs_30Rnd_545x39_AK"],
-		["rhs_weap_aks74u","rhs_30Rnd_545x39_AK"]
+		["arifle_AKS_F","30Rnd_545x39_Mag_F"],
+		["arifle_AKM_F","30Rnd_762x39_Mag_F"],
+		["arifle_AKM_F","30Rnd_762x39_Mag_F"],
+		["arifle_AKM_F","30Rnd_762x39_Mag_F"],
+		["arifle_AK12_F","30Rnd_762x39_Mag_F"]
 	];
 	INS_RIFLE_BLU = 
 	[
-		["rhs_weap_m16a4_carryhandle","rhs_mag_30Rnd_556x45_Mk318_Stanag"],
-		["rhs_weap_m4_carryhandle","rhs_mag_30Rnd_556x45_Mk318_Stanag"],
-		["rhs_weap_m4a1_carryhandle","rhs_mag_30Rnd_556x45_Mk318_Stanag"]
+		["arifle_SPAR_01_blk_F","30Rnd_556x45_Stanag"],
+		["arifle_SPAR_01_blk_F","30Rnd_556x45_Stanag"],
+		["arifle_SPAR_01_blk_F","30Rnd_556x45_Stanag"],
+		["arifle_SPAR_01_blk_F","30Rnd_556x45_Stanag"],
+		["arifle_SPAR_02_blk_F","150Rnd_556x45_Drum_Mag_F"]
 	];
 	
 	INS_GL_OPF =
 	[
-		["rhs_weap_ak74_gp25","rhs_30Rnd_545x39_AK","rhs_VOG25"],
-		["rhs_weap_akms_gp25","rhs_30Rnd_762x39mm","rhs_VOG25"],
-		["rhs_weap_aks74_gp25","rhs_30Rnd_545x39_AK","rhs_VOG25"]
+		["arifle_AK12_GL_F","30Rnd_762x39_Mag_F","rhs_mag_M441_HE"]
 	];
 	INS_GL_BLU =
 	[
-		["rhs_weap_m16a4_carryhandle_M203","rhs_mag_30Rnd_556x45_Mk318_Stanag","1Rnd_HE_Grenade_shell"],
-		["rhs_weap_m4_m203","rhs_mag_30Rnd_556x45_Mk318_Stanag","1Rnd_HE_Grenade_shell"]
+		["arifle_SPAR_01_GL_blk_F","30Rnd_556x45_Stanag","1Rnd_HE_Grenade_shell"]
 	];
 	
 	INS_MG_OPF =
 	[
-		["rhs_weap_pkm","rhs_100Rnd_762x54mmR"]
+		["LMG_Zafir_F","150Rnd_762x54_Box"]
 	];
 	INS_MG_BLU =
 	[
-		["rhs_weap_m249","rhs_200rnd_556x45_M_SAW"]
+		["LMG_03_F","200Rnd_556x45_Box_F"]
 	];
 	
 	INS_AT_OPF = 

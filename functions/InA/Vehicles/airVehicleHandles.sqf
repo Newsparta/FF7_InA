@@ -66,27 +66,82 @@
 					{
 						case 0:
 						{
-							[[], "functions\InA\Vehicles\Hangar\Army\bluforArmyTransport1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 0;
+								fCost = 300;
+
+								vehicleType = "RHS_MELB_MH6M";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 1:
 						{
-							[[], "functions\InA\Vehicles\Hangar\Army\bluforArmyTransport2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 100;
+								fCost = 400;
+
+								vehicleType = "RHS_UH60M";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 2:
 						{
-							[[], "functions\InA\Vehicles\Hangar\Army\bluforArmyTransport3.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 6;
+								mCost = 100;
+								fCost = 600;
+
+								vehicleType = "RHS_CH_47F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 3:
 						{
-							[[], "functions\InA\Vehicles\Hangar\Army\bluforArmyAH1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 200;
+								fCost = 300;
+
+								vehicleType = "RHS_MELB_AH6M_M";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 4:
 						{
-							[[], "functions\InA\Vehicles\Hangar\Army\bluforArmyAH2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 4;
+								mCost = 450;
+								fCost = 600;
+
+								vehicleType = "RHS_AH64D_wd";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 					};
 				};
@@ -143,22 +198,66 @@
 					{
 						case 0:
 						{
-							[[], "functions\InA\Vehicles\Hangar\Marines\bluforMarinesTransport1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 0;
+								fCost = 300;
+
+								vehicleType = "RHS_UH1Y_UNARMED";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 1:
 						{
-							[[], "functions\InA\Vehicles\Hangar\Marines\bluforMarinesTransport2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 200;
+								fCost = 300;
+
+								vehicleType = "RHS_UH1Y_GS";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 2:
 						{
-							[[], "functions\InA\Vehicles\Hangar\Marines\bluforMarinesTransport3.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 6;
+								mCost = 0;
+								fCost = 600;
+
+								vehicleType = "rhsusf_CH53E_USMC";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 3:
 						{
-							[[], "functions\InA\Vehicles\Hangar\Marines\bluforMarinesAH1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 4;
+								mCost = 400;
+								fCost = 600;
+
+								vehicleType = "RHS_AH1Z_wd";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 					};
 				};				
@@ -222,27 +321,82 @@
 					{
 						case 0:
 						{
-							[[], "functions\InA\Vehicles\Hangar\NATO\bluforNATOTransport1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 0;
+								fCost = 300;
+
+								vehicleType = "B_Heli_Light_01_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 1:
 						{
-							[[], "functions\InA\Vehicles\Hangar\NATO\bluforNATOTransport2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 100;
+								fCost = 400;
+
+								vehicleType = "B_Heli_Transport_01_camo_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 2:
 						{
-							[[], "functions\InA\Vehicles\Hangar\NATO\bluforNATOTransport3.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 6;
+								mCost = 100;
+								fCost = 600;
+
+								vehicleType = "B_Heli_Transport_03_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 3:
 						{
-							[[], "functions\InA\Vehicles\Hangar\NATO\bluforNATOAH1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 200;
+								fCost = 300;
+
+								vehicleType = "B_Heli_Light_01_dynamicLoadout_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 4:
 						{
-							[[], "functions\InA\Vehicles\Hangar\NATO\bluforNATOAH2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 4;
+								mCost = 400;
+								fCost = 600;
+
+								vehicleType = "B_Heli_Attack_01_dynamicLoadout_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 					};
 				};					
@@ -292,17 +446,50 @@
 					{	
 						case 0:
 						{
-							[[], "functions\InA\Vehicles\Hangar\AAF\indAAFTransport1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 0;
+								fCost = 400;
+
+								vehicleType = "I_Heli_light_03_unarmed_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 1:
 						{
-							[[], "functions\InA\Vehicles\Hangar\AAF\indAAFTransport2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 6;
+								mCost = 0;
+								fCost = 600;
+
+								vehicleType = "I_Heli_Transport_02_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 2:
 						{
-							[[], "functions\InA\Vehicles\Hangar\AAF\indAAFAH1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 200;
+								fCost = 400;
+
+								vehicleType = "I_Heli_light_03_dynamicLoadout_f";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 					};
 				};					
@@ -373,32 +560,98 @@
 					{
 						case 0:
 						{
-							[[], "functions\InA\Vehicles\Hangar\Russia\opforRussiaTransport1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 0;
+								fCost = 300;
+
+								vehicleType = "rhs_ka60_c";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 1:
 						{
-							[[], "functions\InA\Vehicles\Hangar\Russia\opforRussiaTransport2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 300;
+								fCost = 400;
+
+								vehicleType = "RHS_Mi24P_CAS_vvsc";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 2:
 						{
-							[[], "functions\InA\Vehicles\Hangar\Russia\opforRussiaTransport3.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 0;
+								fCost = 400;
+
+								vehicleType = "RHS_Mi8AMT_vvsc";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 3:
 						{
-							[[], "functions\InA\Vehicles\Hangar\Russia\opforRussiaTransport4.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 300;
+								fCost = 400;
+
+								vehicleType = "RHS_Mi8AMTSh_vvsc";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 4:
 						{
-							[[], "functions\InA\Vehicles\Hangar\Russia\opforRussiaAH1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 4;
+								mCost = 300;
+								fCost = 600;
+
+								vehicleType = "RHS_Ka52_vvsc";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 5:
 						{
-							[[], "functions\InA\Vehicles\Hangar\Russia\opforRussiaAH2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 4;
+								mCost = 400;
+								fCost = 600;
+
+								vehicleType = "rhs_mi28n_vvsc";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call airSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 					};
 				};					

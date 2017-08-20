@@ -173,87 +173,274 @@
 
 						case 1:
 						{
-							[[], "functions\InA\Vehicles\Garage\Army\bluforArmyTech1.sqf"] remoteExec ["execVM", 2];;
+							{
+								vCost = 1;
+								mCost = 0;
+								fCost = 100;
+
+								vehicleType = "B_T_LSV_01_unarmed_F";
+								vehiclePaint = ["Olive",1];
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 2:
 						{
-							[[], "functions\InA\Vehicles\Garage\Army\bluforArmyCar1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 1;
+								mCost = 50;
+								fCost = 100;
+
+								vehicleType = "rhsusf_m1025_w_m2";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 3:
 						{
-							[[], "functions\InA\Vehicles\Garage\Army\bluforArmyCar2.sqf"] remoteExec ["execVM", 2];;
+							{
+								vCost = 1;
+								mCost = 150;
+								fCost = 100;
+
+								vehicleType = "rhsusf_m1025_w_mk19";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 4:
 						{
-							[[], "functions\InA\Vehicles\Garage\Army\bluforArmyCar3.sqf"] remoteExec ["execVM", 2];;
+							{
+								vCost = 1;
+								mCost = 0;
+								fCost = 100;
+
+								vehicleType = "rhsusf_m1025_w";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 5:
 						{
-							[[], "functions\InA\Vehicles\Garage\Army\bluforArmyMRAP1.sqf"] remoteExec ["execVM", 2];;
+							{
+								vCost = 2;
+								mCost = 100;
+								fCost = 200;
+
+								vehicleType = "rhsusf_M1232_M2_usarmy_wd";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 6:
 						{
-							[[], "functions\InA\Vehicles\Garage\Army\bluforArmyMRAP2.sqf"] remoteExec ["execVM", 2];;
+							{
+								vCost = 2;
+								mCost = 200;
+								fCost = 200;
+
+								vehicleType = "rhsusf_M1232_MK19_usarmy_wd";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 7:
 						{
-							[[], "functions\InA\Vehicles\Garage\Army\bluforArmyMRAP3.sqf"] remoteExec ["execVM", 2];;
+							{
+								vCost = 2;
+								mCost = 50;
+								fCost = 200;
+
+								vehicleType = "rhsusf_M1232_usarmy_wd";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 8:
 						{
-							[[], "functions\InA\Vehicles\Garage\Army\bluforArmyTruck1.sqf"] remoteExec ["execVM", 2];;
+							{
+								vCost = 2;
+								mCost = 50;
+								fCost = 200;
+
+								vehicleType = "rhsusf_M1083A1P2_B_M2_wd_fmtv_usarmy";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 9:
 						{
-							[[], "functions\InA\Vehicles\Garage\Army\bluforArmyTruck2.sqf"] remoteExec ["execVM", 2];;
+							{
+								vCost = 2;
+								mCost = 0;
+								fCost = 200;
+
+								vehicleType = "rhsusf_M1083A1P2_B_wd_fmtv_usarmy";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 10:
 						{
-							[[], "functions\InA\Vehicles\Garage\Army\bluforArmyAPC1.sqf"] remoteExec ["execVM", 2];;
+							{
+								vCost = 3;
+								mCost = 50;
+								fCost = 250;
+
+								vehicleType = "rhsusf_m113_usarmy";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 11:
 						{
-							[[], "functions\InA\Vehicles\Garage\Army\bluforArmyAPC2.sqf"] remoteExec ["execVM", 2];;
+							{
+								vCost = 3;
+								mCost = 150;
+								fCost = 250;
+
+								vehicleType = "rhsusf_m113_usarmy_MK19";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 12:
 						{
-							[[], "functions\InA\Vehicles\Garage\Army\bluforArmyAPC3.sqf"] remoteExec ["execVM", 2];;
+							{
+								vCost = 3;
+								mCost = 0;
+								fCost = 250;
+
+								vehicleType = "rhsusf_m113_usarmy_unarmed";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 13:
 						{
-							[[], "functions\InA\Vehicles\Garage\Army\bluforArmyIFV1.sqf"] remoteExec ["execVM", 2];;
+							{
+								vCost = 3;
+								mCost = 200;
+								fCost = 350;
+
+								vehicleType = "RHS_M2A3_BUSKI_wd";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 14:
 						{
-							[[], "functions\InA\Vehicles\Garage\Army\bluforArmyIFV2.sqf"] remoteExec ["execVM", 2];;
+							{
+								vCost = 3;
+								mCost = 300;
+								fCost = 350;
+
+								vehicleType = "RHS_M2A3_BUSKIII_wd";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 15:
 						{
-							[[], "functions\InA\Vehicles\Garage\Army\bluforArmyTank1.sqf"] remoteExec ["execVM", 2];;
+							{
+								vCost = 4;
+								mCost = 350;
+								fCost = 400;
+
+								vehicleType = "rhsusf_m1a2sep1tuskiwd_usarmy";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 16:
 						{
-							[[], "functions\InA\Vehicles\Garage\Army\bluforArmyTank2.sqf"] remoteExec ["execVM", 2];;
+							{
+								vCost = 4;
+								mCost = 450;
+								fCost = 400;
+
+								vehicleType = "rhsusf_m1a2sep1tuskiiwd_usarmy";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 17:
 						{
-							[[], "functions\InA\Vehicles\Garage\Army\bluforArmyUtility1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 0;
+								fCost = 200;
+
+								vehicleType = "rhsusf_M1083A1P2_B_wd_flatbed_fmtv_usarmy";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = true;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 					};
 				};
@@ -401,87 +588,274 @@
 					{
 						case 0:
 						{
-							[[], "functions\InA\Vehicles\Garage\Marines\bluforMarinesATV1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 0;
+								mCost = 0;
+								fCost = 50;
+
+								vehicleType = "B_Quadbike_01_F";
+								vehiclePaint = ["Blufor",1];
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 1:
 						{
-							[[], "functions\InA\Vehicles\Garage\Marines\bluforMarinesTech1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 1;
+								mCost = 0;
+								fCost = 100;
+
+								vehicleType = "B_T_LSV_01_unarmed_F";
+								vehiclePaint = ["Olive",1];
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 2:
 						{
-							[[], "functions\InA\Vehicles\Garage\Marines\bluforMarinesCar1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 1;
+								mCost = 50;
+								fCost = 100;
+
+								vehicleType = "rhsusf_m1025_w_m2";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 3:
 						{
-							[[], "functions\InA\Vehicles\Garage\Marines\bluforMarinesCar2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 1;
+								mCost = 150;
+								fCost = 100;
+
+								vehicleType = "rhsusf_m1025_w_mk19";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 4:
 						{
-							[[], "functions\InA\Vehicles\Garage\Marines\bluforMarinesCar3.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 1;
+								mCost = 0;
+								fCost = 100;
+
+								vehicleType = "rhsusf_m1025_w";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 5:
 						{
-							[[], "functions\InA\Vehicles\Garage\Marines\bluforMarinesMRAP1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 100;
+								fCost = 200;
+
+								vehicleType = "rhsusf_rg33_m2_usmc_wd";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 6:
 						{
-							[[], "functions\InA\Vehicles\Garage\Marines\bluforMarinesMRAP2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 50;
+								fCost = 200;
+
+								vehicleType = "rhsusf_rg33_usmc_wd";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 7:
 						{
-							[[], "functions\InA\Vehicles\Garage\Marines\bluforMarinesTruck1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 50;
+								fCost = 200;
+
+								vehicleType = "rhsusf_M1083A1P2_B_M2_wd_fmtv_usarmy";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 8:
 						{
-							[[], "functions\InA\Vehicles\Garage\Marines\bluforMarinesTruck2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 0;
+								fCost = 200;
+
+								vehicleType = "rhsusf_M1083A1P2_B_wd_fmtv_usarmy";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 9:
 						{
-							[[], "functions\InA\Vehicles\Garage\Marines\bluforMarinesAPC1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 50;
+								fCost = 250;
+
+								vehicleType = "rhsusf_m113_usarmy";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 10:
 						{
-							[[], "functions\InA\Vehicles\Garage\Marines\bluforMarinesAPC2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 150;
+								fCost = 250;
+
+								vehicleType = "rhsusf_m113_usarmy_MK19";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 11:
 						{
-							[[], "functions\InA\Vehicles\Garage\Marines\bluforMarinesAPC3.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 0;
+								fCost = 250;
+
+								vehicleType = "rhsusf_m113_usarmy_unarmed";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 12:
 						{
-							[[], "functions\InA\Vehicles\Garage\Marines\bluforMarinesIFV1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 200;
+								fCost = 350;
+
+								vehicleType = "RHS_M2A3_BUSKI_wd";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 13:
 						{
-							[[], "functions\InA\Vehicles\Garage\Marines\bluforMarinesIFV2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 300;
+								fCost = 350;
+
+								vehicleType = "RHS_M2A3_BUSKIII_wd";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 14:
 						{
-							[[], "functions\InA\Vehicles\Garage\Marines\bluforMarinesTank1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 4;
+								mCost = 250;
+								fCost = 350;
+
+								vehicleType = "rhsusf_m1a1hc_wd";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 15:
 						{
-							[[], "functions\InA\Vehicles\Garage\Marines\bluforMarinesTank2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 4;
+								mCost = 350;
+								fCost = 350;
+
+								vehicleType = "rhsusf_m1a1fep_wd";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 16:
 						{
-							[[], "functions\InA\Vehicles\Garage\Marines\bluforMarinesUtility1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 0;
+								fCost = 200;
+
+								vehicleType = "rhsusf_M1083A1P2_B_wd_flatbed_fmtv_usarmy";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = true;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 					};
 				};				
@@ -587,57 +961,178 @@
 					{
 						case 0:
 						{
-							[[], "functions\InA\Vehicles\Garage\NATO\bluforNATOATV1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 0;
+								mCost = 0;
+								fCost = 50;
+
+								vehicleType = "B_Quadbike_01_F";
+								vehiclePaint = ["Blufor",1];
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 1:
 						{
-							[[], "functions\InA\Vehicles\Garage\NATO\bluforNATOCar1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 1;
+								mCost = 100;
+								fCost = 100;
+
+								vehicleType = "B_T_LSV_01_armed_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 2:
 						{
-							[[], "functions\InA\Vehicles\Garage\NATO\bluforNATOCar2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 1;
+								mCost = 0;
+								fCost = 100;
+
+								vehicleType = "B_T_LSV_01_unarmed_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 3:
 						{
-							[[], "functions\InA\Vehicles\Garage\NATO\bluforNATOMRAP1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 100;
+								fCost = 200;
+
+								vehicleType = "B_MRAP_01_hmg_f";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 4:
 						{
-							[[], "functions\InA\Vehicles\Garage\NATO\bluforNATOMRAP2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 200;
+								fCost = 200;
+
+								vehicleType = "B_MRAP_01_gmg_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 5:
 						{
-							[[], "functions\InA\Vehicles\Garage\NATO\bluforNATOMRAP3.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 50;
+								fCost = 200;
+
+								vehicleType = "B_MRAP_01_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 6:
 						{
-							[[], "functions\InA\Vehicles\Garage\NATO\bluforNATOTruck1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 0;
+								fCost = 200;
+
+								vehicleType = "B_Truck_01_covered_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 7:
 						{
-							[[], "functions\InA\Vehicles\Garage\NATO\bluforNATOAPC1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 300;
+								fCost = 350;
+
+								vehicleType = "B_APC_Tracked_01_rcws_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 8:
 						{
-							[[], "functions\InA\Vehicles\Garage\NATO\bluforNATOIFV1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 350;
+								fCost = 400;
+
+								vehicleType = "B_APC_Wheeled_01_cannon_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 9:
 						{
-							[[], "functions\InA\Vehicles\Garage\NATO\bluforNATOTank1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 4;
+								mCost = 400;
+								fCost = 450;
+
+								vehicleType = "B_MBT_01_TUSK_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 10:
 						{
-							[[], "functions\InA\Vehicles\Garage\NATO\bluforNATOUtility1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 0;
+								fCost = 200;
+
+								vehicleType = "B_T_Truck_01_ammo_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = true;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 					};
 				};				
@@ -736,52 +1231,162 @@
 					{
 						case 0:
 						{
-							[[], "functions\InA\Vehicles\Garage\AAF\indAAFATV1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 0;
+								mCost = 0;
+								fCost = 50;
+
+								vehicleType = "B_Quadbike_01_F";
+								vehiclePaint = ["Indep",1];
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 1:
 						{
-							[[], "functions\InA\Vehicles\Garage\AAF\indAAFTech1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 1;
+								mCost = 0;
+								fCost = 100;
+
+								vehicleType = "B_T_LSV_01_unarmed_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 2:
 						{
-							[[], "functions\InA\Vehicles\Garage\AAF\indAAFMRAP1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 100;
+								fCost = 200;
+
+								vehicleType = "I_MRAP_03_hmg_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 3:
 						{
-							[[], "functions\InA\Vehicles\Garage\AAF\indAAFMRAP2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 200;
+								fCost = 200;
+
+								vehicleType = "I_MRAP_03_gmg_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 4:
 						{
-							[[], "functions\InA\Vehicles\Garage\AAF\indAAFMRAP3.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 50;
+								fCost = 200;
+
+								vehicleType = "I_MRAP_03_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 5:
 						{
-							[[], "functions\InA\Vehicles\Garage\AAF\indAAFTruck1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 0;
+								fCost = 200;
+
+								vehicleType = "I_Truck_02_covered_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 6:
 						{
-							[[], "functions\InA\Vehicles\Garage\AAF\indAAFAPC1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 300;
+								fCost = 350;
+
+								vehicleType = "I_APC_Wheeled_03_cannon_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 7:
 						{
-							[[], "functions\InA\Vehicles\Garage\AAF\indAAFIFV1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 350;
+								fCost = 400;
+
+								vehicleType = "I_APC_tracked_03_cannon_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 8:
 						{
-							[[], "functions\InA\Vehicles\Garage\AAF\indAAFTank1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 4;
+								mCost = 400;
+								fCost = 450;
+
+								vehicleType = "I_MBT_03_cannon_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 9:
 						{
-							[[], "functions\InA\Vehicles\Garage\AAF\indAAFUtility1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 0;
+								fCost = 200;
+
+								vehicleType = "I_Truck_02_box_F";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = true;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 					};
 				};				
@@ -907,72 +1512,226 @@
 					{
 						case 0:
 						{
-							[[], "functions\InA\Vehicles\Garage\Russia\opforRussiaATV1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 0;
+								mCost = 0;
+								fCost = 50;
+
+								vehicleType = "B_Quadbike_01_F";
+								vehiclePaint = ["GreenHex",1];
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 1:
 						{
-							[[], "functions\InA\Vehicles\Garage\Russia\opforRussiaTech1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 1;
+								mCost = 0;
+								fCost = 100;
+
+								vehicleType = "O_T_LSV_02_unarmed_F";
+								vehiclePaint = ["Black",1];
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 2:
 						{
-							[[], "functions\InA\Vehicles\Garage\Russia\opforRussiaCar1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 1;
+								mCost = 0;
+								fCost = 100;
+
+								vehicleType = "rhs_tigr_3camo_msv";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 
 						case 3:
 						{
-							[[], "functions\InA\Vehicles\Garage\Russia\opforRussiaCar2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 1;
+								mCost = 150;
+								fCost = 100;
+
+								vehicleType = "rhs_tigr_sts_3camo_msv";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 4:
 						{
-							[[], "functions\InA\Vehicles\Garage\Russia\opforRussiaMRAP1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 100;
+								fCost = 200;
+
+								vehicleType = "rhsgref_BRDM2_msv";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 5:
 						{
-							[[], "functions\InA\Vehicles\Garage\Russia\opforRussiaMRAP2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 50;
+								fCost = 200;
+
+								vehicleType = "rhsgref_BRDM2UM_msv";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 6:
 						{
-							[[], "functions\InA\Vehicles\Garage\Russia\opforRussiaTruck1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 0;
+								fCost = 200;
+
+								vehicleType = "rhs_kamaz5350_msv";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 7:
 						{
-							[[], "functions\InA\Vehicles\Garage\Russia\opforRussiaAPC1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 100;
+								fCost = 300;
+
+								vehicleType = "rhs_btr80_msv";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 8:
 						{
-							[[], "functions\InA\Vehicles\Garage\Russia\opforRussiaAPC2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 250;
+								fCost = 300;
+
+								vehicleType = "rhs_btr80a_msv";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 9:
 						{
-							[[], "functions\InA\Vehicles\Garage\Russia\opforRussiaIFV1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 300;
+								fCost = 350;
+
+								vehicleType = "rhs_bmp2d_msv";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 10:
 						{
-							[[], "functions\InA\Vehicles\Garage\Russia\opforRussiaIFV2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 3;
+								mCost = 400;
+								fCost = 350;
+
+								vehicleType = "rhs_bmp3_late_msv";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 11:
 						{
-							[[], "functions\InA\Vehicles\Garage\Russia\opforRussiaTank1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 4;
+								mCost = 400;
+								fCost = 400;
+
+								vehicleType = "rhs_t72bb_tv";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 12:
 						{
-							[[], "functions\InA\Vehicles\Garage\Russia\opforRussiaTank2.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 4;
+								mCost = 450;
+								fCost = 450;
+
+								vehicleType = "rhs_t72bd_tv";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 						
 						case 13:
 						{
-							[[], "functions\InA\Vehicles\Garage\Russia\opforRussiaUtility1.sqf"] remoteExec ["execVM", 2];
+							{
+								vCost = 2;
+								mCost = 0;
+								fCost = 200;
+
+								vehicleType = "rhs_typhoon_vdv";
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = false;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
 						};
 					};
 				};			

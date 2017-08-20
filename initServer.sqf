@@ -125,6 +125,49 @@ vehicleSpawn =
 	};
 };
 
+airSpawn = 
+{
+	if (vehicleAirParked) exitWith {
+		["Headquarters", "Please clear the hangar before requisitioning more vehicles."] remoteExec ["FF7_fnc_formatHint", ID, false];
+	};
+
+	_afford = false;
+
+	if (LogV >= vCost) then {
+		if (LogM >= mCost) then {
+			if (LogF >= fCost) then {
+				_afford = true;
+			};
+		};
+	};
+
+	if (_afford) then {
+
+		["VEHICLE REQUSITIONED", ""] remoteExec ["FF7_fnc_formatHint", ID, false];
+
+		_veh = createVehicle [vehicleType, getMarkerPos "hangarSpawn", [], 0, "CAN_COLLIDE"];
+		[
+			_veh,
+			vehiclePaint, 
+			vehicleAnim
+		] call BIS_fnc_initVehicle;
+		_veh setDir (markerDir "hangarSpawn");
+		clearBackpackCargoGlobal _veh;
+		clearMagazineCargoGlobal _veh;
+		clearWeaponCargoGlobal _veh;
+		clearItemCargoGlobal _veh;
+			
+		playerVehicles pushBack _veh;
+			
+		LogV = LogV - vCost;
+		LogM = LogM - mCost;
+		LogF = LogF - fCost;
+
+	} else {
+		["Headquarters", "You do not have the logistical supplies to field this vehicle."] remoteExec ["FF7_fnc_formatHint", ID, false];
+	};
+};
+
 ///////////////////////////////////////////
 // ---------- END SERVER INIT ---------- //
 ///////////////////////////////////////////

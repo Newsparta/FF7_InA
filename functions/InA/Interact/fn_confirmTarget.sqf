@@ -83,6 +83,8 @@ if (count signalArray > 0) then {
 	publicVariableServer "signalArray";
 	signalType = signalType - [_type];
 	publicVariableServer "signalType";
+
+	[getPosATL player] remoteExec ["InA_fnc_targetResponse", 2];
 	
 	["CONFIRMATION","Objective confirmed."] call FF7_fnc_formatHint;
 } else {

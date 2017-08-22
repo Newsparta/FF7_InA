@@ -129,6 +129,41 @@ if (_type in ["B_Soldier_SL_F", "B_Soldier_TL_F", "B_spotter_F", "B_recon_JTAC_F
 
 	[_unit, 1, ["ACE_SelfActions","FF7_Interaction","FF7_Interaction_Environment","FF7_Interaction_Environment_FOB"], _action] call ace_interact_menu_fnc_addActionToObject;
 	
+	// ---------- Base Restrictions ----------
+	_action =
+	[
+		"InA_Restrict",
+		"Restrict",
+		"",
+		{},
+		_cond
+	] call ace_interact_menu_fnc_createAction;
+
+	[_unit, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+		// ---------- Base Restrictions (yes) ----------
+		_action =
+		[
+			"InA_Restrict_Yes",
+			"Yes",
+			"",
+			{gearRestricted = true;publicVariableServer "gearRestricted";["Headquarters", "Gear access is now restricted."] call FF7_fnc_formatHint;},
+			_cond
+		] call ace_interact_menu_fnc_createAction;
+
+		[_unit, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+		// ---------- Base Restrictions (no) ----------
+		_action =
+		[
+			"InA_Restrict_No",
+			"No",
+			"",
+			{gearRestricted = false;publicVariableServer "gearRestricted";["Headquarters", "Gear access is now unrestricted."] call FF7_fnc_formatHint;},
+			_cond
+		] call ace_interact_menu_fnc_createAction;
+
+		[_unit, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 }
 else
 {
@@ -230,6 +265,42 @@ else
 	] call ace_interact_menu_fnc_createAction;
 
 	[_unit, 1, ["ACE_SelfActions","FF7_Interaction","FF7_Interaction_Environment","FF7_Interaction_Environment_FOB"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+	// ---------- Base Restrictions ----------
+	_action =
+	[
+		"InA_Restrict",
+		"Restrict",
+		"",
+		{},
+		_cond
+	] call ace_interact_menu_fnc_createAction;
+
+	[_unit, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+		// ---------- Base Restrictions (yes) ----------
+		_action =
+		[
+			"InA_Restrict_Yes",
+			"Yes",
+			"",
+			{gearRestricted = true;publicVariableServer "gearRestricted";["Headquarters", "Gear access is now restricted."] call FF7_fnc_formatHint;},
+			_cond
+		] call ace_interact_menu_fnc_createAction;
+
+		[_unit, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+		// ---------- Base Restrictions (no) ----------
+		_action =
+		[
+			"InA_Restrict_No",
+			"No",
+			"",
+			{gearRestricted = false;publicVariableServer "gearRestricted";["Headquarters", "Gear access is now unrestricted."] call FF7_fnc_formatHint;},
+			_cond
+		] call ace_interact_menu_fnc_createAction;
+
+		[_unit, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 };
 
 //----- Health check for medics -----

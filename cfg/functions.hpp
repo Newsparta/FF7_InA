@@ -56,9 +56,10 @@ class InA
 		class reqEvac {file = "functions\InA\Support\fn_reqEvac.sqf";};
 		
 		// Export
-		class diversity {file = "export\fn_diversity.sqf";};
+		class diversity {file = "defines\fn_diversity.sqf";};
 		
 		// Misc.
+		class targetResponse {file = "functions\InA\Misc\fn_targetResponse.sqf";};
 		class defaultDB {file = "functions\InA\Misc\fn_defaultDB.sqf";};
 		class save {file = "functions\InA\Misc\fn_save.sqf";};
 		class regionCheck {file = "functions\InA\Misc\fn_regionCheck.sqf";};
@@ -103,21 +104,21 @@ class InA
 		class AAAEmplacement {file = "missions\Objective Bank\fn_AAAEmplacement.sqf";};
 		
 		// Gear
-		class WAD {file = "functions\InA\Gear\fn_WAD.sqf";};
+		class WAD {file = "defines\Gear\fn_WAD.sqf";};
 		
 		// Structures
-		class buildKitLite {file = "functions\InA\Structures\fn_buildKitLite.sqf";};
-		class fob {file = "functions\InA\Structures\fn_fob.sqf";};
-		class placeObj {file = "functions\InA\Structures\fn_placeObj.sqf";};
+		class buildKitLite {file = "defines\Structures\fn_buildKitLite.sqf";};
+		class fob {file = "defines\Structures\fn_fob.sqf";};
+		class placeObj {file = "defines\Structures\fn_placeObj.sqf";};
 		
 		// Vehicles
-		class vehicleService {file = "functions\InA\Vehicles\Vehicle Service\fn_vehicleService.sqf";};
-		class serviceCost {file = "functions\InA\Vehicles\Vehicle Service\fn_serviceCost.sqf";};
-		class vehicleDecommission {file = "functions\InA\Vehicles\Vehicle Service\fn_vehicleDecommission.sqf";};
-		class vehicleRepair {file = "functions\InA\Vehicles\Vehicle Service\fn_vehicleRepair.sqf";};
-		class vehicleRearm {file = "functions\InA\Vehicles\Vehicle Service\fn_vehicleRearm.sqf";};
-		class vehicleRefuel {file = "functions\InA\Vehicles\Vehicle Service\fn_vehicleRefuel.sqf";};
-		class magCostAdd {file = "functions\InA\Vehicles\Vehicle Service\fn_magCostAdd.sqf";};
-		class magCostSubtract {file = "functions\InA\Vehicles\Vehicle Service\fn_magCostSubtract.sqf";};
+		class vehicleService {file = "defines\Vehicles\Vehicle Service\fn_vehicleService.sqf";};
+		class serviceCost {file = "defines\Vehicles\Vehicle Service\fn_serviceCost.sqf";};
+		class vehicleDecommission {file = "defines\Vehicles\Vehicle Service\fn_vehicleDecommission.sqf";};
+		class vehicleRepair {file = "defines\Vehicles\Vehicle Service\fn_vehicleRepair.sqf";};
+		class vehicleRearm {file = "defines\Vehicles\Vehicle Service\fn_vehicleRearm.sqf";};
+		class vehicleRefuel {file = "defines\Vehicles\Vehicle Service\fn_vehicleRefuel.sqf";};
+		class magCostAdd {file = "defines\Vehicles\Vehicle Service\fn_magCostAdd.sqf";};
+		class magCostSubtract {file = "defines\Vehicles\Vehicle Service\fn_magCostSubtract.sqf";};
 	};
 };

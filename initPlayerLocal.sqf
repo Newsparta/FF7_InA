@@ -107,20 +107,8 @@ player createDiaryRecord	[
 									"- This is not a sandbox, value your gear and your vehicles. If you die there will be no free respawns and no reimbursements.<br/><br/>- Collect intel from civilians (you will not see any information about the main AO if you do not).<br/><br/>- Secure regions. (persistently)<br/><br/>- Scout AO's<br/><br/>- Clear enemies from any main AO and clear any objectives you find.<br/><br/>- Confirm your targets.<br/><br/>- submit an after action report and call it a day."
 								]
 							];
-							
-// ---------- Patch Notes (4.1.7c) ----------
 
-player createDiarySubject ["patchNotes","Patch Notes"];
-
-player createDiaryRecord	[
-								"patchNotes",
-								[
-									"Misc.",
-									"- Tweaks to enemy spawn RNG <br/>- Defence missions are more explicit<br/>- Region markers edited<br/>- Supplies drops scale ETA, if one drops the next will be delayed longer, this pattern repeats for as long as people are on and reverts back to the standard drop time when everyone is off.<br/>- Supplies received was drastically reduced (keep in mind main AO's give bonus supplies if you complete enough objectives, this may take multiple AO's depending on RNG)<br/>"
-								]
-							];
-
-// ---------- Notice to read patch notes ----------
+// ---------- Notice ----------
 
 [] spawn {
 
@@ -130,7 +118,7 @@ player createDiaryRecord	[
 	
 	sleep 60;
 	
-	["(4.1.7c)<br/>2017-08-17", "Latest patch date"] call FF7_fnc_formatHint;
+	["(4.1.7c)<br/>2017-08-21", "Latest patch date"] call FF7_fnc_formatHint;
 };
 
 // ---------- Run only on player... ----------
@@ -214,7 +202,7 @@ switch (baseType) do {
 		removeUniform player;
 		removeHeadgear player;
 
-		player forceAddUniform "U_B_CombatUniform_mcam";
+		player forceAddUniform "MNP_CombatUniform_Scorpion_A";
 		player addMagazine "16Rnd_9x21_Mag";
 		player addWeapon "hgun_P07_F";
 	};
@@ -292,7 +280,7 @@ GearOpen addAction [["hq", "FF9900", "Gear Requisition"] call FF7_fnc_formatAddA
 			sleep 0.2;
 		
 			if (!(_this select 1 == leader (group (_this select 1))) && (gearRestricted)) exitWith {["Headquarters", "Only the squad leader may access gear requisition."] call FF7_fnc_formatHint;};
-		
+			
 			disableSerialization;
 	
 			createDialog "InA_Gear_Open_Dialog";
@@ -308,32 +296,40 @@ GearOpen addAction [["hq", "FF9900", "Gear Requisition"] call FF7_fnc_formatAddA
 Garage addAction [["hq", "FF9900", "Vehicle Requisition"] call FF7_fnc_formatAddAction, 
 		{
 		
-			if !(_this select 1 == leader (group (_this select 1))) exitWith {["Headquarters", "Only the squad leader may requisition vehicles."] call FF7_fnc_formatHint;};
+			[clientOwner, "gearRestricted"] remoteExec ["publicVariableClient", 2, false];
 			
-			call compile preprocessFileLineNumbers "functions\InA\Vehicles\landVehicleHandles.sqf";
+			sleep 0.2;
+		
+			if (!(_this select 1 == leader (group (_this select 1))) && (gearRestricted)) exitWith {["Headquarters", "Only the squad leader may access gear requisition."] call FF7_fnc_formatHint;};
+			
+			call compile preprocessFileLineNumbers "defines\Vehicles\landVehicleHandles.sqf";
 		
 		}, [], 99, true, true, "", "((_target distance _this) < 4)"];
 		
 Hangar addAction [["hq", "FF9900", "Vehicle Requisition"] call FF7_fnc_formatAddAction,
 		{
 
-			if !(_this select 1 == leader (group (_this select 1))) exitWith {["Headquarters", "Only the squad leader may requisition vehicles."] call FF7_fnc_formatHint;};
+			[clientOwner, "gearRestricted"] remoteExec ["publicVariableClient", 2, false];
 			
-			call compile preprocessFileLineNumbers "functions\InA\Vehicles\airVehicleHandles.sqf";
+			sleep 0.2;
+		
+			if (!(_this select 1 == leader (group (_this select 1))) && (gearRestricted)) exitWith {["Headquarters", "Only the squad leader may access gear requisition."] call FF7_fnc_formatHint;};
+			
+			call compile preprocessFileLineNumbers "defines\Vehicles\airVehicleHandles.sqf";
 
 		},[], 99, true, true, "", "((_target distance _this) < 4)"];
 	
 	Hangar addAction [["hq", "FF9900", "Shelter helicopter"] call FF7_fnc_formatAddAction,
 		{
 
-			[["shelter"],"functions\InA\Vehicles\shelterHelicopter.sqf"] remoteExec ["execVM", 2];
+			[["shelter"],"defines\Vehicles\shelterHelicopter.sqf"] remoteExec ["execVM", 2];
 
 		},[], 99, true, true, "", "((_target distance _this) < 4)"];
 		
 	Hangar addAction [["hq", "FF9900", "Bring out helicopter"] call FF7_fnc_formatAddAction,
 		{
 			
-			[["bringOut"],"functions\InA\Vehicles\shelterHelicopter.sqf"] remoteExec ["execVM", 2];
+			[["bringOut"],"defines\Vehicles\shelterHelicopter.sqf"] remoteExec ["execVM", 2];
 
 		},[], 99, true, true, "", "((_target distance _this) < 4)"];
 		
@@ -345,3 +341,43 @@ basicGearBox addAction [["hq", "FF9900", "Equip Uniform"] call FF7_fnc_formatAdd
 			createDialog "InA_Uniform_Dialog";
 		
 		}, [], 99, true, true, "", "((_target distance _this) < 4)"];
+
+// ---------- Building Objects ----------
+
+buildObj = 
+{
+	[clientOwner, "buildInventory"] remoteExec ["publicVariableClient", 2, false];
+
+	sleep 0.2;
+
+	if (buildInventory >= objCost) then {
+
+		["BUILDING ACTIONS ADDED", "Building is hidden by default.<br/><br/>Use the SHOW and HIDE commands to toggle the visibility of the structure (keep it hidden if you dont need to see or place it yet, as to avoid accidentally squishing people)"] call FF7_fnc_formatHint;
+
+		obj = objType createVehicle [0,0,0];
+
+		xPos = xDefine;
+		yPos = yDefine;
+		zPos = zDefine;
+
+		aPos = rotDefine;
+		bPos = 0;
+		cPos = 0;
+
+		transX = 0;
+		transY = 0;
+		transZ = 0;
+
+		transA = aPos;
+		transC = cPos;
+
+		disableSerialization;
+
+		player addAction [["FF9900", "(Open Action Menu)"] call FF7_fnc_formatText, 
+				{
+					createDialog "InA_Build_Action_Dialog";
+				}, [], 99, true, true, "", "",0];
+	} else {
+		["Headquarters", "You do not have the logistical supplies to construct this fortification."] call FF7_fnc_formatHint;
+	};
+};

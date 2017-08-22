@@ -83,6 +83,10 @@ params ["_kit"];
 		obj attachTo [player, [(xPos + transX),(yPos + transY),(zPos + transZ)]];
 	};
 
+	[clientOwner, "buildInventory"] remoteExec ["publicVariableClient", 2, false];
+
+	sleep 0.2;
+
 	createDialog "InA_Build_Dialog";
 
 	waitUntil {!isNull (findDisplay 9500);};

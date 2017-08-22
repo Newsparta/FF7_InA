@@ -56,7 +56,7 @@ _i = 0;
 while {_i = _i + 60; _i <= 900} do {
 	scopeName "attackLoop";
 
-	if (({(side _x) == resistance} count allUnits) < 120) then {
+	if (({(side _x) == resistance} count allUnits) < 150) then {
 		_accepted = false;
 		while {!_accepted} do {
 
@@ -102,7 +102,7 @@ while {_i = _i + 60; _i <= 900} do {
 	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.25)) then {
 		[spawnCenter, spawnBorderLand, spawnWaypointMax, 1, 0,"COMBAT","FULL"] spawn InA_fnc_insMediumTruckTransport;
 	};
-	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.0625)) then {
+	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.1)) then {
 		[spawnCenter, spawnBorderLand, spawnWaypointMax, 1, 0,"COMBAT","FULL"] spawn InA_fnc_insApcTransport;
 	};
 	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.0625)) then {

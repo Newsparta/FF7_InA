@@ -482,7 +482,7 @@ class InA_Warning_Dialog
 			w = 0.0516557 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[[InA_Warning_ID], 'functions\InA\Themes\baseHandler.sqf'] remoteExec ['execVM', 2]; closeDialog 0;";
+			action = "[[InA_Warning_ID], 'defines\Themes\baseHandler.sqf'] remoteExec ['execVM', 2]; closeDialog 0;";
 		};
 		class InA_HQ_Warning_Dialog_Header: RscFrame
 		{
@@ -556,7 +556,7 @@ class InA_Uniform_Dialog
 			w = 0.0516557 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[]execVM 'functions\InA\Gear\uniformDialog.sqf';";
+			action = "[]execVM 'defines\Gear\uniformDialog.sqf';";
 		};
 		class InA_Uniform_Dialog_Button_3: RscButton
 		{
@@ -567,7 +567,7 @@ class InA_Uniform_Dialog
 			w = 0.0516557 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[]execVM 'functions\InA\Gear\vestDialog.sqf';";
+			action = "[]execVM 'defines\Gear\vestDialog.sqf';";
 		};
 		class InA_Uniform_Dialog_Button_4: RscButton
 		{
@@ -578,7 +578,7 @@ class InA_Uniform_Dialog
 			w = 0.0516557 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[]execVM 'functions\InA\Gear\helmetDialog.sqf';";
+			action = "[]execVM 'defines\Gear\helmetDialog.sqf';";
 		};
 		class InA_Uniform_Dialog_Header: RscFrame
 		{
@@ -939,7 +939,7 @@ class InA_Gear_Open_Dialog
 			type = CT_STATIC;
 			style = ST_CENTER;
 			colorBackground[] = {0.25,0.25,0.25,0.6};
-		};
+		};/*
 		class InA_Gear_Open_Frame_1: RscFrame
 		{
 			idc = -1;
@@ -950,7 +950,7 @@ class InA_Gear_Open_Dialog
 			type = CT_STATIC;
 			style = ST_CENTER;
 			colorBackground[] = {0,0.5,1,0.1};
-		};
+		};*/
 		class InA_Gear_Open_Button_1: RscButton
 		{
 			idc = 1600;
@@ -960,7 +960,7 @@ class InA_Gear_Open_Dialog
 			w = 0.0516557 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[]execVM 'functions\InA\Gear\weaponDialog.sqf';[]execVM 'functions\InA\Gear\resourceUpdate.sqf';";
+			action = "[]execVM 'defines\Gear\weaponDialog.sqf';[]execVM 'functions\InA\Gear\resourceUpdate.sqf';";
 		};
 		class InA_Gear_Open_Button_2: RscButton
 		{
@@ -971,7 +971,7 @@ class InA_Gear_Open_Dialog
 			w = 0.0516557 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[]execVM 'functions\InA\Gear\ammoDialog.sqf';[]execVM 'functions\InA\Gear\resourceUpdate.sqf';";
+			action = "[]execVM 'defines\Gear\ammoDialog.sqf';[]execVM 'functions\InA\Gear\resourceUpdate.sqf';";
 		};
 		class InA_Gear_Open_Button_3: RscButton
 		{
@@ -982,8 +982,8 @@ class InA_Gear_Open_Dialog
 			w = 0.0516557 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[]execVM 'functions\InA\Gear\miscDialog.sqf';[]execVM 'functions\InA\Gear\resourceUpdate.sqf';";
-		};
+			action = "[]execVM 'defines\Gear\miscDialog.sqf';[]execVM 'functions\InA\Gear\resourceUpdate.sqf';";
+		};/*
 		class InA_Gear_Open_Button_4: RscButton
 		{
 			idc = 1603;
@@ -1005,7 +1005,7 @@ class InA_Gear_Open_Dialog
 			h = 0.021998 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
 			action = "gearRestricted = false;publicVariableServer 'gearRestricted';['Headquarters', 'Gear access is now unrestricted.'] call FF7_fnc_formatHint;";
-		};
+		};*/
 		class InA_Gear_Open_Button_6: RscButton
 		{
 			idc = 1605;
@@ -1027,7 +1027,7 @@ class InA_Gear_Open_Dialog
 			type = CT_STATIC;
 			style = ST_CENTER;
 			colorBackground[] = {0,0.5,1,0.8};
-		};
+		};/*
 		class InA_Gear_Open_SubHeader_1: RscFrame
 		{
 			idc = -1;
@@ -1038,7 +1038,7 @@ class InA_Gear_Open_Dialog
 			type = CT_STATIC;
 			style = ST_CENTER;
 			colorBackground[] = {0,0.5,1,0.8};
-		};
+		};*/
 		class InA_Gear_Open_Text_1: RscText
 		{
 			idc = -1;
@@ -1047,7 +1047,7 @@ class InA_Gear_Open_Dialog
 			y = 0.401009 * safezoneH + safezoneY;
 			w = 0.0516557 * safezoneW;
 			h = 0.021998 * safezoneH;
-		};
+		};/*
 		class InA_Gear_Open_Text_2: RscText
 		{
 			idc = -1;
@@ -1056,7 +1056,7 @@ class InA_Gear_Open_Dialog
 			y = 0.445005 * safezoneH + safezoneY;
 			w = 0.072318 * safezoneW;
 			h = 0.021998 * safezoneH;
-		};
+		};*/
 	};
 };
 

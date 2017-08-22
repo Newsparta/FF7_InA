@@ -130,7 +130,7 @@ class InA_Garage_Dialog
 			w = 0.0516557 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[lbCurSel 1500] call garageHandler;[]execVM 'functions\InA\Vehicles\resourceUpdate.sqf';";
+			action = "[lbCurSel 1500] call garageHandler;[]execVM 'defines\Vehicles\resourceUpdate.sqf';";
 		};
 		class InA_Garage_Button_2: RscButton
 		{
@@ -386,7 +386,7 @@ class InA_Hangar_Dialog
 			w = 0.0516557 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[lbCurSel 1500] call hangarHandler;[]execVM 'functions\InA\Vehicles\resourceUpdate.sqf';";
+			action = "[lbCurSel 1500] call hangarHandler;[]execVM 'defines\Vehicles\resourceUpdate.sqf';";
 		};
 		class InA_Hangar_Button_2: RscButton
 		{

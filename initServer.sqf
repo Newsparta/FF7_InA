@@ -15,7 +15,7 @@ _null = [900, 0.2] execVM "functions\FF7\Generic\fn_weatherMan.sqf";
 
 // ---------- Ambient modules ----------
 
-_null = execVM "export\ambientModules.sqf";
+_null = execVM "defines\ambientModules.sqf";
 
 // ---------- TFAR setup ----------
 
@@ -64,8 +64,8 @@ for [ {_i = 0}, {_i < count(paramsArray)}, {_i = _i + 1} ] do {
 	];
 };
 
-call compile preprocessFileLineNumbers "export\civilianTheme.sqf";
-call compile preprocessFileLineNumbers "export\enemyTheme.sqf";
+call compile preprocessFileLineNumbers "defines\civilianTheme.sqf";
+call compile preprocessFileLineNumbers "defines\enemyTheme.sqf";
 
 // ---------- Missions ----------
 

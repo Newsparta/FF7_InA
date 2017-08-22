@@ -13,7 +13,7 @@ player createDiaryRecord	[
 								"missionMechanics",
 								[
 									"Vehicle Service",
-									"There are vehicle service stations located next to the garage (under the two hooks) and at each helipad.<br/><br/>Use these locations to repair and refuel friendly vehicles. Keep in mind that they will require fuel and supplies to do so."
+									"There are vehicle service stations located next to the garage and at each helipad.<br/><br/>Use these locations to repair and refuel friendly vehicles. Keep in mind that they will require fuel and supplies to do so."
 								]
 							];
 player createDiaryRecord	[
@@ -34,7 +34,7 @@ player createDiaryRecord	[
 								"missionMechanics",
 								[
 									"Region Instability",
-									"All areas of the map are simulated. Each region has a certain instability value. This value will slowly increase over time (going from completely stable to completely volatile will take approximately 2 weeks) but can be stabalized by doing the following.<br/><br/>In order for you to stabalize a region you need to be present in the region for a period of time depending on how many friendlies you have. The stability of the region when you LEAVE (key word) is dependent on the number of enemies you LEAVE (same key word) behind when exiting the area.<br/><br/>Be sure to do quick patrols through regions that you may want to keep stable, once you get the notification that you have affected the region, that means the volatility value will be edited when you leave, and as long as you didnt leave behind lots of enemies, it will continue to be stable."
+									"All areas of the map are simulated. Each region has a certain instability value. This value will slowly increase over time but can be stabalized by doing the following.<br/><br/>In order for you to stabalize a region you need to be present in the region for a period of time depending on how many friendlies you have. The stability of the region when you LEAVE (key word) is dependent on the number of enemies you LEAVE (same key word) behind when exiting the area.<br/><br/>Be sure to do quick patrols through regions that you may want to keep stable, once you get the notification that you have affected the region, that means the volatility value will be edited when you leave, and as long as you didnt leave behind lots of enemies, it will continue to be stable."
 								]
 							];
 player createDiaryRecord	[
@@ -54,22 +54,15 @@ player createDiaryRecord	[
 player createDiaryRecord	[
 								"missionMechanics",
 								[
-									"Interaction Menu",
-									"Mission specific ACE interaction menu actions have been added for interacting with yourself and the environment."
-								]
-							];
-player createDiaryRecord	[
-								"missionMechanics",
-								[
 									"Vehicle Requisition",
-									"All available vehicles can be requisitioned from this station.<br/><br/>Vehicle Service - The vehicle service area is located adjacent to the garage and at each helipad. You must exit the vehicle to service it, and the amount of resources required to service the vehicle depends on the damage it has sustained, the fuel it is missing, and the ammunition it requires to rearm."
+									"All available vehicles can be requisitioned from the appropriate station.<br/><br/>Vehicle Service - The vehicle service area is located adjacent to the garage and at each helipad. You must exit the vehicle to service it, and the amount of resources required to service the vehicle depends on the damage it has sustained, the fuel it is missing, and the ammunition it requires to rearm."
 								]
 							];
 player createDiaryRecord	[
 								"missionMechanics",
 								[
 									"Gear Requisition",
-									"All available gear to be requisitioned can be accessed at this station.<br/><br/>Uniforms - All basic uniform equipment is located in the uniform box near this station.<br/><br/>Equipment - All gear can be requisitioned from the Gear Requisition menu station. Once the gear has been requisitioned it will be stored in the nearby cargo container.<br/><br/>Assault boats - boats can be requisitioned (in their disassembled form) from the Misc. category. These will appear as support boxes next to the station. support boxes are ONLY used to represent disassembled assault boats."
+									"All available gear to be requisitioned can be accessed at the appropriate station.<br/><br/>Uniforms - All basic uniform equipment is located in the uniform box near this station.<br/><br/>Equipment - All gear can be requisitioned from the Gear Requisition menu station. Once the gear has been requisitioned it will be stored in the nearby cargo container.<br/><br/>Assault boats - boats can be requisitioned (in their disassembled form) from the Misc. category. These will appear as support boxes next to the station. support boxes are ONLY used to represent disassembled assault boats."
 								]
 							];
 player createDiaryRecord	[
@@ -83,21 +76,7 @@ player createDiaryRecord	[
 								"missionMechanics",
 								[
 									"Resources",
-									"The crux of this map is the use of a resource system. Equipment and vehicles will all cost certain resources to requisition and maintain. The resources and their procurement are listed below<br/><br/>Logistics - This resources is accumulated through the accomplishment of missions and through the stabalization of VOLATILE regions. There is no other way to gain logistics.<br/><br/>Fuel/Supplies - These resources are ONLY aquired through periodic (approx. every 2 hrs) supply transports from offshore. Manage these resources wisely. You can increase the amount you get by completing objectives in the main AO."
-								]
-							];
-player createDiaryRecord	[
-								"missionMechanics",
-								[
-									"Menu Stability",
-									"Many menus were added to this map. To ensure that everything functions as intended it is highly recommended that you do not have many people accessing menus all at once, and that you do not press buttons spastically. There should not be any issues, but i thought i would mention this just to make everyone aware."
-								]
-							];
-player createDiaryRecord	[
-								"missionMechanics",
-								[
-									"Feedback",
-									"Where applicable, feedback is greatly appreciated. 'It is good' and 'It is bad' are not examples of informative feedback, i do not care how critical you are, but i need to know specifically WHY you hold the opinion that you do. Key areas where feedback is most needed are listed below.<br/><br/>Difficulty - The overall difficulty of the enemy and the missions is very important from both a FPS and a balance standpoint. The mission utilizes a difficulty scaling system that attempts to alter the difficulty based on the specific number of people who are playing. Considering i can only test by myself, it is important that i know how difficult the mission is with 'x' amount of players.<br/><br/>Resources - I am intentionally limiting your capabilities via a resource system, this resource system is not intended to restrict what you have access to but rather restrict you only if the resources are not managed well. It is intended to have you gain equipment and vehicles the longer you progress. Feedback on the effectiveness of these intentions would be good."
+									"Resources are used in this game mode to add a system of gear/equipment progression, and to punish players for losing vehicles and equipment in the field. Resource types are listed below.<br/><br/>Logistics Points- This resources is accumulated through the accomplishment of missions and through the stabalization of VOLATILE regions.<br/><br/>Supplies - A small set amount of supplies are gained with each resupply helicopter. Additional supplies can be redirected by HQ if you accomplish enough objectives (through main AO's).<br/><br/>Fuel - This resource is only provided by each resupply helicopter."
 								]
 							];
 player createDiaryRecord	[
@@ -118,7 +97,7 @@ player createDiaryRecord	[
 	
 	sleep 60;
 	
-	["(4.1.7c)<br/>2017-08-21", "Latest patch date"] call FF7_fnc_formatHint;
+	["(4.1.7c)<br/>2017-08-22", "Latest patch date"] call FF7_fnc_formatHint;
 };
 
 // ---------- Run only on player... ----------

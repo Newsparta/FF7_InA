@@ -199,13 +199,13 @@ gearItemChange =
 				case 8:
 				{
 					// ANPRC 152 Radio
-					Multiplier = 20;
+					Multiplier = 40;
 				};
 				
 				case 9:
 				{
 					// RT-1523G Radio
-					Multiplier = 40;
+					Multiplier = 60;
 				};
 				
 				case 10:
@@ -217,43 +217,43 @@ gearItemChange =
 				case 11:
 				{
 					// Compass
-					Multiplier = 1;
+					Multiplier = 20;
 				};
 				
 				case 12:
 				{
 					// GPS
-					Multiplier = 50;
+					Multiplier = 60;
 				};
 				
 				case 13:
 				{
 					// Watch
-					Multiplier = 1;
+					Multiplier = 0.1;
 				};
 				
 				case 14:
 				{
 					// Binocular
-					Multiplier = 1;
+					Multiplier = 20;
 				};
 				
 				case 15:
 				{
 					// Rangefinder
-					Multiplier = 50;
+					Multiplier = 60;
 				};
 				
 				case 16:
 				{
 					// Laser Designator
-					Multiplier = 50;
+					Multiplier = 60;
 				};
 				
 				case 17:
 				{
 					// NVG's
-					Multiplier = 50;
+					Multiplier = 60;
 				};
 				
 				case 18:
@@ -543,13 +543,13 @@ gearItemChange =
 				case 8:
 				{
 					// ANPRC 152 Radio
-					Multiplier = 20;
+					Multiplier = 40;
 				};
 				
 				case 9:
 				{
 					// RT-1523G Radio
-					Multiplier = 40;
+					Multiplier = 60;
 				};
 				
 				case 10:
@@ -561,43 +561,43 @@ gearItemChange =
 				case 11:
 				{
 					// Compass
-					Multiplier = 1;
+					Multiplier = 20;
 				};
 				
 				case 12:
 				{
 					// GPS
-					Multiplier = 50;
+					Multiplier = 60;
 				};
 				
 				case 13:
 				{
 					// Watch
-					Multiplier = 1;
+					Multiplier = 0.1;
 				};
 				
 				case 14:
 				{
 					// Binocular
-					Multiplier = 1;
+					Multiplier = 20;
 				};
 				
 				case 15:
 				{
 					// Rangefinder
-					Multiplier = 50;
+					Multiplier = 60;
 				};
 				
 				case 16:
 				{
 					// Laser Designator
-					Multiplier = 50;
+					Multiplier = 60;
 				};
 				
 				case 17:
 				{
 					// NVG's
-					Multiplier = 50;
+					Multiplier = 60;
 				};
 				
 				case 18:
@@ -916,7 +916,7 @@ gearRequisition =
 				
 				case 15:
 				{
-					_item = "Rangefinder";
+					_item = "ACE_VectorDay";
 					_itemType = "other";
 					call itemCostCheck;
 				};
@@ -1312,7 +1312,7 @@ gearRequisition =
 				
 				case 15:
 				{
-					_item = "Rangefinder";
+					_item = "ACE_VectorDay";
 					_itemType = "other";
 					call itemCostCheck;
 				};

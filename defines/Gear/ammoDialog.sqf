@@ -2150,6 +2150,7 @@ switch (baseType) do {
 			"7.62mm 50Rnd Belt",
 			"7.62mm 20Rnd Magazine",
 			"7.62mm 5Rnd Magazine",
+			".50BMG 10Rnd Magazine",
 			"FFV751 HEAT",
 			"FFV502 HEDP",
 			"FFV441 HE",

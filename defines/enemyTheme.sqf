@@ -69,114 +69,108 @@
 	// ---------- CAR ----------
 
 	INS_CAR_OPF = [
-		"LOP_NAPA_Landrover_M2",
 		"I_G_Offroad_01_armed_F"
 	];
-	INS_CAR_OPF_TEX = true;
-	INS_CAR_OPF_ANI = true;
+	INS_CAR_OPF_TEX = nil;
+	INS_CAR_OPF_ANI = nil;
 	INS_CAR_BLU = [
-		"LOP_NAPA_Landrover_M2",
 		"I_G_Offroad_01_armed_F"
 	];
-	INS_CAR_BLU_TEX = true;
-	INS_CAR_BLU_ANI = true;
+	INS_CAR_BLU_TEX = nil;
+	INS_CAR_BLU_ANI = nil;
 
 	// ---------- CAR UNARMED ----------
 
 	INS_CARU_OPF = [
-		"LOP_CDF_Offroad"
+		"I_G_Offroad_01_F"
 	];
-	INS_CARU_OPF_TEX = ["LOP_CDF",1];
-	INS_CARU_OPF_ANI = ["HideBumper1",0,"HideConstruction",0,"Proxy",0,"Destruct",0];
+	INS_CARU_OPF_TEX = nil;
+	INS_CARU_OPF_ANI = nil;
 	INS_CARU_BLU = [
-		"LOP_CDF_Offroad"
+		"I_G_Offroad_01_F"
 	];
-	INS_CARU_BLU_TEX = ["LOP_CDF",1];
-	INS_CARU_BLU_ANI = ["HideBumper1",0,"HideConstruction",0,"Proxy",0,"Destruct",0];
+	INS_CARU_BLU_TEX = nil;
+	INS_CARU_BLU_ANI = nil;
 
 	// ---------- MRAP ----------
 
 	INS_MRAP_OPF = [
-		"rhsgref_BRDM2",
-		"rhsgref_BRDM2_HQ"
+		"rhsgref_BRDM2"
 	];
-	INS_MRAP_OPF_TEX = true;
+	INS_MRAP_OPF_TEX = ["3tone",1];
 	INS_MRAP_OPF_ANI = true;
 	INS_MRAP_BLU = [
 		"rhsusf_m1025_w_m2"
 	];
-	INS_MRAP_BLU_TEX = ["Olive",1];
-	INS_MRAP_BLU_ANI = ["hide_A2_Parts",1];
+	INS_MRAP_BLU_TEX = nil;
+	INS_MRAP_BLU_ANI = ["hide_A2_Parts",1,"Hide_A2Bumper",1];
 	
 	// ---------- SPAAG ----------
 
 	INS_SPAAG_OPF = [
-		"rhsgref_cdf_ural_Zu23"
+		"rhs_gaz66_zu23_vmf"
 	];
-	INS_SPAAG_OPF_TEX = true;
+	INS_SPAAG_OPF_TEX = ["camo",1];
 	INS_SPAAG_OPF_ANI = true;
 	INS_SPAAG_BLU = [
-		"rhsgref_cdf_ural_Zu23"
+		"rhs_gaz66_zu23_vmf"
 	];
-	INS_SPAAG_BLU_TEX = true;
+	INS_SPAAG_BLU_TEX = ["camo",1];
 	INS_SPAAG_BLU_ANI = true;
 
 	// ---------- APC ----------
 
 	INS_APC_OPF = [
-		"rhsgref_cdf_btr60",
-		"rhsgref_cdf_btr70"
+		"rhs_btr60_vmf"
 	];
-	INS_APC_OPF_TEX = true;
+	INS_APC_OPF_TEX = ["3tone",1];
 	INS_APC_OPF_ANI = true;
 	INS_APC_BLU = [
-		"rhsusf_m113_usarmy"
+		"rhsusf_m113_usarmy_M240"
 	];
-	INS_APC_BLU_TEX = ["Olive",1];
+	INS_APC_BLU_TEX = nil;
 	INS_APC_BLU_ANI = ["IFF_Panels_Hide",1];
 
 	// ---------- IFV ----------
 
 	INS_IFV_OPF = [
-		"rhsgref_cdf_bmp1",
-		"rhsgref_cdf_bmp2"
+		"rhs_bmd2m"
 	];
-	INS_IFV_OPF_TEX = true;
-	INS_IFV_OPF_ANI = ["wood_1_unhide",1,"cargoHandler1",0];
+	INS_IFV_OPF_TEX = ["camo1",1];
+	INS_IFV_OPF_ANI = true;
 	INS_IFV_BLU = [
-		"RHS_M2A2_wd"
+		"rhsusf_m113_usarmy"
 	];
-	INS_IFV_BLU_TEX = ["Olive",1];
+	INS_IFV_BLU_TEX = nil;
 	INS_IFV_BLU_ANI = ["IFF_Panels_Hide",1];
 
 	// ---------- TANK ----------
 
 	INS_TANK_OPF = [
-		"rhsgref_cdf_t72ba_tv",
-		"rhsgref_cdf_t72bb_tv",
-		"rhsgref_cdf_t80bv_tv",
-		"rhsgref_cdf_t80b_tv"
+		"rhs_sprut_vdv",
+		"rhs_bmd4_vdv",
+		"rhs_t90a_tv"
 	];
 	INS_TANK_OPF_TEX = true;
 	INS_TANK_OPF_ANI = true;
 	INS_TANK_BLU = [
 		"rhsusf_m1a1aimwd_usarmy"
 	];
-	INS_TANK_BLU_TEX = ["Olive",1];
+	INS_TANK_BLU_TEX = nil;
 	INS_TANK_BLU_TEX = ["IFF_Panels_Hide",1,"Miles_Hide",1];
 
 	// ---------- TRUCK ----------
 
 	INS_TRUCK_OPF = [
-		"rhsgref_cdf_ural_open"
+		"I_G_Van_01_transport_F"
 	];
-	INS_TRUCK_OPF_TEX = true;
-	INS_TRUCK_OPF_ANI = true;
+	INS_TRUCK_OPF_TEX = nil;
+	INS_TRUCK_OPF_ANI = nil;
 	INS_TRUCK_BLU = [
-		"rhsgref_cdf_ural_open"
+		"I_G_Van_01_transport_F"
 	];
-	INS_TRUCK_BLU_TEX = true;
-	INS_TRUCK_BLU_ANI = true;
+	INS_TRUCK_BLU_TEX = nil;
+	INS_TRUCK_BLU_ANI = nil;
 	
 // ---------- AIR ----------
 
@@ -284,6 +278,15 @@
 	INS_MG_BLU =
 	[
 		["LMG_03_F","200Rnd_556x45_Box_F"]
+	];
+
+	INS_SNIPER_OPF =
+	[
+		["rhs_weap_t5000","rhs_5Rnd_338lapua_t5000"]
+	];
+	INS_SNIPER_BLU =
+	[
+		["rhs_weap_m24sws_blk","rhsusf_5Rnd_762x51_m118_special_Mag"]
 	];
 	
 	INS_AT_OPF = 

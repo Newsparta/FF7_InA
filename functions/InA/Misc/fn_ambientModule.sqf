@@ -129,6 +129,14 @@ while {true} do {
 						1
 					] spawn InA_fnc_insLightInfantryAttack;
 				};
+				if (random 100 < (0.01 + (0.01 * _ambMult))) then {
+					[
+						_loc, 
+						_rad + 500, 
+						(_rad/2), 
+						1
+					] spawn InA_fnc_insSniperAttack;
+				};
 				if (random 100 < (0.025 + (0.025 * _ambMult))) then {
 					[
 						_loc, 

@@ -24,7 +24,7 @@ Author:
 
 // ---------- PARAMETERS ----------
 
-params ["_units", ["_aimMin", 0.10, [0]], ["_aimMax", 0.20, [0]]];
+params ["_units", ["_aimMin", 0.10, [0]], ["_aimMax", 0.25, [0]]];
 private ["_aimingShake","_aimingSpeed","_endurance","_spotDistance","_spotTime","_courage","_reloadSpeed",
 	"_commanding","_general","_unit","_num","_choice"];
 

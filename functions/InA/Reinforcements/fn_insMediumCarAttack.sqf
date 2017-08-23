@@ -82,10 +82,10 @@ sleep _delay;
 		] call BIS_fnc_spawnGroup;
 			((units _group) select 0) assignAsDriver _car;
 			((units _group) select 1) assignAsGunner _car;
-			((units _group) select 2) assignAsCommander _car;
+			((units _group) select 2) assignAsCargo _car;
 			((units _group) select 0) moveInDriver _car;
 			((units _group) select 1) moveInGunner _car;
-			((units _group) select 2) moveInCommander _car;
+			((units _group) select 2) moveInCargo _car;
 		
 	_wp = _group addWaypoint [[_center, 0, _wpMax, 1, 0, 20, 0] call BIS_fnc_findSafePos, 0];
 	_wp setWaypointType "GUARD";

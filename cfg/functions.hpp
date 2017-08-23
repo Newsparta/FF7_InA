@@ -39,6 +39,7 @@ class InA
 	{
 		
 		// Reinforcements
+		class insSniperAttack {file = "functions\InA\Reinforcements\fn_insSniperAttack.sqf";};
 		class genLightCarAttack {file = "functions\InA\Reinforcements\fn_genLightCarAttack.sqf";};
 		class insLightCarAttack {file = "functions\InA\Reinforcements\fn_insLightCarAttack.sqf";};
 		class insMediumCarAttack {file = "functions\InA\Reinforcements\fn_insMediumCarAttack.sqf";};
@@ -69,6 +70,7 @@ class InA
 		class ambientEntrance {file = "functions\InA\Misc\fn_ambientEntrance.sqf";};
 		class indGarrison {file = "functions\InA\Misc\fn_indGarrison.sqf";};
 		class insCustomize {file = "functions\InA\Misc\fn_insCustomize.sqf";};
+		class insSniper {file = "functions\InA\Misc\fn_insSniper.sqf";};
 		class agentTakeCover {file = "functions\InA\Misc\fn_agentTakeCover.sqf";};
 		class agentUrbanPatrol {file = "functions\InA\Misc\fn_agentUrbanPatrol.sqf";};
 		class taskUrbanPatrol {file = "functions\InA\Misc\fn_taskUrbanPatrol.sqf";};

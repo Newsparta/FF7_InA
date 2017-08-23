@@ -482,7 +482,7 @@ class InA_Warning_Dialog
 			w = 0.0516557 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[[InA_Warning_ID], 'defines\Themes\baseHandler.sqf'] remoteExec ['execVM', 2]; closeDialog 0;";
+			action = "[[InA_Warning_ID], 'defines\baseHandler.sqf'] remoteExec ['execVM', 2]; closeDialog 0;";
 		};
 		class InA_HQ_Warning_Dialog_Header: RscFrame
 		{

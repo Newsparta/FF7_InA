@@ -62,6 +62,8 @@ switch (_id) do
 		];
 
 		call themeSelect;
+
+		[] call InA_fnc_defaultDB;
 	};
 	
 	case 1:
@@ -121,6 +123,8 @@ switch (_id) do
 		];
 
 		call themeSelect;
+
+		[] call InA_fnc_defaultDB;
 	};
 	
 	case 2:
@@ -175,6 +179,8 @@ switch (_id) do
 		];
 
 		call themeSelect;
+
+		[] call InA_fnc_defaultDB;
 	};
 	
 	case 3:
@@ -229,6 +235,8 @@ switch (_id) do
 		];
 
 		call themeSelect;
+
+		[] call InA_fnc_defaultDB;
 	};
 	
 	case 4:
@@ -285,5 +293,7 @@ switch (_id) do
 		];
 
 		call themeSelect;
+
+		[] call InA_fnc_defaultDB;
 	};
 };

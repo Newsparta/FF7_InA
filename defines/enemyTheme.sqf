@@ -30,15 +30,14 @@
 	// ---------- STATICS ----------
 
 	INS_STATIC_HMG_OPF = [
-		"rhsgref_cdf_DSHKM"
+		"RHS_M2StaticMG_D"
 	];
 	INS_STATIC_HMG_BLU = [
-		"RHS_M2StaticMG_WD"
+		"RHS_M2StaticMG_D"
 	];
 	
 	INS_STATIC_AT_OPF = [
-		"rhsgref_cdf_SPG9M",
-		"rhs_Kornet_9M133_2_vmf"
+		"rhsgref_cdf_SPG9M"
 	];
 	INS_STATIC_AT_BLU = [
 		"RHS_TOW_TriPod_WD"
@@ -60,10 +59,10 @@
 	];
 	
 	INS_STATIC_AAA_OPF = [
-		"rhsgref_cdf_zsu234"
+		"rhs_zsu234_aa"
 	];
 	INS_STATIC_AAA_BLU = [
-		"rhsgref_cdf_zsu234"
+		"rhs_zsu234_aa"
 	];
 	
 	// ---------- CAR ----------

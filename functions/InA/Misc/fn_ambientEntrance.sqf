@@ -56,7 +56,7 @@ if (_instability >= 0.5) then {
 
 if (_instability >= 0.9) then {
 	
-	_pos = getPosATL (selectRandom (nearestObjects [_loc, ["building"], _rad]));
+	_pos = getPosATL (selectRandom (nearestTerrainObjects [_loc,["HOUSE","HOSPITAL","FUELSTATION"],_rad]));
 	[_pos, 50, 0.05] call InA_fnc_indGarrison;
 
 	// ---------- SPAAG ----------

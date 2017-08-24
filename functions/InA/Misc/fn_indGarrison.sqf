@@ -32,13 +32,12 @@ params ["_loc", ["_rad", 100, [0]], ["_garrisonPercent", 0.05, [0]], ["_staticPe
 // ---------- Init ----------
 private ["_buildings","_array","_bldg","_group","_pos","_dir","_obj","_car"];
 
-_buildings = nearestObjects [
+_buildings = nearestTerrainObjects [
 	_loc, 
 	[
 		"HOUSE",
-		"BUNKER",
-		"FORTRESS",
-		"LIGHTHOUSE"
+		"HOSPITAL",
+		"FUELSTATION"
 	], 
 	_rad
 ];

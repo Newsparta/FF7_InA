@@ -38,6 +38,10 @@ weaponCostCheck =
 			{
 				[launcherCrate, [_item, Amount]] remoteExec ["addWeaponCargoGlobal", 2];
 			};
+			case "Backpack":
+			{
+				[GearDump, [_item, Amount]] remoteExec ["addBackpackCargoGlobal", 2];
+			};
 		};
 		
 		LogM = (LogM - Cost);
@@ -187,6 +191,54 @@ gearItemChange =
 					// FIM-92F
 					Multiplier = 100;
 				};
+
+				case 21:
+				{
+					// M2 Tripod
+					Multiplier = 10;
+				};
+
+				case 22:
+				{
+					// M2 Gunbag
+					Multiplier = 40;
+				};
+
+				case 23:
+				{
+					// Mk19 Tripod
+					Multiplier = 10;
+				};
+
+				case 24:
+				{
+					// Mk19 Gunbag
+					Multiplier = 90;
+				};
+
+				case 25:
+				{
+					// TOW Tripod
+					Multiplier = 10;
+				};
+
+				case 26:
+				{
+					// TOW Gunbag
+					Multiplier = 90;
+				};
+
+				case 27:
+				{
+					// M252 Tripod
+					Multiplier = 10;
+				};
+
+				case 28:
+				{
+					// M252 Gunbag
+					Multiplier = 40;
+				};
 			};
 		};
 		
@@ -305,6 +357,54 @@ gearItemChange =
 				{
 					// FIM-92F
 					Multiplier = 100;
+				};
+
+				case 19:
+				{
+					// M2 Tripod
+					Multiplier = 10;
+				};
+
+				case 20:
+				{
+					// M2 Gunbag
+					Multiplier = 40;
+				};
+
+				case 21:
+				{
+					// Mk19 Tripod
+					Multiplier = 10;
+				};
+
+				case 22:
+				{
+					// Mk19 Gunbag
+					Multiplier = 90;
+				};
+
+				case 23:
+				{
+					// TOW Tripod
+					Multiplier = 10;
+				};
+
+				case 24:
+				{
+					// TOW Gunbag
+					Multiplier = 90;
+				};
+
+				case 25:
+				{
+					// M252 Tripod
+					Multiplier = 10;
+				};
+
+				case 26:
+				{
+					// M252 Gunbag
+					Multiplier = 40;
 				};
 			};
 		};
@@ -438,6 +538,54 @@ gearItemChange =
 					// TITAN AA
 					Multiplier = 100;
 				};
+
+				case 21:
+				{
+					// M2 Tripod
+					Multiplier = 10;
+				};
+
+				case 22:
+				{
+					// M2 Gunbag
+					Multiplier = 40;
+				};
+
+				case 23:
+				{
+					// Mk19 Tripod
+					Multiplier = 10;
+				};
+
+				case 24:
+				{
+					// Mk19 Gunbag
+					Multiplier = 90;
+				};
+
+				case 25:
+				{
+					// TOW Tripod
+					Multiplier = 10;
+				};
+
+				case 26:
+				{
+					// TOW Gunbag
+					Multiplier = 90;
+				};
+
+				case 27:
+				{
+					// M252 Tripod
+					Multiplier = 10;
+				};
+
+				case 28:
+				{
+					// M252 Gunbag
+					Multiplier = 40;
+				};
 			};
 		};
 		
@@ -528,6 +676,54 @@ gearItemChange =
 					// TITAN AA
 					Multiplier = 100;
 				};
+
+				case 21:
+				{
+					// M2 Tripod
+					Multiplier = 10;
+				};
+
+				case 22:
+				{
+					// M2 Gunbag
+					Multiplier = 40;
+				};
+
+				case 23:
+				{
+					// Mk19 Tripod
+					Multiplier = 10;
+				};
+
+				case 24:
+				{
+					// Mk19 Gunbag
+					Multiplier = 90;
+				};
+
+				case 25:
+				{
+					// TOW Tripod
+					Multiplier = 10;
+				};
+
+				case 26:
+				{
+					// TOW Gunbag
+					Multiplier = 90;
+				};
+
+				case 27:
+				{
+					// M252 Tripod
+					Multiplier = 10;
+				};
+
+				case 28:
+				{
+					// M252 Gunbag
+					Multiplier = 40;
+				};
 			};
 		};
 		
@@ -616,6 +812,54 @@ gearItemChange =
 				{
 					// Igla
 					Multiplier = 100;
+				};
+
+				case 14:
+				{
+					// NSV Tripod
+					Multiplier = 10;
+				};
+
+				case 15:
+				{
+					// NSV Gunbag
+					Multiplier = 40;
+				};
+
+				case 16:
+				{
+					// AGS30 Tripod
+					Multiplier = 10;
+				};
+
+				case 17:
+				{
+					// AGS30 Gunbag
+					Multiplier = 90;
+				};
+
+				case 18:
+				{
+					// Kornet Tripod
+					Multiplier = 10;
+				};
+
+				case 19:
+				{
+					// Kornet Gunbag
+					Multiplier = 90;
+				};
+
+				case 20:
+				{
+					// Podnos Tripod
+					Multiplier = 10;
+				};
+
+				case 21:
+				{
+					// Podnos Gunbag
+					Multiplier = 40;
 				};
 			};
 		};
@@ -775,6 +1019,62 @@ gearRequisition =
 					_itemType = "launcher";
 					call weaponCostCheck;
 				};
+
+				case 21:
+				{
+					_item = "RHS_M2_Tripod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 22:
+				{
+					_item = "RHS_M2_Gun_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 23:
+				{
+					_item = "RHS_Mk19_Tripod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 24:
+				{
+					_item = "RHS_Mk19_Gun_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 25:
+				{
+					_item = "rhs_TOW_Tripod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 26:
+				{
+					_item = "rhs_Tow_Gun_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 27:
+				{
+					_item = "rhs_M252_Bipod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 28:
+				{
+					_item = "rhs_M252_Gun_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
 			};
 		};
 		
@@ -911,6 +1211,62 @@ gearRequisition =
 				{
 					_item = "rhs_weap_fim92";
 					_itemType = "launcher";
+					call weaponCostCheck;
+				};
+
+				case 19:
+				{
+					_item = "RHS_M2_Tripod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 20:
+				{
+					_item = "RHS_M2_Gun_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 21:
+				{
+					_item = "RHS_Mk19_Tripod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 22:
+				{
+					_item = "RHS_Mk19_Gun_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 23:
+				{
+					_item = "rhs_TOW_Tripod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 24:
+				{
+					_item = "rhs_Tow_Gun_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 25:
+				{
+					_item = "rhs_M252_Bipod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 26:
+				{
+					_item = "rhs_M252_Gun_Bag";
+					_itemType = "Backpack";
 					call weaponCostCheck;
 				};
 			};
@@ -1066,6 +1422,62 @@ gearRequisition =
 					_itemType = "launcher";
 					call weaponCostCheck;
 				};
+
+				case 21:
+				{
+					_item = "RHS_M2_Tripod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 22:
+				{
+					_item = "RHS_M2_Gun_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 23:
+				{
+					_item = "RHS_Mk19_Tripod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 24:
+				{
+					_item = "RHS_Mk19_Gun_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 25:
+				{
+					_item = "rhs_TOW_Tripod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 26:
+				{
+					_item = "rhs_Tow_Gun_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 27:
+				{
+					_item = "rhs_M252_Bipod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 28:
+				{
+					_item = "rhs_M252_Gun_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
 			};
 		};
 		case "AAF":
@@ -1167,6 +1579,62 @@ gearRequisition =
 				{
 					_item = "launch_B_Titan_tna_F";
 					_itemType = "launcher";
+					call weaponCostCheck;
+				};
+
+				case 14:
+				{
+					_item = "RHS_M2_Tripod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 15:
+				{
+					_item = "RHS_M2_Gun_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 16:
+				{
+					_item = "RHS_Mk19_Tripod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 17:
+				{
+					_item = "RHS_Mk19_Gun_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 18:
+				{
+					_item = "rhs_TOW_Tripod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 19:
+				{
+					_item = "rhs_Tow_Gun_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 20:
+				{
+					_item = "rhs_M252_Bipod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 21:
+				{
+					_item = "rhs_M252_Gun_Bag";
+					_itemType = "Backpack";
 					call weaponCostCheck;
 				};
 			};
@@ -1271,6 +1739,62 @@ gearRequisition =
 					_itemType = "launcher";
 					call weaponCostCheck;
 				};
+
+				case 14:
+				{
+					_item = "RHS_NSV_Tripod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 15:
+				{
+					_item = "RHS_NSV_Gun_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 16:
+				{
+					_item = "RHS_AGS30_Tripod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 17:
+				{
+					_item = "RHS_AGS30_Gun_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 18:
+				{
+					_item = "RHS_Kornet_Tripod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 19:
+				{
+					_item = "RHS_Kornet_Gun_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 20:
+				{
+					_item = "RHS_Podnos_Bipod_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
+
+				case 21:
+				{
+					_item = "RHS_Podnos_Gun_Bag";
+					_itemType = "Backpack";
+					call weaponCostCheck;
+				};
 			};
 		};
 	};
@@ -1302,7 +1826,15 @@ switch (baseType) do {
 			"M72A7",
 			"M3 MAAWS",
 			"FGM-148 Javelin",
-			"FIM-92F Stinger"
+			"FIM-92F Stinger",
+			"M2 Tripod",
+			"M2 Gunbag",
+			"Mk19 Tripod",
+			"Mk19 Gunbag",
+			"TOW Tripod",
+			"TOW Gunbag",
+			"M252 Bipod",
+			"M252 Gunbag"
 		];
 	};
 	
@@ -1327,7 +1859,15 @@ switch (baseType) do {
 			"M72A7",
 			"M3 MAAWS",
 			"FGM-148 Javelin",
-			"FIM-92F Stinger"
+			"FIM-92F Stinger",
+			"M2 Tripod",
+			"M2 Gunbag",
+			"Mk19 Tripod",
+			"Mk19 Gunbag",
+			"TOW Tripod",
+			"TOW Gunbag",
+			"M252 Bipod",
+			"M252 Gunbag"
 		];
 	};
 	
@@ -1354,7 +1894,15 @@ switch (baseType) do {
 			"M72A7",
 			"M3 MAAWS",
 			"TITAN AT",
-			"TITAN AA"
+			"TITAN AA",
+			"M2 Tripod",
+			"M2 Gunbag",
+			"Mk19 Tripod",
+			"Mk19 Gunbag",
+			"TOW Tripod",
+			"TOW Gunbag",
+			"M252 Bipod",
+			"M252 Gunbag"
 		];	
 	};
 	
@@ -1374,7 +1922,15 @@ switch (baseType) do {
 			"M136 (HP)",
 			"M72A7",
 			"TITAN AT",
-			"TITAN AA"
+			"TITAN AA",
+			"M2 Tripod",
+			"M2 Gunbag",
+			"Mk19 Tripod",
+			"Mk19 Gunbag",
+			"TOW Tripod",
+			"TOW Gunbag",
+			"M252 Bipod",
+			"M252 Gunbag"
 		];	
 	};
 	
@@ -1394,7 +1950,15 @@ switch (baseType) do {
 			"RPG-26",
 			"RShG-2",
 			"RPG-7",
-			"Igla"
+			"Igla",
+			"NSV Tripod",
+			"NSV Gunbag",
+			"AGS30 Tripod",
+			"AGS30 Gunbag",
+			"Kornet Tripod",
+			"Kornet Gunbag",
+			"Podnos Bipod",
+			"Podnos Gunbag"
 		];	
 	};
 };

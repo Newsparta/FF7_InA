@@ -82,7 +82,7 @@ if (_command == "build") then {
 					WEST,
 					_troops
 				] call BIS_fnc_spawnGroup;
-				[_group, _pos, 50] call BIS_fnc_taskDefend;
+				[_group, _pos, 50] call BIS_fnc_taskPatrol;
 				[units _group] call InA_fnc_bluCustomize;
 
 				while {true} do {

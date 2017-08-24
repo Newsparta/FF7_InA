@@ -36,7 +36,10 @@ if (spotted) then {
 		_loc, 
 		_landRad, 
 		(_landRad/4), 
-		(1 + ((count (call BIS_fnc_listPlayers)) * 0.1))
+		(1 + ((count (call BIS_fnc_listPlayers)) * 0.1)),
+		0,
+		"COMBAT",
+		"FULL"
 	] spawn InA_fnc_insLightInfantryAttack;
 
 	if (random 100 < (20 + (10 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {

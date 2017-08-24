@@ -34,9 +34,15 @@ if (_state == "lock") then {
 	_houses = nearestTerrainObjects [_loc, ["HOUSE"], _rad];
 
 	{
+		
+		for [{_i=1}, {_i < 11}, {_i = _i + 1}] do {
+	
+			_x animate [format ["Door_%1_rot", _i], 0];
+		};
+
 		if (floor (random 100) < (_pct * 100)) then {
 			for [{_i=0}, {_i < 10}, {_i = _i + 1}] do {
-				_x setVariable [format ['bis_disabled_Door_%1', _i],1,true];
+				_house setVariable [format ['bis_disabled_Door_%1', _i],1,true];
 			};
 		};
 

@@ -60,6 +60,7 @@ class InA
 		class diversity {file = "defines\fn_diversity.sqf";};
 		
 		// Misc.
+		class bluCustomize {file = "functions\InA\Misc\fn_bluCustomize.sqf";};
 		class targetResponse {file = "functions\InA\Misc\fn_targetResponse.sqf";};
 		class defaultDB {file = "functions\InA\Misc\fn_defaultDB.sqf";};
 		class save {file = "functions\InA\Misc\fn_save.sqf";};

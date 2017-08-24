@@ -37,7 +37,7 @@ baseType = "";
 InA_sitrep = true;
 
 InA_fob_location = [0,0,0];
-InA_fob_array = [];
+fobPlaced = false;
 
 _null = execVM "functions\InA\Init\isGarageClear.sqf";
 _null = execVM "functions\InA\Init\resourceHandler.sqf";

@@ -34,7 +34,9 @@ params ["_cen",["_max", 2000, [0]]];
 } forEach allUnits - (allPlayers - entities "HeadlessClient_F"); 
 	
 { 
-	deleteVehicle _x;
+	if (_x distance InA_fob_location > 100) then {
+		deleteVehicle _x;
+	};
 } forEach ((nearestObjects [_cen, 
 	[
 		"StaticWeapon",
@@ -45,4 +47,4 @@ params ["_cen",["_max", 2000, [0]]];
 		"HELICOPTER",
 		"TANK",
 		"CAManBase"
-	], _max]) - playerVehicles - InA_fob_array);
+	], _max]) - playerVehicles);

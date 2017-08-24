@@ -95,12 +95,12 @@ private ["_aimingShake","_aimingSpeed","_endurance","_spotDistance","_spotTime",
 		
 			_choice = INS_MG_OPF call BIS_fnc_selectRandom;
 			_x addBackpack (INS_BACKPACKS call BIS_fnc_selectRandom);
-			for "_i" from 1 to 6 do {_x addMagazine (_choice select 1);};
+			for "_i" from 1 to 3 do {_x addMagazine (_choice select 1);};
 			_x addWeapon (_choice select 0);
 		} else {
 			_choice = INS_MG_BLU call BIS_fnc_selectRandom;
 			_x addBackpack (INS_BACKPACKS call BIS_fnc_selectRandom);
-			for "_i" from 1 to 6 do {_x addMagazine (_choice select 1);};
+			for "_i" from 1 to 3 do {_x addMagazine (_choice select 1);};
 			_x addWeapon (_choice select 0);
 		};
 	};

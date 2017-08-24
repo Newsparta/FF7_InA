@@ -217,7 +217,7 @@ gearItemChange =
 				case 11:
 				{
 					// Compass
-					Multiplier = 20;
+					Multiplier = 10;
 				};
 				
 				case 12:
@@ -331,25 +331,25 @@ gearItemChange =
 				case 30:
 				{
 					// AFG Grip
-					Multiplier = 1;
+					Multiplier = 0.1;
 				};
 				
 				case 31:
 				{
 					// Vertical Grip
-					Multiplier = 1;
+					Multiplier = 0.1;
 				};
 				
 				case 32:
 				{
 					// Laser Pointer
-					Multiplier = 10;
+					Multiplier = 1;
 				};
 				
 				case 33:
 				{
 					// Flashlight
-					Multiplier = 1;
+					Multiplier = 0.1;
 				};
 				
 				case 34:
@@ -561,7 +561,7 @@ gearItemChange =
 				case 11:
 				{
 					// Compass
-					Multiplier = 20;
+					Multiplier = 10;
 				};
 				
 				case 12:
@@ -657,19 +657,19 @@ gearItemChange =
 				case 27:
 				{
 					// Vertical Grip
-					Multiplier = 1;
+					Multiplier = 0.1;
 				};
 				
 				case 28:
 				{
 					// Laser Pointer
-					Multiplier = 10;
+					Multiplier = 1;
 				};
 				
 				case 29:
 				{
 					// Flashlight
-					Multiplier = 1;
+					Multiplier = 0.1;
 				};
 				
 				case 30:

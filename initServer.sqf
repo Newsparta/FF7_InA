@@ -192,7 +192,7 @@ themeSelect =
 
 	// ---------- GEAR BASICS ----------
 
-	call compile preprocessFileLineNumbers "functions\InA\Gear\gearWipe.sqf";
+	call compile preprocessFileLineNumbers "defines\Gear\gearWipe.sqf";
 };
 
 ///////////////////////////////////////////

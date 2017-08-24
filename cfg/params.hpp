@@ -61,3 +61,11 @@ class mortarTimeout
 	texts[]  = {"5 min.", "10 min.", "15 min.", "30 min.", "45 min.", "1 hour"};
 	default  = 3600;
 };
+
+class fobDelay
+{
+	title    = "FOB Delay";
+	values[] = {300, 600, 900, 1800, 2700, 3600};
+	texts[]  = {"5 min.", "10 min.", "15 min.", "30 min.", "45 min.", "1 hour"};
+	default  = 3600;
+};

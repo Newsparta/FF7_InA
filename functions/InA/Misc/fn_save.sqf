@@ -6,29 +6,34 @@ _export pushBack ([] call InA_fnc_regionCheck);
 
 // ---------- Armory inventory (1-10) ----------
 
-_launcherInventory = [];
-_explosiveInventory = [];
-_ammoInventory = [];
-_weaponInventory1 = [];
-_weaponInventory2 = [];
-_grenadeInventory = [];
-_equipmentInventory = [];
-_medicalInventory = [];
-_miscInventory = [];
-_dumpInventory = [];
+_lI1 = [];
+_lI2 = [];
+_aI1 = [];
+_aI2 = [];
+_wI1 = [];
+_wI2 = [];
+_wI3 = [];
+_gI1 = [];
+_gI2 = [];
+_eI1 = [];
+_mI1 = [];
+_dI = [];
 
 _array = 
 [
-	[launcherCrate, _launcherInventory],
-	[explosiveCrate, _explosiveInventory],
-	[ammoCrate, _ammoInventory],
-	[weaponCrate, _weaponInventory1],
-	[weaponCrate_2, _weaponInventory2],
-	[grenadeCrate, _grenadeInventory],
-	[equipmentCrate, _equipmentInventory],
-	[medicalCrate, _medicalInventory],
-	[miscCrate, _miscInventory],
-	[gearDump, _dumpInventory]
+	[launcherCrate_1, _lI1],
+	[launcherCrate_2, _lI2],
+	[explosiveCrate_1, _eI1],
+	[ammoCrate_1, _aI1],
+	[ammoCrate_2, _aI2],
+	[weaponCrate_1, _wI1],
+	[weaponCrate_2, _wI2],
+	[weaponCrate_3, _wI3],
+	[grenadeCrate_1, _gI1],
+	[grenadeCrate_2, _gI2],
+	[equipmentCrate_1, _eI1],
+	[medicalCrate_1, _mI1],
+	[gearDump, _dI]
 ];
 
 {
@@ -49,16 +54,23 @@ _array =
 
 } forEach _array;
 
-_export pushBack _launcherInventory;
-_export pushBack _explosiveInventory;
-_export pushBack _ammoInventory;
-_export pushBack _weaponInventory1;
-_export pushBack _weaponInventory2;
-_export pushBack _grenadeInventory;
-_export pushBack _equipmentInventory;
-_export pushBack _medicalInventory;
-_export pushBack _miscInventory;
-_export pushBack _dumpInventory;
+_allItems = [];
+
+_allItems pushBack _lI1;
+_allItems pushBack _lI2;
+_allItems pushBack _eI1;
+_allItems pushBack _aI1;
+_allItems pushBack _aI2;
+_allItems pushBack _wI1;
+_allItems pushBack _wI2;
+_allItems pushBack _wI3;
+_allItems pushBack _gI1;
+_allItems pushBack _gI2;
+_allItems pushBack _eI1;
+_allItems pushBack _mI1;
+_allItems pushBack _dI;
+
+_export pushBack _allItems;
 
 // ---------- Logistics (11) ----------
 

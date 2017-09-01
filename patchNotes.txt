@@ -11,3 +11,4 @@
 - Civilians are less bitchy, but still dont like you taking their shit.
 - Your superiors dont want insurgent junk lying around base, dispose of it or they will.
 - Database is automatically reset on base theme selection, heed the warning.
+- Autosave every 24hrs.

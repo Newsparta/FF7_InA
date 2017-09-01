@@ -57,29 +57,34 @@ _regionData = _data select 0;
 
 // ---------- Armory data ----------
 
-_launcherInventory = (_data select 1);
-_explosiveInventory = (_data select 2);
-_ammoInventory = (_data select 3);
-_weaponInventory1 = (_data select 4);
-_weaponInventory2 = (_data select 5);
-_grenadeInventory = (_data select 6);
-_equipmentInventory = (_data select 7);
-_medicalInventory = (_data select 8);
-_miscInventory = (_data select 9);
-_dumpInventory = (_data select 10);
+_lI1 = (_data select 1 select 0);
+_lI2 = (_data select 1 select 1);
+_aI1 = (_data select 1 select 2);
+_aI2 = (_data select 1 select 3);
+_wI1 = (_data select 1 select 4);
+_wI2 = (_data select 1 select 5);
+_wI3 = (_data select 1 select 6);
+_gI1 = (_data select 1 select 7);
+_gI2 = (_data select 1 select 8);
+_eI1 = (_data select 1 select 9);
+_mI1 = (_data select 1 select 10);
+_dI = (_data select 1 select 11);
 
 _array = 
 [
-	[launcherCrate, _launcherInventory],
-	[explosiveCrate, _explosiveInventory],
-	[ammoCrate, _ammoInventory],
-	[weaponCrate, _weaponInventory1],
-	[weaponCrate_2, _weaponInventory2],
-	[grenadeCrate, _grenadeInventory],
-	[equipmentCrate, _equipmentInventory],
-	[medicalCrate, _medicalInventory],
-	[miscCrate, _miscInventory],
-	[gearDump, _dumpInventory]
+	[launcherCrate_1, _lI1],
+	[launcherCrate_2, _lI2],
+	[explosiveCrate_1, _eI1],
+	[ammoCrate_1, _aI1],
+	[ammoCrate_2, _aI2],
+	[weaponCrate_1, _wI1],
+	[weaponCrate_2, _wI2],
+	[weaponCrate_3, _wI3],
+	[grenadeCrate_1, _gI1],
+	[grenadeCrate_2, _gI2],
+	[equipmentCrate_1, _eI1],
+	[medicalCrate_1, _mI1],
+	[gearDump, _dI]
 ];
 
 {
@@ -99,7 +104,7 @@ _array =
 
 // ---------- Logistics data ----------
 
-_logisticsData = _data select 11;
+_logisticsData = _data select 2;
 
 LogV = (_logisticsData select 0);
 LogM = (_logisticsData select 1);
@@ -107,8 +112,8 @@ LogF = (_logisticsData select 2);
 
 // ---------- Vehicle data ----------
 
-_vehicleData = _data select 12;
-_utilityVehicles = _data select 13;
+_vehicleData = _data select 3;
+_utilityVehicles = _data select 4;
 
 {
 	_veh = createVehicle [(_x select 0), (_x select 2), [], 0, "CAN_COLLIDE"];

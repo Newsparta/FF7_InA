@@ -53,6 +53,16 @@ _null = execVM "functions\InA\Init\supplierCheck.sqf";
 	]
 ] spawn InA_fnc_vehicleService;
 
+// ---------- Autosave ----------
+
+[] spawn {
+
+	while {true} do {
+		sleep 86400;
+		[] call InA_fnc_save;	
+	};
+};
+
 // ---------- Parameters ----------
 	
 for [ {_i = 0}, {_i < count(paramsArray)}, {_i = _i + 1} ] do {

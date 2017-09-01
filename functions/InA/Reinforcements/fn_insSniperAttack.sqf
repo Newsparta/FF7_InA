@@ -73,6 +73,6 @@ sleep _delay;
 		_wp setWaypointBehaviour _awareness;
 		_wp setWaypointFormation "STAG COLUMN";
 		_wp setWaypointCompletionRadius 25;
-		[(units _group) select 0] call InA_fnc_insSniper;
-		[(units _group) select 1] call InA_fnc_insCustomize;
+		[[(units _group) select 0]] call InA_fnc_insSniper;
+		[[(units _group) select 1]] call InA_fnc_insCustomize;
 	};

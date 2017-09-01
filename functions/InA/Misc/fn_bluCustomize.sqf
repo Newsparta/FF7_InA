@@ -74,7 +74,7 @@ private ["_aimingShake","_aimingSpeed","_endurance","_spotDistance","_spotTime",
 		for "_i" from 1 to 6 do {_x addMagazine (_choice select 1);};
 		_x addWeapon (_choice select 0);
 			
-		if (_num <= 0.2) then {
+		if (_num <= 0.1) then {
 			_choice = BLU_AT call BIS_fnc_selectRandom;
 			_x addBackpack (BLU_BACKPACKS call BIS_fnc_selectRandom);
 			for "_i" from 1 to 2 do {_x addMagazine (_choice select 1);};

@@ -42,7 +42,7 @@ while {true} do {
 					if ((_x distance (getMarkerPos "respawn_west")) > 750) then {
 						deleteVehicle _x;
 					};
-				} forEach (allMissionObjects "" - _excludedObjects - playerVehicles - InA_fob_array);
+				} forEach (allMissionObjects "" - _excludedObjects - playerVehicles);
 				
 				["HQ", "DEBUG", "Map has been wiped."] call FF7_fnc_globalHintStruct;
 					

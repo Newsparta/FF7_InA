@@ -13,27 +13,27 @@ _baseType = _data select 14 select 0;
 switch (_baseType) do {
 	case "Army": 
 	{
-		_handle = []execVM "functions\InA\Themes\baseTransportArmy.sqf";
+		_handle = [0]execVM "defines\baseHandler.sqf";
 		waitUntil {scriptDone _handle;};
 	};
 	case "Marines": 
 	{
-		_handle = []execVM "functions\InA\Themes\baseTransportMarines.sqf";
+		_handle = [1]execVM "defines\baseHandler.sqf";
 		waitUntil {scriptDone _handle;};
 	};
 	case "Nato": 
 	{
-		_handle = []execVM "functions\InA\Themes\baseTransportNato.sqf";
+		_handle = [2]execVM "defines\baseHandler.sqf";
 		waitUntil {scriptDone _handle;};
 	};
 	case "AAF": 
 	{
-		_handle = []execVM "functions\InA\Themes\baseTransportAAF.sqf";
+		_handle = [3]execVM "defines\baseHandler.sqf";
 		waitUntil {scriptDone _handle;};
 	};
 	case "Russia": 
 	{
-		_handle = []execVM "functions\InA\Themes\baseTransportRussia.sqf";
+		_handle = [4]execVM "defines\baseHandler.sqf";
 		waitUntil {scriptDone _handle;};
 	};
 	default 

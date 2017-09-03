@@ -45,6 +45,8 @@ if (_command == "build") then {
 	"fob_area" setMarkerBrush "BDiagonal";
 	"fob_area" setMarkerSize [100, 100];
 
+	breakOut "fobDefence";
+
 	[] spawn {
 		while {true} do {
 			scopeName "fobDefence";

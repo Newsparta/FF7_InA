@@ -24,7 +24,7 @@ params ["_command",["_loc",[0,0,0],[[]]]];
 
 // ---------- MAIN ----------
 
-if (fobPlaced) exitWith {["HQ", "Headquarters", "FOB cannot be designated, a previous FOB was designated too recently."] remoteExec ["FF7_fnc_globalHintStruct", 0];};
+if (fobPlaced) exitWith {["HQ", "Headquarters", "FOB cannot be designated, you must abandon the previous FOB."] remoteExec ["FF7_fnc_globalHintStruct", 0];};
 
 if (_command == "build") then {
 
@@ -44,8 +44,6 @@ if (_command == "build") then {
 	"fob_area" setMarkerShape "ELLIPSE";
 	"fob_area" setMarkerBrush "BDiagonal";
 	"fob_area" setMarkerSize [100, 100];
-
-	breakOut "fobDefence";
 
 	[] spawn {
 		while {true} do {
@@ -102,6 +100,10 @@ if (_command == "build") then {
 
 						breakOut "fobEntered";
 					};
+
+					if !(fobPlaced) then {
+						breakOut "fobDefence";
+					};
 				};
 			};
 		};
@@ -109,15 +111,11 @@ if (_command == "build") then {
 
 	["HQ", "Headquarters", "FOB location set."] remoteExec ["FF7_fnc_globalHintStruct", 0];
 
-	sleep (params_fobDelay);
-
-	fobPlaced = false;
-
 } else {
 
 	InA_fob_location = [0,0,0];
 
-	breakOut "fobDefence";
+	fobPlaced = false;
 
 	deleteMarker "fob_mark";
 	deleteMarker "fob_area";

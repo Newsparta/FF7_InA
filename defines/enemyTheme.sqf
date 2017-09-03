@@ -178,10 +178,10 @@
 	// ---------- HEAVY TRANSPORT HELICOPTER ----------
 	
 	INS_HEAVY_HELI_TR_OPF = [
-		"rhsgref_cdf_reg_Mi17Sh"
+		"RHS_Mi24P_vvs"
 	];
-	INS_HEAVY_HELI_TR_OPF_TEX = true;
-	INS_HEAVY_HELI_TR_OPF_ANI = ["LeftDoor",0,"hide_door_hatch",0,"AddCargoHook_COver",0];
+	INS_HEAVY_HELI_TR_OPF_TEX = ["Camo1",1];
+	INS_HEAVY_HELI_TR_OPF_ANI = ["exhaust_hide",1,"at_rack_hide",0];
 	INS_HEAVY_HELI_TR_BLU = [
 		"RHS_UH60M"
 	];
@@ -312,8 +312,10 @@
 	
 	INS_BACKPACKS =
 	[
-		"B_Kitbag_cbr",
-		"B_Kitbag_rgr"
+		"B_ViperHarness_oli_F",
+		"B_TacticalPack_rgr",
+		"B_FieldPack_oli",
+		"B_ViperLightHarness_oli_F"
 	];
 	
 // ---------- Buildings ----------

@@ -318,8 +318,8 @@
 	
 // ---------- Buildings ----------
 	
-	INS_SANDBAG_LONG = "Land_BagFence_long_F";
-	INS_SANDBAG_SHORT = "Land_BagFence_short_F";
-	INS_SANDBAG_ROUND = "Land_BagFence_round_F";
+	INS_SANDBAG_LONG = "Land_BagFence_01_long_green_F";
+	INS_SANDBAG_SHORT = "Land_BagFence_01_short_green_F";
+	INS_SANDBAG_ROUND = "Land_BagFence_01_round_green_F";
 	
-	INS_CAMONET = "CamoNet_OPFOR_open_F";
+	INS_CAMONET = "CamoNet_ghex_open_F";

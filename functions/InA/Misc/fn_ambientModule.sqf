@@ -161,7 +161,7 @@ while {true} do {
 						1
 					] spawn InA_fnc_insMediumTruckTransport;
 				};
-				if (random 100 < (0.0125 + (0.025 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
+				if (random 100 < (0.01 + (0.025 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
 					[
 						_loc, 
 						_rad + 1000, 

@@ -59,7 +59,7 @@ while {true} do {
 	
 	_i = 0;
 	
-	if ({_x distance _loc < (_rad * 1.5)} count (allPlayers - entities "HeadlessClient_F") > 0) then {
+	if ({_x distance _loc < (_rad * 1.25)} count (allPlayers - entities "HeadlessClient_F") > 0) then {
 	
 		call compile format
 		[
@@ -220,7 +220,7 @@ while {true} do {
 			};
 			
 			if ({_x distance _loc < _rad} count (allPlayers - entities "HeadlessClient_F") < 1) then {
-				if (_loc distance mission > (_rad * 2)) then {
+				if (_loc distance mission > (_rad * 1.5)) then {
 				
 					["HQ", "DEBUG", "Exited Ambient Area."] call FF7_fnc_globalHintStruct;
 					
@@ -250,7 +250,7 @@ while {true} do {
 						_rad = _this select 1;
 						_name = _this select 2;
 						
-						waitUntil {sleep (2 + (random 2)); {_x distance _loc < (_rad * 2)} count (allPlayers - entities "HeadlessClient_F") < 1};
+						waitUntil {sleep (2 + (random 2)); {_x distance _loc < (_rad * 1.5)} count (allPlayers - entities "HeadlessClient_F") < 1};
 						
 						call compile format
 						[

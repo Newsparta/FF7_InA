@@ -42,7 +42,7 @@ if (_state == "lock") then {
 
 		if (floor (random 100) < (_pct * 100)) then {
 			for [{_i=0}, {_i < 10}, {_i = _i + 1}] do {
-				_house setVariable [format ['bis_disabled_Door_%1', _i],1,true];
+				_x setVariable [format ['bis_disabled_Door_%1', _i],1,true];
 			};
 		};
 

@@ -72,7 +72,7 @@ if (afterActionReport) then {
 			sleep 5;
 		};
 		
-		LogV = LogV + 3;
+		LogV = LogV + 4;
 		["HQ", "Headquarters", "You have been commended for your success against the insurgents."] remoteExec ["FF7_fnc_globalHintStruct", 0];
 	} else {
 	

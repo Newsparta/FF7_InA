@@ -91,6 +91,13 @@ if (_command == "build") then {
 					sleep (2 + (random 2));
 
 					if ({_x distance InA_fob_location < 1500} count (allPlayers - entities "HeadlessClient_F") < 1) then {
+
+						{
+							if (_x distance InA_fob_location <= 100) then {
+								deleteVehicle _x;
+							};
+						} forEach allUnits;
+
 						breakOut "fobEntered";
 					};
 				};

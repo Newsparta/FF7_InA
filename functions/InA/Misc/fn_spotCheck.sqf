@@ -53,7 +53,7 @@ while {true} do {
 		};
 	} forEach (allPlayers - entities "HeadlessClient_F");
 	
-	if !(InA_missionActive) then {
+	if !(InA_missionCompleted) then {
 		breakOut "spotted";
 	};
 };

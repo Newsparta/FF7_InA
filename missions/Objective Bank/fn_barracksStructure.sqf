@@ -77,7 +77,7 @@ while {!InA_missionCompleted} do {
 				[units _group] call InA_fnc_insCustomize;
 			};
 			
-		[_loc, 20, 0.25] call InA_fnc_indGarrison;
+		[_pos, 20, 0.25] call InA_fnc_indGarrison;
 
 		/////////////////////////
 		// objective spawn end //

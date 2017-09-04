@@ -42,7 +42,7 @@ if (spotted) then {
 		"FULL"
 	] spawn InA_fnc_insLightInfantryAttack;
 
-	if (random 100 < (20 + (10 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
+	if (random 100 < (20 + (10 * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
 		[
 			_loc, 
 			_landRad, 
@@ -54,7 +54,7 @@ if (spotted) then {
 		] spawn InA_fnc_insLightCarAttack;
 	};
 
-	if (random 100 < (10 + (10 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
+	if (random 100 < (10 + (10 * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
 		[
 			_loc, 
 			_landRad, 
@@ -66,7 +66,7 @@ if (spotted) then {
 		] spawn InA_fnc_insMediumCarAttack;
 	};
 
-	if (random 100 < (20 + (10 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
+	if (random 100 < (20 + (10 * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
 		[
 			_loc, 
 			_landRad, 
@@ -78,7 +78,7 @@ if (spotted) then {
 		] spawn InA_fnc_insMediumTruckTransport;
 	};
 
-	if (random 100 < (5 + (20 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
+	if (random 100 < (5 + (20 * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
 		[
 			_loc, 
 			_landRad, 
@@ -90,7 +90,7 @@ if (spotted) then {
 		] spawn InA_fnc_insApcTransport;
 	};
 
-	if (random 100 < (5 + (5 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
+	if (random 100 < (5 + (5 * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
 		[
 			_loc, 
 			_landRad, 
@@ -102,7 +102,7 @@ if (spotted) then {
 		] spawn InA_fnc_insIfvTransport;
 	};
 
-	if (random 100 < (5 + (5 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
+	if (random 100 < (5 + (5 * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
 		[
 			_loc, 
 			_landRad, 
@@ -114,7 +114,7 @@ if (spotted) then {
 		] spawn InA_fnc_insLightHeliAttack;
 	};
 
-	if (random 100 < (5 + (5 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
+	if (random 100 < (5 + (5 * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
 		[
 			_loc, 
 			_landRad, 
@@ -126,7 +126,7 @@ if (spotted) then {
 		] spawn InA_fnc_insTankAttack;
 	};
 
-	if (random 100 < (5 + (5 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
+	if (random 100 < (5 + (5 * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
 		[
 			_loc, 
 			_landRad, 
@@ -138,7 +138,7 @@ if (spotted) then {
 		] spawn InA_fnc_insMediumHeliTransport;
 	};
 
-	if (random 100 < (2 + (2 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
+	if (random 100 < (2 + (2 * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
 		[
 			_loc, 
 			_landRad, 
@@ -150,7 +150,7 @@ if (spotted) then {
 		] spawn InA_fnc_insHeavyHeliTransport;
 	};
 
-	if (random 100 < (20 + (10 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
+	if (random 100 < (20 + (10 * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
 		[
 			_loc, 
 			_landRad, 

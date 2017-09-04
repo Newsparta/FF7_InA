@@ -105,6 +105,9 @@ class InA
 		class supplyOutpost {file = "missions\Objective Bank\fn_supplyOutpost.sqf";};
 		class barracksStructure {file = "missions\Objective Bank\fn_barracksStructure.sqf";};
 		class AAAEmplacement {file = "missions\Objective Bank\fn_AAAEmplacement.sqf";};
+		class civEliminate {file = "missions\Objective Bank\fn_civEliminate.sqf";};
+
+		class missionAO {file = "missions\fn_missionAO.sqf";};
 		
 		// Gear
 		class WAD {file = "defines\Gear\fn_WAD.sqf";};

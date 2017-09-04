@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=42;
+		nextID=54;
 	};
 	class Camera
 	{
-		pos[]={10951.057,352.3031,11494.159};
-		dir[]={-0.20923361,-0.26349369,-0.94182664};
-		up[]={-0.057161402,0.96459103,-0.25731027};
-		aside[]={-0.97634178,-1.9090949e-006,0.21690206};
+		pos[]={10974.243,375.38,11519.184};
+		dir[]={-0.66135132,-0.7025066,-0.26287559};
+		up[]={-0.65282714,0.71167588,-0.25948724};
+		aside[]={-0.36937377,1.9499566e-008,0.92928368};
 	};
 };
 binarizationWanted=0;
@@ -8982,7 +8982,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={10945.933,350.677,11498.479};
-				angles[]={0,4.4614406,-0};
+				angles[]={0,4.4614406,0};
 			};
 			side="Empty";
 			flags=4;
@@ -8992,7 +8992,7 @@ class Mission
 			};
 			id=162;
 			type="Box_NATO_WpsLaunch_F";
-			atlOffset=0.020599365;
+			atlOffset=0.020629883;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -9477,7 +9477,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={10952.53,351.90579,11489.335};
-				angles[]={0,6.0163236,-0};
+				angles[]={0,6.0163236,0};
 			};
 			side="Empty";
 			flags=4;
@@ -29072,7 +29072,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={10952.492,351.90579,11489.121};
-				angles[]={0,5.9600959,-0};
+				angles[]={0,5.9600959,0};
 			};
 			side="Empty";
 			flags=4;
@@ -29088,7 +29088,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={10952.618,351.44339,11489.189};
-				angles[]={-0,5.6983137,0};
+				angles[]={0,5.6983137,0};
 			};
 			side="Empty";
 			flags=4;

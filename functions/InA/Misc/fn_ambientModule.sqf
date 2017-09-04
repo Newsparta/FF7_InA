@@ -220,54 +220,52 @@ while {true} do {
 			};
 			
 			if ({_x distance _loc < _rad} count (allPlayers - entities "HeadlessClient_F") < 1) then {
-				if (_loc distance mission > (_rad * 1.5)) then {
 				
-					["HQ", "DEBUG", "Exited Ambient Area."] call FF7_fnc_globalHintStruct;
+				["HQ", "DEBUG", "Exited Ambient Area."] call FF7_fnc_globalHintStruct;
 					
-					_nme = {(side _x == resistance) && ((_x distance _loc) < _rad)} count allUnits;
+				_nme = {(side _x == resistance) && ((_x distance _loc) < _rad)} count allUnits;
 					
-					if (_affect) then {
-						if (_nme > 15) then {
-							_instability = random 0.5;
-							if (_nme > 25) then {
-								_instability = (0.5 + (random 0.5));
-							};
-						} else {
-							_instability = 0;
+				if (_affect) then {
+					if (_nme > 15) then {
+						_instability = random 0.5;
+						if (_nme > 25) then {
+							_instability = (0.5 + (random 0.5));
 						};
-						
-						call compile format
-						[
-							"instability%1 = %2",
-							_name,
-							_instability
-						];
+					} else {
+						_instability = 0;
 					};
-				
-					[_loc,_rad,_name] spawn {
-					
-						_loc = _this select 0;
-						_rad = _this select 1;
-						_name = _this select 2;
 						
-						waitUntil {sleep (2 + (random 2)); {_x distance _loc < (_rad * 1.5)} count (allPlayers - entities "HeadlessClient_F") < 1};
-						
-						call compile format
-						[
-							"%1Occupied = false",
-							_name
-						];
-						
-						[_loc,_rad] spawn InA_fnc_cleanup;
-					};
-					
-					[_loc, _rad, 1,"unlock"] spawn InA_fnc_houseLocks;
-					
-					ambientExited = true;
-					_i = 0;
-				
-					breakOut "entered";
+					call compile format
+					[
+						"instability%1 = %2",
+						_name,
+						_instability
+					];
 				};
+				
+				[_loc,_rad,_name] spawn {
+					
+					_loc = _this select 0;
+					_rad = _this select 1;
+					_name = _this select 2;
+						
+					waitUntil {sleep (2 + (random 2)); {_x distance _loc < (_rad * 1.5)} count (allPlayers - entities "HeadlessClient_F") < 1};
+						
+					call compile format
+					[
+						"%1Occupied = false",
+						_name
+					];
+						
+					[_loc,_rad] spawn InA_fnc_cleanup;
+				};
+					
+				[_loc, _rad, 1,"unlock"] spawn InA_fnc_houseLocks;
+					
+				ambientExited = true;
+				_i = 0;
+				
+				breakOut "entered";
 			};
 			
 			_affectTimer = _affectTimer - (0.0034 + (.0001 * ({(side _x == west) && ((_x distance _loc) < _rad)} count allUnits)));

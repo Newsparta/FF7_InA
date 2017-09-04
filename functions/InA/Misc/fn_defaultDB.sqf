@@ -51,9 +51,13 @@ _export pushBack _allVehicles;
 
 _export pushBack [];
 
-// ---------- Base type (14) ----------
+// ---------- Base type ----------
 
 _export pushBack [];
+
+// ---------- Main AO ----------
+
+_export pushBack [false,[],[]];
 
 // ---------- End ----------
 

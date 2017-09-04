@@ -4,7 +4,7 @@ _export = [];
 
 _export pushBack ([] call InA_fnc_regionCheck);
 
-// ---------- Armory inventory (1-10) ----------
+// ---------- Armory inventory (1) ----------
 
 _lI1 = [];
 _lI2 = [];
@@ -72,11 +72,11 @@ _allItems pushBack _dI;
 
 _export pushBack _allItems;
 
-// ---------- Logistics (11) ----------
+// ---------- Logistics (2) ----------
 
 _export pushBack ([LogV, LogM, LogF]);
 
-// ---------- Vehicles/strategic (12) ----------
+// ---------- Vehicles/strategic (3) ----------
 
 _allVehicles = [];
 
@@ -121,7 +121,7 @@ _buildingArray = nearestObjects [InA_fob_location,["Strategic"],100];
 
 _export pushBack _allVehicles;
 
-// ---------- Check build vehicles (13) ----------
+// ---------- Check build vehicles (4) ----------
 
 _buildVehicles = [];
 
@@ -131,9 +131,17 @@ _buildVehicles = [];
 
 _export pushBack _buildVehicles;
 
-// ---------- Base type (14) ----------
+// ---------- Base type (5) ----------
 
 _export pushBack [baseType];
+
+// ---------- Main AO (6) ----------
+
+if !(InA_missionCompleted) then {
+	_export pushBack [true,mission,mainObj];
+} else {
+	_export pushBack [false,[],[]];
+};
 
 // ---------- Save to database ----------
 

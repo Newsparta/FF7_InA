@@ -2,10 +2,13 @@ private ["_missions","_delay","_virgin","_handle","_last","_missionRequested","_
 
 civilian setFriend [west, 1];
 civilian setFriend [resistance, 1];
+civMissionActive = false;
 
 mission = [0,0,0];
+mainObj = [];
+mainLimit = 2500;
 InA_missionActive = false;
-afterActionReport = false;
+InA_missionCompleted = false;
 
 givenType = "";
 givenLoc = "";
@@ -26,29 +29,36 @@ while {true} do {
 	["HQ", "Headquarters", "Insurgents seem to have increased their activity in the region."] remoteExec ["FF7_fnc_globalHintStruct", 0];
 	
 	intelActivity = "increased";
+	InA_missionActive = false;
+	InA_missionCompleted = false;
 	spotted = false;
+	afterActionReport = false;
 	intelType = ["type", 0];
 	intelLoc = ["loc", 0];
 	intelMan = ["man", 0];
 	
-	_handle = execVM "missions\missionAO.sqf";
-	
-	waitUntil {
-		sleep (2 + (random 2));
-		
-		scriptDone _handle;
+	if !(missionSaved) then {
+		[] spawn InA_fnc_missionAO;
+	} else {
+		call compile format 
+		[
+			"[%1, false, %2] spawn InA_fnc_missionAO",
+			missionData select 0,
+			missionData select 1
+		];
 	};
 	
 	waitUntil {
 		sleep (5 + (random 5));
 		
-		!(InA_missionActive);
+		InA_missionCompleted;
 	};
 
 	_virgin = false;
 	
 	intelActivity = "none";
 	spawnedObj = [];
+	mainObj = [];
 	placedMarkers = [];
 	givenType = "";
 	givenLoc = "";

@@ -6,9 +6,9 @@ _data = ["load", "data"] call FF7_fnc_extSerialize;
 
 if ((count (_data select 0)) < 1) exitWith {};
 
-// ---------- Set base type ----------
+// ---------- Set base type (5) ----------
 
-_baseType = _data select 14 select 0;
+_baseType = _data select 5 select 0;
 
 switch (_baseType) do {
 	case "Army": 
@@ -42,7 +42,7 @@ switch (_baseType) do {
 	};
 };
 
-// ---------- Region data ----------
+// ---------- Region data (0) ----------
 
 _regionData = _data select 0;
 
@@ -55,7 +55,7 @@ _regionData = _data select 0;
 	];
 } forEach _regionData;
 
-// ---------- Armory data ----------
+// ---------- Armory data (1) ----------
 
 _lI1 = (_data select 1 select 0);
 _lI2 = (_data select 1 select 1);
@@ -102,7 +102,7 @@ _array =
 
 } forEach _array;
 
-// ---------- Logistics data ----------
+// ---------- Logistics data (2) ----------
 
 _logisticsData = _data select 2;
 
@@ -110,7 +110,7 @@ LogV = (_logisticsData select 0);
 LogM = (_logisticsData select 1);
 LogF = (_logisticsData select 2);
 
-// ---------- Vehicle data ----------
+// ---------- Vehicle data (3 - 4) ----------
 
 _vehicleData = _data select 3;
 _utilityVehicles = _data select 4;
@@ -129,5 +129,19 @@ _utilityVehicles = _data select 4;
 	
 	playerVehicles pushBack _veh;
 } forEach _vehicleData;
+
+// ---------- mission (6) ----------
+
+if (_data select 6 select 0) then {
+
+	missionSaved = true;
+	mission = _data select 6 select 1;
+	mainObj = _data select 6 select 2;
+
+} else {};
+
+/////////
+// end //
+/////////
 
 ["LOADED", "Data loaded"] remoteExec ["FF7_fnc_formatHint", 0];

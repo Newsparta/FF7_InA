@@ -84,6 +84,8 @@ if (afterActionReport) then {
 	signalType = [];
 	
 	call compile preprocessFileLineNumbers "missions\objectiveRefresh.sqf";
+
+	InA_missionCompleted = true;
 	
 } else {
 

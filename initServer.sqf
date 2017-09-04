@@ -5,10 +5,6 @@
 FF7_Global_Debug = true;
 initialized = false;
 
-// ---------- Load database ----------
-
-_null = execVM "functions\InA\Init\loadDatabase.sqf";
-
 // ---------- Fog/mist controller ----------
 
 _null = [900, 0.2] execVM "functions\FF7\Generic\fn_weatherMan.sqf";
@@ -82,6 +78,9 @@ call compile preprocessFileLineNumbers "defines\enemyTheme.sqf";
 _null = execVM "missions\missionControl.sqf";
 _null = execVM "missions\eventsHandler.sqf";
 _null = execVM "functions\InA\Init\baseAttack.sqf";
+
+missionSaved = false;
+missionData = [];
 
 // ---------- Map wipe ----------
 
@@ -204,6 +203,10 @@ themeSelect =
 
 	call compile preprocessFileLineNumbers "defines\Gear\gearWipe.sqf";
 };
+
+// ---------- Load database ----------
+
+_null = execVM "functions\InA\Init\loadDatabase.sqf";
 
 ///////////////////////////////////////////
 // ---------- END SERVER INIT ---------- //

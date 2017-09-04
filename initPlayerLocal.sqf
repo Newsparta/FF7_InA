@@ -97,7 +97,7 @@ player createDiaryRecord	[
 	
 	sleep 60;
 	
-	["(4.1.8)<br/>2017-08-31", "Latest patch date"] call FF7_fnc_formatHint;
+	["(4.1.8)<br/>2017-09-03", "Latest patch date"] call FF7_fnc_formatHint;
 };
 
 // ---------- Run only on player... ----------

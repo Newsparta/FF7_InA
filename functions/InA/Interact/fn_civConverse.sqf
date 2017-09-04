@@ -10,6 +10,7 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 	[clientOwner, "intelLoc"] remoteExec ["publicVariableClient", 2, false];
 	[clientOwner, "intelMan"] remoteExec ["publicVariableClient", 2, false];
 	[clientOwner, "mission"] remoteExec ["publicVariableClient", 2, false];
+	[clientOwner, "civMissionActive"] remoteExec ["publicVariableClient", 2, false];
 
 	sleep 1;
 
@@ -379,91 +380,125 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 					
 					[_check,_civ] spawn InA_fnc_intelUpdate;			
 				} else {
-				
-					_nearGuer = {side _x == resistance} count (_civ nearEntities ["Man", 3000]);
-					
-					if (_nearGuer > 0) then {
-						
-						_men = [];
-						{
-							if (side _x == resistance) then {
-								_men = _men + [_x];
-							};
-						} forEach (_civ nearEntities ["Man", 3000]);
-						
-						_mkrName = random 1;
-						
-						_mkr = createMarker [format ["%1",_mkrName], selectRandom _men];
-						format ["%1",_mkrName] setMarkerColor "ColorGuer";
-						format ["%1",_mkrName] setMarkerShape "ICON";
-						format ["%1",_mkrName] setMarkerType "o_inf";
-						format ["%1",_mkrName] setMarkerText "Infantry";
-						
-						[_mkrName] spawn {
-							private ["_i"];
-						
-							_mkrName = _this select 0;
-							
-							_i = 1;
-							while {_i = _i - (1/120); _i > 0} do {
-							
-								format ["%1",_mkrName] setMarkerAlpha _i;
-								
-								sleep 1;
-							};
 
-							sleep 120;
+					if !(civMissionActive) then {
 
-							deleteMarker format ["%1",_mkrName];
-						};
+						_bank = 
+						[
+							"civEliminate"
+						];
+
+						_selection = selectRandom _bank;
+
+						call compile format 
+						[
+							"[getPosATL player] remoteExec ['InA_fnc_%1', 2];",
+							_selection
+						];
 						
-						["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
 					} else {
-						["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+						_nearGuer = {side _x == resistance} count (_civ nearEntities ["Man", 3000]);
+						
+						if (_nearGuer > 0) then {
+							
+							_men = [];
+							{
+								if (side _x == resistance) then {
+									_men = _men + [_x];
+								};
+							} forEach (_civ nearEntities ["Man", 3000]);
+							
+							_mkrName = random 1;
+							
+							_mkr = createMarker [format ["%1",_mkrName], selectRandom _men];
+							format ["%1",_mkrName] setMarkerColor "ColorGuer";
+							format ["%1",_mkrName] setMarkerShape "ICON";
+							format ["%1",_mkrName] setMarkerType "o_inf";
+							format ["%1",_mkrName] setMarkerText "Infantry";
+							
+							[_mkrName] spawn {
+								private ["_i"];
+							
+								_mkrName = _this select 0;
+								
+								_i = 1;
+								while {_i = _i - (1/120); _i > 0} do {
+								
+									format ["%1",_mkrName] setMarkerAlpha _i;
+									
+									sleep 1;
+								};
+
+								sleep 120;
+
+								deleteMarker format ["%1",_mkrName];
+							};
+							
+							["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
+						} else {
+							["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+						};
 					};
 				};
 			} else {
-				_nearGuer = {side _x == resistance} count (_civ nearEntities ["Man", 3000]);
-				
-				if (_nearGuer > 0) then {
-				
-					_men = [];
-					{
-						if (side _x == resistance) then {
-							_men = _men + [_x];
-						};
-					} forEach (_civ nearEntities ["Man", 3000]);
-					
-					_mkrName = random 1;
-					
-					_mkr = createMarker [format ["%1",_mkrName], selectRandom _men];
-					format ["%1",_mkrName] setMarkerColor "ColorGuer";
-					format ["%1",_mkrName] setMarkerShape "ICON";
-					format ["%1",_mkrName] setMarkerType "o_inf";
-					format ["%1",_mkrName] setMarkerText "Infantry";
-					
-					[_mkrName] spawn {
-						private ["_i"];
-					
-						_mkrName = _this select 0;
+				if !(civMissionActive) then {
+
+						_bank = 
+						[
+							"civEliminate"
+						];
+
+						_selection = selectRandom _bank;
+
+						call compile format 
+						[
+							"[getPosATL player] remoteExec ['InA_fnc_%1', 2];",
+							_selection
+						];
 						
-						_i = 1;
-						while {_i = _i - (1/120); _i > 0} do {
+					} else {
+						_nearGuer = {side _x == resistance} count (_civ nearEntities ["Man", 3000]);
 						
-							format ["%1",_mkrName] setMarkerAlpha _i;
+						if (_nearGuer > 0) then {
 							
-							sleep 1;
-						};
-						
-						sleep 120;
+							_men = [];
+							{
+								if (side _x == resistance) then {
+									_men = _men + [_x];
+								};
+							} forEach (_civ nearEntities ["Man", 3000]);
 							
-						deleteMarker format ["%1",_mkrName];
+							_mkrName = random 1;
+							
+							_mkr = createMarker [format ["%1",_mkrName], selectRandom _men];
+							format ["%1",_mkrName] setMarkerColor "ColorGuer";
+							format ["%1",_mkrName] setMarkerShape "ICON";
+							format ["%1",_mkrName] setMarkerType "o_inf";
+							format ["%1",_mkrName] setMarkerText "Infantry";
+							
+							[_mkrName] spawn {
+								private ["_i"];
+							
+								_mkrName = _this select 0;
+								
+								_i = 1;
+								while {_i = _i - (1/120); _i > 0} do {
+								
+									format ["%1",_mkrName] setMarkerAlpha _i;
+									
+									sleep 1;
+								};
+
+								sleep 120;
+
+								deleteMarker format ["%1",_mkrName];
+							};
+							
+							["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
+						} else {
+							["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+						};
 					};
-					
-					["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
-				} else {
-					["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
-				};
 			};
 		};
 		if (response == (_endTree select 0 select 2)) exitWith {
@@ -524,90 +559,124 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 					[_check,_civ] spawn InA_fnc_intelUpdate;			
 				} else {
 				
-					_nearGuer = {side _x == resistance} count (_civ nearEntities ["Man", 3000]);
-					
-					if (_nearGuer > 0) then {
-					
-						_men = [];
-						{
-							if (side _x == resistance) then {
-								_men = _men + [_x];
-							};
-						} forEach (_civ nearEntities ["Man", 3000]);
-						
-						_mkrName = random 1;
-						
-						_mkr = createMarker [format ["%1",_mkrName], selectRandom _men];
-						format ["%1",_mkrName] setMarkerColor "ColorGuer";
-						format ["%1",_mkrName] setMarkerShape "ICON";
-						format ["%1",_mkrName] setMarkerType "o_inf";
-						format ["%1",_mkrName] setMarkerText "Infantry";
-						
-						[_mkrName] spawn {
-							private ["_i"];
-						
-							_mkrName = _this select 0;
-							
-							_i = 1;
-							while {_i = _i - (1/120); _i > 0} do {
-							
-								format ["%1",_mkrName] setMarkerAlpha _i;
-								
-								sleep 1;
-							};
+					if !(civMissionActive) then {
 
-							sleep 120;
+						_bank = 
+						[
+							"civEliminate"
+						];
 
-							deleteMarker format ["%1",_mkrName];
-						};
+						_selection = selectRandom _bank;
+
+						call compile format 
+						[
+							"[getPosATL player] remoteExec ['InA_fnc_%1', 2];",
+							_selection
+						];
 						
-						["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
 					} else {
-						["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+						_nearGuer = {side _x == resistance} count (_civ nearEntities ["Man", 3000]);
+						
+						if (_nearGuer > 0) then {
+							
+							_men = [];
+							{
+								if (side _x == resistance) then {
+									_men = _men + [_x];
+								};
+							} forEach (_civ nearEntities ["Man", 3000]);
+							
+							_mkrName = random 1;
+							
+							_mkr = createMarker [format ["%1",_mkrName], selectRandom _men];
+							format ["%1",_mkrName] setMarkerColor "ColorGuer";
+							format ["%1",_mkrName] setMarkerShape "ICON";
+							format ["%1",_mkrName] setMarkerType "o_inf";
+							format ["%1",_mkrName] setMarkerText "Infantry";
+							
+							[_mkrName] spawn {
+								private ["_i"];
+							
+								_mkrName = _this select 0;
+								
+								_i = 1;
+								while {_i = _i - (1/120); _i > 0} do {
+								
+									format ["%1",_mkrName] setMarkerAlpha _i;
+									
+									sleep 1;
+								};
+
+								sleep 120;
+
+								deleteMarker format ["%1",_mkrName];
+							};
+							
+							["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
+						} else {
+							["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+						};
 					};
 				};
 			} else {
-				_nearGuer = {side _x == resistance} count (_civ nearEntities ["Man", 3000]);
-				
-				if (_nearGuer > 0) then {
-				
-					_men = [];
-					{
-						if (side _x == resistance) then {
-							_men = _men + [_x];
-						};
-					} forEach (_civ nearEntities ["Man", 3000]);
-					
-					_mkrName = random 1;
-					
-					_mkr = createMarker [format ["%1",_mkrName], selectRandom _men];
-					format ["%1",_mkrName] setMarkerColor "ColorGuer";
-					format ["%1",_mkrName] setMarkerShape "ICON";
-					format ["%1",_mkrName] setMarkerType "o_inf";
-					format ["%1",_mkrName] setMarkerText "Infantry";
-					
-					[_mkrName] spawn {
-						private ["_i"];
-					
-						_mkrName = _this select 0;
+				if !(civMissionActive) then {
+
+						_bank = 
+						[
+							"civEliminate"
+						];
+
+						_selection = selectRandom _bank;
+
+						call compile format 
+						[
+							"[getPosATL player] remoteExec ['InA_fnc_%1', 2];",
+							_selection
+						];
 						
-						_i = 1;
-						while {_i = _i - (1/120); _i > 0} do {
+					} else {
+						_nearGuer = {side _x == resistance} count (_civ nearEntities ["Man", 3000]);
 						
-							format ["%1",_mkrName] setMarkerAlpha _i;
+						if (_nearGuer > 0) then {
 							
-							sleep 1;
-						};
-						
-						sleep 120;
+							_men = [];
+							{
+								if (side _x == resistance) then {
+									_men = _men + [_x];
+								};
+							} forEach (_civ nearEntities ["Man", 3000]);
 							
-						deleteMarker format ["%1",_mkrName];
+							_mkrName = random 1;
+							
+							_mkr = createMarker [format ["%1",_mkrName], selectRandom _men];
+							format ["%1",_mkrName] setMarkerColor "ColorGuer";
+							format ["%1",_mkrName] setMarkerShape "ICON";
+							format ["%1",_mkrName] setMarkerType "o_inf";
+							format ["%1",_mkrName] setMarkerText "Infantry";
+							
+							[_mkrName] spawn {
+								private ["_i"];
+							
+								_mkrName = _this select 0;
+								
+								_i = 1;
+								while {_i = _i - (1/120); _i > 0} do {
+								
+									format ["%1",_mkrName] setMarkerAlpha _i;
+									
+									sleep 1;
+								};
+
+								sleep 120;
+
+								deleteMarker format ["%1",_mkrName];
+							};
+							
+							["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
+						} else {
+							["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+						};
 					};
-					
-					["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
-				} else {
-					["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
-				};
 			};
 		};
 		if (response == (_endTree select 1 select 2)) exitWith {
@@ -668,90 +737,124 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 					[_check,_civ] spawn InA_fnc_intelUpdate;			
 				} else {
 				
-					_nearGuer = {side _x == resistance} count (_civ nearEntities ["Man", 3000]);
-					
-					if (_nearGuer > 0) then {
-					
-						_men = [];
-						{
-							if (side _x == resistance) then {
-								_men = _men + [_x];
-							};
-						} forEach (_civ nearEntities ["Man", 3000]);
-						
-						_mkrName = random 1;
-						
-						_mkr = createMarker [format ["%1",_mkrName], selectRandom _men];
-						format ["%1",_mkrName] setMarkerColor "ColorGuer";
-						format ["%1",_mkrName] setMarkerShape "ICON";
-						format ["%1",_mkrName] setMarkerType "o_inf";
-						format ["%1",_mkrName] setMarkerText "Infantry";
-						
-						[_mkrName] spawn {
-							private ["_i"];
-						
-							_mkrName = _this select 0;
-							
-							_i = 1;
-							while {_i = _i - (1/120); _i > 0} do {
-							
-								format ["%1",_mkrName] setMarkerAlpha _i;
-								
-								sleep 1;
-							};
+					if !(civMissionActive) then {
 
-							sleep 120;
+						_bank = 
+						[
+							"civEliminate"
+						];
 
-							deleteMarker format ["%1",_mkrName];
-						};
+						_selection = selectRandom _bank;
+
+						call compile format 
+						[
+							"[getPosATL player] remoteExec ['InA_fnc_%1', 2];",
+							_selection
+						];
 						
-						["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
 					} else {
-						["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+						_nearGuer = {side _x == resistance} count (_civ nearEntities ["Man", 3000]);
+						
+						if (_nearGuer > 0) then {
+							
+							_men = [];
+							{
+								if (side _x == resistance) then {
+									_men = _men + [_x];
+								};
+							} forEach (_civ nearEntities ["Man", 3000]);
+							
+							_mkrName = random 1;
+							
+							_mkr = createMarker [format ["%1",_mkrName], selectRandom _men];
+							format ["%1",_mkrName] setMarkerColor "ColorGuer";
+							format ["%1",_mkrName] setMarkerShape "ICON";
+							format ["%1",_mkrName] setMarkerType "o_inf";
+							format ["%1",_mkrName] setMarkerText "Infantry";
+							
+							[_mkrName] spawn {
+								private ["_i"];
+							
+								_mkrName = _this select 0;
+								
+								_i = 1;
+								while {_i = _i - (1/120); _i > 0} do {
+								
+									format ["%1",_mkrName] setMarkerAlpha _i;
+									
+									sleep 1;
+								};
+
+								sleep 120;
+
+								deleteMarker format ["%1",_mkrName];
+							};
+							
+							["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
+						} else {
+							["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+						};
 					};
 				};
 			} else {
-				_nearGuer = {side _x == resistance} count (_civ nearEntities ["Man", 3000]);
-				
-				if (_nearGuer > 0) then {
-				
-					_men = [];
-					{
-						if (side _x == resistance) then {
-							_men = _men + [_x];
-						};
-					} forEach (_civ nearEntities ["Man", 3000]);
-					
-					_mkrName = random 1;
-					
-					_mkr = createMarker [format ["%1",_mkrName], selectRandom _men];
-					format ["%1",_mkrName] setMarkerColor "ColorGuer";
-					format ["%1",_mkrName] setMarkerShape "ICON";
-					format ["%1",_mkrName] setMarkerType "o_inf";
-					format ["%1",_mkrName] setMarkerText "Infantry";
-					
-					[_mkrName] spawn {
-						private ["_i"];
-					
-						_mkrName = _this select 0;
+				if !(civMissionActive) then {
+
+						_bank = 
+						[
+							"civEliminate"
+						];
+
+						_selection = selectRandom _bank;
+
+						call compile format 
+						[
+							"[getPosATL player] remoteExec ['InA_fnc_%1', 2];",
+							_selection
+						];
 						
-						_i = 1;
-						while {_i = _i - (1/120); _i > 0} do {
+					} else {
+						_nearGuer = {side _x == resistance} count (_civ nearEntities ["Man", 3000]);
 						
-							format ["%1",_mkrName] setMarkerAlpha _i;
+						if (_nearGuer > 0) then {
 							
-							sleep 1;
-						};
-						
-						sleep 120;
+							_men = [];
+							{
+								if (side _x == resistance) then {
+									_men = _men + [_x];
+								};
+							} forEach (_civ nearEntities ["Man", 3000]);
 							
-						deleteMarker format ["%1",_mkrName];
+							_mkrName = random 1;
+							
+							_mkr = createMarker [format ["%1",_mkrName], selectRandom _men];
+							format ["%1",_mkrName] setMarkerColor "ColorGuer";
+							format ["%1",_mkrName] setMarkerShape "ICON";
+							format ["%1",_mkrName] setMarkerType "o_inf";
+							format ["%1",_mkrName] setMarkerText "Infantry";
+							
+							[_mkrName] spawn {
+								private ["_i"];
+							
+								_mkrName = _this select 0;
+								
+								_i = 1;
+								while {_i = _i - (1/120); _i > 0} do {
+								
+									format ["%1",_mkrName] setMarkerAlpha _i;
+									
+									sleep 1;
+								};
+
+								sleep 120;
+
+								deleteMarker format ["%1",_mkrName];
+							};
+							
+							["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
+						} else {
+							["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+						};
 					};
-					
-					["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
-				} else {
-					["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
-				};
 			};
 		};
 		if (response == (_endTree select 2 select 2)) exitWith {
@@ -812,90 +915,124 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 					[_check,_civ] spawn InA_fnc_intelUpdate;			
 				} else {
 				
-					_nearGuer = {side _x == resistance} count (_civ nearEntities ["Man", 3000]);
-					
-					if (_nearGuer > 0) then {
-					
-						_men = [];
-						{
-							if (side _x == resistance) then {
-								_men = _men + [_x];
-							};
-						} forEach (_civ nearEntities ["Man", 3000]);
-						
-						_mkrName = random 1;
-						
-						_mkr = createMarker [format ["%1",_mkrName], selectRandom _men];
-						format ["%1",_mkrName] setMarkerColor "ColorGuer";
-						format ["%1",_mkrName] setMarkerShape "ICON";
-						format ["%1",_mkrName] setMarkerType "o_inf";
-						format ["%1",_mkrName] setMarkerText "Infantry";
-						
-						[_mkrName] spawn {
-							private ["_i"];
-						
-							_mkrName = _this select 0;
-							
-							_i = 1;
-							while {_i = _i - (1/120); _i > 0} do {
-							
-								format ["%1",_mkrName] setMarkerAlpha _i;
-								
-								sleep 1;
-							};
+					if !(civMissionActive) then {
 
-							sleep 120;
+						_bank = 
+						[
+							"civEliminate"
+						];
 
-							deleteMarker format ["%1",_mkrName];
-						};
+						_selection = selectRandom _bank;
+
+						call compile format 
+						[
+							"[getPosATL player] remoteExec ['InA_fnc_%1', 2];",
+							_selection
+						];
 						
-						["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
 					} else {
-						["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+						_nearGuer = {side _x == resistance} count (_civ nearEntities ["Man", 3000]);
+						
+						if (_nearGuer > 0) then {
+							
+							_men = [];
+							{
+								if (side _x == resistance) then {
+									_men = _men + [_x];
+								};
+							} forEach (_civ nearEntities ["Man", 3000]);
+							
+							_mkrName = random 1;
+							
+							_mkr = createMarker [format ["%1",_mkrName], selectRandom _men];
+							format ["%1",_mkrName] setMarkerColor "ColorGuer";
+							format ["%1",_mkrName] setMarkerShape "ICON";
+							format ["%1",_mkrName] setMarkerType "o_inf";
+							format ["%1",_mkrName] setMarkerText "Infantry";
+							
+							[_mkrName] spawn {
+								private ["_i"];
+							
+								_mkrName = _this select 0;
+								
+								_i = 1;
+								while {_i = _i - (1/120); _i > 0} do {
+								
+									format ["%1",_mkrName] setMarkerAlpha _i;
+									
+									sleep 1;
+								};
+
+								sleep 120;
+
+								deleteMarker format ["%1",_mkrName];
+							};
+							
+							["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
+						} else {
+							["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+						};
 					};
 				};
 			} else {
-				_nearGuer = {side _x == resistance} count (_civ nearEntities ["Man", 3000]);
-				
-				if (_nearGuer > 0) then {
-				
-					_men = [];
-					{
-						if (side _x == resistance) then {
-							_men = _men + [_x];
-						};
-					} forEach (_civ nearEntities ["Man", 3000]);
-					
-					_mkrName = random 1;
-					
-					_mkr = createMarker [format ["%1",_mkrName], selectRandom _men];
-					format ["%1",_mkrName] setMarkerColor "ColorGuer";
-					format ["%1",_mkrName] setMarkerShape "ICON";
-					format ["%1",_mkrName] setMarkerType "o_inf";
-					format ["%1",_mkrName] setMarkerText "Infantry";
-					
-					[_mkrName] spawn {
-						private ["_i"];
-					
-						_mkrName = _this select 0;
+				if !(civMissionActive) then {
+
+						_bank = 
+						[
+							"civEliminate"
+						];
+
+						_selection = selectRandom _bank;
+
+						call compile format 
+						[
+							"[getPosATL player] remoteExec ['InA_fnc_%1', 2];",
+							_selection
+						];
 						
-						_i = 1;
-						while {_i = _i - (1/120); _i > 0} do {
+					} else {
+						_nearGuer = {side _x == resistance} count (_civ nearEntities ["Man", 3000]);
 						
-							format ["%1",_mkrName] setMarkerAlpha _i;
+						if (_nearGuer > 0) then {
 							
-							sleep 1;
-						};
-						
-						sleep 120;
+							_men = [];
+							{
+								if (side _x == resistance) then {
+									_men = _men + [_x];
+								};
+							} forEach (_civ nearEntities ["Man", 3000]);
 							
-						deleteMarker format ["%1",_mkrName];
+							_mkrName = random 1;
+							
+							_mkr = createMarker [format ["%1",_mkrName], selectRandom _men];
+							format ["%1",_mkrName] setMarkerColor "ColorGuer";
+							format ["%1",_mkrName] setMarkerShape "ICON";
+							format ["%1",_mkrName] setMarkerType "o_inf";
+							format ["%1",_mkrName] setMarkerText "Infantry";
+							
+							[_mkrName] spawn {
+								private ["_i"];
+							
+								_mkrName = _this select 0;
+								
+								_i = 1;
+								while {_i = _i - (1/120); _i > 0} do {
+								
+									format ["%1",_mkrName] setMarkerAlpha _i;
+									
+									sleep 1;
+								};
+
+								sleep 120;
+
+								deleteMarker format ["%1",_mkrName];
+							};
+							
+							["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
+						} else {
+							["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+						};
 					};
-					
-					["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
-				} else {
-					["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
-				};
 			};
 		};
 		if (response == (_endTree select 3 select 2)) exitWith {

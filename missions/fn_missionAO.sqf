@@ -36,7 +36,7 @@ if (_virgin) then {
 	mission = _loc;
 };
 
-[mission] call InA_fnc_spotCheck;
+[mission] spawn InA_fnc_spotCheck;
 
 // ---------- Objective Spawns ----------
 

@@ -1,4 +1,7 @@
 *InA 4.1.8*
+
+[map changed to Tanoa]
+
 - Menu restrictions added to squad lead ACE menu.
 - Static Weapons added for all factions.
 - Generic cost edits to items.

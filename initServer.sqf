@@ -5,6 +5,12 @@
 FF7_Global_Debug = true;
 initialized = false;
 
+// ---------- initialize variables ----------
+
+_handle = execVM "functions\InA\Init\initializeVariables.sqf";
+
+waitUntil {scriptDone _handle;};
+
 // ---------- Fog/mist controller ----------
 
 _null = [900, 0.2] execVM "functions\FF7\Generic\fn_weatherMan.sqf";
@@ -27,13 +33,6 @@ else
 #include "\task_force_radio\functions\common.sqf";
 
 // ---------- Base init ----------
-
-baseType = "";
-
-InA_sitrep = true;
-
-InA_fob_location = [0,0,0];
-fobPlaced = false;
 
 _null = execVM "functions\InA\Init\isGarageClear.sqf";
 _null = execVM "functions\InA\Init\resourceHandler.sqf";
@@ -78,8 +77,6 @@ call compile preprocessFileLineNumbers "defines\enemyTheme.sqf";
 _null = execVM "missions\missionControl.sqf";
 _null = execVM "missions\eventsHandler.sqf";
 _null = execVM "functions\InA\Init\baseAttack.sqf";
-
-missionSaved = false;
 
 // ---------- Map wipe ----------
 

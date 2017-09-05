@@ -1,27 +1,5 @@
 private ["_missions","_delay","_virgin","_handle","_last","_missionRequested","_missionRequest"];
 
-civilian setFriend [west, 1];
-civilian setFriend [resistance, 1];
-civMissionActive = false;
-
-mission = [0,0,0];
-mainObj = [];
-mainLimit = 2500;
-InA_missionActive = false;
-InA_missionCompleted = false;
-
-givenType = "";
-givenLoc = "";
-givenMan = "";
-
-compObj = 0;
-totalObj = 0;
-signalArray = [];
-signalType = [];
-spawnedObj = [];
-placedMarkers = [];
-call compile preprocessFileLineNumbers "missions\objectiveRefresh.sqf";
-
 waitUntil {sleep 20; ["HQ", "Headquarters", "Select a base theme to begin."] remoteExec ["FF7_fnc_globalHintStruct", 0]; initialized};
 
 while {true} do {

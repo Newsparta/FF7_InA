@@ -1,8 +1,4 @@
 private ["_cars"];
-// ---------- Civilian tolerance init ----------
-
-civTol = 1;
-responded = false;
 
 // ---------- Control loop ----------
 

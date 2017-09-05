@@ -1,9 +1,6 @@
 private ["_fuelArray","_fuelCount","_obj","_munitionsArray","_munitionsCount"];
 // ---------- Resource Visuals init ----------
 	
-LogV = 0;
-LogF = 0;
-LogM = 0;
 buildInventory = 60;
 playerVehicles = [];
 utilityVehicles = [];

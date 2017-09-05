@@ -43,8 +43,8 @@ while {true} do {
 		call compile format 
 		[
 			"[%1, false, %2] spawn InA_fnc_missionAO",
-			missionData select 0,
-			missionData select 1
+			mission,
+			mainObj
 		];
 	};
 	

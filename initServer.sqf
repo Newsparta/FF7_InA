@@ -80,7 +80,6 @@ _null = execVM "missions\eventsHandler.sqf";
 _null = execVM "functions\InA\Init\baseAttack.sqf";
 
 missionSaved = false;
-missionData = [];
 
 // ---------- Map wipe ----------
 

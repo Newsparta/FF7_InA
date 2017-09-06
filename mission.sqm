@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=42;
+		nextID=273;
 	};
 	class Camera
 	{
-		pos[]={10951.057,352.3031,11494.159};
-		dir[]={-0.20923361,-0.26349369,-0.94182664};
-		up[]={-0.057161402,0.96459103,-0.25731027};
-		aside[]={-0.97634178,-1.9090949e-006,0.21690206};
+		pos[]={10935.676,352.3031,11506.103};
+		dir[]={-0.2991105,-0.22503383,-0.9274419};
+		up[]={-0.06910032,0.97428441,-0.21426213};
+		aside[]={-0.95186007,-1.3267272e-006,0.30698895};
 	};
 };
 binarizationWanted=0;
@@ -835,6 +835,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""GearDump""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="GearDump";
 			};
 			id=18;
@@ -8909,6 +8910,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""launcherCrate_2""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="launcherCrate_2";
 			};
 			id=161;
@@ -8981,18 +8983,19 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={10945.933,350.677,11498.479};
-				angles[]={0,4.4614406,-0};
+				position[]={10945.933,350.67661,11498.479};
+				angles[]={0,4.4614453,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				init="[_this, ""launcherCrate_1""] call FF7_fnc_pst_registerStaticContainer;";
 				name="launcherCrate_1";
 			};
 			id=162;
 			type="Box_NATO_WpsLaunch_F";
-			atlOffset=0.020599365;
+			atlOffset=0.020233154;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -9067,6 +9070,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""weaponCrate_1""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="weaponCrate_1";
 			};
 			id=163;
@@ -9146,6 +9150,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""weaponCrate_2""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="weaponCrate_2";
 			};
 			id=164;
@@ -9225,6 +9230,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""grenadeCrate_1""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="grenadeCrate_1";
 				aiRadarUsage=805961924;
 			};
@@ -9324,6 +9330,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""grenadeCrate_2""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="grenadeCrate_2";
 				aiRadarUsage=805961924;
 			};
@@ -9404,6 +9411,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""equipmentCrate_1""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="equipmentCrate_1";
 			};
 			id=167;
@@ -9477,7 +9485,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={10952.53,351.90579,11489.335};
-				angles[]={0,6.0163236,-0};
+				angles[]={0,6.0163236,0};
 			};
 			side="Empty";
 			flags=4;
@@ -25790,6 +25798,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""explosiveCrate_1""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="explosiveCrate_1";
 			};
 			id=510;
@@ -25868,6 +25877,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
+				init="call{[_this, ""medicalCrate_1""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="medicalCrate_1";
 			};
 			id=512;
@@ -28831,18 +28841,19 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={10943.057,351.08008,11495.134};
+				position[]={10943.057,351.07983,11495.134};
 				angles[]={6.2828364,0,0.02237512};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""ammoCrate_2""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="ammoCrate_2";
 			};
 			id=630;
 			type="CargoNet_01_box_F";
-			atlOffset=0.0036315918;
+			atlOffset=0.0033874512;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28891,18 +28902,19 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={10941.564,351.07077,11495.11};
+				position[]={10941.564,351.07083,11495.11};
 				angles[]={6.2828364,0,0.02237512};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""ammoCrate_1""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="ammoCrate_1";
 			};
 			id=633;
 			type="CargoNet_01_box_F";
-			atlOffset=0.027893066;
+			atlOffset=0.027954102;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -28957,6 +28969,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
+				init="call{[_this, ""weaponCrate_3""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="weaponCrate_3";
 			};
 			id=636;
@@ -29072,7 +29085,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={10952.492,351.90579,11489.121};
-				angles[]={0,5.9600959,-0};
+				angles[]={0,5.9600959,0};
 			};
 			side="Empty";
 			flags=4;
@@ -29088,7 +29101,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={10952.618,351.44339,11489.189};
-				angles[]={-0,5.6983137,0};
+				angles[]={0,5.6983137,0};
 			};
 			side="Empty";
 			flags=4;

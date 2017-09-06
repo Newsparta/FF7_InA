@@ -97,7 +97,7 @@ player createDiaryRecord	[
 	
 	sleep 60;
 	
-	["(4.1.7c)<br/>2017-08-24", "Latest patch date"] call FF7_fnc_formatHint;
+	["(4.1.8)<br/>2017-08-31", "Latest patch date"] call FF7_fnc_formatHint;
 };
 
 // ---------- Run only on player... ----------
@@ -229,97 +229,86 @@ switch (baseType) do {
 
 InA_Warning_ID = 0;
 
-menuHQ addAction [["hq", "FF9900", "Headquarters"] call FF7_fnc_formatAddAction, 
-		{
-			if !(_this select 1 == leader (group (_this select 1))) exitWith {["HQ", "Headquarters", "Only the squad leader may access the headquarters."] call FF7_fnc_globalHintStruct;};
-			
-			call compile preprocessFileLineNumbers "functions\InA\Auxiliary\menuHQ.sqf";
-			
-		}, [], 99, true, true, "", "((_target distance _this) < 4)"];
+menuHQ addAction [
+	["hq", "FF9900", "Headquarters"] call FF7_fnc_formatAddAction, 
+	{_this call InA_fnc_actionHQMenu;},
+	[], 
+	99, 
+	true, 
+	true, 
+	"", 
+	"((_target distance _this) < 4)"
+];
 		
 menuHQ addAction [["FF9900", "Look At Map"] call FF7_fnc_formatText,
-		{
-		
-			if ("ItemMap" in (assignedItems player)) exitWith {["HQ", "Headquarters", "You already have a map to look at silly."] call FF7_fnc_globalHintStruct;};
-
-			(_this select 1) linkItem "ItemMap";
-			
-			openMap true;
-			
-			waitUntil {sleep 1; !visibleMap};
-			
-			(_this select 1) unlinkItem "ItemMap";
-
-		},[], 99, true, true, "", "((_target distance _this) < 4)"];
+	{_this call InA_fnc_actionHQLookAtMap;},
+	[], 
+	99, 
+	true, 
+	true, 
+	"", 
+	"((_target distance _this) < 4)"
+];
 		
 GearOpen addAction [["hq", "FF9900", "Gear Requisition"] call FF7_fnc_formatAddAction, 
-		{
-			[clientOwner, "gearRestricted"] remoteExec ["publicVariableClient", 2, false];
-			
-			sleep 0.2;
-		
-			if (!(_this select 1 == leader (group (_this select 1))) && (gearRestricted)) exitWith {["Headquarters", "Only the squad leader may access gear requisition."] call FF7_fnc_formatHint;};
-			
-			disableSerialization;
-	
-			createDialog "InA_Gear_Open_Dialog";
-			
-			[clientOwner, "LogM"] remoteExec ["publicVariableClient", 2, false];
-
-			sleep 0.2;
-
-			ctrlSetText [1002, (format ["%1",LogM])];	
-		
-		}, [], 99, true, true, "", "((_target distance _this) < 4)"];
+	{_this call InA_fnc_actionGearRequisition;},
+	[], 
+	99, 
+	true, 
+	true, 
+	"", 
+	"((_target distance _this) < 4)"
+];
 		
 Garage addAction [["hq", "FF9900", "Vehicle Requisition"] call FF7_fnc_formatAddAction, 
-		{
-		
-			[clientOwner, "gearRestricted"] remoteExec ["publicVariableClient", 2, false];
-			
-			sleep 0.2;
-		
-			if (!(_this select 1 == leader (group (_this select 1))) && (gearRestricted)) exitWith {["Headquarters", "Only the squad leader may access gear requisition."] call FF7_fnc_formatHint;};
-			
-			call compile preprocessFileLineNumbers "defines\Vehicles\landVehicleHandles.sqf";
-		
-		}, [], 99, true, true, "", "((_target distance _this) < 4)"];
+	{_this call InA_fnc_actionGarageRequisition;},
+	[], 
+	99, 
+	true, 
+	true, 
+	"", 
+	"((_target distance _this) < 4)"
+];
 		
 Hangar addAction [["hq", "FF9900", "Vehicle Requisition"] call FF7_fnc_formatAddAction,
-		{
-
-			[clientOwner, "gearRestricted"] remoteExec ["publicVariableClient", 2, false];
-			
-			sleep 0.2;
-		
-			if (!(_this select 1 == leader (group (_this select 1))) && (gearRestricted)) exitWith {["Headquarters", "Only the squad leader may access gear requisition."] call FF7_fnc_formatHint;};
-			
-			call compile preprocessFileLineNumbers "defines\Vehicles\airVehicleHandles.sqf";
-
-		},[], 99, true, true, "", "((_target distance _this) < 4)"];
+	{_this call InA_fnc_actionHangarRequisition;},
+	[], 
+	99, 
+	true, 
+	true, 
+	"", 
+	"((_target distance _this) < 4)"
+];
 	
-	Hangar addAction [["hq", "FF9900", "Shelter helicopter"] call FF7_fnc_formatAddAction,
-		{
-
-			[["shelter"],"defines\Vehicles\shelterHelicopter.sqf"] remoteExec ["execVM", 2];
-
-		},[], 99, true, true, "", "((_target distance _this) < 4)"];
-		
-	Hangar addAction [["hq", "FF9900", "Bring out helicopter"] call FF7_fnc_formatAddAction,
-		{
-			
-			[["bringOut"],"defines\Vehicles\shelterHelicopter.sqf"] remoteExec ["execVM", 2];
-
-		},[], 99, true, true, "", "((_target distance _this) < 4)"];
+Hangar addAction [["hq", "FF9900", "Shelter helicopter"] call FF7_fnc_formatAddAction,
+	{_this call InA_fnc_actionHangarShelter;},
+	[], 
+	99, 
+	true, 
+	true, 
+	"", 
+	"((_target distance _this) < 4)"
+];
+	
+Hangar addAction [["hq", "FF9900", "Bring out helicopter"] call FF7_fnc_formatAddAction,
+	{_this call InA_fnc_actionHangarTakeOut;},
+	[], 
+	99, 
+	true, 
+	true, 
+	"", 
+	"((_target distance _this) < 4)"
+];
 		
 basicGearBox addAction [["hq", "FF9900", "Equip Uniform"] call FF7_fnc_formatAddAction, 
-		{
-		
-			disableSerialization;
-	
-			createDialog "InA_Uniform_Dialog";
-		
-		}, [], 99, true, true, "", "((_target distance _this) < 4)"];
+	{_this call InA_fnc_actionUniformEquip;},
+	[], 
+	99, 
+	true, 
+	true, 
+	"", 
+	"((_target distance _this) < 4)"
+];
 
 // ---------- Building Objects ----------
 

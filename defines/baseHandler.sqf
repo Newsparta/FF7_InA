@@ -8,10 +8,7 @@ switch (_id) do
 		themeType = "Army";
 		themeSupplier = "OPF";
 
-		BLU_INF_SINGLE = 
-		[
-			"B_Soldier_F"
-		];
+		BLU_INF_SINGLE = "B_Soldier_F";
 		BLU_RIFLE =
 		[
 			["hlc_rifle_ACR_Carb_tan","30Rnd_556x45_Stanag"],
@@ -72,32 +69,29 @@ switch (_id) do
 		themeType = "Marines";
 		themeSupplier = "OPF";
 
-		BLU_INF_SINGLE = 
-		{
-			"B_Soldier_F"
-		};
+		BLU_INF_SINGLE = "B_Soldier_F";
 		BLU_RIFLE =
-		{
+		[
 			["rhs_weap_m4a1_carryhandle_pmag","30Rnd_556x45_Stanag"],
 			["rhs_weap_m16a4_pmag","30Rnd_556x45_Stanag"]
-		};
+		];
 		BLU_GL =
-		{
+		[
 			["rhs_weap_m4a1_m320","30Rnd_556x45_Stanag","1Rnd_HE_Grenade_shell"],
 			["rhs_weap_m16a4_carryhandle_M203","30Rnd_556x45_Stanag","1Rnd_HE_Grenade_shell"]
-		};
+		];
 		BLU_MG =
-		{
+		[
 			["rhs_weap_m249_pip_S","rhs_200rnd_556x45_M_SAW"]
-		};
+		];
 		BLU_AT =
-		{
+		[
 			["tf47_m3maaws","tf47_m3maaws_HEAT"]
-		};
+		];
 		BLU_AA =
-		{
+		[
 			["rhs_weap_fim92","rhs_fim92_mag"]
-		};
+		];
 		BLU_BACKPACKS =
 		[
 			"VSM_OGA_OD_Backpack_Kitbag"
@@ -133,10 +127,7 @@ switch (_id) do
 		themeType = "Nato";
 		themeSupplier = "OPF";
 
-		BLU_INF_SINGLE = 
-		{
-			"B_Soldier_F"
-		};
+		BLU_INF_SINGLE = "B_Soldier_F";
 		BLU_RIFLE =
 		[
 			["hlc_rifle_ACR_Carb_tan","30Rnd_556x45_Stanag"],
@@ -189,31 +180,28 @@ switch (_id) do
 		themeType = "AAF";
 		themeSupplier = "OPF";
 
-		BLU_INF_SINGLE = 
-		{
-			"B_Soldier_F"
-		};
+		BLU_INF_SINGLE = "B_Soldier_F";
 		BLU_RIFLE =
-		{
+		[
 			["rhs_weap_hk416d10","30Rnd_556x45_Stanag"],
 			["rhs_weap_hk416d145","30Rnd_556x45_Stanag"]
-		};
+		];
 		BLU_GL =
-		{
+		[
 			["rhs_weap_hk416d145_m320","30Rnd_556x45_Stanag","1Rnd_HE_Grenade_shell"]
-		};
+		];
 		BLU_MG =
-		{
+		[
 			["LMG_Mk200_F","200Rnd_65x39_cased_Box_Tracer"]
-		};
+		];
 		BLU_AT =
-		{
+		[
 			["launch_B_Titan_short_tna_F","Titan_AT"]
-		};
+		];
 		BLU_AA =
-		{
+		[
 			["launch_B_Titan_tna_F","Titan_AA"]
-		};
+		];
 		BLU_BACKPACKS =
 		[
 			"VSM_OGA_OD_Backpack_Kitbag"
@@ -245,32 +233,29 @@ switch (_id) do
 		themeType = "Russia";
 		themeSupplier = "BLU";
 
-		BLU_INF_SINGLE = 
-		{
-			"rhs_vdv_rifleman"
-		};
+		BLU_INF_SINGLE = "rhs_vdv_rifleman";
 		BLU_RIFLE =
-		{
+		[
 			["rhs_weap_ak74m_zenitco01","rhs_30Rnd_545x39_7N10_AK"],
 			["rhs_weap_ak74m_zenitco01_b33","rhs_30Rnd_545x39_7N10_AK"],
 			["rhs_weap_ak74mr","rhs_30Rnd_545x39_7N10_AK"]
-		};
+		];
 		BLU_GL =
-		{
+		[
 			["rhs_weap_ak74mr_gp25","rhs_30Rnd_545x39_7N10_AK","rhs_VOG25"]
-		};
+		];
 		BLU_MG =
-		{
+		[
 			["rhs_weap_pkp","rhs_100Rnd_762x54mmR_green"]
-		};
+		];
 		BLU_AT =
-		{
+		[
 			["rhs_weap_rpg7","rhs_rpg7_PG7V_mag"]
-		};
+		];
 		BLU_AA =
-		{
+		[
 			["rhs_weap_igla","rhs_mag_9k38_rocket"]
-		};
+		];
 		BLU_BACKPACKS =
 		[
 			"VSM_OGA_OD_Backpack_Kitbag"

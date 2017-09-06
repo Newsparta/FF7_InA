@@ -46,17 +46,17 @@ if (_command == "build") then {
 	"fob_area" setMarkerSize [100, 100];
 
 	[] spawn {
-		while (true) do {
+		while {true} do {
 			scopeName "fobDefence";
 
-			sleep (2 + (random 2);
+			sleep (2 + (random 2));
 
 			if ({_x distance InA_fob_location < 1500} count (allPlayers - entities "HeadlessClient_F") > 0) then {
 
 				_pos = [InA_fob_location, 0, 25, 1, 0, -1, 0] call BIS_fnc_findSafePos;
 
 				_troops = [];
-				for "_i" from 1 to (4 + (round random 6)) do {
+				for "_i" from 1 to (3 + (round random 3)) do {
 
 					_troops pushBack BLU_INF_SINGLE;
 				};
@@ -72,7 +72,7 @@ if (_command == "build") then {
 				_pos = [InA_fob_location, 0, 25, 1, 0, -1, 0] call BIS_fnc_findSafePos;
 
 				_troops = [];
-				for "_i" from 1 to (4 + (round random 6)) do {
+				for "_i" from 1 to (3 + (round random 3)) do {
 
 					_troops pushBack BLU_INF_SINGLE;
 				};
@@ -88,7 +88,7 @@ if (_command == "build") then {
 				while {true} do {
 					scopeName "fobEntered";
 
-					sleep (2 + (random 2);
+					sleep (2 + (random 2));
 
 					if ({_x distance InA_fob_location < 1500} count (allPlayers - entities "HeadlessClient_F") < 1) then {
 						breakOut "fobEntered";

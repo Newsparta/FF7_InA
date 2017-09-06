@@ -1,8 +1,8 @@
 // ---------- Basics ----------
 author					= "FoxForce";
-onLoadName				= "InA [Malden]";
+onLoadName				= "InA [Tanoa]";
 onLoadMission			= "FoxForce - Invade, no Annex 4.1.8";
-loadScreen				= "img\malden_noannex_load_512.paa";
+loadScreen				= "img\tanoa_noannex_load_512.paa";
 overviewText			= "FoxForce COOP";
 onLoadIntroTime			= 0;
 onLoadMissionTime		= 0;
@@ -62,8 +62,15 @@ class CfgFunctions
 
 #include "cfg\defines.hpp"
 #include "cfg\dialogs.hpp"
-#include "cfg\dialogsBuild.hpp"
-#include "cfg\dialogsVehicle.hpp"
+
+// ---------- Items ----------
+#include "cfg\gear.hpp"
+
+// ---------- Vehicles ----------
+#include "cfg\vehicles.hpp"
+
+// ---------- Faction data ----------
+#include "cfg\factions.hpp"
 
 // ---------- ACE ----------
 

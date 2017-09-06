@@ -5,6 +5,8 @@
 FF7_Global_Debug = true;
 initialized = false;
 
+_null = execVM "functions\InA\Init\initConfigs.sqf";
+
 // ---------- Load database ----------
 
 _null = execVM "functions\InA\Init\loadDatabase.sqf";
@@ -52,6 +54,16 @@ _null = execVM "functions\InA\Init\supplierCheck.sqf";
 		getMarkerPos "airResupply_2"
 	]
 ] spawn InA_fnc_vehicleService;
+
+// ---------- Autosave ----------
+
+[] spawn {
+
+	while {true} do {
+		sleep 86400;
+		[] call InA_fnc_save;	
+	};
+};
 
 // ---------- Parameters ----------
 	

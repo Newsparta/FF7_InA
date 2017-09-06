@@ -3,7 +3,6 @@ class FF7
 	tag = "FF7";
 	class functions
 	{
-		
 		// ACE
 		class aceHealLocal {file = "functions\FF7\Ace\fn_aceheallocal.sqf";};
 		class aceMedicalStatus {file = "functions\FF7\Ace\fn_acemedicalstatus.sqf";};
@@ -12,6 +11,7 @@ class FF7
 		
 		// GENERIC
 		class extSerialize {file = "functions\FF7\Generic\extSerialize.sqf";};
+		class pst_registerStaticContainer {file = "functions\FF7\Generic\fn_pst_registerStaticContainer.sqf";};
 		class weatherMan {file = "functions\FF7\Generic\fn_weatherMan.sqf";};
 		class tfarSetup {file = "functions\FF7\Generic\fn_tfarsetup.sqf";};
 		class addGlobalAction {file = "functions\FF7\Generic\fn_addglobalaction.sqf";};
@@ -32,11 +32,33 @@ class FF7
 	};
 };
 
+class Helpers
+{
+	tag = "Helpers";
+	class Helpers
+	{
+		class GearToArray {};
+		class SortArrayByClassname {};
+		class FindArrayByClassname {};
+		class IsClassnameInArray {};
+		class ConfigToArrayTemplate {};
+	};
+};
+
 class InA
 {
 	tag = "InA";
 	class functions
 	{
+		// Actions
+		class actionGarageRequisition {file = "functions\InA\Actions\fn_actionGarageRequisition.sqf";};
+		class actionGearRequisition {file = "functions\InA\Actions\fn_actionGearRequisition.sqf";};
+		class actionHangarRequisition {file = "functions\InA\Actions\fn_actionHangarRequisition.sqf";};
+		class actionHangarShelter {file = "functions\InA\Actions\fn_actionHangarShelter.sqf";};
+		class actionHangarTakeOut {file = "functions\InA\Actions\fn_actionHangarTakeOut.sqf";};
+		class actionHQLookAtMap {file = "functions\InA\Actions\fn_actionHQLookAtMap.sqf";};
+		class actionHQMenu {file = "functions\InA\Actions\fn_actionHQMenu.sqf";};
+		class actionUniformEquip {file = "functions\InA\Actions\fn_actionUniformEquip.sqf";};
 		
 		// Reinforcements
 		class insSniperAttack {file = "functions\InA\Reinforcements\fn_insSniperAttack.sqf";};

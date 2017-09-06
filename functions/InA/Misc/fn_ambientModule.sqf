@@ -305,7 +305,7 @@ while {true} do {
 	[
 		"
 			if (_instability == instability%1) then {
-				_instability = _instability + 0.00000165;
+				_instability = _instability + (0.00000165 * (1/volatileRate));
 			} else {
 				_instability = instability%1;
 			};

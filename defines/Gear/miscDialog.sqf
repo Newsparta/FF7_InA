@@ -32,7 +32,7 @@ itemCostCheck =
 		{
 			case "medical":
 			{
-				[medicalCrate, [_item, Amount]] remoteExec ["addItemCargoGlobal", 2];
+				[medicalCrate_1, [_item, Amount]] remoteExec ["addItemCargoGlobal", 2];
 			};
 			case "other":
 			{

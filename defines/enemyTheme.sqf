@@ -3,20 +3,22 @@
 	// ---------- INFANTRY ----------
 
 	INS_INF_SINGLE = [
-		"I_G_Soldier_A_F",
-		"I_G_Soldier_AR_F",
-		"I_G_medic_F",
-		"I_G_engineer_F",
-		"I_G_Soldier_exp_F",
-		"I_G_Soldier_GL_F",
-		"I_G_Soldier_M_F",
-		"I_G_officer_F",
-		"I_G_Soldier_F",
-		"I_G_Soldier_LAT_F",
-		"I_G_Soldier_lite_F",
-		"I_G_Soldier_Sharpshooter_F",
-		"I_G_Soldier_SL_F",
-		"I_G_Soldier_TL_F"
+		"I_C_Soldier_Para_1_F",
+		"I_C_Soldier_Para_2_F",
+		"I_C_Soldier_Para_3_F",
+		"I_C_Soldier_Para_4_F",
+		"I_C_Soldier_Para_5_F",
+		"I_C_Soldier_Para_6_F",
+		"I_C_Soldier_Para_7_F",
+		"I_C_Soldier_Para_8_F",
+		"I_C_Soldier_Bandit_1_F",
+		"I_C_Soldier_Bandit_2_F",
+		"I_C_Soldier_Bandit_3_F",
+		"I_C_Soldier_Bandit_4_F",
+		"I_C_Soldier_Bandit_5_F",
+		"I_C_Soldier_Bandit_6_F",
+		"I_C_Soldier_Bandit_7_F",
+		"I_C_Soldier_Bandit_8_F"
 	];
 	
 	INS_INF_HELIPILOT = [

@@ -151,7 +151,7 @@ if (_type in ["B_Soldier_SL_F", "B_Soldier_TL_F", "B_spotter_F", "B_recon_JTAC_F
 			_cond
 		] call ace_interact_menu_fnc_createAction;
 
-		[_unit, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+		[_unit, 1, ["ACE_SelfActions","InA_Restrict"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 		// ---------- Base Restrictions (no) ----------
 		_action =
@@ -163,7 +163,7 @@ if (_type in ["B_Soldier_SL_F", "B_Soldier_TL_F", "B_spotter_F", "B_recon_JTAC_F
 			_cond
 		] call ace_interact_menu_fnc_createAction;
 
-		[_unit, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+		[_unit, 1, ["ACE_SelfActions","InA_Restrict"], _action] call ace_interact_menu_fnc_addActionToObject;
 }
 else
 {

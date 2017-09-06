@@ -5,7 +5,7 @@ switch (_id) do
 	case 0:
 	{
 		themeFlag = "flag_USA";
-		themeType = "Army";
+		baseType = "Army";
 		supplier = "OPF";
 
 		BLU_INF_SINGLE = "B_Soldier_F";
@@ -66,7 +66,7 @@ switch (_id) do
 	case 1:
 	{
 		themeFlag = "flag_USA";
-		themeType = "Marines";
+		baseType = "Marines";
 		supplier = "OPF";
 
 		BLU_INF_SINGLE = "B_Soldier_F";
@@ -124,7 +124,7 @@ switch (_id) do
 	case 2:
 	{
 		themeFlag = "flag_NATO";
-		themeType = "Nato";
+		baseType = "Nato";
 		supplier = "OPF";
 
 		BLU_INF_SINGLE = "B_Soldier_F";
@@ -177,7 +177,7 @@ switch (_id) do
 	case 3:
 	{
 		themeFlag = "flag_AAF";
-		themeType = "AAF";
+		baseType = "AAF";
 		supplier = "OPF";
 
 		BLU_INF_SINGLE = "B_Soldier_F";
@@ -230,7 +230,7 @@ switch (_id) do
 	case 4:
 	{
 		themeFlag = "rhs_flag_russia";
-		themeType = "Russia";
+		baseType = "Russia";
 		supplier = "BLU";
 
 		BLU_INF_SINGLE = "rhs_vdv_rifleman";

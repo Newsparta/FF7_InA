@@ -6,7 +6,7 @@ switch (_id) do
 	{
 		themeFlag = "flag_USA";
 		themeType = "Army";
-		themeSupplier = "OPF";
+		supplier = "OPF";
 
 		BLU_INF_SINGLE = "B_Soldier_F";
 		BLU_RIFLE =
@@ -67,7 +67,7 @@ switch (_id) do
 	{
 		themeFlag = "flag_USA";
 		themeType = "Marines";
-		themeSupplier = "OPF";
+		supplier = "OPF";
 
 		BLU_INF_SINGLE = "B_Soldier_F";
 		BLU_RIFLE =
@@ -125,7 +125,7 @@ switch (_id) do
 	{
 		themeFlag = "flag_NATO";
 		themeType = "Nato";
-		themeSupplier = "OPF";
+		supplier = "OPF";
 
 		BLU_INF_SINGLE = "B_Soldier_F";
 		BLU_RIFLE =
@@ -178,7 +178,7 @@ switch (_id) do
 	{
 		themeFlag = "flag_AAF";
 		themeType = "AAF";
-		themeSupplier = "OPF";
+		supplier = "OPF";
 
 		BLU_INF_SINGLE = "B_Soldier_F";
 		BLU_RIFLE =
@@ -231,7 +231,7 @@ switch (_id) do
 	{
 		themeFlag = "rhs_flag_russia";
 		themeType = "Russia";
-		themeSupplier = "BLU";
+		supplier = "BLU";
 
 		BLU_INF_SINGLE = "rhs_vdv_rifleman";
 		BLU_RIFLE =

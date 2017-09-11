@@ -139,9 +139,9 @@ class AAF: opfor
         };
         class secondary
         {
-            classname = "";
-            ammo[] = {}; // {"magazine class name", "# num bullets"}
-            items[] = {}; // addSecondaryWeaponItem
+            classname = "hgun_P07_F";
+            ammo[] = {"rhsusf_mag_15Rnd_9x19_JHP", ""}; // {"magazine class name", "# num bullets"}
+            items[] = {"rhsusf_mag_15Rnd_9x19_JHP", "rhsusf_mag_15Rnd_9x19_JHP"}; // addSecondaryWeaponItem
         };
         class launcher
         {
@@ -156,7 +156,7 @@ class AAF: opfor
         };
         class uniform
         {
-            classname = "";
+            classname = "U_I_CombatUniform";
             items[] = {}; // addItemToUniform
         };
         class vest 

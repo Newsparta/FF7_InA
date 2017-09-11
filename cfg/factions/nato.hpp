@@ -184,9 +184,9 @@ class Nato: blufor
         };
         class secondary
         {
-            classname = "";
-            ammo[] = {}; // {"magazine class name", "# num bullets"}
-            items[] = {}; // addSecondaryWeaponItem
+            classname = "hgun_P07_F";
+            ammo[] = {"16Rnd_9x21_Mag", ""}; // {"magazine class name", "# num bullets"}
+            items[] = {"16Rnd_9x21_Mag", "16Rnd_9x21_Mag"}; // addSecondaryWeaponItem
         };
         class launcher
         {
@@ -201,7 +201,7 @@ class Nato: blufor
         };
         class uniform
         {
-            classname = "";
+            classname = "MNP_CombatUniform_Scorpion_A";
             items[] = {}; // addItemToUniform
         };
         class vest 

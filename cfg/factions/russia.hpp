@@ -145,9 +145,9 @@ class Russia: opfor
         };
         class secondary
         {
-            classname = "";
-            ammo[] = {}; // {"magazine class name", "# num bullets"}
-            items[] = {}; // addSecondaryWeaponItem
+            classname = "rhs_weap_makarov_pm";
+            ammo[] = {"rhs_mag_9x18_8_57N181S", ""}; // {"magazine class name", "# num bullets"}
+            items[] = {"rhs_mag_9x18_8_57N181S", "rhs_mag_9x18_8_57N181S"}; // addSecondaryWeaponItem
         };
         class launcher
         {
@@ -162,7 +162,7 @@ class Russia: opfor
         };
         class uniform
         {
-            classname = "";
+            classname = "rhs_uniform_emr_patchless";
             items[] = {}; // addItemToUniform
         };
         class vest 

@@ -155,9 +155,9 @@ class Marines: blufor
         };
         class secondary
         {
-            classname = "";
-            ammo[] = {}; // {"magazine class name", "# num bullets"}
-            items[] = {}; // addSecondaryWeaponItem
+            classname = "rhsusf_weap_m9";
+            ammo[] = {"rhsusf_mag_15Rnd_9x19_JHP", ""}; // {"magazine class name", "# num bullets"}
+            items[] = {"rhsusf_mag_15Rnd_9x19_JHP", "rhsusf_mag_15Rnd_9x19_JHP"}; // addSecondaryWeaponItem
         };
         class launcher
         {
@@ -172,7 +172,7 @@ class Marines: blufor
         };
         class uniform
         {
-            classname = "";
+            classname = "rhs_uniform_FROG01_wd";
             items[] = {}; // addItemToUniform
         };
         class vest 

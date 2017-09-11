@@ -38,65 +38,89 @@ class InA_Helmets
     };
     class H_HelmetB_light_desert
     {
-        name = "Light Combat Helmet";
+        name = "Light (Desert)";
         cost = 0;
         type = "helmet";
     };
     class H_HelmetB_light_grass
     {
-        name = "Enhanced Combat Helmet";
+        name = "Light (Grass)";
         cost = 0;
         type = "helmet";
     };
     class H_HelmetB_light_snakeskin
     {
-        name = "United States Army (MICH camo)";
+        name = "Light (Snakeskin)";
         cost = 0;
         type = "helmet";
     };
     class H_HelmetSpecB_paint2
     {
-        name = "Bundeswehr (MICH camo)";
+        name = "Enhanced (Paint 2)";
         cost = 0;
         type = "helmet";
     };
     class H_HelmetSpecB_paint1
     {
-        name = "Canadian Army (MICH camo)";
+        name = "Enhanced (Paint 1)";
         cost = 0;
         type = "helmet";
     };
     class H_HelmetSpecB_snakeskin
     {
-        name = "Finnish Army (MICH camo)";
+        name = "Enhanced (Snakeskin)";
         cost = 0;
         type = "helmet";
     };
     class MNP_Helmet_Scorpion
     {
-        name = "Australian Army (MICH camo)";
+        name = "United States Army (MICH camo)";
         cost = 0;
         type = "helmet";
     };
     class MNP_Helmet_Germany
     {
-        name = "Modular Helmet";
+        name = "Bundeswehr (MICH camo)";
         cost = 0;
         type = "helmet";
     };
     class MNP_Helmet_Canada_T
     {
-        name = "Officer Cap";
+        name = "Canadian Army (MICH camo)";
         cost = 0;
         type = "helmet";
     };
     class MNP_Helmet_FIN_T
     {
-        name = "6b47";
+        name = "Finnish Army (MICH camo)";
         cost = 0;
         type = "helmet";
     };
     class MNP_Helmet_Australia
+    {
+        name = "Australian Army (MICH camo)";
+        cost = 0;
+        type = "helmet";
+    };
+    class H_HelmetIA
+    {
+        name = "Modular Helmet";
+        cost = 0;
+        type = "helmet";
+    };
+    class H_MilCap_dgtl
+    {
+        name = "Officer Cap";
+        cost = 0;
+        type = "helmet";
+    };
+    class rhs_6b47
+    {
+        name = "6b47";
+        cost = 0;
+        type = "helmet";
+    };
+    class rhs_6b47_ess
     {
         name = "6b47 (ESS)";
         cost = 0;

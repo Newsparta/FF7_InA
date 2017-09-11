@@ -1,6 +1,6 @@
 #include "factions\global.hpp"
-#include "sides\blufor.hpp"
-#include "sides\opfor.hpp"
+#include "factions\sides\blufor.hpp"
+#include "factions\sides\opfor.hpp"
 class InA_Factions
 {
 	#include "factions\aaf.hpp"

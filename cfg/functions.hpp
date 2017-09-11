@@ -37,11 +37,44 @@ class Helpers
 	tag = "Helpers";
 	class Helpers
 	{
-		class GearToArray {};
-		class SortArrayByClassname {};
-		class FindArrayByClassname {};
-		class IsClassnameInArray {};
-		class ConfigToArrayTemplate {};
+		// Initialization
+		class composeFactionConfigs {};
+		class configToArrayByStructure {};
+
+		// Config Array Getters
+		class getAllFactionNames {};
+
+		class getFactionByClassname {};
+		class getFactionProperty {};
+		class getElementByConfigName {};
+		
+		class getProperty_FromWeapon {};
+		class getProperty_FromMagazine {};
+		class getProperty_FromMiscItem {};
+		class getProperty_FromLandVehicle {};
+		class getProperty_FromAirVehicle {};
+		class getProperty_FromWaterVehicle {};
+		class getProperty_FromHelmet {};
+		class getProperty_FromVest {};
+		class getProperty_FromUniform {};
+		class getProperty_FromLoadout {};
+		
+		class indexOfProp_Weapon {};
+		class indexOfProp_Magazine {};
+		class indexOfProp_MiscItem {};
+		class indexOfProp_LandVehicle {};
+		class indexOfProp_AirVehicle {};
+		class indexOfProp_WaterVehicle {};
+		class indexOfProp_Helmet {};
+		class indexOfProp_Vest {};
+		class indexOfProp_Uniform {};
+		class indexOfProp_Loadout {};
+
+		// Generic helpers
+		class findSubItemBySubIndex {};
+		class stringPadRight {};
+
+		class debugPrettyDumpFactions {};
 	};
 };
 

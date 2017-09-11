@@ -41,7 +41,7 @@ private     _return         = false;
 if (!isServer) exitWith { true; };
 
 	// Initialize if necessary
-	if (isNil {g_pst_StaticContainers}) then {
+	if (isNil "g_pst_StaticContainers") then {
 		g_pst_StaticContainers = [];
 	};
 

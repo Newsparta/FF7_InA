@@ -205,7 +205,7 @@ class InA_Weapons
 
 	class rhs_weap_ak74m_zenitco01
 	{
-		cost = 0;
+		cost = 1;
 		name = "AK-74M";
 		type = "weapon";
 	};
@@ -324,7 +324,7 @@ class InA_Weapons
 
 	class rhs_weap_m4a1_carryhandle_pmag
 	{
-		cost = 0;
+		cost = 10;
 		name = "M4A1";
 		type = "weapon";
 	};

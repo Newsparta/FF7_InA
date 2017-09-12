@@ -299,13 +299,13 @@ while {true} do {
 		};
 	};
 
-	call compile format
+	_instability = call compile format
 	[
 		"
-			if (_instability == instability%1) then {
-				_instability = _instability + (0.00000165 * (1/volatileRate));
+			if (%2 == instability%1) then {
+				%2 + (0.00000165 * (1/volatileRate));
 			} else {
-				_instability = instability%1;
+				instability%1;
 			};
 		",
 		_name,

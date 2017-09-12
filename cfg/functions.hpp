@@ -83,7 +83,7 @@ class InA
 	tag = "InA";
 	class functions
 	{
-		// Actions
+		
 		class actionGarageRequisition {file = "functions\InA\Actions\fn_actionGarageRequisition.sqf";};
 		class actionGearRequisition {file = "functions\InA\Actions\fn_actionGearRequisition.sqf";};
 		class actionHangarRequisition {file = "functions\InA\Actions\fn_actionHangarRequisition.sqf";};

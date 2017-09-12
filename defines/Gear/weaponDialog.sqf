@@ -32,11 +32,11 @@ weaponCostCheck =
 		{
 			case "weapon":
 			{
-				[weaponCrate_1, [_item, Amount]] remoteExec ["addWeaponCargoGlobal", 2];
+				[weaponCrate, [_item, Amount]] remoteExec ["addWeaponCargoGlobal", 2];
 			};
 			case "launcher":
 			{
-				[launcherCrate_1, [_item, Amount]] remoteExec ["addWeaponCargoGlobal", 2];
+				[launcherCrate, [_item, Amount]] remoteExec ["addWeaponCargoGlobal", 2];
 			};
 			case "Backpack":
 			{

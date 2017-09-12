@@ -25,7 +25,7 @@ gearRestricted = false;
 
 			player forceAddUniform "VSM_Multicam_Crye_Camo";
 			player addMagazine "rhsusf_mag_15Rnd_9x19_JHP";
-			player addWeapon "rhsusf_weap_m9";
+			player addWeapon "rhsusf_weap_m9",
 		};
 		case "Marines":
 		{
@@ -39,7 +39,7 @@ gearRestricted = false;
 
 			player forceAddUniform "rhs_uniform_FROG01_wd";
 			player addMagazine "rhsusf_mag_15Rnd_9x19_JHP";
-			player addWeapon "rhsusf_weap_m9";
+			player addWeapon "rhsusf_weap_m9",
 		};
 		case "Nato":
 		{
@@ -53,7 +53,7 @@ gearRestricted = false;
 
 			player forceAddUniform "MNP_CombatUniform_Scorpion_A";
 			player addMagazine "16Rnd_9x21_Mag";
-			player addWeapon "hgun_P07_F";
+			player addWeapon "hgun_P07_F",
 		};
 		case "AAF":
 		{
@@ -67,7 +67,7 @@ gearRestricted = false;
 
 			player forceAddUniform "U_I_CombatUniform";
 			player addMagazine "rhsusf_mag_15Rnd_9x19_JHP";
-			player addWeapon "hgun_P07_F";
+			player addWeapon "hgun_P07_F",
 		};
 		case "Russia":
 		{
@@ -81,7 +81,7 @@ gearRestricted = false;
 
 			player forceAddUniform "rhs_uniform_emr_patchless";
 			player addMagazine "rhs_mag_9x18_8_57N181S";
-			player addWeapon "rhs_weap_makarov_pm";
+			player addWeapon "rhs_weap_makarov_pm",
 		};
 		default
 		{
@@ -98,7 +98,17 @@ gearRestricted = false;
 
 _array = nearestObjects [getMarkerPos "respawn_west", 
 [
-	"ReammoBox_F"
+	"Box_NATO_WpsLaunch_F",
+	"Box_NATO_Support_F",
+	"Box_NATO_AmmoOrd_F",
+	"Box_NATO_Ammo_F",
+	"Box_NATO_Wps_F",
+	"Box_NATO_Grenades_F",
+	"Box_NATO_Equip_F",
+	"B_supplyCrate_F",
+	"Box_NATO_Uniforms_F",
+	"B_CargoNet_01_ammo_F",
+	"ACE_medicalSupplyCrate"
 ], 750];
 
 {

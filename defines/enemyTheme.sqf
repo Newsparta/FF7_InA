@@ -3,22 +3,20 @@
 	// ---------- INFANTRY ----------
 
 	INS_INF_SINGLE = [
-		"I_C_Soldier_Para_1_F",
-		"I_C_Soldier_Para_2_F",
-		"I_C_Soldier_Para_3_F",
-		"I_C_Soldier_Para_4_F",
-		"I_C_Soldier_Para_5_F",
-		"I_C_Soldier_Para_6_F",
-		"I_C_Soldier_Para_7_F",
-		"I_C_Soldier_Para_8_F",
-		"I_C_Soldier_Bandit_1_F",
-		"I_C_Soldier_Bandit_2_F",
-		"I_C_Soldier_Bandit_3_F",
-		"I_C_Soldier_Bandit_4_F",
-		"I_C_Soldier_Bandit_5_F",
-		"I_C_Soldier_Bandit_6_F",
-		"I_C_Soldier_Bandit_7_F",
-		"I_C_Soldier_Bandit_8_F"
+		"I_G_Soldier_A_F",
+		"I_G_Soldier_AR_F",
+		"I_G_medic_F",
+		"I_G_engineer_F",
+		"I_G_Soldier_exp_F",
+		"I_G_Soldier_GL_F",
+		"I_G_Soldier_M_F",
+		"I_G_officer_F",
+		"I_G_Soldier_F",
+		"I_G_Soldier_LAT_F",
+		"I_G_Soldier_lite_F",
+		"I_G_Soldier_Sharpshooter_F",
+		"I_G_Soldier_SL_F",
+		"I_G_Soldier_TL_F"
 	];
 	
 	INS_INF_HELIPILOT = [
@@ -178,10 +176,10 @@
 	// ---------- HEAVY TRANSPORT HELICOPTER ----------
 	
 	INS_HEAVY_HELI_TR_OPF = [
-		"RHS_Mi24P_vvs"
+		"rhsgref_cdf_reg_Mi17Sh"
 	];
-	INS_HEAVY_HELI_TR_OPF_TEX = ["Camo1",1];
-	INS_HEAVY_HELI_TR_OPF_ANI = ["exhaust_hide",1,"at_rack_hide",0];
+	INS_HEAVY_HELI_TR_OPF_TEX = true;
+	INS_HEAVY_HELI_TR_OPF_ANI = ["LeftDoor",0,"hide_door_hatch",0,"AddCargoHook_COver",0];
 	INS_HEAVY_HELI_TR_BLU = [
 		"RHS_UH60M"
 	];
@@ -312,16 +310,14 @@
 	
 	INS_BACKPACKS =
 	[
-		"B_ViperHarness_oli_F",
-		"B_TacticalPack_rgr",
-		"B_FieldPack_oli",
-		"B_ViperLightHarness_oli_F"
+		"B_Kitbag_cbr",
+		"B_Kitbag_rgr"
 	];
 	
 // ---------- Buildings ----------
 	
-	INS_SANDBAG_LONG = "Land_BagFence_01_long_green_F";
-	INS_SANDBAG_SHORT = "Land_BagFence_01_short_green_F";
-	INS_SANDBAG_ROUND = "Land_BagFence_01_round_green_F";
+	INS_SANDBAG_LONG = "Land_BagFence_long_F";
+	INS_SANDBAG_SHORT = "Land_BagFence_short_F";
+	INS_SANDBAG_ROUND = "Land_BagFence_round_F";
 	
-	INS_CAMONET = "CamoNet_ghex_open_F";
+	INS_CAMONET = "CamoNet_OPFOR_open_F";

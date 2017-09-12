@@ -1,131 +1,65 @@
 mapCenter = [(worldSize/2),(worldSize/2),0];
 mapSize = sqrt((worldSize/2)^2 + (worldSize/2)^2);
 
-// ---------- Volatility rate (1 = 2 weeks) ----------
-
-volatileRate = 2;
-
 // ---------- Spawn ambient modules ----------
 
-[getMarkerPos "ambientTanouka","Tanouka",1000,"medium"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientGalili","Galili",750,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientVagalala","Vagalala",850,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientBa","Ba",500,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientBluePearlIndustrial","BluePearlIndustrial",1000,"medium"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientLuganville","Luganville",600,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientNandai","Nandai",600,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientOumere","Oumere",1000,"medium"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientKotomo","Kotomo",750,"medium"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientLami","Lami",750,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientRegina","Regina",750,"medium"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientLobaka","Lobaka",600,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientLifou","Lifou",750,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientGeorgetown","Georgetown",1000,"large"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientSaintJulien","SaintJulien",750,"medium"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientIpota","Ipota",750] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientNicolet","Nicolet",750,"medium"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientPetitNicolet","PetitNicolet",600,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientLaRochelle","LaRochelle",750] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientOvau","Ovau",750,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientMomeaPenelo","MomeaPenelo",750,"medium"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientSavu","Savu",600,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientSaintPaul","SaintPaul",600,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientHarcourt","Harcourt",500,"medium"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientDoodstil","Doodstil",750,"medium"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientPortBoise","PortBoise",400,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientLijnhaven","Lijnhaven",1000,"large"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientBlerick","Blerick",600,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientBuabua","Buabua",500,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientRereki","Rereki",600,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientTaga","Taga",500,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientModdergat","Moddergat",600,"medium"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientLaFoa","LaFoa",500,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientTobakoro","Tobakoro",500,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientLosi","Losi",500,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientSosovu","Sosovu",500,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientKatkoula","Katkoula",1000,"large"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientSavaka","Savaka",500,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientYanukka","Yanukka",750,"medium"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientLailai","Lailai",600,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientKoumac","Koumac",600,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientCerebu","Cerebu",600,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientRautake","Rautake",750,"medium"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientNamuvaka","Namuvaka",600,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientLaikoro","Laikoro",600,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientBalavu","Balavu",750,"medium"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientLeqa","Leqa",600,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientMuaceba","Muaceba",600,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientLakatoro","Lakatoro",500,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientTavu","Tavu",750,"medium"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientNani","Nani",600,"small"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientBelfort","Belfort",750,"medium"] spawn InA_fnc_ambientModule;
-[getMarkerPos "ambientTuvanaka","Tuvanaka",850,"medium"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientLolisse","Lolisse",600,"small"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientBosquet","Bosquet",500,"small"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientSaintLouis","SaintLouis",750,"medium"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientLarche","Larche",750,"large"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientLaTrinite","LaTrinite",750,"large"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientGoisse","Goisse",750,"small"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientSaintJean","SaintJean",750,"small"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientArudy","Arudy",750,"medium"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientDourdan","Dourdan",750,"medium"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientHoudan","Houdan",750,"medium"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientLaPessagne","LaPessagne",750,"medium"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientArette","Arette",750,"small"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientLaRiviere","LaRiviere",750,"medium"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientDorres","Dorres",750,"small"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientSainteMarie","SainteMarie",750,"medium"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientBlanches","Blanches",500,"small"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientChapoi","Chapoi",750,"large"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientCancon","Cancon",750,"large"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientNorthLePort","NorthLePort",750,"large"] spawn InA_fnc_ambientModule;
+[getMarkerPos "ambientLePort","LePort",750,"medium"] spawn InA_fnc_ambientModule;
 
 // ---------- Location references ----------
 
 ambientSitrep1 = 
 [
-	["BluePearlIndustrial",1000],
-	["Ba",500],
-	["Galili",750],
-	["SaintJulien",750],
-	["GeorgeTown",1000],
-	["Ipota",750],
-	["Kotomo",750],
-	["LaRochelle",750],
-	["Ovau",750],
-	["MomeaPenelo",750],
-	["Lakatoro",500],
-	["Lifou",750],
-	["Lami",750],
-	["Luganville",600],
-	["Nicolet",750],
-	["PetitNicolet",600],
-	["Regina",750],
-	["Lobaka",600],
-	["Nandai",600],
-	["Oumere",1000],
-	["Savu",600],
-	["SaintPaul",600],
-	["Tanouka",1000],
-	["Vagalala",850]
+	["Lolisse",600],
+	["Bosquet",500],
+	["SaintLouis",750],
+	["Larche",750],
+	["LaTrinite",750],
+	["Goisse",750],
+	["SaintJean",750],
+	["Arudy",750],
+	["Dourdan",750],
+	["Houdan",750],
+	["LaPessagne",750],
+	["Arette",750],
+	["LaRiviere",750],
+	["Dorres",750],
+	["SainteMarie",750],
+	["Blanches",500],
+	["Chapoi",750],
+	["Cancon",750],
+	["NorthLePort",750],
+	["LePort",750]
 ];
 
 ambientSitrep2 = 
 [
-	["BuaBua",500],
-	["Cerebu",500],
-	["Doodstil",750],
-	["Harcourt",500],
-	["Katkoula",1000],
-	["Koumac",500],
-	["Losi",500],
-	["Lailai",750],
-	["Lijnhaven",1000],
-	["Blerick",600],
-	["Moddergat",600],
-	["LaFoa",500],
-	["Tobakoro",500],
-	["PortBoise",400],
-	["Rereki",600],
-	["Taga",500],
-	["Savaka",500],
-	["Yanukka",750]
+
 ];
 
 ambientSitrep3 = 
 [
-	["Balavu",750],
-	["Belfort",750],
-	["Laikoro",600],
-	["Leqa",600],
-	["Nani",600],
-	["Rautake",750],
-	["Namuvaka",600],
-	["Sosovu",500],
-	["Tavu",750],
-	["Tuvanaka",850]
+
 ];
+
 // ---------- War torn region ----------
 
 _array = nearestObjects 

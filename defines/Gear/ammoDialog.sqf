@@ -32,20 +32,42 @@ magazineCostCheck =
 		{
 			case "magazine":
 			{
-				[ammoCrate_1, [_item, Amount]] remoteExec ["addMagazineCargoGlobal", 2];
+				[ammoCrate, [_item, Amount]] remoteExec ["addMagazineCargoGlobal", 2];
 			};
 			case "launcher":
 			{
-				[launcherCrate_1, [_item, Amount]] remoteExec ["addMagazineCargoGlobal", 2];
+				[launcherCrate, [_item, Amount]] remoteExec ["addMagazineCargoGlobal", 2];
 			};
+		};
+		
+		LogM = (LogM - Cost);
+		
+		publicVariableServer "LogM";
+		
+		ctrlSetText [1002, (format ["%1",LogM])];	
 
+		["Headquarters", "item(s) Requisitioned."] call FF7_fnc_formatHint;
+	} else {
+		["Headquarters", "Not enough Supplies."] call FF7_fnc_formatHint;
+	};
+};
+itemCostCheck = 
+{
+	[clientOwner, "LogM"] remoteExec ["publicVariableClient", 2, false];
+	
+	sleep 0.2;
+	
+	if (LogM >= Cost) then {
+	
+		switch (_itemType) do
+		{
 			case "grenade":
 			{
-				[grenadeCrate_1, [_item, Amount]] remoteExec ["addItemCargoGlobal", 2];
+				[grenadeCrate, [_item, Amount]] remoteExec ["addItemCargoGlobal", 2];
 			};
 			case "explosive":
 			{
-				[explosiveCrate_1, [_item, Amount]] remoteExec ["addMagazineCargoGlobal", 2];
+				[explosiveCrate, [_item, Amount]] remoteExec ["addMagazineCargoGlobal", 2];
 			};
 		};
 		
@@ -1125,112 +1147,112 @@ gearRequisition =
 				{
 					_item = "1Rnd_HE_Grenade_shell";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 19:
 				{
 					_item = "3Rnd_HE_Grenade_shell";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 20:
 				{
 					_item = "1Rnd_Smoke_Grenade_shell";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 21:
 				{
 					_item = "UGL_FlareWhite_F";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 22:
 				{
 					_item = "ACE_HuntIR_M203";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 23:
 				{
 					_item = "HandGrenade";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 24:
 				{
 					_item = "MiniGrenade";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 25:
 				{
 					_item = "SmokeShell";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 26:
 				{
 					_item = "SmokeShellBlue";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 27:
 				{
 					_item = "SmokeShellGreen";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 28:
 				{
 					_item = "ACE_M14";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 29:
 				{
 					_item = "APERSMine_Range_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 30:
 				{
 					_item = "SLAMDirectionalMine_Wire_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 31:
 				{
 					_item = "ClaymoreDirectionalMine_Remote_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 32:
 				{
 					_item = "ATMine_Range_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 33:
 				{
 					_item = "DemoCharge_Remote_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 			};
 		};
@@ -1355,112 +1377,112 @@ gearRequisition =
 				{
 					_item = "1Rnd_HE_Grenade_shell";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 17:
 				{
 					_item = "3Rnd_HE_Grenade_shell";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 18:
 				{
 					_item = "1Rnd_Smoke_Grenade_shell";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 19:
 				{
 					_item = "UGL_FlareWhite_F";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 20:
 				{
 					_item = "ACE_HuntIR_M203";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 21:
 				{
 					_item = "HandGrenade";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 22:
 				{
 					_item = "MiniGrenade";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 23:
 				{
 					_item = "SmokeShell";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 24:
 				{
 					_item = "SmokeShellBlue";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 25:
 				{
 					_item = "SmokeShellGreen";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 26:
 				{
 					_item = "ACE_M14";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 27:
 				{
 					_item = "APERSMine_Range_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 28:
 				{
 					_item = "SLAMDirectionalMine_Wire_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 29:
 				{
 					_item = "ClaymoreDirectionalMine_Remote_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 30:
 				{
 					_item = "ATMine_Range_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 31:
 				{
 					_item = "DemoCharge_Remote_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 			};
 		};
@@ -1585,112 +1607,112 @@ gearRequisition =
 				{
 					_item = "1Rnd_HE_Grenade_shell";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 17:
 				{
 					_item = "3Rnd_HE_Grenade_shell";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 18:
 				{
 					_item = "1Rnd_Smoke_Grenade_shell";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 19:
 				{
 					_item = "UGL_FlareWhite_F";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 20:
 				{
 					_item = "ACE_HuntIR_M203";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 21:
 				{
 					_item = "HandGrenade";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 22:
 				{
 					_item = "MiniGrenade";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 23:
 				{
 					_item = "SmokeShell";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 24:
 				{
 					_item = "SmokeShellBlue";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 25:
 				{
 					_item = "SmokeShellGreen";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 26:
 				{
 					_item = "ACE_M14";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 27:
 				{
 					_item = "APERSMine_Range_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 28:
 				{
 					_item = "SLAMDirectionalMine_Wire_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 29:
 				{
 					_item = "ClaymoreDirectionalMine_Remote_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 30:
 				{
 					_item = "ATMine_Range_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 31:
 				{
 					_item = "DemoCharge_Remote_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 			};
 		};
@@ -1780,112 +1802,112 @@ gearRequisition =
 				{
 					_item = "1Rnd_HE_Grenade_shell";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 12:
 				{
 					_item = "3Rnd_HE_Grenade_shell";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 13:
 				{
 					_item = "1Rnd_Smoke_Grenade_shell";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 14:
 				{
 					_item = "UGL_FlareWhite_F";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 15:
 				{
 					_item = "ACE_HuntIR_M203";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 16:
 				{
 					_item = "HandGrenade";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 17:
 				{
 					_item = "MiniGrenade";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 18:
 				{
 					_item = "SmokeShell";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 19:
 				{
 					_item = "SmokeShellBlue";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 20:
 				{
 					_item = "SmokeShellGreen";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 21:
 				{
 					_item = "ACE_M14";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 22:
 				{
 					_item = "APERSMine_Range_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 23:
 				{
 					_item = "SLAMDirectionalMine_Wire_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 24:
 				{
 					_item = "ClaymoreDirectionalMine_Remote_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 25:
 				{
 					_item = "ATMine_Range_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 26:
 				{
 					_item = "DemoCharge_Remote_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 			};
 		};
@@ -1982,91 +2004,91 @@ gearRequisition =
 				{
 					_item = "rhs_VOG25";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 13:
 				{
 					_item = "rhs_VG40TB";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 14:
 				{
 					_item = "rhs_VG40MD_White";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 15:
 				{
 					_item = "rhs_VG40OP_white";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 16:
 				{
 					_item = "rhs_mag_rgo";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 17:
 				{
 					_item = "rhs_mag_rgn";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 18:
 				{
 					_item = "rhs_mag_rdg2_white";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 19:
 				{
 					_item = "rhs_mag_rdg2_black";
 					_itemType = "grenade";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 20:
 				{
 					_item = "APERSMine_Range_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 21:
 				{
 					_item = "SLAMDirectionalMine_Wire_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 22:
 				{
 					_item = "ClaymoreDirectionalMine_Remote_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 23:
 				{
 					_item = "ATMine_Range_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 				
 				case 24:
 				{
 					_item = "DemoCharge_Remote_Mag";
 					_itemType = "explosive";
-					call magazineCostCheck;
+					call itemCostCheck;
 				};
 			};
 		};

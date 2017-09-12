@@ -32,7 +32,7 @@ _fnc_RecurseProperties = {
 	// get property name (and remove this element from route)
 	_propertyName = _routeArrayCopy deleteAt 0;
 
-	if (isNil "_propertyName") exitWith { diag_log format ["Property [%1] was nil. from %2", _propertyName, _routeArrayCopy]; };
+	if (!assert(!(isNil "_propertyName"))) exitWith { diag_log format ["Property [%1] was nil. from %2", _propertyName, _routeArrayCopy]; };
 	// Get index of property
 	_index = -1;
 	{
@@ -61,8 +61,6 @@ _fnc_RecurseProperties = {
 	if (count _routeArrayCopy > 0) then {
 		assert(_property isEqualType []); // Tried to get a property of a value!
 		_property = [_routeArrayCopy, _property, __arrayStructure] call _fnc_RecurseProperties;
-	} else {
-		
 	};
 
 	// return

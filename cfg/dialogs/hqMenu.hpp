@@ -69,7 +69,7 @@ class InA_HQ_Dialog
 			w = 0.0515625 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "if !(InA_sitrep) exitWith {['Headquarters', 'Situation report has already been given recently...'] call FF7_fnc_formatHint};['1'] remoteExec ['InA_fnc_sitrep', 2, false];openMap true;";
+			action = "if !(InA_sitrep) exitWith {['Headquarters', 'Situation report has already been given recently..'] call FF7_fnc_formatHint};['1'] remoteExec ['InA_fnc_sitrep', 2, false];openMap true;";
 		};
 		class InA_HQ_Button_2: RscButton
 		{
@@ -80,7 +80,7 @@ class InA_HQ_Dialog
 			w = 0.0515625 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "if !(InA_sitrep) exitWith {['Headquarters', 'Situation report has already been given recently...'] call FF7_fnc_formatHint};['2'] remoteExec ['InA_fnc_sitrep', 2, false];openMap true;";
+			action = "if !(InA_sitrep) exitWith {['Headquarters', 'Situation report has already been given recently..'] call FF7_fnc_formatHint};['2'] remoteExec ['InA_fnc_sitrep', 2, false];openMap true;";
 		};
 		class InA_HQ_Button_3: RscButton
 		{
@@ -91,7 +91,7 @@ class InA_HQ_Dialog
 			w = 0.0515625 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "if !(InA_sitrep) exitWith {['Headquarters', 'Situation report has already been given recently...'] call FF7_fnc_formatHint};['3'] remoteExec ['InA_fnc_sitrep', 2, false];openMap true;";
+			action = "if !(InA_sitrep) exitWith {['Headquarters', 'Situation report has already been given recently..'] call FF7_fnc_formatHint};['3'] remoteExec ['InA_fnc_sitrep', 2, false];openMap true;";
 		};
 		class InA_HQ_Button_4: RscButton
 		{

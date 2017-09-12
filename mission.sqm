@@ -835,6 +835,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""GearDump""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="GearDump";
 			};
 			id=18;
@@ -8909,6 +8910,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""launcherCrate_2""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="launcherCrate_2";
 			};
 			id=161;
@@ -8988,6 +8990,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="[_this, ""launcherCrate_1""] call FF7_fnc_pst_registerStaticContainer;";
 				name="launcherCrate_1";
 			};
 			id=162;
@@ -9067,6 +9070,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""weaponCrate_1""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="weaponCrate_1";
 			};
 			id=163;
@@ -9146,6 +9150,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""weaponCrate_2""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="weaponCrate_2";
 			};
 			id=164;
@@ -9225,6 +9230,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""grenadeCrate_1""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="grenadeCrate_1";
 				aiRadarUsage=805961924;
 			};
@@ -9324,6 +9330,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""grenadeCrate_2""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="grenadeCrate_2";
 				aiRadarUsage=805961924;
 			};
@@ -9404,6 +9411,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""equipmentCrate_1""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="equipmentCrate_1";
 			};
 			id=167;
@@ -25790,6 +25798,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""explosiveCrate_1""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="explosiveCrate_1";
 			};
 			id=510;
@@ -25868,6 +25877,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
+				init="call{[_this, ""medicalCrate_1""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="medicalCrate_1";
 			};
 			id=512;
@@ -28838,6 +28848,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""ammoCrate_2""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="ammoCrate_2";
 			};
 			id=630;
@@ -28898,6 +28909,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="call{[_this, ""ammoCrate_1""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="ammoCrate_1";
 			};
 			id=633;
@@ -28957,6 +28969,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
+				init="call{[_this, ""weaponCrate_3""] call FF7_fnc_pst_registerStaticContainer;}";
 				name="weaponCrate_3";
 			};
 			id=636;

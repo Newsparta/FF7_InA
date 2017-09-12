@@ -6,6 +6,7 @@ FF7_Global_Debug = true;
 initialized = false;
 
 // ---------- initialize variables ----------
+_null = execVM "functions\InA\Init\initConfigs.sqf";
 
 _handle = execVM "functions\InA\Init\initializeVariables.sqf";
 

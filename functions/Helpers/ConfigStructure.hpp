@@ -115,3 +115,5 @@
 #define SELECT_FACTION_DATA(FACTION_PROP)        select (CLASS_STRUCTURE_FACTION find FACTION_PROP)
 
 #define INDEX_OF(PROP_NAME) find PROP_NAME
+
+//#define assert(COND) (true)

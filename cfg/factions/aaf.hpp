@@ -36,7 +36,7 @@ class AAF: opfor
         // before using them here.
         class weapons: weapons
         {
-            class hgun_P07_F {};
+            class hgun_P07_F { cost = 0; };
             class rhs_weap_hk416d10 { cost = 0; };
             class rhs_weap_hk416d145 {};
             class rhs_weap_hk416d145_m320 {};

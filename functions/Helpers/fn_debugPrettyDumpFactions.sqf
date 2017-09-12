@@ -208,8 +208,7 @@ _fnc_debug_printlog_allFactions = {
 	diag_log "====================================================================================================================================================================================";
 };
 
-if (!isNil "g_cfg_Factions") then {
-	[g_cfg_Factions] call _fnc_debug_printlog_allFactions;
-} else {
+if (!assert(!(isNil "g_cfg_Factions"))) then {
 	diag_log "[ERROR] 'g_cfg_Factions' is undefined!";
 };
+[g_cfg_Factions] call _fnc_debug_printlog_allFactions;

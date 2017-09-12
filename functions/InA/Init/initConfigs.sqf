@@ -9,7 +9,7 @@ g_cfg_Factions = ([] call Helpers_fnc_composeFactionConfigs);
 g_cfg_initDone = true;
 
 // debug
-[g_cfg_Factions] call Helpers_fnc_debugPrettyDumpFactions;
+//[g_cfg_Factions] call Helpers_fnc_debugPrettyDumpFactions;
 
 // return
 true;

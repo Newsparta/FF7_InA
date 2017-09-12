@@ -8,6 +8,7 @@ _export pushBack ([] call InA_fnc_regionCheck);
 
 _lI1 = [];
 _lI2 = [];
+_xI1 = [];
 _aI1 = [];
 _aI2 = [];
 _wI1 = [];
@@ -23,7 +24,7 @@ _array =
 [
 	[launcherCrate_1, _lI1],
 	[launcherCrate_2, _lI2],
-	[explosiveCrate_1, _eI1],
+	[explosiveCrate_1, _xI1],
 	[ammoCrate_1, _aI1],
 	[ammoCrate_2, _aI2],
 	[weaponCrate_1, _wI1],

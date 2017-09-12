@@ -98,17 +98,7 @@ gearRestricted = false;
 
 _array = nearestObjects [getMarkerPos "respawn_west", 
 [
-	"Box_NATO_WpsLaunch_F",
-	"Box_NATO_Support_F",
-	"Box_NATO_AmmoOrd_F",
-	"Box_NATO_Ammo_F",
-	"Box_NATO_Wps_F",
-	"Box_NATO_Grenades_F",
-	"Box_NATO_Equip_F",
-	"B_supplyCrate_F",
-	"Box_NATO_Uniforms_F",
-	"B_CargoNet_01_ammo_F",
-	"ACE_medicalSupplyCrate"
+	"ReammoBox_F"
 ], 750];
 
 {

@@ -1,0 +1,6 @@
+#include "gear\magazines.hpp"
+#include "gear\misc.hpp"
+#include "gear\weapons.hpp"
+#include "gear\helmets.hpp"
+#include "gear\uniforms.hpp"
+#include "gear\vests.hpp"

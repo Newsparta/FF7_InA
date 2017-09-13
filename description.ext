@@ -62,8 +62,15 @@ class CfgFunctions
 
 #include "cfg\defines.hpp"
 #include "cfg\dialogs.hpp"
-#include "cfg\dialogsBuild.hpp"
-#include "cfg\dialogsVehicle.hpp"
+
+// ---------- Items ----------
+#include "cfg\gear.hpp"
+
+// ---------- Vehicles ----------
+#include "cfg\vehicles.hpp"
+
+// ---------- Faction data ----------
+#include "cfg\factions.hpp"
 
 // ---------- ACE ----------
 

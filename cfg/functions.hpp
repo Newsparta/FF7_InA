@@ -3,7 +3,6 @@ class FF7
 	tag = "FF7";
 	class functions
 	{
-		
 		// ACE
 		class aceHealLocal {file = "functions\FF7\Ace\fn_aceheallocal.sqf";};
 		class aceMedicalStatus {file = "functions\FF7\Ace\fn_acemedicalstatus.sqf";};
@@ -12,6 +11,7 @@ class FF7
 		
 		// GENERIC
 		class extSerialize {file = "functions\FF7\Generic\extSerialize.sqf";};
+		class pst_registerStaticContainer {file = "functions\FF7\Generic\fn_pst_registerStaticContainer.sqf";};
 		class weatherMan {file = "functions\FF7\Generic\fn_weatherMan.sqf";};
 		class tfarSetup {file = "functions\FF7\Generic\fn_tfarsetup.sqf";};
 		class addGlobalAction {file = "functions\FF7\Generic\fn_addglobalaction.sqf";};
@@ -32,11 +32,66 @@ class FF7
 	};
 };
 
+class Helpers
+{
+	tag = "Helpers";
+	class Helpers
+	{
+		// Initialization
+		class composeFactionConfigs {};
+		class configToArrayByStructure {};
+
+		// Config Array Getters
+		class getAllFactionNames {};
+
+		class getFactionByClassname {};
+		class getFactionProperty {};
+		class getElementByConfigName {};
+		
+		class getProperty_FromWeapon {};
+		class getProperty_FromMagazine {};
+		class getProperty_FromMiscItem {};
+		class getProperty_FromLandVehicle {};
+		class getProperty_FromAirVehicle {};
+		class getProperty_FromWaterVehicle {};
+		class getProperty_FromHelmet {};
+		class getProperty_FromVest {};
+		class getProperty_FromUniform {};
+		class getProperty_FromLoadout {};
+		
+		class indexOfProp_Weapon {};
+		class indexOfProp_Magazine {};
+		class indexOfProp_MiscItem {};
+		class indexOfProp_LandVehicle {};
+		class indexOfProp_AirVehicle {};
+		class indexOfProp_WaterVehicle {};
+		class indexOfProp_Helmet {};
+		class indexOfProp_Vest {};
+		class indexOfProp_Uniform {};
+		class indexOfProp_Loadout {};
+
+		// Generic helpers
+		class findSubItemBySubIndex {};
+		class stringPadRight {};
+
+		class debugPrettyDumpFactions {};
+	};
+};
+
 class InA
 {
 	tag = "InA";
 	class functions
 	{
+		
+		class actionGarageRequisition {file = "functions\InA\Actions\fn_actionGarageRequisition.sqf";};
+		class actionGearRequisition {file = "functions\InA\Actions\fn_actionGearRequisition.sqf";};
+		class actionHangarRequisition {file = "functions\InA\Actions\fn_actionHangarRequisition.sqf";};
+		class actionHangarShelter {file = "functions\InA\Actions\fn_actionHangarShelter.sqf";};
+		class actionHangarTakeOut {file = "functions\InA\Actions\fn_actionHangarTakeOut.sqf";};
+		class actionHQLookAtMap {file = "functions\InA\Actions\fn_actionHQLookAtMap.sqf";};
+		class actionHQMenu {file = "functions\InA\Actions\fn_actionHQMenu.sqf";};
+		class actionUniformEquip {file = "functions\InA\Actions\fn_actionUniformEquip.sqf";};
 		
 		// Reinforcements
 		class insSniperAttack {file = "functions\InA\Reinforcements\fn_insSniperAttack.sqf";};
@@ -105,6 +160,9 @@ class InA
 		class supplyOutpost {file = "missions\Objective Bank\fn_supplyOutpost.sqf";};
 		class barracksStructure {file = "missions\Objective Bank\fn_barracksStructure.sqf";};
 		class AAAEmplacement {file = "missions\Objective Bank\fn_AAAEmplacement.sqf";};
+		class civEliminate {file = "missions\Objective Bank\fn_civEliminate.sqf";};
+
+		class missionAO {file = "missions\fn_missionAO.sqf";};
 		
 		// Gear
 		class WAD {file = "defines\Gear\fn_WAD.sqf";};

@@ -1,0 +1,349 @@
+// ---------- Arguments ----------
+
+params ["_loc",["_virgin", true,[true]],["_rad", (500 + random 1000),[0]]];
+private ["_tPos","_accepted","_pos","_net","_target","_xPos","_yPos","_zDir","_i","_obj"];
+
+// ---------- Main ----------
+
+_pos = [];
+
+/*
+Select objective location, using mission location if virgin or input location if not.
+*/
+
+if (_virgin) then {
+	_tPos = [];
+	_accepted = false;
+	while {!_accepted} do {
+		_pos = [[[_loc,_rad]],["water","out"]] call BIS_fnc_randomPos;
+		_tPos = _pos isFlatEmpty [-1, 0, 0.2, 4, 0, false];
+		
+		_roads = nearestTerrainObjects [_pos, ["ROAD","MAIN ROAD"], 30];
+
+		if (count _tPos > 2) then {
+			if (count _roads < 1) then {
+				_accepted = true;
+			};
+		};	
+	};
+} else {
+	_pos = _loc;
+};
+
+// ---------- insert spawn into memory ----------
+
+mainObj pushBack ["MGNest",_pos];
+
+/*
+Loop for spawning objective when players are near.
+*/
+
+while {!InA_missionCompleted} do {
+
+	sleep (2 + (random 2));
+
+	if ({_x distance mission < mainLimit} count (allPlayers - entities "HeadlessClient_F") > 0) then {
+
+		///////////////////////////
+		// objective spawn start //
+		///////////////////////////
+
+		_net = INS_CAMONET createVehicle _pos;
+		waitUntil {alive _net};
+		_net allowDamage false;
+		_net setDir (random 360);
+		_net setPos [_pos select 0, _pos select 1, 0];
+
+		_target = _net;
+		_loc = getPosATL _net;
+
+		spawnedObj pushBack ["MG nest", _loc];
+
+		_xPos = [-7.342,-2.664,2.151,7.149,2.325,-2.221];
+		_yPos = [-2.929,5.369,5.359,2.651,-5.657,-5.836];
+		_zDir = [72.986,184.274,170.930,240.171,2.847,353.591];
+
+		for [{_i = 0}, {_i <= ((count _xPos) - 1)}, {_i = _i + 1}] do {
+			
+			_obj = createVehicle ["Land_Trench_01_grass_F",[0,0,0],[],0,"CAN_COLLIDE"];
+			_obj attachTo [_net, 
+				[
+					(_xPos select _i),
+					(_yPos select _i),
+					-1.9
+				]
+			];
+			detach _obj;
+			_obj setDir (direction _net + (_zDir select _i));
+			sleep 0.1;
+		};
+
+		_xPos = [-5.805,-1.564,1.734,5.910,1.528,-2.334];
+		_yPos = [-1.947,3.509,3.535,1.294,-3.848,-4.136];
+		_zDir = [252.469,184.390,355.182,59.442,181.420,171];
+
+		for [{_i = 0}, {_i <= ((count _xPos) - 1)}, {_i = _i + 1}] do {
+			
+			_obj = createVehicle [INS_SANDBAG_LONG,[0,0,0],[],0,"CAN_COLLIDE"];
+			_obj attachTo [_net, 
+				[
+					(_xPos select _i),
+					(_yPos select _i),
+					-0.8
+				]
+			];
+			detach _obj;
+			_obj setDir (direction _net + (_zDir select _i));
+			sleep 0.1;
+		};
+
+		_xPos = [-4.599,4.227];
+		_yPos = [-3.917,3.351];
+		_zDir = [32.002,205.769];
+
+		for [{_i = 0}, {_i <= ((count _xPos) - 1)}, {_i = _i + 1}] do {
+			
+			_obj = createVehicle [INS_SANDBAG_ROUND,[0,0,0],[],0,"CAN_COLLIDE"];
+			_obj attachTo [_net, 
+				[
+					(_xPos select _i),
+					(_yPos select _i),
+					-0.8
+				]
+			];
+			detach _obj;
+			_obj setDir (direction _net + (_zDir select _i));
+			sleep 0.1;
+		};
+
+		_xPos = [-3.821,3.725];
+		_yPos = [3.797,-3.934];
+		_zDir = [189.749,184.830];
+
+		for [{_i = 0}, {_i <= ((count _xPos) - 1)}, {_i = _i + 1}] do {
+			
+			_obj = createVehicle [INS_SANDBAG_SHORT,[0,0,0],[],0,"CAN_COLLIDE"];
+			_obj attachTo [_net, 
+				[
+					(_xPos select _i),
+					(_yPos select _i),
+					-0.8
+				]
+			];
+			detach _obj;
+			_obj setDir (direction _net + (_zDir select _i));
+			sleep 0.1;
+		};
+
+		_xPos = [4.241,-4.076];
+		_yPos = [0.906,-1.780];
+		_zDir = [61.346,254.267];
+
+		for [{_i = 0}, {_i <= ((count _xPos) - 1)}, {_i = _i + 1}] do {
+			
+			if (supplier == "BLU") then {
+				_obj = createVehicle [(selectRandom INS_STATIC_HMG_BLU),[0,0,0],[],0,"CAN_COLLIDE"];
+			} else {
+				_obj = createVehicle [(selectRandom INS_STATIC_HMG_OPF),[0,0,0],[],0,"CAN_COLLIDE"];
+			};
+			_obj attachTo [_net, 
+				[
+					(_xPos select _i),
+					(_yPos select _i),
+					0.75
+				]
+			];
+			detach _obj;
+			_obj setDir (direction _net + (_zDir select _i));
+			
+			_group = 
+			[
+				[0,0,0], 
+				INDEPENDENT, 
+				[
+					(selectRandom INS_INF_SINGLE)
+				]
+			] call BIS_fnc_spawnGroup;
+			(units _group select 0) moveInTurret [_obj, [0]];
+			[units _group] call InA_fnc_insCustomize;
+			sleep 0.1;
+		};
+
+		_obj = createVehicle ["Land_WoodenCrate_01_stack_x5_F",[0,0,0],[],0,"CAN_COLLIDE"];
+		_obj attachTo [_net, 
+			[
+				0.274,
+				-2.733,
+				-0.25
+			]
+		];
+		detach _obj;
+		_obj setDir (direction _net + 0);
+
+		_obj = createVehicle ["Land_WoodenCrate_01_stack_x3_F",[0,0,0],[],0,"CAN_COLLIDE"];
+		_obj attachTo [_net, 
+			[
+				1.969,
+				-2.803,
+				-0.4
+			]
+		];
+		detach _obj;
+		_obj setDir (direction _net + 184.398);
+
+		_obj = createVehicle ["Land_Garbage_square5_F",[0,0,0],[],0,"CAN_COLLIDE"];
+		_obj attachTo [_net, 
+			[
+				2.116,
+				0.106,
+				-1.1
+			]
+		];
+		detach _obj;
+		_obj setDir (direction _net + 91.709);
+
+		_obj = createVehicle ["Land_Garbage_square3_F",[0,0,0],[],0,"CAN_COLLIDE"];
+		_obj attachTo [_net, 
+			[
+				-1.898,
+				-2.267,
+				-1.1
+			]
+		];
+		detach _obj;
+		_obj setDir (direction _net + 0);
+
+		// ---------- ENEMIES ----------
+		private ["_pos","_group"];
+			
+			// ---------- SMALL PATROLS ----------
+
+			for "_i" from 0 to ((count (call BIS_fnc_listPlayers)) * 0.05) do {
+				if (random 100 < random 50) then {
+					_pos = [_net, 200, 300, 0, 0, 50, 0] call BIS_fnc_findSafePos;
+					_group = [
+					_pos, 
+					INDEPENDENT,
+					[
+						(selectRandom INS_INF_SINGLE)
+					]
+				] call BIS_fnc_spawnGroup;
+					[_group, _pos, 250] call BIS_fnc_taskPatrol;
+					[units _group] call InA_fnc_insCustomize;
+				};
+			};
+
+			for "_i" from 0 to ((count (call BIS_fnc_listPlayers)) * 0.05) do {
+				if (random 100 < random 40) then {
+					_pos = [_net, 200, 300, 0, 0, 50, 0] call BIS_fnc_findSafePos;
+					_group = [
+					_pos, 
+					INDEPENDENT,
+					[
+						(selectRandom INS_INF_SINGLE),
+						(selectRandom INS_INF_SINGLE)
+					]
+				] call BIS_fnc_spawnGroup;
+					[_group, _pos, 250] call BIS_fnc_taskPatrol;
+					[units _group] call InA_fnc_insCustomize;
+				};
+			};
+
+			for "_i" from 0 to ((count (call BIS_fnc_listPlayers)) * 0.05) do {
+				if (random 100 < random 30) then {
+					_pos = [_net, 200, 300, 0, 0, 50, 0] call BIS_fnc_findSafePos;
+					_group = [
+					_pos, 
+					INDEPENDENT,
+					[
+						(selectRandom INS_INF_SINGLE),
+						(selectRandom INS_INF_SINGLE),
+						(selectRandom INS_INF_SINGLE)
+					]
+				] call BIS_fnc_spawnGroup;
+					[_group, _pos, 250] call BIS_fnc_taskPatrol;
+					[units _group] call InA_fnc_insCustomize;
+				};
+			};
+
+			for "_i" from 0 to ((count (call BIS_fnc_listPlayers)) * 0.05) do {
+				if (random 100 < random 20) then {
+					_pos = [_net, 200, 300, 0, 0, 50, 0] call BIS_fnc_findSafePos;
+					_group = [
+					_pos, 
+					INDEPENDENT,
+					[
+						(selectRandom INS_INF_SINGLE),
+						(selectRandom INS_INF_SINGLE),
+						(selectRandom INS_INF_SINGLE),
+						(selectRandom INS_INF_SINGLE)
+					]
+				] call BIS_fnc_spawnGroup;
+					[_group, _pos, 250] call BIS_fnc_taskPatrol;
+					[units _group] call InA_fnc_insCustomize;
+				};
+			};
+
+		/////////////////////////
+		// objective spawn end //
+		/////////////////////////
+
+		// ---------- target confirmation ----------
+
+		[_target] spawn {
+
+			_target = _this select 0;
+			
+			while {InA_missionActive} do {
+			
+				sleep (2 + (random 2));
+				
+				_virgin = false;
+				
+				if ({_x distance _target < 50} count (allPlayers - entities "HeadlessClient_F") > 0) then {
+				
+					_virgin = true;
+					
+					_z = random 1;
+					
+					while {true} do {
+						scopeName format ["target%1",_z];
+						
+						sleep (2 + (random 2));
+						
+						if (_virgin && {!alive _target}) then {
+							
+							signalArray pushBack _target;
+							signalType pushBack "MGNest";
+							_virgin = false;
+						};
+						
+						if ({_x distance _target < 50} count (allPlayers - entities "HeadlessClient_F") < 1) then {
+							if !(_virgin) then {
+								signalArray = signalArray - [_target];
+								signalType = signalType - ["MGNest"];
+							};
+							
+							breakOut format ["target%1",_z];
+						};
+					};
+				};
+			};
+		};
+
+		// ---------- near objective pause loop ----------
+
+		while {true} do {
+			scopeName "obj_MG";
+
+			sleep (2 + (random 2));
+
+			if ({_x distance mission < mainLimit} count (allPlayers - entities "HeadlessClient_F") < 1) then {
+				breakOut "obj_MG";
+			};
+
+		};
+
+	};
+
+};

@@ -1,0 +1,24 @@
+*InA 4.1.8*
+
+[map changed to Tanoa]
+
+- Menu restrictions added to squad lead ACE menu.
+- Static Weapons added for all factions.
+- Generic cost edits to items.
+- Changed insurgent small arms and vehicle types.
+- Insurgent garrison script was broken, it's fixed.
+- Repair kits will now be consumed on use.
+- FOB's should be better preserved.
+- FOB's spawn passive garrison forces.
+- Enlisted uniquely skilled insurgents in the fight.
+- Civilians are less bitchy, but still dont like you taking their shit.
+- Your superiors dont want insurgent junk lying around base.
+- Database is automatically reset on base theme selection.
+- Autosave every 24hrs.
+- If you're not sneaky, main AO's are deadlier... maybe.
+- Main AO's do not spawn until players are sufficiently close.
+- Main AO's (though not any markers) will be saved in database.
+- virtually all rewards were increased (not base income).
+- civies can give side missions upon conversation success.
+    - counts towards completed objectives tally.
+    - gives reward.

@@ -1,6 +1,10 @@
 mapCenter = [(worldSize/2),(worldSize/2),0];
 mapSize = sqrt((worldSize/2)^2 + (worldSize/2)^2);
 
+// ---------- Volatility rate (1 = 2 weeks) ----------
+
+volatileRate = 2;
+
 // ---------- Spawn ambient modules ----------
 
 [getMarkerPos "ambientLolisse","Lolisse",600,"small"] spawn InA_fnc_ambientModule;

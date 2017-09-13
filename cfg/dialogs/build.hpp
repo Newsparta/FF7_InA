@@ -47,7 +47,7 @@ class InA_Build_Dialog
 			y = 0.379011 * safezoneH + safezoneY;
 			w = 0.113643 * safezoneW;
 			h = 0.197982 * safezoneH;
-			onLBSelChanged = "[lbCurSel 1500] execVM 'defines\Structures\resourceUpdate.sqf';[lbCurSel 1500] execVM 'functions\InA\Structures\resourceCosts.sqf';";
+			onLBSelChanged = "[lbCurSel 1500] execVM 'defines\Structures\resourceUpdate.sqf';[lbCurSel 1500] execVM 'defines\Structures\resourceCosts.sqf';";
 			colorBackground[] = {0,0,0,0.8};
 		};
 		class InA_Build_Button_1: RscButton

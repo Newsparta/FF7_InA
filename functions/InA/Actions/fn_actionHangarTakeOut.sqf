@@ -1,0 +1,1 @@
+[["bringOut"],"defines\Vehicles\shelterHelicopter.sqf"] remoteExec ["execVM", 2];

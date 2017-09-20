@@ -22,7 +22,7 @@ player setCustomAimCoef 0.5;
 
 [clientOwner, "baseType"] remoteExec ["publicVariableClient", 2, false];
 
-sleep 1;
+sleep 0.2;
 
 switch (baseType) do {
 	case "Army":

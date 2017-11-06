@@ -55,9 +55,13 @@ _export pushBack [];
 
 _export pushBack [];
 
-// ---------- Main AO ----------
+// ---------- FOB (6) ----------
 
-_export pushBack [false,[],[]];
+_export pushBack [false, [0,0,0]];
+
+// ---------- Stronghold (7) ----------
+
+_export pushBack [false, [0,0,0]];
 
 // ---------- End ----------
 

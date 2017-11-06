@@ -325,3 +325,11 @@
 	INS_SANDBAG_ROUND = "Land_BagFence_01_round_green_F";
 	
 	INS_CAMONET = "CamoNet_ghex_open_F";
+
+	CRATES = 
+	[
+		"Box_Syndicate_Wps_F",
+		"Box_Syndicate_WpsLaunch_F",
+		"Box_Syndicate_Ammo_F",
+		"Box_IED_Exp_F"
+	];

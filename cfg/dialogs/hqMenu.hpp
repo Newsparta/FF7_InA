@@ -27,17 +27,6 @@ class InA_HQ_Dialog
 			style = ST_CENTER;
 			colorBackground[] = {0,0.5,1,0.1};
 		};
-		class InA_HQ_Frame_2: RscFrame
-		{
-			idc = -1;
-			x = 0.4175 * safezoneW + safezoneX;
-			y = 0.379011 * safezoneH + safezoneY;
-			w = 0.0721875 * safezoneW;
-			h = 0.087992 * safezoneH;
-			type = CT_STATIC;
-			style = ST_CENTER;
-			colorBackground[] = {0,0.5,1,0.1};
-		};
 		class InA_HQ_Frame_3: RscFrame
 		{
 			idc = -1;
@@ -92,17 +81,6 @@ class InA_HQ_Dialog
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
 			action = "if !(InA_sitrep) exitWith {['Headquarters', 'Situation report has already been given recently..'] call FF7_fnc_formatHint};['3'] remoteExec ['InA_fnc_sitrep', 2, false];openMap true;";
-		};
-		class InA_HQ_Button_4: RscButton
-		{
-			idc = 1603;
-			text = "Submit";
-			x = 0.427812 * safezoneW + safezoneX;
-			y = 0.401009 * safezoneH + safezoneY;
-			w = 0.0515625 * safezoneW;
-			h = 0.043996 * safezoneH;
-			colorBackground[] = {0,0,0,0.8};
-			action = "[] remoteExec ['InA_fnc_afterAction', 2];";
 		};
 		class InA_HQ_Button_5: RscButton
 		{
@@ -253,17 +231,6 @@ class InA_HQ_Dialog
 			style = ST_CENTER;
 			colorBackground[] = {0,0.5,1,0.8};
 		};
-		class InA_HQ_SubHeader_2: RscFrame
-		{
-			idc = -1;
-			x = 0.4175 * safezoneW + safezoneX;
-			y = 0.357013 * safezoneH + safezoneY;
-			w = 0.0721875 * safezoneW;
-			h = 0.021998 * safezoneH;
-			type = CT_STATIC;
-			style = ST_CENTER;
-			colorBackground[] = {0,0.5,1,0.8};
-		};
 		class InA_HQ_SubHeader_3: RscFrame
 		{
 			idc = -1;
@@ -313,15 +280,6 @@ class InA_HQ_Dialog
 			x = 0.335 * safezoneW + safezoneX;
 			y = 0.357013 * safezoneH + safezoneY;
 			w = 0.0721875 * safezoneW;
-			h = 0.021998 * safezoneH;
-		};
-		class InA_HQ_Text_6: RscText
-		{
-			idc = -1;
-			text = "AAR";
-			x = 0.4175 * safezoneW + safezoneX;
-			y = 0.357013 * safezoneH + safezoneY;
-			w = 0.020625 * safezoneW;
 			h = 0.021998 * safezoneH;
 		};
 		class InA_HQ_Text_7: RscText

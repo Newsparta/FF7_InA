@@ -1,7 +1,7 @@
 // ---------- Basics ----------
 author					= "FoxForce";
 onLoadName				= "InA [Tanoa]";
-onLoadMission			= "FoxForce - Invade, no Annex 4.1.8";
+onLoadMission			= "FoxForce - Invade, no Annex 4.2";
 loadScreen				= "img\tanoa_noannex_load_512.paa";
 overviewText			= "FoxForce COOP";
 onLoadIntroTime			= 0;

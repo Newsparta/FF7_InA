@@ -1,28 +1,21 @@
 // ---------- missions ----------
 
-missionSaved = false;
-
 civilian setFriend [west, 1];
 civilian setFriend [resistance, 1];
 civMissionActive = false;
 
-mission = [0,0,0];
-mainObj = [];
+activeLocations = 0;
+concentrations = [];
+InA_stronghold = false;
+InA_stronghold_Loc = [];
 mainLimit = 2500;
-InA_missionActive = false;
-InA_missionCompleted = false;
-
-givenType = "";
 givenLoc = "";
-givenMan = "";
 
 compObj = 0;
-totalObj = 0;
-signalArray = [];
-signalType = [];
-spawnedObj = [];
-placedMarkers = [];
-call compile preprocessFileLineNumbers "missions\objectiveRefresh.sqf";
+missionBank = 
+[
+	"AAAEmplacement"
+];
 
 // ---------- base ----------
 

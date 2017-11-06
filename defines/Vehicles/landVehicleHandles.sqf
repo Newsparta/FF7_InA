@@ -145,6 +145,13 @@
 							ctrlSetText [1001, "200"];
 							ctrlSetText [1002, "0"];
 						};
+
+						case 18:
+						{
+							ctrlSetText [1000, "0"];
+							ctrlSetText [1001, "100"];
+							ctrlSetText [1002, "0"];
+						};
 					};
 				};
 
@@ -442,6 +449,22 @@
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
 						};
+
+						case 18:
+						{
+							{
+								vCost = 0;
+								mCost = 0;
+								fCost = 100;
+
+								vehicleType = selectRandom idap_cars;
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = true;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
+						};
 					};
 				};
 			};
@@ -574,6 +597,13 @@
 						{
 							ctrlSetText [1000, "2"];
 							ctrlSetText [1001, "200"];
+							ctrlSetText [1002, "0"];
+						};
+
+						case 17:
+						{
+							ctrlSetText [1000, "0"];
+							ctrlSetText [1001, "100"];
 							ctrlSetText [1002, "0"];
 						};
 					};
@@ -857,6 +887,22 @@
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
 						};
+
+						case 17:
+						{
+							{
+								vCost = 0;
+								mCost = 0;
+								fCost = 100;
+
+								vehicleType = selectRandom idap_cars;
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = true;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
+						};
 					};
 				};				
 			};
@@ -947,6 +993,13 @@
 						{
 							ctrlSetText [1000, "2"];
 							ctrlSetText [1001, "200"];
+							ctrlSetText [1002, "0"];
+						};
+
+						case 11:
+						{
+							ctrlSetText [1000, "0"];
+							ctrlSetText [1001, "100"];
 							ctrlSetText [1002, "0"];
 						};
 					};
@@ -1134,6 +1187,22 @@
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
 						};
+
+						case 11:
+						{
+							{
+								vCost = 0;
+								mCost = 0;
+								fCost = 100;
+
+								vehicleType = selectRandom idap_cars;
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = true;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
+						};
 					};
 				};				
 			};
@@ -1217,6 +1286,13 @@
 						{
 							ctrlSetText [1000, "2"];
 							ctrlSetText [1001, "200"];
+							ctrlSetText [1002, "0"];
+						};
+
+						case 10:
+						{
+							ctrlSetText [1000, "0"];
+							ctrlSetText [1001, "100"];
 							ctrlSetText [1002, "0"];
 						};
 					};
@@ -1388,6 +1464,22 @@
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
 						};
+
+						case 10:
+						{
+							{
+								vCost = 0;
+								mCost = 0;
+								fCost = 100;
+
+								vehicleType = selectRandom idap_cars;
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = true;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
+						};
 					};
 				};				
 			};
@@ -1498,6 +1590,13 @@
 						{
 							ctrlSetText [1000, "2"];
 							ctrlSetText [1001, "200"];
+							ctrlSetText [1002, "0"];
+						};
+
+						case 14:
+						{
+							ctrlSetText [1000, "0"];
+							ctrlSetText [1001, "100"];
 							ctrlSetText [1002, "0"];
 						};
 					};
@@ -1733,6 +1832,22 @@
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
 						};
+
+						case 14:
+						{
+							{
+								vCost = 0;
+								mCost = 0;
+								fCost = 100;
+
+								vehicleType = selectRandom idap_cars;
+								vehiclePaint = true;
+								vehicleAnim = true;
+								isUtility = true;
+
+								call vehicleSpawn; 
+							} remoteExec ["BIS_fnc_call", 2];
+						};
 					};
 				};			
 			};
@@ -1762,7 +1877,8 @@
 				"M2A3 Bradley (BUSK III)",
 				"M1A2 Abrams (TUSK I)",
 				"M1A2 Abrams (TUSK II)",
-				"Utility Truck"
+				"Utility Truck",
+				"Humanitarian Aid Vehicle"
 			];
 		};
 		
@@ -1785,7 +1901,8 @@
 				"M2A3 Bradley (BUSK III)",
 				"M1A1 Abrams (HC)",
 				"M1A1 Abrams (FEP)",
-				"Utility Truck"
+				"Utility Truck",
+				"Humanitarian Aid Vehicle"
 			];	
 		};
 		
@@ -1802,7 +1919,8 @@
 				"Namer",
 				"Badger",
 				"Merkava Mk IV",
-				"Utility Truck"
+				"Utility Truck",
+				"Humanitarian Aid Vehicle"
 			];
 		};
 		
@@ -1818,7 +1936,8 @@
 				"Pandur II",
 				"FV510 Warrior",
 				"Leopard 2SG",
-				"Utility Truck"
+				"Utility Truck",
+				"Humanitarian Aid Vehicle"
 			];
 		};
 		
@@ -1838,7 +1957,8 @@
 				"BMP-3",
 				"T-72B",
 				"T-72B3",
-				"Utility Truck"
+				"Utility Truck",
+				"Humanitarian Aid Vehicle"
 			];
 		};
 	};

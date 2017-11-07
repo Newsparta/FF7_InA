@@ -35,6 +35,7 @@ sleep random 3;
 _instability = (0.5 + (random 0.5));
 _reward = false;
 _affect = false;
+_needAid = false;
 _didSomething = false;
 _affectTimer = 1;
 _i = 0;
@@ -87,6 +88,7 @@ while {true} do {
 
 			_reward = false;
 			_affect = false;
+			_needAid = false;
 			_didSomething = false;
 			_affectTimer = 0.25;
 			_ambMult = 0.25;
@@ -95,6 +97,7 @@ while {true} do {
 
 			_reward = false;
 			_affect = false;
+			_needAid = true;
 			_didSomething = false;
 			_affectTimer = 0.75;
 			_ambMult = 1.25;
@@ -103,6 +106,7 @@ while {true} do {
 			
 			_reward = true;
 			_affect = false;
+			_needAid = false;
 			_didSomething = false;
 			_affectTimer = 1;
 			_ambMult = 1.75;
@@ -120,6 +124,32 @@ while {true} do {
 			};
 			
 			if ({_x distance _loc < _rad} count (allPlayers - entities "HeadlessClient_F") > 0) then {
+
+				if ((_needAid) && {count (nearestObjects [_loc, idap_cars, _rad]) > 0}) then {
+					[format ["%1", _name], "Keep the aid vehicle in the region for 5 minutes to deploy the supplies."] remoteExec ["FF7_fnc_formatHint", 0, false];
+				
+					_needAid = false;
+
+					[_loc, _rad, _name] spawn {
+
+						_loc = _this select 0;
+						_rad = _this select 1;
+						_name = _this select 2;
+
+						sleep 300;
+
+						if (count (nearestObjects [_loc, idap_cars, _rad]) > 0) then {
+							
+							compObj = compObj + 1;
+
+							LogV = LogV + 1;
+
+							civTol = civTol + 0.1;
+
+							[format ["%1", _name], "Aid has been successfully deployed."] remoteExec ["FF7_fnc_formatHint", 0, false];
+						};
+					};
+				};
 	
 				if (random 100 < (0.7 + (0.7 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
 					[
@@ -161,21 +191,23 @@ while {true} do {
 						1
 					] spawn InA_fnc_insMediumTruckTransport;
 				};
-				if (random 100 < (0.01 + (0.025 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
-					[
-						_loc, 
-						_rad + 1000, 
-						(_rad/2), 
-						1
-					] spawn InA_fnc_insApcTransport;
-				};
-				if (random 100 < (0.006250 + (0.0125 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
-					[
-						_loc, 
-						_rad + 1000, 
-						(_rad/2),  
-						1
-					] spawn InA_fnc_insIfvTransport;
+				if (count (call BIS_fnc_listPlayers) > 5) then {
+					if (random 100 < (0.01 + (0.025 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
+						[
+							_loc, 
+							_rad + 1000, 
+							(_rad/2), 
+							1
+						] spawn InA_fnc_insApcTransport;
+					};
+					if (random 100 < (0.006250 + (0.0125 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
+						[
+							_loc, 
+							_rad + 1000, 
+							(_rad/2),  
+							1
+						] spawn InA_fnc_insIfvTransport;
+					};
 				};
 				if (random 100 < (0.008 + (0.008 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
 					[

@@ -1,4 +1,4 @@
-// ---------- Mission Mechanics (4.1.7c) ----------
+// ---------- Mission Mechanics (4.2) ----------
 
 player createDiarySubject ["missionMechanics","Mission Mechanics"];
 
@@ -83,7 +83,7 @@ player createDiaryRecord	[
 								"missionMechanics",
 								[
 									"Basic Tenets (please read)",
-									"- This is not a sandbox, value your gear and your vehicles. If you die there will be no free respawns and no reimbursements.<br/><br/>- Collect intel from civilians (you will not see any information about the main AO if you do not).<br/><br/>- Secure regions. (persistently)<br/><br/>- Scout AO's<br/><br/>- Clear enemies from any main AO and clear any objectives you find.<br/><br/>- Confirm your targets.<br/><br/>- submit an after action report and call it a day."
+									"- This is NOT a sandbox.<br/><br/>- Secure volatile and destabalizing regions (persistent combat).<br/><br/>- Interact with civilians (intel and side missions).<br/><br/>- seek out insurgent hideouts and strongholds (persistent combat).<br/><br/>- defend regions from incursions (defence combat).<br/><br/>- setup FOB's (safe haven).<br/><br/>- deliver aid to civilians (humanitarian).<br/><br/>- ."
 								]
 							];
 
@@ -97,7 +97,7 @@ player createDiaryRecord	[
 	
 	sleep 60;
 	
-	["(4.1.8)<br/>2017-09-03", "Latest patch date"] call FF7_fnc_formatHint;
+	["(4.2)<br/>2017-10-09", "Latest patch date"] call FF7_fnc_formatHint;
 };
 
 // ---------- Run only on player... ----------

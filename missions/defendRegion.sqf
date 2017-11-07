@@ -38,9 +38,25 @@ if (_i == 720) exitWith {
 	];
 };
 
+safehouse = selectRandom (nearestTerrainObjects [_loc, ["HOUSE"], 400]);
+
+buildInventory = 100;
+
+[safehouse] call InA_fnc_buildKit;
+
+_mkr = createMarker ["safehouse", safehouse];
+"safehouse" setMarkerColor "ColorWest";
+"safehouse" setMarkerShape "ICON";
+"safehouse" setMarkerType "mil_flag";
+"safehouse" setMarkerText "Safehouse";
+
 ["HQ", "Headquarters", format ["Insurgents around %1 will likely begin their assault in the next few minutes.", _location]] remoteExec ["FF7_fnc_globalHintStruct", 0];
 
-sleep 300;
+sleep 10;
+
+["HQ", "Headquarters", format ["A safehouse in %1 has been marked, use this as a base of operations to make preparations.", _location]] remoteExec ["FF7_fnc_globalHintStruct", 0];
+
+sleep 290;
 
 ["HQ", "Headquarters", format ["Maintain control of %1 until enemy activity subsides.", _location]] remoteExec ["FF7_fnc_globalHintStruct", 0];
 
@@ -136,6 +152,8 @@ while {_i = _i + 60; _i <= 900} do {
 		LogV = LogV + 1;
 
 		civTol = civTol + 0.1;
+
+		safehouse = [0,0,0];
 		
 		["HQ", "Headquarters", "Enemy activity appears to be subsiding."] remoteExec ["FF7_fnc_globalHintStruct", 0];
 	};

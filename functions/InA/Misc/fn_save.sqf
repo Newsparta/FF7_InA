@@ -107,7 +107,7 @@ _airArray = nearestObjects [getMarkerPos "respawn_west",["Air"],750];
 
 } forEach _airArray;
 
-_buildingArray = nearestObjects [InA_fob_location,["Strategic"],100];
+_buildingArray = nearestObjects [InA_fob_location,["Static"],100];
 
 {
 	_temp = [];
@@ -136,13 +136,13 @@ _export pushBack _buildVehicles;
 
 _export pushBack [baseType];
 
-// ---------- Main AO (6) ----------
+// ---------- FOB (6) ----------
 
-if !(InA_missionCompleted) then {
-	_export pushBack [true,mission,mainObj];
-} else {
-	_export pushBack [false,[],[]];
-};
+_export pushBack [fobPlaced, InA_fob_location];
+
+// ---------- Stronghold (7) ----------
+
+_export pushBack [InA_stronghold, InA_stronghold_Loc];
 
 // ---------- Save to database ----------
 

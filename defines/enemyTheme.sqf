@@ -310,8 +310,10 @@
 	
 	INS_BACKPACKS =
 	[
-		"B_Kitbag_cbr",
-		"B_Kitbag_rgr"
+		"B_ViperHarness_oli_F",
+		"B_TacticalPack_rgr",
+		"B_FieldPack_oli",
+		"B_ViperLightHarness_oli_F"
 	];
 	
 // ---------- Buildings ----------
@@ -320,4 +322,12 @@
 	INS_SANDBAG_SHORT = "Land_BagFence_short_F";
 	INS_SANDBAG_ROUND = "Land_BagFence_round_F";
 	
-	INS_CAMONET = "CamoNet_OPFOR_open_F";
+	INS_CAMONET = "CamoNet_ghex_open_F";
+
+	CRATES = 
+	[
+		"Box_Syndicate_Wps_F",
+		"Box_Syndicate_WpsLaunch_F",
+		"Box_Syndicate_Ammo_F",
+		"Box_IED_Exp_F"
+	];

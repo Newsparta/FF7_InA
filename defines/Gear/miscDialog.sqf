@@ -157,13 +157,13 @@ gearItemChange =
 				case 1:
 				{
 					// Bandage
-					Multiplier = 0.1;
+					Multiplier = 0.05;
 				};
 				
 				case 2:
 				{
 					// Morphine
-					Multiplier = 0.1;
+					Multiplier = 0.05;
 				};
 				
 				case 3:
@@ -175,37 +175,37 @@ gearItemChange =
 				case 4:
 				{
 					// Epinephrine
-					Multiplier = 0.5;
+					Multiplier = 0.25;
 				};
 				
 				case 5:
 				{
 					// Blood IV 1000
-					Multiplier = 2;
+					Multiplier = 1;
 				};
 				
 				case 6:
 				{
 					// Blood IV 500
-					Multiplier = 1;
+					Multiplier = 0.5;
 				};
 				
 				case 7:
 				{
 					// Blood IV 250
-					Multiplier = 0.5;
+					Multiplier = 0.25;
 				};
 				
 				case 8:
 				{
 					// ANPRC 152 Radio
-					Multiplier = 40;
+					Multiplier = 50;
 				};
 				
 				case 9:
 				{
 					// RT-1523G Radio
-					Multiplier = 60;
+					Multiplier = 50;
 				};
 				
 				case 10:
@@ -223,61 +223,61 @@ gearItemChange =
 				case 12:
 				{
 					// GPS
-					Multiplier = 60;
+					Multiplier = 100;
 				};
 				
 				case 13:
 				{
 					// Watch
-					Multiplier = 0.1;
+					Multiplier = 0;
 				};
 				
 				case 14:
 				{
 					// Binocular
-					Multiplier = 20;
+					Multiplier = 0;
 				};
 				
 				case 15:
 				{
 					// Rangefinder
-					Multiplier = 60;
+					Multiplier = 100;
 				};
 				
 				case 16:
 				{
 					// Laser Designator
-					Multiplier = 60;
+					Multiplier = 100;
 				};
 				
 				case 17:
 				{
 					// NVG's
-					Multiplier = 60;
+					Multiplier = 50;
 				};
 				
 				case 18:
 				{
 					// ACO
-					Multiplier = 1;
+					Multiplier = 0.1;
 				};
 				
 				case 19:
 				{
 					// M68 CCO
-					Multiplier = 1;
+					Multiplier = 0.1;
 				};
 				
 				case 20:
 				{
 					// Barska
-					Multiplier = 1;
+					Multiplier = 0.1;
 				};
 				
 				case 21:
 				{
 					// Eotech 553
-					Multiplier = 1;
+					Multiplier = 0.1;
 				};
 				
 				case 22:
@@ -289,37 +289,37 @@ gearItemChange =
 				case 23:
 				{
 					// RCO
-					Multiplier = 10;
+					Multiplier = 20;
 				};
 				
 				case 24:
 				{
 					// ERCO
-					Multiplier = 10;
+					Multiplier = 20;
 				};
 				
 				case 25:
 				{
 					// MGO
-					Multiplier = 10;
+					Multiplier = 20;
 				};
 				
 				case 26:
 				{
 					// ACOG
-					Multiplier = 10;
+					Multiplier = 20;
 				};
 				
 				case 27:
 				{
 					// MOS
-					Multiplier = 15;
+					Multiplier = 20;
 				};
 				
 				case 28:
 				{
 					// Kahlia
-					Multiplier = 20;
+					Multiplier = 25;
 				};
 				
 				case 29:
@@ -331,37 +331,37 @@ gearItemChange =
 				case 30:
 				{
 					// AFG Grip
-					Multiplier = 0.1;
+					Multiplier = 0;
 				};
 				
 				case 31:
 				{
 					// Vertical Grip
-					Multiplier = 0.1;
+					Multiplier = 0;
 				};
 				
 				case 32:
 				{
 					// Laser Pointer
-					Multiplier = 1;
+					Multiplier = 0;
 				};
 				
 				case 33:
 				{
 					// Flashlight
-					Multiplier = 0.1;
+					Multiplier = 0;
 				};
 				
 				case 34:
 				{
 					// 5.56mm SS
-					Multiplier = 5;
+					Multiplier = 10;
 				};
 				
 				case 35:
 				{
 					// Bipod
-					Multiplier = 1;
+					Multiplier = 0;
 				};
 				
 				case 36:
@@ -378,13 +378,13 @@ gearItemChange =
 				case 38:
 				{
 					// Map Light
-					Multiplier = 1;
+					Multiplier = 0;
 				};
 				
 				case 39:
 				{
 					// Map Tools
-					Multiplier = 1;
+					Multiplier = 0;
 				};
 				
 				case 40:
@@ -396,13 +396,13 @@ gearItemChange =
 				case 41:
 				{
 					// Entrenching tool
-					Multiplier = 5;
+					Multiplier = 0;
 				};
 				
 				case 42:
 				{
 					// Strobe
-					Multiplier = 1;
+					Multiplier = 0;
 				};
 				
 				case 43:
@@ -414,31 +414,31 @@ gearItemChange =
 				case 44:
 				{
 					// Wirecutter
-					Multiplier = 5;
+					Multiplier = 10;
 				};
 				
 				case 45:
 				{
 					// Difusal Kit
-					Multiplier = 20;
+					Multiplier = 10;
 				};
 				
 				case 46:
 				{
 					// Mine Detector
-					Multiplier = 20;
+					Multiplier = 100;
 				};
 				
 				case 47:
 				{
 					// M152 Firing Device
-					Multiplier = 5;
+					Multiplier = 0.1;
 				};
 				
 				case 48:
 				{
 					// M57 Firing Device
-					Multiplier = 5;
+					Multiplier = 0.1;
 				};
 				
 				case 49:
@@ -456,25 +456,25 @@ gearItemChange =
 				case 51:
 				{
 					// Range Card
-					Multiplier = 1;
+					Multiplier = 0;
 				};
 				
 				case 52:
 				{
 					// Backpack small
-					Multiplier = 5;
+					Multiplier = 10;
 				};
 				
 				case 53:
 				{
 					// Backpack medium
-					Multiplier = 10;
+					Multiplier = 20;
 				};
 				
 				case 54:
 				{
 					// Backpack large
-					Multiplier = 15;
+					Multiplier = 30;
 				};
 				
 				case 55:
@@ -501,13 +501,13 @@ gearItemChange =
 				case 1:
 				{
 					// Bandage
-					Multiplier = 0.1;
+					Multiplier = 0.05;
 				};
 				
 				case 2:
 				{
 					// Morphine
-					Multiplier = 0.1;
+					Multiplier = 0.05;
 				};
 				
 				case 3:
@@ -519,37 +519,37 @@ gearItemChange =
 				case 4:
 				{
 					// Epinephrine
-					Multiplier = 0.5;
+					Multiplier = 0.25;
 				};
 				
 				case 5:
 				{
 					// Blood IV 1000
-					Multiplier = 2;
+					Multiplier = 1;
 				};
 				
 				case 6:
 				{
 					// Blood IV 500
-					Multiplier = 1;
+					Multiplier = 0.5;
 				};
 				
 				case 7:
 				{
 					// Blood IV 250
-					Multiplier = 0.5;
+					Multiplier = 0.25;
 				};
 				
 				case 8:
 				{
 					// ANPRC 152 Radio
-					Multiplier = 40;
+					Multiplier = 50;
 				};
 				
 				case 9:
 				{
 					// RT-1523G Radio
-					Multiplier = 60;
+					Multiplier = 50;
 				};
 				
 				case 10:
@@ -567,85 +567,85 @@ gearItemChange =
 				case 12:
 				{
 					// GPS
-					Multiplier = 60;
+					Multiplier = 100;
 				};
 				
 				case 13:
 				{
 					// Watch
-					Multiplier = 0.1;
+					Multiplier = 0;
 				};
 				
 				case 14:
 				{
 					// Binocular
-					Multiplier = 20;
+					Multiplier = 0;
 				};
 				
 				case 15:
 				{
 					// Rangefinder
-					Multiplier = 60;
+					Multiplier = 100;
 				};
 				
 				case 16:
 				{
 					// Laser Designator
-					Multiplier = 60;
+					Multiplier = 100;
 				};
 				
 				case 17:
 				{
 					// NVG's
-					Multiplier = 60;
+					Multiplier = 50;
 				};
 				
 				case 18:
 				{
 					// ACO
-					Multiplier = 1;
+					Multiplier = 0.1;
 				};
 				
 				case 19:
 				{
 					// Rakurs PM
-					Multiplier = 1;
+					Multiplier = 0.1;
 				};
 				
 				case 20:
 				{
 					// Barska
-					Multiplier = 1;
+					Multiplier = 0.1;
 				};
 				
 				case 21:
 				{
 					// 1P63
-					Multiplier = 1;
+					Multiplier = 0.1;
 				};
 				
 				case 22:
 				{
 					// MRCO
-					Multiplier = 10;
+					Multiplier = 20;
 				};
 				
 				case 23:
 				{
 					// ARCO
-					Multiplier = 10;
+					Multiplier = 20;
 				};
 				
 				case 24:
 				{
 					// MOS
-					Multiplier = 15;
+					Multiplier = 20;
 				};
 				
 				case 25:
 				{
 					// Kahlia
-					Multiplier = 20;
+					Multiplier = 25;
 				};
 				
 				case 26:
@@ -657,31 +657,31 @@ gearItemChange =
 				case 27:
 				{
 					// Vertical Grip
-					Multiplier = 0.1;
+					Multiplier = 0;
 				};
 				
 				case 28:
 				{
 					// Laser Pointer
-					Multiplier = 1;
+					Multiplier = 0;
 				};
 				
 				case 29:
 				{
 					// Flashlight
-					Multiplier = 0.1;
+					Multiplier = 0;
 				};
 				
 				case 30:
 				{
 					// 5.45mm SS
-					Multiplier = 5;
+					Multiplier = 10;
 				};
 				
 				case 31:
 				{
 					// Bipod
-					Multiplier = 1;
+					Multiplier = 0;
 				};
 				
 				case 32:
@@ -698,13 +698,13 @@ gearItemChange =
 				case 34:
 				{
 					// Map Light
-					Multiplier = 1;
+					Multiplier = 0;
 				};
 				
 				case 35:
 				{
 					// Map Tools
-					Multiplier = 1;
+					Multiplier = 0;
 				};
 				
 				case 36:
@@ -716,13 +716,13 @@ gearItemChange =
 				case 37:
 				{
 					// Entrenching tool
-					Multiplier = 5;
+					Multiplier = 0;
 				};
 				
 				case 38:
 				{
 					// Strobe
-					Multiplier = 1;
+					Multiplier = 0;
 				};
 				
 				case 39:
@@ -734,25 +734,25 @@ gearItemChange =
 				case 40:
 				{
 					// Wirecutter
-					Multiplier = 5;
+					Multiplier = 10;
 				};
 				
 				case 41:
 				{
 					// Difusal Kit
-					Multiplier = 20;
+					Multiplier = 10;
 				};
 				
 				case 42:
 				{
 					// Mine Detector
-					Multiplier = 20;
+					Multiplier = 100;
 				};
 				
 				case 43:
 				{
 					// M152 Firing Device
-					Multiplier = 5;
+					Multiplier = 0.1;
 				};
 				
 				case 44:
@@ -770,25 +770,25 @@ gearItemChange =
 				case 46:
 				{
 					// Range Card
-					Multiplier = 1;
+					Multiplier = 0;
 				};
 				
 				case 47:
 				{
 					// Backpack small
-					Multiplier = 5;
+					Multiplier = 10;
 				};
 				
 				case 48:
 				{
 					// Backpack medium
-					Multiplier = 10;
+					Multiplier = 20;
 				};
 				
 				case 49:
 				{
 					// Backpack large
-					Multiplier = 15;
+					Multiplier = 30;
 				};
 				
 				case 50:

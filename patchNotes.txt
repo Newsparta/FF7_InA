@@ -1,24 +1,34 @@
-*InA 4.1.8*
+*InA 4.2*
 
-[map changed to Tanoa]
+- please re-read "basic tenets" in game.
 
-- Menu restrictions added to squad lead ACE menu.
-- Static Weapons added for all factions.
-- Generic cost edits to items.
-- Changed insurgent small arms and vehicle types.
-- Insurgent garrison script was broken, it's fixed.
-- Repair kits will now be consumed on use.
-- FOB's should be better preserved.
-- FOB's spawn passive garrison forces.
-- Enlisted uniquely skilled insurgents in the fight.
-- Civilians are less bitchy, but still dont like you taking their shit.
-- Your superiors dont want insurgent junk lying around base.
-- Database is automatically reset on base theme selection.
-- Autosave every 24hrs.
-- If you're not sneaky, main AO's are deadlier... maybe.
-- Main AO's do not spawn until players are sufficiently close.
-- Main AO's (though not any markers) will be saved in database.
-- virtually all rewards were increased (not base income).
-- civies can give side missions upon conversation success.
-    - counts towards completed objectives tally.
-    - gives reward.
+- main AO's were substituted for insurgent hideouts and strongholds.
+    - hideouts are displaced concentrations of insurgents.
+        - multiple hideouts may be active at once.
+        - more hideouts will appear as more regions are secured.
+        - rewards logistics points.
+        - hideouts will change location every ~12hrs
+    - strongholds are reinforced versions of hideouts
+        - only manifest in volatile towns/villages/cities.
+        - give significantly more logistics points
+        - give immediate supply boost
+        - only 1 strongohld active at a time.
+        - 2 day respawn timer if completed.
+    - clearing them counts towards completed objectives.
+- After Action Reports have been removed
+    - There is still a completed objectives tally for everything you do.
+    - Extra supplies are routed if enough objectives are completed.
+- Target Confirmation has been removed.
+- civilians may offer intel on hideout locations.
+- civilians will offer all side missions.
+- Humanitarian Aid vehicles were added.
+    - bring aid vehicles into destabalizing regions.
+    - counts towards completed objectives.
+    - increases civ tolerance.
+    - rewards logistics points.
+- killing civilians has drastically increased negative tolerance effect.
+- stealing vehicles has slightly increased negative tolerance effect.
+- difficulty tweak for small squad sizes to make it more manageable.
+- Autosave changed to save every time the last person leaves the server.
+- safehouses added for defence missions to allow for building without a utility vehicle or kit.
+    - more build options when near an FOB or safehouse.

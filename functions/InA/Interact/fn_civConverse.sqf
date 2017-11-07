@@ -329,6 +329,11 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 	waitUntil {!isNull (findDisplay 8102);};
 	
 	_ctrl = (findDisplay 8102) displayCtrl 1100;
+
+	[clientOwner, "missionBank"] remoteExec ["publicVariableClient", 2, false];
+	[clientOwner, "activeLocations"] remoteExec ["publicVariableClient", 2, false];
+
+	sleep 0.2;
 	
 	// ---------- Subject 1 ----------
 	
@@ -341,52 +346,16 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 		if (response == (_endTree select 0 select 1)) then {
 			
 			if (random 1 < 0.5) then {
-			
-				[clientOwner, "intelType"] remoteExec ["publicVariableClient", 2, false];
-				[clientOwner, "intelLoc"] remoteExec ["publicVariableClient", 2, false];
-				[clientOwner, "intelMan"] remoteExec ["publicVariableClient", 2, false];
-				[clientOwner, "InA_missionActive"] remoteExec ["publicVariableClient", 2, false];
 				
-				sleep 0.2;
-				
-				if (InA_missionActive) then {
-					_exit = false;
-					while {true} do {
-						scopeName "intelLoop";
+				if (activeLocations > 0) then {
 					
-						if (intelType select 1 == 1) then {
-							if (intelLoc select 1 == 1) then {
-								if (intelMan select 1 == 1) then {
-								_exit = true
-								};
-							};
-						};
-						
-						if (_exit) exitWith {["INTERACTION","This person affirms the intel you already have."] call FF7_fnc_formatHint;};
+					[] spawn InA_fnc_intelUpdate;			
 
-						_array = 
-						[
-							intelType,
-							intelLoc,
-							intelMan
-						];
-						
-						_selection = (selectRandom _array);
-						_state = _selection select 1;
-						_check = _selection select 0;
-						
-						if (_state == 0) then {breakOut "intelLoop";};
-					};
-					
-					[_check,_civ] spawn InA_fnc_intelUpdate;			
 				} else {
 
 					if !(civMissionActive) then {
 
-						_bank = 
-						[
-							"civEliminate"
-						];
+						_bank = missionBank;
 
 						_selection = selectRandom _bank;
 
@@ -443,10 +412,7 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 			} else {
 				if !(civMissionActive) then {
 
-						_bank = 
-						[
-							"civEliminate"
-						];
+						_bank = missionBank;
 
 						_selection = selectRandom _bank;
 
@@ -519,52 +485,16 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 		if (response == (_endTree select 1 select 1)) then {
 				
 			if (random 1 < 0.5) then {
-			
-				[clientOwner, "intelType"] remoteExec ["publicVariableClient", 2, false];
-				[clientOwner, "intelLoc"] remoteExec ["publicVariableClient", 2, false];
-				[clientOwner, "intelMan"] remoteExec ["publicVariableClient", 2, false];
-				[clientOwner, "InA_missionActive"] remoteExec ["publicVariableClient", 2, false];
 				
-				sleep 0.2;
-				
-				if (InA_missionActive) then {
-					_exit = false;
-					while {true} do {
-						scopeName "intelLoop";
+				if (activeLocations > 0) then {
 					
-						if (intelType select 1 == 1) then {
-							if (intelLoc select 1 == 1) then {
-								if (intelMan select 1 == 1) then {
-								_exit = true
-								};
-							};
-						};
-						
-						if (_exit) exitWith {["INTERACTION","This person affirms the intel you already have."] call FF7_fnc_formatHint;};
+					[] spawn InA_fnc_intelUpdate;			
 
-						_array = 
-						[
-							intelType,
-							intelLoc,
-							intelMan
-						];
-						
-						_selection = (selectRandom _array);
-						_state = _selection select 1;
-						_check = _selection select 0;
-						
-						if (_state == 0) then {breakOut "intelLoop";};
-					};
-					
-					[_check,_civ] spawn InA_fnc_intelUpdate;			
 				} else {
 				
 					if !(civMissionActive) then {
 
-						_bank = 
-						[
-							"civEliminate"
-						];
+						_bank = missionBank;
 
 						_selection = selectRandom _bank;
 
@@ -621,10 +551,7 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 			} else {
 				if !(civMissionActive) then {
 
-						_bank = 
-						[
-							"civEliminate"
-						];
+						_bank = missionBank;
 
 						_selection = selectRandom _bank;
 
@@ -697,52 +624,16 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 		if (response == (_endTree select 2 select 1)) then {
 			
 			if (random 1 < 0.5) then {
-			
-				[clientOwner, "intelType"] remoteExec ["publicVariableClient", 2, false];
-				[clientOwner, "intelLoc"] remoteExec ["publicVariableClient", 2, false];
-				[clientOwner, "intelMan"] remoteExec ["publicVariableClient", 2, false];
-				[clientOwner, "InA_missionActive"] remoteExec ["publicVariableClient", 2, false];
 				
-				sleep 0.2;
-				
-				if (InA_missionActive) then {
-					_exit = false;
-					while {true} do {
-						scopeName "intelLoop";
+				if (activeLocations > 0) then {
 					
-						if (intelType select 1 == 1) then {
-							if (intelLoc select 1 == 1) then {
-								if (intelMan select 1 == 1) then {
-								_exit = true
-								};
-							};
-						};
-						
-						if (_exit) exitWith {["INTERACTION","This person affirms the intel you already have."] call FF7_fnc_formatHint;};
+					[] spawn InA_fnc_intelUpdate;			
 
-						_array = 
-						[
-							intelType,
-							intelLoc,
-							intelMan
-						];
-						
-						_selection = (selectRandom _array);
-						_state = _selection select 1;
-						_check = _selection select 0;
-						
-						if (_state == 0) then {breakOut "intelLoop";};
-					};
-					
-					[_check,_civ] spawn InA_fnc_intelUpdate;			
 				} else {
 				
 					if !(civMissionActive) then {
 
-						_bank = 
-						[
-							"civEliminate"
-						];
+						_bank = missionBank;
 
 						_selection = selectRandom _bank;
 
@@ -799,10 +690,7 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 			} else {
 				if !(civMissionActive) then {
 
-						_bank = 
-						[
-							"civEliminate"
-						];
+						_bank = missionBank;
 
 						_selection = selectRandom _bank;
 
@@ -875,52 +763,16 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 		if (response == (_endTree select 3 select 1)) then {
 			
 			if (random 1 < 0.5) then {
-			
-				[clientOwner, "intelType"] remoteExec ["publicVariableClient", 2, false];
-				[clientOwner, "intelLoc"] remoteExec ["publicVariableClient", 2, false];
-				[clientOwner, "intelMan"] remoteExec ["publicVariableClient", 2, false];
-				[clientOwner, "InA_missionActive"] remoteExec ["publicVariableClient", 2, false];
 				
-				sleep 0.2;
-				
-				if (InA_missionActive) then {
-					_exit = false;
-					while {true} do {
-						scopeName "intelLoop";
+				if (activeLocations > 0) then {
 					
-						if (intelType select 1 == 1) then {
-							if (intelLoc select 1 == 1) then {
-								if (intelMan select 1 == 1) then {
-								_exit = true
-								};
-							};
-						};
-						
-						if (_exit) exitWith {["INTERACTION","This person affirms the intel you already have."] call FF7_fnc_formatHint;};
+					[] spawn InA_fnc_intelUpdate;			
 
-						_array = 
-						[
-							intelType,
-							intelLoc,
-							intelMan
-						];
-						
-						_selection = (selectRandom _array);
-						_state = _selection select 1;
-						_check = _selection select 0;
-						
-						if (_state == 0) then {breakOut "intelLoop";};
-					};
-					
-					[_check,_civ] spawn InA_fnc_intelUpdate;			
 				} else {
 				
 					if !(civMissionActive) then {
 
-						_bank = 
-						[
-							"civEliminate"
-						];
+						_bank = missionBank;
 
 						_selection = selectRandom _bank;
 
@@ -977,10 +829,7 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 			} else {
 				if !(civMissionActive) then {
 
-						_bank = 
-						[
-							"civEliminate"
-						];
+						_bank = missionBank;
 
 						_selection = selectRandom _bank;
 

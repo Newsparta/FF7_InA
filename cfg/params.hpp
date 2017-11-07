@@ -11,7 +11,7 @@ class sitrepDelay
 	title    = "SitRep Delay";
 	values[] = {300, 600, 900, 1800, 2700, 3600};
 	texts[]  = {"5 min.", "10 min.", "15 min.", "30 min.", "45 min.", "1 hour"};
-	default  = 600;
+	default  = 300;
 };
 
 class respawnAI
@@ -51,7 +51,7 @@ class mapWipe
 	title    = "Map Wipe Time Between";
 	values[] = {300, 600, 900, 1800, 2700, 3600};
 	texts[]  = {"5 min.", "10 min.", "15 min.", "30 min.", "45 min.", "1 hour"};
-	default  = 900;
+	default  = 300;
 };
 
 class mortarTimeout

@@ -64,3 +64,10 @@ civ_cars = [
 	"C_Van_01_box_F",
 	"C_Truck_02_covered_F"
 ];
+
+idap_cars = [
+	"C_IDAP_Van_02_medevac_F",
+	"C_IDAP_Van_02_vehicle_F",
+	"C_IDAP_Truck_02_water_F",
+	"C_IDAP_Truck_02_F"
+];

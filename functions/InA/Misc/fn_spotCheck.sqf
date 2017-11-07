@@ -24,36 +24,36 @@ Author:
 
 // ---------- PARAMETERS ----------
 
-params ["_cen", ["_rad", 2000, [0]]];
+params [];
 
 // ---------- MAIN ----------
-private ["_q","_w"];
+private ["_q"];
 
 spotted = false;
+_players = [];
 
 while {true} do {
-	scopeName "spotted";
-	
-	sleep (4 + (random 4));
+		
+	sleep (5 + (random 5));
 	
 	{
 		_q = (independent knowsAbout _x);
-		_w = (east knowsAbout _x);
-		if ({_x distance _cen < _rad} count (allPlayers - entities "HeadlessClient_F") > 0) then  {
-			if (_q > 3) then {
-				spotted = true;
-				hint "you have been spotted"; //debug
-				breakOut "spotted";
-			};
-			if (_w > 3) then {
-				spotted = true;
-				hint "you have been spotted"; //debug
-				breakOut "spotted";
+
+		if (_q > 3) then {
+
+			spotted = true;
+			_players = [];
+			hint "you have been spotted"; //debug
+			
+		} else {
+
+			_players pushBack _x;
+
+			if (count _players == count (allPlayers - entities "HeadlessClient_F")) then {
+
+				spotted = false;
+
 			};
 		};
 	} forEach (allPlayers - entities "HeadlessClient_F");
-	
-	if (InA_missionCompleted) then {
-		breakOut "spotted";
-	};
 };

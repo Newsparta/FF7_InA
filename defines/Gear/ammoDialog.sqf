@@ -995,11 +995,23 @@ gearItemChange =
 				
 				case 21:
 				{
+					// M4A1 Slam Mine
+					Multiplier = 5;
+				};
+				
+				case 22:
+				{
+					// M18A1 Claymore Mine
+					Multiplier = 5;
+				};
+				
+				case 23:
+				{
 					// M15 AT Mine
 					Multiplier = 10;
 				};
 				
-				case 22:
+				case 24:
 				{
 					// M112 Demolition Block
 					Multiplier = 1;
@@ -2271,6 +2283,8 @@ switch (baseType) do {
 			"Smoke Grenade (White)",
 			"Smoke Grenade (Black)",
 			"VS-50 AP Mine",
+			"M4A1 Slam Mine",
+			"M18A1 Claymore Mine",
 			"M15 AT Mine",
 			"M112 Demolition Block"
 		];	

@@ -1655,7 +1655,7 @@ switch (supplier) do {
 			"Night Vision Goggles",
 			"[Optic 1x] ACO",
 			"[Optic 1x] 1P76",
-			"[Optic 1x] Barksa RDS",
+			"[Optic 1x] Barska RDS",
 			"[Optic 1x] 1P63",
 			"[Optic 4x] MRCO",
 			"[Optic 4x] ARCO",

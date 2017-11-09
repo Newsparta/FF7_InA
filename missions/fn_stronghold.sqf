@@ -6,6 +6,10 @@ private ["_accepted","_pos","_blacklist"];
 Select location.
 */
 
+// BUG: Gets stuck in infinite loop durign placement sometimes - tested on Malden
+// Disable for now
+if (true) exitWith {};
+
 _loc = [];
 
 if !(InA_stronghold) then {

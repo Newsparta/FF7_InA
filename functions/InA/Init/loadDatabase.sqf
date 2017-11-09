@@ -4,7 +4,7 @@ sleep 5;
 
 _data = ["load", "data"] call FF7_fnc_extSerialize;
 
-if ((count (_data select 0)) < 1) exitWith {};
+if (isNil "_data") exitWith {};
 
 // ---------- Set base type (5) ----------
 

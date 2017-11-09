@@ -1,3 +1,6 @@
+#include "dialogs\hangar.hpp"
+#include "dialogs\garage.hpp"
+
 // ---------- Timer ----------
 
 class InA_Timer_Dialog

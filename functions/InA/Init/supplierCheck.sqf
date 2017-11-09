@@ -65,6 +65,8 @@ while {true} do {
 	};
 
 	{
+		if (isNil "_x") exitWith {};
+
 		_inv = ((getMagazineCargo _x) + (getWeaponCargo _x));
 		_obj = _x;
 		{

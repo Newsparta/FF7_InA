@@ -32,19 +32,16 @@ while {true} do {
 	_airArray = nearestObjects [getMarkerPos "respawn_west",["Air"],750];
 	_array = 
 	[
-		launcherCrate_1,
-		launcherCrate_2,
-		explosiveCrate_1,
-		ammoCrate_1,
-		ammoCrate_2,
-		weaponCrate_1,
+		launcherCrate,
+		explosiveCrate,
+		ammoCrate,
+		weaponCrate,
 		weaponCrate_2,
-		weaponCrate_3,
-		grenadeCrate_1,
-		grenadeCrate_2,
-		equipmentCrate_1,
-		medicalCrate_1,
-		gearDump
+		grenadeCrate,
+		equipmentCrate,
+		medicalCrate,
+		miscCrate,
+		GearDump
 	];
 
 	_banned = [];

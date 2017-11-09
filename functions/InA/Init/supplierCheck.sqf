@@ -54,15 +54,19 @@ while {true} do {
 		{_banned pushBack _x} forEach INS_MG_BLU;
 		{_banned pushBack _x} forEach INS_AT_BLU;
 		{_banned pushBack _x} forEach INS_AA_BLU;
+		{_banned pushBack _x} forEach INS_SNIPER_BLU;
 	} else {
 		{_banned pushBack _x} forEach INS_RIFLE_OPF;
 		{_banned pushBack _x} forEach INS_GL_OPF;
 		{_banned pushBack _x} forEach INS_MG_OPF;
 		{_banned pushBack _x} forEach INS_AT_OPF;
 		{_banned pushBack _x} forEach INS_AA_OPF;
+		{_banned pushBack _x} forEach INS_SNIPER_OPF;
 	};
 
 	{
+		if (isNil "_x") exitWith {};
+
 		_inv = ((getMagazineCargo _x) + (getWeaponCargo _x));
 		_obj = _x;
 		{

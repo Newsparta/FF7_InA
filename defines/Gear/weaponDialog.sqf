@@ -1160,7 +1160,7 @@ gearRequisition =
 
 				case 11:
 				{
-					_item = "rhs_weap_m16a4_carryhandle_M203";
+					_item = "rhs_weap_M107_w";
 					_itemType = "weapon";
 					call weaponCostCheck;
 				};
@@ -1814,7 +1814,7 @@ switch (baseType) do {
 			"ACR-E 6.8mm (mid)",
 			"ACR-E 6.8mm (long)",
 			"M4A1 (M320)",
-			"M249",
+			"M249 LMG",
 			"M240B",
 			"M14",
 			"SR-25",
@@ -1847,7 +1847,7 @@ switch (baseType) do {
 			"M27 IAR",
 			"M4A1 (M320)",
 			"M16A4 (M203)",
-			"M249",
+			"M249 LMG",
 			"M240B",
 			"M14",
 			"SR-25",

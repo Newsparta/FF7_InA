@@ -81,18 +81,6 @@ if (_type in ["B_Soldier_SL_F", "B_Soldier_TL_F", "B_spotter_F", "B_recon_JTAC_F
 
 	[_unit, 1, ["ACE_SelfActions", "InA_Support","InA_Support_Evac"], _action] call ace_interact_menu_fnc_addActionToObject;
 
-	// ---------- Intel clipboard ----------
-	_action =
-	[
-		"FF7_Interaction_Self_intelClipboard",
-		"Intel Clipboard",
-		"",
-		{[] spawn InA_fnc_intelClipboard;},
-		_cond
-	] call ace_interact_menu_fnc_createAction;
-
-	[_unit, 1, ["ACE_SelfActions","FF7_Interaction","FF7_Interaction_Self"], _action] call ace_interact_menu_fnc_addActionToObject;
-
 	// ---------- FOB parent ----------
 	_action =
 	[
@@ -217,18 +205,6 @@ else
 	] call ace_interact_menu_fnc_createAction;
 
 	[_unit, 1, ["ACE_SelfActions", "InA_Support","InA_Support_Evac"], _action] call ace_interact_menu_fnc_addActionToObject;
-
-	// ---------- Intel clipboard ----------
-	_action =
-	[
-		"FF7_Interaction_Self_intelClipboard",
-		"Intel Clipboard",
-		"",
-		{[] spawn InA_fnc_intelClipboard;},
-		_cond
-	] call ace_interact_menu_fnc_createAction;
-
-	[_unit, 1, ["ACE_SelfActions","FF7_Interaction","FF7_Interaction_Self"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 	// ---------- FOB parent ----------
 	_action =

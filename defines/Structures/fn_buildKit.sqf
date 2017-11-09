@@ -28,12 +28,43 @@ params ["_kit"];
 		
 	disableSerialization;
 
-	_selections =	[
-		"Sandbag (long)",
-		"Sandbag (round)",
-		"Sandbag (end)",
-		"Portable Light"
-	];
+	[clientOwner, "InA_fob_location"] remoteExec ["publicVariableClient", 2, false];
+	[clientOwner, "safehouse"] remoteExec ["publicVariableClient", 2, false];
+
+	sleep 0.2;
+
+	_selections = [];
+
+	if (player distance InA_fob_location < 100) then {
+		_selections =	[
+			"Sandbag (long)",
+			"Sandbag (round)",
+			"Sandbag (end)",
+			"Portable Light",
+			"HBarrier Wall",
+			"Tower",
+			"Camonet"
+		];
+	};
+	if (player distance safehouse < 100) then {
+		_selections =	[
+			"Sandbag (long)",
+			"Sandbag (round)",
+			"Sandbag (end)",
+			"Portable Light",
+			"HBarrier Wall",
+			"Tower",
+			"Camonet"
+		];
+	} else {
+		_selections =	[
+			"Sandbag (long)",
+			"Sandbag (round)",
+			"Sandbag (end)",
+			"Portable Light"
+		];
+	};
+
 	plusX = 
 	{
 		transX = transX + 0.05;

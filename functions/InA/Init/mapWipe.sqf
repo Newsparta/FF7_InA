@@ -30,24 +30,22 @@ while {true} do {
 	sleep (10 +(random 10));
 	
 	if ({_x distance (getMarkerPos "respawn_west") > 750} count (allPlayers - entities "HeadlessClient_F") < 1) then {
-		if !(InA_missionActive) then {
-			if !(alive logiVeh) then {
-				{ 
-					if ((_x distance (getMarkerPos "respawn_west")) > 750) then {
-						deleteVehicle _x;
-					};
-				} forEach allUnits - (allPlayers - entities "HeadlessClient_F"); 
-					
-				{ 
-					if ((_x distance (getMarkerPos "respawn_west")) > 750) then {
-						deleteVehicle _x;
-					};
-				} forEach (allMissionObjects "" - _excludedObjects - playerVehicles);
+		if !(alive logiVeh) then {
+			{ 
+				if ((_x distance (getMarkerPos "respawn_west")) > 750) then {
+					deleteVehicle _x;
+				};
+			} forEach allUnits - (allPlayers - entities "HeadlessClient_F"); 
 				
-				["HQ", "DEBUG", "Map has been wiped."] call FF7_fnc_globalHintStruct;
+			{ 
+				if ((_x distance (getMarkerPos "respawn_west")) > 750) then {
+					deleteVehicle _x;
+				};
+			} forEach (allMissionObjects "" - _excludedObjects - playerVehicles);
+			
+			["HQ", "DEBUG", "Map has been wiped."] call FF7_fnc_globalHintStruct;
 					
-				sleep params_mapWipe;
-			};
+			sleep params_mapWipe;
 		};
 	};
 };

@@ -22,7 +22,7 @@ _added = false;
 		{
 			if ((_x distance (getMarkerPos "respawn_west") > 750) && {!_added}) then {
 				
-				[_x] call InA_fnc_buildKitLite;
+				[_x] call InA_fnc_buildKit;
 				_added = true;
 			};
 			

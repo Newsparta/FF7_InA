@@ -4,7 +4,7 @@ sleep 5;
 
 _data = ["load", "data"] call FF7_fnc_extSerialize;
 
-if ((count (_data select 0)) < 1) exitWith {};
+if (isNil "_data") exitWith {};
 
 // ---------- Set base type (5) ----------
 
@@ -131,15 +131,22 @@ _utilityVehicles = _data select 4;
 	playerVehicles pushBack _veh;
 } forEach _vehicleData;
 
-// ---------- mission (6) ----------
+// ---------- FOB (6) ----------
 
 if (_data select 6 select 0) then {
 
-	missionSaved = true;
-	mission = _data select 6 select 1;
-	mainObj = _data select 6 select 2;
+	["build", _data select 6 select 1] call InA_fnc_fob;
 
-} else {};
+};
+
+// ---------- Stronghold (7) ----------
+
+if (_data select 7 select 0) then {
+
+	InA_stronghold = true;
+	InA_stronghold_Loc = _data select 7 select 1;
+
+};
 
 /////////
 // end //

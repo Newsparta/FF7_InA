@@ -11,6 +11,7 @@ waitUntil {sleep 1; initialized};
 
 		_regions = [] call InA_fnc_regionCheck;
 		_candidates = [];
+		safehouse = [0,0,0];
 
 		{
 			if ((_x select 1) < 0.9) then {

@@ -1,95 +1,85 @@
 // ---------- arguments ----------
 
-params ["_loc",["_virgin", true,[true]],"_objectives"];
 private ["_accepted","_pos","_blacklist"];
 
 /*
-Select mission location, using random location if virgin or input location if not.
+Select location.
 */
 
-if (_virgin) then {
+_accepted = false;
+_loc = [];
 
-	_accepted = false;
-	while {!_accepted} do {
-		_pos = [[[mapCenter,mapSize]],["water","out"]] call BIS_fnc_randomPos;
-		mission = _pos isFlatEmpty [5, 0, 0.6, 5, 0, false];
+while {!_accepted} do {
+	_pos = [[[mapCenter,mapSize]],["water","out"]] call BIS_fnc_randomPos;
+	_loc = _pos isFlatEmpty [5, 0, 0.6, 5, 0, false];
+	
+	if (count _loc > 2) then {
 		
-		if (count mission > 2) then {
-			
-			_isNear = false;
+		_isNearPlayer = false;
 
+		{
+			if ((_x distance _loc) < 2000) then {
+				_isNearPlayer = true;
+			};
+		} forEach (allPlayers - entities "HeadlessClient_F");
+
+		_isNearLoc = false;
+
+		if (count concentrations > 0) then {
 			{
-				if ((_x distance mission) < 2000) then {
-					_isNear = true;
+				if ((_x distance _loc) < 2000) then {
+					_isNearLoc = true;
 				};
-			} forEach (allPlayers - entities "HeadlessClient_F");
+			} forEach concentrations;
+		};
 			
-			if (((getMarkerPos "respawn_west") distance mission) > 3000) then {
-				if !(_isNear) then {
+		if (((getMarkerPos "respawn_west") distance _loc) > 3000) then {
+			if !(_isNearPlayer) then {
+				if !(_isNearLoc) then {
 					_accepted = true;
 				};
 			};
 		};
 	};
-
-} else {
-	mission = _loc;
 };
 
-[mission] spawn InA_fnc_spotCheck;
+activeLocations = activeLocations + 1;
+concentrations pushBack _loc;
 
-// ---------- Objective Spawns ----------
-
-private ["_bank","_selection"];
-
-if (_virgin) then {
-	_bank = 
-	[
-		"commOutpost",
-		"fuelDepot",
-		"HVTOfficer",
-		"MGNest",
-		"weaponsCache",
-		"supplyOutpost",
-		"AAAEmplacement",
-		"barracksStructure"
-	];
-
-	for "_i" from 0 to (random 4) do {
-
-		_selection = selectRandom _bank;
-
-		call compile format 
-		[
-			"[mission] spawn InA_fnc_%1",
-			_selection
-		];
-	};
-} else {
-	{
-		call compile format 
-		[
-			"[%2, false] spawn InA_fnc_%1",
-			_x select 0,
-			_x select 1
-		];
-	} forEach _objectives;
-};
+_num = random 1;
+_mkr = createMarker [format ["%1",_num], _loc];
+					format ["%1",_num] setMarkerColor "ColorGUER";
+					format ["%1",_num] setMarkerShape "ELLIPSE";
+					format ["%1",_num] setMarkerBrush "Border";
+					format ["%1",_num] setMarkerSize [250, 250];
 
 /*
 Loop for spawning AO when players are near.
 */
 
-while {!InA_missionCompleted} do {
+_cleared = false;
+_i = 0;
+
+while {!_cleared} do {
 
 	sleep (2 + (random 2));
 
-	if ({_x distance mission < mainLimit} count (allPlayers - entities "HeadlessClient_F") > 0) then {
+	_i = _i + 1;
 
-		InA_missionActive = true;
-		publicVariable "InA_missionActive";
+	/*
+	clear the hideout after approximately 12 hours.
+	*/
 
-		afterActionReport = true;
+	if (_i >= 14400) then {
+
+		_cleared = true;
+		activeLocations = activeLocations - 1;
+		concentrations = concentrations - _loc;
+		deleteMarker _mkr;
+
+	};
+
+	if ({_x distance _loc < mainLimit} count (allPlayers - entities "HeadlessClient_F") > 0) then {
 
 		/////////////////////////
 		// mission spawn start //
@@ -107,7 +97,7 @@ while {!InA_missionCompleted} do {
 			// ---------- Generic large spawns ----------
 
 			for "_i" from 0 to (round random (3 + _addSome)) do {
-				_pos = [mission, 0, 1000, 1, 0, 1, 0] call BIS_fnc_findSafePos;
+				_pos = [_loc, 0, 500, 1, 0, 1, 0] call BIS_fnc_findSafePos;
 
 				_troops = [];
 				for "_i" from 1 to (4 + (round random 6)) do {
@@ -126,7 +116,7 @@ while {!InA_missionCompleted} do {
 			};
 
 			for "_i" from 0 to (round random (3 + _addSome)) do {
-				_pos = [mission, 0, 500, 1, 0, 1, 0] call BIS_fnc_findSafePos;
+				_pos = [_loc, 0, 500, 1, 0, 1, 0] call BIS_fnc_findSafePos;
 
 				_troops = [];
 				for "_i" from 1 to (4 + (round random 6)) do {
@@ -142,30 +132,11 @@ while {!InA_missionCompleted} do {
 				[_group, _pos, 500] call BIS_fnc_taskPatrol;
 				[units _group] call InA_fnc_insCustomize;
 			};
-			
-			// ---------- Convoy ----------
-		/*	
-			if (random 100 < 50) then {
-			
-				_vehicles = [];
-				if (supplier == "BLU") then {
-					_vehicles = INS_CAR_OPF + INS_MRAP_OPF + INS_SPAAG_OPF + INS_APC_OPF + INS_IFV_OPF + INS_TANK_OPF + INS_TRUCK_OPF;
-				} else {
-					_vehicles = INS_CAR_BLU + INS_MRAP_BLU + INS_SPAAG_BLU + INS_APV_BLU + INS_IFV_BLU + INS_TANK_BLU + INS_TRUCK_BLU;
-				};
-				
-				_pos = [mission, 0, 1000, 5, 0, 1, 0] call BIS_fnc_findSafePos;
-				
-				for "_i" from 0 to (1 + random 3) do {
-					_veh = (selectRandom _vehicles) createVehicle _pos;
-				};
-			
-			};
-			*/
+
 			// ---------- AA ----------
 			
 			for "_i" from 0 to ((count (call BIS_fnc_listPlayers)) * 0.05) do {
-				_pos = [mission, 0, 500, 0, 0, -1, 0] call BIS_fnc_findSafePos;
+				_pos = [_loc, 0, 500, 0, 0, -1, 0] call BIS_fnc_findSafePos;
 				_group = [
 					_pos, 
 					INDEPENDENT, 
@@ -202,7 +173,7 @@ while {!InA_missionCompleted} do {
 			
 			for "_i" from 0 to ((count (call BIS_fnc_listPlayers)) * 0.1) do {
 				if (random 100 < 50) then {
-					_pos = [mission, 0, 750, 1, 0, 1, 0] call BIS_fnc_findSafePos;
+					_pos = [_loc, 0, 250, 1, 0, 1, 0] call BIS_fnc_findSafePos;
 					if (supplier == "BLU") then {
 						_car = (selectRandom INS_CAR_BLU) createVehicle _pos;
 						[
@@ -257,7 +228,7 @@ while {!InA_missionCompleted} do {
 
 			for "_i" from 0 to ((count (call BIS_fnc_listPlayers)) * 0.067) do {
 				if (random 100 < 50) then {
-					_pos = [mission, 0, 750, 1, 0, 1, 0] call BIS_fnc_findSafePos;
+					_pos = [_loc, 0, 250, 1, 0, 1, 0] call BIS_fnc_findSafePos;
 					if (supplier == "BLU") then {
 						_car = (selectRandom INS_MRAP_BLU) createVehicle _pos;
 						[
@@ -313,7 +284,7 @@ while {!InA_missionCompleted} do {
 
 			for "_i" from 0 to ((count (call BIS_fnc_listPlayers)) * 0.067) do {
 				if (random 100 < 50) then {
-					_pos = [mission, 0, 750, 1, 0, 1, 0] call BIS_fnc_findSafePos;
+					_pos = [_loc, 0, 250, 1, 0, 1, 0] call BIS_fnc_findSafePos;
 					if (supplier == "BLU") then {
 						_car = (selectRandom (INS_APC_BLU + INS_IFV_BLU + INS_TANK_BLU)) createVehicle _pos;
 						if (typeOf _car in INS_APC_BLU) then {
@@ -406,7 +377,7 @@ while {!InA_missionCompleted} do {
 
 			for "_i" from 0 to (round random 4) do {
 				if (random 100 < random 50) then {
-					_pos = [mission, 0, 750, 0, 0, 50, 0] call BIS_fnc_findSafePos;
+					_pos = [_loc, 0, 500, 0, 0, 50, 0] call BIS_fnc_findSafePos;
 
 					_troops = [];
 					for "_i" from 1 to (round random 4) do {
@@ -430,46 +401,39 @@ while {!InA_missionCompleted} do {
 
 		// ---------- enemies cleared trigger ----------
 
-		[] spawn {
-
-			private ["_nme"];
-
-			_nme = createTrigger ["EmptyDetector",mission];
-			_nme setTriggerArea [1500,1500, 0, false];
-			_nme setTriggerActivation ["GUER", "NOT PRESENT", false];
-			_nme setTriggerStatements ["this","",""];
-			
-			while {InA_missionActive} do {
-				scopeName "end";
-				
-				sleep (5 + (random 5));
-				
-				if (count list _nme < 25) then {
-					
-					compObj = compObj + 1;
-					
-					mainObjective = ["enemies near",1];
-				
-					breakOut "end";
-				};
-			};
-		};
+		_nme = createTrigger ["EmptyDetector",_loc];
+		_nme setTriggerArea [1000,1000, 0, false];
+		_nme setTriggerActivation ["GUER", "NOT PRESENT", false];
+		_nme setTriggerStatements ["this","",""];
 
 		// ---------- near mission pause loop ----------
 
 		while {true} do {
-			scopeName "mission";
+			scopeName "activity";
 
 			sleep (2 + (random 2));
 
-			if ({_x distance mission < mainLimit} count (allPlayers - entities "HeadlessClient_F") < 1) then {
+			if (count list _nme < 20) then {
 
-				[mission, (mainLimit - 500)] spawn InA_fnc_cleanup;
+				deleteVehicle _nme;
+				_cleared = true;
+				activeLocations = activeLocations - 1;
+				compObj = compObj + 1;
+				LogV = LogV + 3;
+				concentrations = concentrations - _loc;
+			
+				["INSURGENT HIDEOUT", "The insurgents concentrated here have been mostly routed."] remoteExec ["FF7_fnc_formatHint", 0];
 
-				InA_missionActive = false;
-				publicVariable "InA_missionActive";
+				breakOut "activity";
+			};
 
-				breakOut "mission";
+			if ({_x distance _loc < mainLimit} count (allPlayers - entities "HeadlessClient_F") < 1) then {
+
+				[_loc, (mainLimit - 500)] spawn InA_fnc_cleanup;
+
+				_active = false;
+
+				breakOut "activity";
 			};
 
 		};

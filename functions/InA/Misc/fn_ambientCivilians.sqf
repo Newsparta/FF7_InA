@@ -2,17 +2,17 @@
 Function: InA_fnc_ambientCivilians
 
 Description:
-    A function to look for nearby towns or villages and spawn civilians/vehicles.
+    A function to spawn civilians/vehicles.
 
 Parameters:
     - Center Location (Position)
 
 Optional:
-    - Radius to find towns (Number)
+    - Radius to spawn (Number)
     - Total number of men to spawn (Number)
-	- Total number of cars to spawn (Number)
-	- Total number of parked cars (Number)
+	- Total number of groups to spawn (Number)
 	- Percentage (0 to 1) of building positions to spawn civilians in (Number)
+	- Total number of parked cars (Number)
 
 Example:
    
@@ -180,7 +180,7 @@ for "_i" from 1 to _carsParked do {
 
 							_nameTheif = name _theif;
 
-							civTol = civTol - 0.1;
+							civTol = civTol - 0.2;
 
 							["Civility", (format ["<t color='#CC2222'>%1</t> just stole a civilian vehicle.</t>", _nameTheif])] remoteExec ["FF7_fnc_formatHint", 0];
 

@@ -94,6 +94,7 @@ class InA
 		class actionUniformEquip {file = "functions\InA\Actions\fn_actionUniformEquip.sqf";};
 		
 		// Reinforcements
+		class reinforcementCall {file = "functions\InA\Reinforcements\fn_reinforcementCall.sqf";};
 		class insSniperAttack {file = "functions\InA\Reinforcements\fn_insSniperAttack.sqf";};
 		class genLightCarAttack {file = "functions\InA\Reinforcements\fn_genLightCarAttack.sqf";};
 		class insLightCarAttack {file = "functions\InA\Reinforcements\fn_insLightCarAttack.sqf";};
@@ -115,6 +116,7 @@ class InA
 		class diversity {file = "defines\fn_diversity.sqf";};
 		
 		// Misc.
+		class placeUXO {file = "functions\InA\Misc\fn_placeUXO.sqf";};
 		class bluCustomize {file = "functions\InA\Misc\fn_bluCustomize.sqf";};
 		class targetResponse {file = "functions\InA\Misc\fn_targetResponse.sqf";};
 		class defaultDB {file = "functions\InA\Misc\fn_defaultDB.sqf";};
@@ -154,21 +156,20 @@ class InA
 		// Objectives
 		class HVTOfficer {file = "missions\Objective Bank\fn_HVTOfficer.sqf";};
 		class weaponsCache {file = "missions\Objective Bank\fn_weaponsCache.sqf";};
-		class MGNest {file = "missions\Objective Bank\fn_MGNest.sqf";};
 		class fuelDepot {file = "missions\Objective Bank\fn_fuelDepot.sqf";};
 		class commOutpost {file = "missions\Objective Bank\fn_commOutpost.sqf";};
-		class supplyOutpost {file = "missions\Objective Bank\fn_supplyOutpost.sqf";};
-		class barracksStructure {file = "missions\Objective Bank\fn_barracksStructure.sqf";};
 		class AAAEmplacement {file = "missions\Objective Bank\fn_AAAEmplacement.sqf";};
-		class civEliminate {file = "missions\Objective Bank\fn_civEliminate.sqf";};
+		class Eliminate {file = "missions\Objective Bank\fn_Eliminate.sqf";};
+		class MGNest {file = "missions\Objective Bank\fn_MGNest.sqf";};
 
-		class missionAO {file = "missions\fn_missionAO.sqf";};
+		class majorActivity {file = "missions\fn_majorActivity.sqf";};
+		class stronghold {file = "missions\fn_stronghold.sqf";};
 		
 		// Gear
 		class WAD {file = "defines\Gear\fn_WAD.sqf";};
 		
 		// Structures
-		class buildKitLite {file = "defines\Structures\fn_buildKitLite.sqf";};
+		class buildKit {file = "defines\Structures\fn_buildKit.sqf";};
 		class fob {file = "defines\Structures\fn_fob.sqf";};
 		class placeObj {file = "defines\Structures\fn_placeObj.sqf";};
 		

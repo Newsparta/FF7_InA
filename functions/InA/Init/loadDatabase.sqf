@@ -4,7 +4,7 @@ sleep 5;
 
 _data = ["load", "data"] call FF7_fnc_extSerialize;
 
-if ((count (_data select 0)) < 1) exitWith {};
+if (isNil "_data") exitWith {};
 
 // ---------- Set base type (5) ----------
 
@@ -58,34 +58,28 @@ _regionData = _data select 0;
 // ---------- Armory data (1) ----------
 
 _lI1 = (_data select 1 select 0);
-_lI2 = (_data select 1 select 1);
-_xI1 = (_data select 1 select 2);
-_aI1 = (_data select 1 select 3);
-_aI2 = (_data select 1 select 4);
-_wI1 = (_data select 1 select 5);
-_wI2 = (_data select 1 select 6);
-_wI3 = (_data select 1 select 7);
-_gI1 = (_data select 1 select 8);
-_gI2 = (_data select 1 select 9);
-_eI1 = (_data select 1 select 10);
-_mI1 = (_data select 1 select 11);
-_dI = (_data select 1 select 12);
+_xI1 = (_data select 1 select 1);
+_aI1 = (_data select 1 select 2);
+_wI1 = (_data select 1 select 3);
+_wI2 = (_data select 1 select 4);
+_gI1 = (_data select 1 select 5);
+_eI1 = (_data select 1 select 6);
+_mI1 = (_data select 1 select 7);
+_dI1 = (_data select 1 select 8);
+_sI1 = (_data select 1 select 9);
 
 _array = 
 [
-	[launcherCrate_1, _lI1],
-	[launcherCrate_2, _lI2],
-	[explosiveCrate_1, _xI1],
-	[ammoCrate_1, _aI1],
-	[ammoCrate_2, _aI2],
-	[weaponCrate_1, _wI1],
+	[launcherCrate, _lI1],
+	[explosiveCrate, _xI1],
+	[ammoCrate, _aI1],
+	[weaponCrate, _wI1],
 	[weaponCrate_2, _wI2],
-	[weaponCrate_3, _wI3],
-	[grenadeCrate_1, _gI1],
-	[grenadeCrate_2, _gI2],
-	[equipmentCrate_1, _eI1],
-	[medicalCrate_1, _mI1],
-	[gearDump, _dI]
+	[grenadeCrate, _gI1],
+	[equipmentCrate, _eI1],
+	[medicalCrate, _mI1],
+	[miscCrate, _dI1],
+	[GearDump, _sI1]
 ];
 
 {
@@ -131,15 +125,22 @@ _utilityVehicles = _data select 4;
 	playerVehicles pushBack _veh;
 } forEach _vehicleData;
 
-// ---------- mission (6) ----------
+// ---------- FOB (6) ----------
 
 if (_data select 6 select 0) then {
 
-	missionSaved = true;
-	mission = _data select 6 select 1;
-	mainObj = _data select 6 select 2;
+	["build", _data select 6 select 1] call InA_fnc_fob;
 
-} else {};
+};
+
+// ---------- Stronghold (7) ----------
+
+if (_data select 7 select 0) then {
+
+	InA_stronghold = true;
+	InA_stronghold_Loc = _data select 7 select 1;
+
+};
 
 /////////
 // end //

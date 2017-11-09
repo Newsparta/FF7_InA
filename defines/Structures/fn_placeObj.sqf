@@ -23,7 +23,7 @@ Author:
 // ---------- MAIN ----------
 
 detach obj;
-buildInventory = buildInventory - cCost;
+buildInventory = buildInventory - objCost;
 publicVariableServer "buildInventory";
 
 removeAllActions player;

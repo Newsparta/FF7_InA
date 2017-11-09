@@ -54,8 +54,15 @@ _null = execVM "functions\InA\Init\supplierCheck.sqf";
 [] spawn {
 
 	while {true} do {
-		sleep 86400;
-		[] call InA_fnc_save;	
+
+		waitUntil {sleep 1; (count (allPlayers - entities "HeadlessClient_F") > 0)};
+
+		sleep (30 + (random 30));
+
+		if (count (allPlayers - entities "HeadlessClient_F") < 1) then {
+
+			[] call InA_fnc_save;
+		};
 	};
 };
 
@@ -77,7 +84,7 @@ call compile preprocessFileLineNumbers "defines\enemyTheme.sqf";
 
 _null = execVM "missions\missionControl.sqf";
 _null = execVM "missions\eventsHandler.sqf";
-_null = execVM "functions\InA\Init\baseAttack.sqf";
+//_null = execVM "functions\InA\Init\baseAttack.sqf";
 
 // ---------- Map wipe ----------
 
@@ -89,6 +96,10 @@ vehicleSpawn =
 {
 	if (vehicleParked) exitWith {
 		["Headquarters", "Please clear the garage before requisitioning more vehicles."] remoteExec ["FF7_fnc_formatHint", ID, false];
+	};
+
+	if (count (nearestObjects [mapCenter, idap_cars, mapSize]) > 0) exitWith {
+		["Headquarters", "There is already an aid vehicle deployed."] remoteExec ["FF7_fnc_formatHint", ID, false];
 	};
 
 	_afford = false;

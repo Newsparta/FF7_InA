@@ -9,7 +9,7 @@ Parameters:
 
 Example:
    
-    [[0,0,0]] call InA_fnc_fob
+    ["build",[0,0,0]] call InA_fnc_fob
 
 Returns:
     Nil

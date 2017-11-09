@@ -20,7 +20,7 @@ if (isPlayer _killer) then {
 	
 	sleep 0.2;
 	
-	civTol = civTol - 0.1;
+	civTol = civTol - 0.5;
 	publicVariableServer "civTol";
 
 	["R.O.E", (format ["<t color='#CC2222'>%1</t> just murdered a civilian</t>", _nameKiller])] remoteExec ["FF7_fnc_formatHint", 0];

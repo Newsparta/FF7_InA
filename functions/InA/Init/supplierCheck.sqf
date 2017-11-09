@@ -32,19 +32,16 @@ while {true} do {
 	_airArray = nearestObjects [getMarkerPos "respawn_west",["Air"],750];
 	_array = 
 	[
-		launcherCrate_1,
-		launcherCrate_2,
-		explosiveCrate_1,
-		ammoCrate_1,
-		ammoCrate_2,
-		weaponCrate_1,
+		launcherCrate,
+		explosiveCrate,
+		ammoCrate,
+		weaponCrate,
 		weaponCrate_2,
-		weaponCrate_3,
-		grenadeCrate_1,
-		grenadeCrate_2,
-		equipmentCrate_1,
-		medicalCrate_1,
-		gearDump
+		grenadeCrate,
+		equipmentCrate,
+		medicalCrate,
+		miscCrate,
+		GearDump
 	];
 
 	_banned = [];
@@ -54,15 +51,19 @@ while {true} do {
 		{_banned pushBack _x} forEach INS_MG_BLU;
 		{_banned pushBack _x} forEach INS_AT_BLU;
 		{_banned pushBack _x} forEach INS_AA_BLU;
+		{_banned pushBack _x} forEach INS_SNIPER_BLU;
 	} else {
 		{_banned pushBack _x} forEach INS_RIFLE_OPF;
 		{_banned pushBack _x} forEach INS_GL_OPF;
 		{_banned pushBack _x} forEach INS_MG_OPF;
 		{_banned pushBack _x} forEach INS_AT_OPF;
 		{_banned pushBack _x} forEach INS_AA_OPF;
+		{_banned pushBack _x} forEach INS_SNIPER_OPF;
 	};
 
 	{
+		if (isNil "_x") exitWith {};
+
 		_inv = ((getMagazineCargo _x) + (getWeaponCargo _x));
 		_obj = _x;
 		{

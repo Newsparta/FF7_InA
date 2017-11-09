@@ -12,6 +12,7 @@
 
 	Returns:
 		Array 		Parsed SQF array of the data stored by key
+		** nil on error
 
 	Example 1: (Write)
 		_response = ["save", "somekey", ["some", ["arbitrary",["data"]]]] call FF7_fnc_extSerialize;
@@ -46,7 +47,7 @@ if (__func == "save") then {
 
 	if (0 == count __data) exitWith {
 		["ERROR", "Error saving to database"] remoteExec ["FF7_fnc_formatHint", 0];
-		diag_log format ["ERROR (fn_save.sqf): __data array was empty."];
+		diag_log format ["ERROR (extSerialize.sqf/save): __data array was empty."];
 	};
 
 	_call_string = ["003", __key, str __data] joinString ":";
@@ -55,7 +56,7 @@ if (__func == "save") then {
 
 	if (_response == "ERROR") exitWith {
 		["ERROR", "Error saving to database"] remoteExec ["FF7_fnc_formatHint", 0];
-		diag_log format ["ERROR (fn_save.sqf): _response was ""ERROR""."];
+		diag_log format ["ERROR (extSerialize.sqf/save): _response was ""ERROR""."];
 	};
 
 	_return = [_response];
@@ -72,7 +73,7 @@ if (__func == "save") then {
 
 		if (_response == "ERROR") exitWith {
 			["ERROR", "Error loading from database"] remoteExec ["FF7_fnc_formatHint", 0];
-			diag_log format ["ERROR (fn_save.sqf): _response was ""ERROR""."];
+			diag_log format ["ERROR (extSerialize.sqf/load): _response was ""ERROR""."];
 
 			sleep 2;
 		};
@@ -81,14 +82,20 @@ if (__func == "save") then {
 		
 		_data_string = [_data_string, _response] joinString "";
 	};
-	_return = parseSimpleArray _data_string;
 
+	if (_data_string != "") then {
+		_return = parseSimpleArray _data_string;
+	}
 
 // ---------- Unknown Func ----------
 
 } else {
     ["ERROR", "Unknown function passed to extSerialize"] remoteExec ["FF7_fnc_formatHint", 0];
-	diag_log format ["ERROR (fn_save.sqf): Unknown function ""%1"" called with key ""%2"".", __func, __key];
+	diag_log format ["ERROR (extSerialize.sqf): Unknown function ""%1"" called with key ""%2"".", __func, __key];
 }; };
 
-_return
+if (isNil "_return") then {
+	nil
+} else {
+	_return
+}

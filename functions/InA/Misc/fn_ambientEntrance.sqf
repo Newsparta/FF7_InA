@@ -31,7 +31,11 @@ if (_size == "large") then {
 
 ambientExited = false;
 ambientShotsFired = false;
-
+/*
+if (random 1 < 0.25) then {
+	[_loc,_rad, (20 + (round random 80)),(20 + (round random 20))] call InA_fnc_placeUXO;
+};
+*/
 if (_instability >= 0.5) then {
 
 // ---------- GENERIC LARGE SPAWN ----------
@@ -57,8 +61,11 @@ if (_instability >= 0.5) then {
 if (_instability >= 0.9) then {
 	
 	if (random 100 < 80) then {
-		_pos = getPosATL (selectRandom (nearestTerrainObjects [_loc,["HOUSE","HOSPITAL","FUELSTATION"],_rad]));
-		[_pos, 50, 0.05] call InA_fnc_indGarrison;
+		
+		for "_x" from 1 to (floor random 3) do {
+			_pos = getPosATL (selectRandom (nearestTerrainObjects [_loc,["HOUSE","HOSPITAL","FUELSTATION"],_rad]));
+			[_pos, 50, 0.1] call InA_fnc_indGarrison;
+		}
 	};
 
 	// ---------- SPAAG ----------

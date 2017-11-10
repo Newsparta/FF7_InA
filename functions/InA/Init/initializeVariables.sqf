@@ -20,6 +20,8 @@ missionBank =
 // ---------- base ----------
 
 baseType = "";
+supplier = "";
+gearRestricted = false;
 
 InA_sitrep = true;
 

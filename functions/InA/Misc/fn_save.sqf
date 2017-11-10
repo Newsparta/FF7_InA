@@ -1,3 +1,14 @@
+
+
+if (isNil "baseType") exitWith {
+	["Headquarters", "No theme selected. Nothing to save."] call FF7_fnc_formatHint;
+	nil;
+};
+if (baseType == "") exitWith {
+	["Headquarters", "No theme selected. Nothing to save."] call FF7_fnc_formatHint;
+	nil;
+};
+
 _export = [];
 
 // ---------- Region stability (0)----------

@@ -6,69 +6,32 @@ class Marines: blufor
     {
         // Item classes must be defined in magazines.hpp
         // before using them here.
-        class magazines: magazines
-        {
-            class mag_rhsusf_mag_15Rnd_9x19_JHP {};
-            class mag_30Rnd_556x45_Stanag {};
-            class mag_30Rnd_556x45_Stanag_Tracer_Red {};
-            class mag_rhs_200rnd_556x45_M_SAW {};
-            class mag_rhsusf_100Rnd_556x45_soft_pouch {};
-            class mag_rhsusf_100Rnd_762x51_m80a1epr {};
-            class mag_rhsusf_50Rnd_762x51_m80a1epr {};
-            class mag_rhsusf_20Rnd_762x51_m118_special_Mag {};
-            class mag_rhsusf_5Rnd_762x51_m118_special_Mag {};
-            class mag_rhsusf_mag_10Rnd_STD_50BMG_M33 {};
-            class mag_tf47_m3maaws_HEAT {};
-            class mag_tf47_m3maaws_HEDP {};
-            class mag_tf47_m3maaws_HE {};
-            class mag_tf47_m3maaws_SMOKE {};
-            class mag_rhs_fgm148_magazine_AT {};
-            class mag_rhs_fim92_mag {};
-            class mag_1Rnd_HE_Grenade_shell {};
-            class mag_3Rnd_HE_Grenade_shell {};
-            class mag_1Rnd_Smoke_Grenade_shell {};
-            class mag_UGL_FlareWhite_F {};
-            class mag_ACE_HuntIR_M203 {};
-            class mag_HandGrenade {};
-            class mag_MiniGrenade {};
-            class mag_SmokeShell {};
-            class mag_SmokeShellBlue {};
-            class mag_SmokeShellGreen {};
-            class mag_ACE_M14 {};
-        };
+		class magazines: magazines 
+		{
+			class mag_rhs_fgm148_magazine_AT {};
+			class mag_rhs_fim92_mag {};
+			class mag_rhsusf_100Rnd_762x51_m80a1epr {};
+			class mag_rhsusf_20Rnd_762x51_m118_special_Mag {};
+			class mag_rhsusf_50Rnd_762x51_m80a1epr {};
+			class mag_rhsusf_5Rnd_762x51_m118_special_Mag {};
+			class mag_rhsusf_mag_15Rnd_9x19_JHP {};
+		};
 
         // Weapon classes must be defined in weapons.hpp
         // before using them here.
-        class weapons: weapons
-        {
-            class rhsusf_weap_m9 {};
-            class rhs_weap_m4a1_carryhandle_pmag { cost = 0; };
-            class rhs_weap_m16a4_pmag {};
-            class rhs_weap_m27iar {};
-            class rhs_weap_m4a1_m320 {};
-            class rhs_weap_m16a4_carryhandle_M203 {};
-            class rhs_weap_m249_pip_S {};
-            class rhs_weap_m240B_CAP {};
-            class rhs_weap_m14ebrri {};
-            class rhs_weap_sr25 {};
-            class rhs_weap_m40a5_wd {};
-            class rhs_weap_M107_w {};
-            class tf47_at4_heat {};
-            class tf47_at4_HEDP {};
-            class tf47_at4_HP {};
-            class rhs_weap_m72a7 {};
-            class tf47_m3maaws {};
-            class rhs_weap_fgm148 {};
-            class rhs_weap_fim92 {};
-            class RHS_M2_Tripod_Bag {};
-            class RHS_M2_Gun_Bag {};
-            class RHS_Mk19_Tripod_Bag {};
-            class RHS_Mk19_Gun_Bag {};
-            class rhs_TOW_Tripod_Bag {};
-            class rhs_Tow_Gun_Bag {};
-            class rhs_M252_Bipod_Bag {};
-            class rhs_M252_Gun_Bag {};
-        };
+		class weapons: weapons 
+		{
+			class rhs_weap_fgm148 {};
+			class rhs_weap_fim92 {};
+			class rhs_weap_m16a4_carryhandle_M203 {};
+			class rhs_weap_m16a4_pmag {};
+			class rhs_weap_m240B_CAP {};
+			class rhs_weap_m27iar {};
+			class rhs_weap_m40a5_wd {};
+			class rhs_weap_m4a1_carryhandle_pmag {};
+			class rhs_weap_sr25 {};
+			class rhsusf_weap_m9 {};
+		};
 
         // Misc item classes must be defined in misc.hpp
         // before using them here.

@@ -10,6 +10,9 @@ if (isNil "_data") exitWith {};
 
 _baseType = _data select 5 select 0;
 
+if (isNil "_baseType") exitWith {};
+if (_baseType == "") exitWith {};
+
 switch (_baseType) do {
 	case "Army": 
 	{

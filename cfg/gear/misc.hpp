@@ -352,18 +352,18 @@ class InA_MiscItems
 	{
 		cost = 10;
 		name = "[Backpack] Compact";
-		type = "other";
+		type = "backpack";
 	};
 	class VSM_OGA_OD_Backpack_Kitbag
 	{
 		cost = 20;
 		name = "[Backpack] Kitbag";
-		type = "other";
+		type = "backpack";
 	};
 	class VSM_OGA_OD_carryall
 	{
 		cost = 30;
 		name = "[Backpack] Carryall";
-		type = "other";
+		type = "backpack";
 	};
 };

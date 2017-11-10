@@ -92,6 +92,10 @@ class InA
 		class actionHQLookAtMap {file = "functions\InA\Actions\fn_actionHQLookAtMap.sqf";};
 		class actionHQMenu {file = "functions\InA\Actions\fn_actionHQMenu.sqf";};
 		class actionUniformEquip {file = "functions\InA\Actions\fn_actionUniformEquip.sqf";};
+
+		// Dialog Functions
+		class handleGearDialog {file = "functions\InA\Dialogs\fn_handleGearDialog.sqf";};
+		class simpleListFromItemArray {file = "functions\InA\Dialogs\fn_simpleListFromItemArray.sqf";};
 		
 		// Reinforcements
 		class reinforcementCall {file = "functions\InA\Reinforcements\fn_reinforcementCall.sqf";};

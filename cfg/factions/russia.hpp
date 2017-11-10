@@ -6,57 +6,57 @@ class Russia: opfor
     {
         // Item classes must be defined in magazines.hpp
         // before using them here.
-        class magazines: magazines
-        {
-            class mag_rhs_mag_9x18_8_57N181S {};
-            class mag_rhs_30Rnd_545x39_7N10_AK {};
-            class mag_rhs_30Rnd_545x39_AK_green {};
-            class mag_rhs_100Rnd_762x54mmR {};
-            class mag_rhs_100Rnd_762x54mmR_green {};
-            class mag_rhs_10Rnd_762x54mmR_7N1 {};
-            class mag_rhs_5Rnd_338lapua_t5000 {};
-            class mag_rhs_rpg7_PG7V_mag {};
-            class mag_rhs_rpg7_OG7V_mag {};
-            class mag_rhs_rpg7_TBG7V_mag {};
-            class mag_rhs_rpg7_PG7VR_mag {};
-            class mag_rhs_mag_9k38_rocket {};
-            class mag_rhs_VOG25 {};
-            class mag_rhs_VG40TB {};
-            class mag_rhs_VG40MD_White {};
-            class mag_rhs_VG40OP_white {};
-            class mag_rhs_mag_rgo {};
-            class mag_rhs_mag_rgn {};
-            class mag_rhs_mag_rdg2_white {};
-            class mag_rhs_mag_rdg2_black {};
-        };
+		class magazines: magazines 
+		{
+			class mag_rhs_100Rnd_762x54mmR {};
+			class mag_rhs_100Rnd_762x54mmR_green {};
+			class mag_rhs_10Rnd_762x54mmR_7N1 {};
+			class mag_rhs_30Rnd_545x39_7N10_AK {};
+			class mag_rhs_30Rnd_545x39_AK_green {};
+			class mag_rhs_5Rnd_338lapua_t5000 {};
+			class mag_rhs_mag_9k38_rocket {};
+			class mag_rhs_mag_9x18_8_57N181S {};
+			class mag_rhs_mag_rdg2_black {};
+			class mag_rhs_mag_rdg2_white {};
+			class mag_rhs_mag_rgn {};
+			class mag_rhs_mag_rgo {};
+			class mag_rhs_rpg7_OG7V_mag {};
+			class mag_rhs_rpg7_PG7V_mag {};
+			class mag_rhs_rpg7_PG7VR_mag {};
+			class mag_rhs_rpg7_TBG7V_mag {};
+			class mag_rhs_VG40MD_White {};
+			class mag_rhs_VG40OP_white {};
+			class mag_rhs_VG40TB {};
+			class mag_rhs_VOG25 {};
+		};
 
         // Weapon classes must be defined in weapons.hpp
         // before using them here.
-        class weapons: weapons
-        {
-            class rhs_weap_makarov_pm {};
-            class rhs_weap_ak74m_zenitco01 { cost = 0; };
-            class rhs_weap_ak74m_zenitco01_b33 {};
-            class rhs_weap_ak74mr {};
-            class rhs_weap_ak74mr_gp25 {};
-            class rhs_weap_pkm {};
-            class rhs_weap_pkp {};
-            class rhs_weap_svds_npz {};
-            class rhs_weap_svdp_npz {};
-            class rhs_weap_t5000 {};
-            class rhs_weap_rpg26 {};
-            class rhs_weap_rshg2 {};
-            class rhs_weap_rpg7 {};
-            class rhs_weap_igla {};
-            class RHS_NSV_Tripod_Bag {};
-            class RHS_NSV_Gun_Bag {};
-            class RHS_AGS30_Tripod_Bag {};
-            class RHS_AGS30_Gun_Bag {};
-            class RHS_Kornet_Tripod_Bag {};
-            class RHS_Kornet_Gun_Bag {};
-            class RHS_Podnos_Bipod_Bag {};
-            class RHS_Podnos_Gun_Bag {};
-        };
+		class weapons: weapons 
+		{
+			class RHS_AGS30_Gun_Bag {};
+			class RHS_AGS30_Tripod_Bag {};
+			class RHS_Kornet_Gun_Bag {};
+			class RHS_Kornet_Tripod_Bag {};
+			class RHS_NSV_Gun_Bag {};
+			class RHS_NSV_Tripod_Bag {};
+			class RHS_Podnos_Bipod_Bag {};
+			class RHS_Podnos_Gun_Bag {};
+			class rhs_weap_ak74m_zenitco01 {};
+			class rhs_weap_ak74m_zenitco01_b33 {};
+			class rhs_weap_ak74mr {};
+			class rhs_weap_ak74mr_gp25 {};
+			class rhs_weap_igla {};
+			class rhs_weap_makarov_pm {};
+			class rhs_weap_pkm {};
+			class rhs_weap_pkp {};
+			class rhs_weap_rpg26 {};
+			class rhs_weap_rpg7 {};
+			class rhs_weap_rshg2 {};
+			class rhs_weap_svdp_npz {};
+			class rhs_weap_svds_npz {};
+			class rhs_weap_t5000 {};
+		};
 
         // Misc item classes must be defined in misc.hpp
         // before using them here.

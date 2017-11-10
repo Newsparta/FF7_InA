@@ -58,7 +58,7 @@ class InA_Gear_Dialog
 			w = 0.113643 * safezoneW;
 			h = 0.197982 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			onLBSelChanged = "[lbCurSel 1500] spawn gearItemChange;[lbCurSel 1500] spawn lbSelCost;";
+			onLBSelChanged = "[lbCurSel 1500] spawn g_dialog_handler_gear_item_select;";
 		};
 		class InA_Gear_Button_1: RscButton
 		{
@@ -69,7 +69,7 @@ class InA_Gear_Dialog
 			w = 0.0516557 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[lbCurSel 1500] spawn gearRequisition;";
+			action = "[lbCurSel 1500] spawn g_dialog_handler_gear_item_purchase;";
 		};
 		class InA_Gear_Button_2: RscButton
 		{
@@ -90,7 +90,7 @@ class InA_Gear_Dialog
 			w = 0.113643 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			onSliderPosChanged = "[_this select 1] spawn gearSliderChange";
+			onSliderPosChanged = "[_this select 1] spawn g_dialog_handler_gear_slider_change";
 		};
 		class InA_Gear_OutputText_1: RscText
 		{
@@ -278,7 +278,7 @@ class InA_Gear_Open_Dialog
 			w = 0.0516557 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[]execVM 'defines\Gear\weaponDialog.sqf';[]execVM 'defines\Gear\resourceUpdate.sqf';";
+			action = "[] spawn { ['weapons', 'cost', false] call InA_fnc_handleGearDialog;}; [] execVM 'defines\Gear\resourceUpdate.sqf';";
 		};
 		class InA_Gear_Open_Button_2: RscButton
 		{
@@ -289,7 +289,7 @@ class InA_Gear_Open_Dialog
 			w = 0.0516557 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[]execVM 'defines\Gear\ammoDialog.sqf';[]execVM 'defines\Gear\resourceUpdate.sqf';";
+			action = "[] spawn { ['magazines', 'cost', false] call InA_fnc_handleGearDialog;}; [] execVM 'defines\Gear\resourceUpdate.sqf';";
 		};
 		class InA_Gear_Open_Button_3: RscButton
 		{
@@ -300,7 +300,7 @@ class InA_Gear_Open_Dialog
 			w = 0.0516557 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[]execVM 'defines\Gear\miscDialog.sqf';[]execVM 'defines\Gear\resourceUpdate.sqf';";
+			action = "[] spawn { ['miscitems', 'cost', false] call InA_fnc_handleGearDialog;}; [] execVM 'defines\Gear\resourceUpdate.sqf';";
 		};/*
 		class InA_Gear_Open_Button_4: RscButton
 		{

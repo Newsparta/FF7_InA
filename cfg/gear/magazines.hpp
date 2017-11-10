@@ -186,19 +186,19 @@ class InA_Magazines
 	{
 		cost = 20;
 		name = "Javelin AT";
-		type = "launcher";
+		type = "rocket";
 	};
 	class mag_rhs_fim92_mag
 	{
 		cost = 20;
 		name = "Stinger AA";
-		type = "launcher";
+		type = "rocket";
 	};
 	class mag_rhs_mag_9k38_rocket
 	{
 		cost = 20;
 		name = "9k38 Igla";
-		type = "launcher";
+		type = "rocket";
 	};
 	class mag_rhs_mag_9x18_8_57N181S
 	{
@@ -234,25 +234,25 @@ class InA_Magazines
 	{
 		cost = 6;
 		name = "OG-7V Rocket";
-		type = "launcher";
+		type = "rocket";
 	};
 	class mag_rhs_rpg7_PG7V_mag
 	{
 		cost = 6;
 		name = "PG-7VL Rocket";
-		type = "launcher";
+		type = "rocket";
 	};
 	class mag_rhs_rpg7_PG7VR_mag
 	{
 		cost = 10;
 		name = "PG-7VR Rocket";
-		type = "launcher";
+		type = "rocket";
 	};
 	class mag_rhs_rpg7_TBG7V_mag
 	{
 		cost = 10;
 		name = "TBG-7V Rocket";
-		type = "launcher";
+		type = "rocket";
 	};
 	class mag_rhs_VG40MD_White
 	{
@@ -360,43 +360,43 @@ class InA_Magazines
 	{
 		cost = 10;
 		name = "FFV441 HE";
-		type = "launcher";
+		type = "rocket";
 	};
 	class mag_tf47_m3maaws_HEAT
 	{
 		cost = 10;
 		name = "FFV751 HEAT";
-		type = "launcher";
+		type = "rocket";
 	};
 	class mag_tf47_m3maaws_HEDP
 	{
 		cost = 10;
 		name = "FFV502 HEDP";
-		type = "launcher";
+		type = "rocket";
 	};
 	class mag_tf47_m3maaws_SMOKE
 	{
 		cost = 8;
 		name = "FFV469 SMOKE";
-		type = "launcher";
+		type = "rocket";
 	};
 	class mag_Titan_AA
 	{
 		cost = 20;
 		name = "Titan AA";
-		type = "launcher";
+		type = "rocket";
 	};
 	class mag_Titan_AP
 	{
 		cost = 20;
 		name = "Titan AP";
-		type = "launcher";
+		type = "rocket";
 	};
 	class mag_Titan_AT
 	{
 		cost = 20;
 		name = "Titan AT";
-		type = "launcher";
+		type = "rocket";
 	};
 	class mag_UGL_FlareWhite_F
 	{

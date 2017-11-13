@@ -5,13 +5,6 @@ player createDiarySubject ["missionMechanics","Mission Mechanics"];
 player createDiaryRecord	[
 								"missionMechanics",
 								[
-									"WAD",
-									"There is a weapons and ammunition disposal crate inside the hangar next to the hangar vehicle station. You can place any items in here to be disposed of."
-								]
-							];
-player createDiaryRecord	[
-								"missionMechanics",
-								[
 									"Vehicle Service",
 									"There are vehicle service stations located next to the garage and at each helipad.<br/><br/>Use these locations to repair and refuel friendly vehicles. Keep in mind that they will require fuel and supplies to do so."
 								]
@@ -26,8 +19,8 @@ player createDiaryRecord	[
 player createDiaryRecord	[
 								"missionMechanics",
 								[
-									"Intelligence Gathering",
-									"If the enemy have an operation planned or a presence somewhere in the region it will be noted via an 'increased' enemy activity indicator announced by HQ and in the intel clipboard available to squad leaders. If there is increased enemy presence, you will have to talk to civilians to gain intelligence on what objectives might have been spotted (or where), where the general activity is, and what their strength might be. There will be various qualities of intel that the civilians will reveal. Do note that what the civilians give you is all you have to work with, sometimes you may not know absolutely everything and you will have to figure it out on the go. Once all of the intel is aquired it will be stored in the intel clipboard for reference."
+									"Side Missions",
+									"Interacting with civilians will give you the chance to be assigned side missions to complete. In order to have a side mission activate you need to successfully converse with a civilian and then there will be a probability that the success outcome results in a side mission assignment. "
 								]
 							];
 player createDiaryRecord	[
@@ -40,8 +33,8 @@ player createDiaryRecord	[
 player createDiaryRecord	[
 								"missionMechanics",
 								[
-									"Main AO's",
-									"Main AO's will spawn persistently around the map randomly, with approximately 1 hour inbetween spawns if you complete one. This area is not marked in any way and you will never be told when the AO is clear or when objectives have been destroyed. The main tasks you need to accomplish are clearing enemies from the AO and destroying any objectives you find. Some example objectives include:<br/><br/>- Barracks<br/>- Fuel Depot<br/>- Officer<br/>- AA emplacement<br/><br/>The civilians will be able to tell you generally where the AO is and either what objectives they saw or a general area where they saw them. They might tell you about all the objectives in the AO or thy might only tell you about one of them. It is completely up to you to determine when you think the job is done and you can RTB.<br/><br/>In order to complete the objectives you will need to use the 'Confirm Target' command in your self interaction menu. You can only confirm a target if it has been properly destroyed, so in order for you to confirm you destroyed an enemy barracks, you need to blow it up and then walk up and inspect it, use the confirm target and it will prompt you if it has been identified (if it is invalid, you either didnt kill the target or someone has already confirmed it)."
+									"Strongholds and Hideouts",
+									"There are concentrations of insurgents littered around the map via strongholds and hideouts. Civilians will give you intel on locations where insurgents are concentrated but will not specify if the area is a hideout or stronghold.<br/><br/>Hideouts are mere concentrations of enemies that occupy a small region. Routing the insurgents from this area will count as a completed objective. These hideout locations will change approximately every 12 hours. More hideouts will become active as you secure more of the map.<br/><br/>Strongholds only manifest in population centers on the map. These areas contain more insurgents and a heavier response to any attack. these locations will only manifest in volatile regions and will remain until cleared. If they are cleared they will not appear again for 2 days."
 								]
 							];
 player createDiaryRecord	[
@@ -76,14 +69,14 @@ player createDiaryRecord	[
 								"missionMechanics",
 								[
 									"Resources",
-									"Resources are used in this game mode to add a system of gear/equipment progression, and to punish players for losing vehicles and equipment in the field. Resource types are listed below.<br/><br/>Logistics Points- This resources is accumulated through the accomplishment of missions and through the stabalization of VOLATILE regions.<br/><br/>Supplies - A small set amount of supplies are gained with each resupply helicopter. Additional supplies can be redirected by HQ if you accomplish enough objectives (through main AO's).<br/><br/>Fuel - This resource is only provided by each resupply helicopter."
+									"Resources are used in this game mode to add a system of gear/equipment progression, and to punish players for losing vehicles and equipment in the field. Resource types are listed below.<br/><br/>Logistics Points- This resources is accumulated through the accomplishment of missions and through the stabalization of VOLATILE regions.<br/><br/>Supplies - A small set amount of supplies are gained with each resupply helicopter. Additional supplies can be redirected by HQ if you accomplish enough objectives (through completed objectives tally).<br/><br/>Fuel - This resource is only provided by each resupply helicopter."
 								]
 							];
 player createDiaryRecord	[
 								"missionMechanics",
 								[
 									"Basic Tenets (please read)",
-									"- This is NOT a sandbox.<br/><br/>- Secure volatile and destabalizing regions (persistent combat).<br/><br/>- Interact with civilians (intel and side missions).<br/><br/>- seek out insurgent hideouts and strongholds (persistent combat).<br/><br/>- defend regions from incursions (defence combat).<br/><br/>- setup FOB's (safe haven).<br/><br/>- deliver aid to civilians (humanitarian).<br/><br/>- ."
+									"- Secure volatile and destabalizing regions (persistent combat).<br/><br/>- Interact with civilians (intel and side missions).<br/><br/>- seek out insurgent hideouts and strongholds (persistent combat).<br/><br/>- defend regions from incursions (defence combat).<br/><br/>- setup FOB's (safe haven).<br/><br/>- deliver aid to civilians (humanitarian).<br/><br/>"
 								]
 							];
 
@@ -97,7 +90,7 @@ player createDiaryRecord	[
 	
 	sleep 60;
 	
-	["(4.2)<br/>2017-10-09", "Latest patch date"] call FF7_fnc_formatHint;
+	["(4.2)<br/>2017-11-12", "Latest patch date"] call FF7_fnc_formatHint;
 };
 
 // ---------- Run only on player... ----------

@@ -6,18 +6,14 @@ private ["_accepted","_pos","_blacklist"];
 Select location.
 */
 
-// BUG: Gets stuck in infinite loop durign placement sometimes - tested on Malden
-// Disable for now
-if (true) exitWith {};
-
 _loc = [];
+_candidates = [];
+_choice = [];
+_mark = [];
 
 if !(InA_stronghold) then {
 
 	_regions = [] call InA_fnc_regionCheck;
-	_candidates = [];
-	_choice = [];
-	_mark = [];
 
 	{
 		if ((_x select 1) >= 0.9) then {
@@ -32,7 +28,7 @@ if !(InA_stronghold) then {
 
 	};
 
-	if (count _choice < 1) exitWith {}; 
+	if (count _candidates < 1) exitWith {}; 
 
 	_accepted = false;
 	_towns = nearestLocations [
@@ -84,15 +80,9 @@ if !(InA_stronghold) then {
 	_loc = InA_stronghold_Loc;
 
 };
+if (count _candidates < 1 && {!InA_stronghold}) exitWith {};
 
 concentrations pushBack _loc;
-
-_num = random 1;
-_mkr = createMarker [format ["%1",_num], _loc];
-					format ["%1",_num] setMarkerColor "ColorGUER";
-					format ["%1",_num] setMarkerShape "ELLIPSE";
-					format ["%1",_num] setMarkerBrush "Border";
-					format ["%1",_num] setMarkerSize [250, 250];
 
 /*
 Loop for spawning AO when players are near.

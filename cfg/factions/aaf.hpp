@@ -15,8 +15,15 @@ class AAF: opfor
 			class mag_200Rnd_65x39_cased_Box {};
 			class mag_200Rnd_65x39_cased_Box_Tracer {};
 			class mag_20Rnd_762x51_Mag {};
+			class mag_ACE_20Rnd_762x51_Mk319_Mod_0_Mag {};
+			class mag_ACE_20Rnd_762x51_M993_AP_Mag {};
 			class mag_30Rnd_556x45_Stanag {};
-			class mag_30Rnd_556x45_Stanag_Tracer_Yellow {};
+			class mag_ACE_30Rnd_556x45_Stanag_M995_AP_mag {};
+			class mag_ACE_30Rnd_556x45_Stanag_Mk262_mag {};
+			class mag_ACE_30Rnd_556x45_Stanag_Mk318_mag {};
+            class mag_30Rnd_556x45_Stanag_Tracer_Yellow {};
+            class mag_rhs_200rnd_556x45_M_SAW {};
+			class mag_rhsusf_100Rnd_556x45_soft_pouch {};
 			class mag_3Rnd_HE_Grenade_shell {};
 			class mag_ACE_HuntIR_M203 {};
 			class mag_ACE_M14 {};
@@ -37,33 +44,16 @@ class AAF: opfor
 		class weapons: weapons 
 		{
 			class hgun_P07_F {};
-			class launch_B_Titan_short_tna_F {};
-			class launch_B_Titan_tna_F {};
-			class LMG_Mk200_F {};
-			class MMG_01_tan_F {};
-			class rhs_M252_Bipod_Bag {};
-			class rhs_M252_Gun_Bag {};
-			class RHS_M2_Gun_Bag {};
-			class RHS_M2_Tripod_Bag {};
-			class RHS_Mk19_Gun_Bag {};
-			class RHS_Mk19_Tripod_Bag {};
-			class rhs_Tow_Gun_Bag {};
-			class rhs_TOW_Tripod_Bag {};
-			class rhs_weap_hk416d10
-			{
-				cost = 0;
-			};
-			class rhs_weap_hk416d145 {};
-			class rhs_weap_hk416d145_m320
-			{
-				cost = 10;
-			};
-			class rhs_weap_M107_w {};
-			class rhs_weap_m72a7 {};
-			class srifle_EBR_F {};
-			class tf47_at4_heat {};
-			class tf47_at4_HEDP {};
-			class tf47_at4_HP {};
+            class rhs_weap_m16a4_pmag {};
+            class rhs_weap_m4a1 {};
+            class rhs_weap_mk18 {};
+            class rhs_weap_mk18_m320 {};
+            class hlc_lmg_mk48mod1 {};
+            class rhs_weap_m240B_CAP {};
+            class rhs_weap_M320 {};
+            class rhs_weap_XM2010_sa {};
+            class rhs_weap_fgm148 {};
+            class rhs_weap_fim92 {};
 		};
 
         // Misc item classes must be defined in misc.hpp

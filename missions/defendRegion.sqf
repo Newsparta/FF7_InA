@@ -40,9 +40,7 @@ if (_i == 720) exitWith {
 
 safehouse = selectRandom (nearestTerrainObjects [_loc, ["HOUSE"], 400]);
 
-buildInventory = 100;
-
-[safehouse] call InA_fnc_buildKit;
+utilityVehicles pushBack [safehouse, 100, 100, false];
 
 _mkr = createMarker ["safehouse", safehouse];
 "safehouse" setMarkerColor "ColorWest";
@@ -160,3 +158,20 @@ while {_i = _i + 60; _i <= 900} do {
 	
 	sleep 60;
 };
+
+{
+	
+	if (safehouse in _x) then {
+
+		_index = utilityVehicles find _x;
+
+		utilityVehicles set [_index, -1];
+
+		utilityVehicles = utilityVehicles - [-1];
+	};
+
+} forEach utilityVehicles;
+
+[safehouse] remoteExec ["removeAllActions", 0];
+
+safehouse = [0,0,0];

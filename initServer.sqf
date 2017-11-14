@@ -98,10 +98,6 @@ vehicleSpawn =
 		["Headquarters", "Please clear the garage before requisitioning more vehicles."] remoteExec ["FF7_fnc_formatHint", ID, false];
 	};
 
-	if (count (nearestObjects [mapCenter, idap_cars, mapSize]) > 0) exitWith {
-		["Headquarters", "There is already an aid vehicle deployed."] remoteExec ["FF7_fnc_formatHint", ID, false];
-	};
-
 	_afford = false;
 
 	if (LogV >= vCost) then {
@@ -129,8 +125,9 @@ vehicleSpawn =
 		clearItemCargoGlobal _veh;
 			
 		playerVehicles pushBack _veh;
+		
 		if (isUtility) then {
-			utilityVehicles pushBack _veh;
+			utilityVehicles pushBack [_veh, capacity, capacity, false];
 		};
 			
 		LogV = LogV - vCost;

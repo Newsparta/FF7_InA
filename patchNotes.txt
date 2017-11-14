@@ -30,5 +30,21 @@
 - stealing vehicles has slightly increased negative tolerance effect.
 - difficulty tweak for small squad sizes to make it more manageable.
 - Autosave changed to save every time the last person leaves the server.
-- safehouses added for defence missions to allow for building without a utility vehicle or kit.
+- Build tweaks.
+    - safehouses added for defence missions to allow for building without a utility vehicle.
     - more build options when near an FOB or safehouse.
+    - build inventories added to Cars, MRAP's, and Trucks (not light vehicles).
+        - very limited size.
+- (Bliss) major rework to item/vehicle configuration
+    - more ammo types added
+    - more weapons added
+    - faction weapons edited
+        - Army: ACR
+        - Marines: M16
+        - NATO: M16
+        - AAF: M16
+        - Russia: AK
+- cost edits
+    - consumables are less expensive
+    - more cosmetic and basic gear is free
+    - non cosumables are more expensive

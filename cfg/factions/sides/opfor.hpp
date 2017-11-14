@@ -13,18 +13,14 @@ class opfor: InA_FactionBase
 		// Defaut misc items for this side
 		class miscitems: miscitems 
 		{
-			class ACE_Clacker {};
-			class optic_Aco {};
-			class optic_ERCO_blk_F {};
-			class optic_Hamr {};
-			class RH_eotech553 {};
-			class RH_eotech553mag {};
-			class RH_ta31rmr {};
-			class rhsusf_acc_compm4 {};
-			class rhsusf_acc_ELCAN {};
-			class rhsusf_acc_grip2 {};
-			class rhsusf_acc_grip3 {};
-			class rhsusf_acc_nt4_black {};
+			class optic_ACO_grn {};
+			class optic_Arco_blk_F {};
+			class optic_MRCO {};
+			class rhs_acc_1p63 {};
+			class rhs_acc_dtk4short {};
+			class rhs_acc_grip_ffg2 {};
+			class rhs_acc_rakursPM {};
+			class RH_barska_rds {};
 		};
 	};
 	

@@ -30,23 +30,26 @@ params ["_kit"];
 
 	[clientOwner, "InA_fob_location"] remoteExec ["publicVariableClient", 2, false];
 	[clientOwner, "safehouse"] remoteExec ["publicVariableClient", 2, false];
+	[clientOwner, "utilityVehicles"] remoteExec ["publicVariableClient", 2, false];
 
 	sleep 0.2;
 
+	kitVeh = _this select 0;
+
+	{
+
+		if (kitVeh in _x) then {
+
+			veh = _x;
+			kitVal = _x select 1;
+
+		};
+
+	} forEach utilityVehicles;
+
 	_selections = [];
 
-	if (player distance InA_fob_location < 100) then {
-		_selections =	[
-			"Sandbag (long)",
-			"Sandbag (round)",
-			"Sandbag (end)",
-			"Portable Light",
-			"HBarrier Wall",
-			"Tower",
-			"Camonet"
-		];
-	};
-	if (player distance safehouse < 100) then {
+	if ((player distance safehouse < 100) || {player distance InA_fob_location < 100}) then {
 		_selections =	[
 			"Sandbag (long)",
 			"Sandbag (round)",
@@ -114,10 +117,6 @@ params ["_kit"];
 		obj attachTo [player, [(xPos + transX),(yPos + transY),(zPos + transZ)]];
 	};
 
-	[clientOwner, "buildInventory"] remoteExec ["publicVariableClient", 2, false];
-
-	sleep 0.2;
-
 	createDialog "InA_Build_Dialog";
 
 	waitUntil {!isNull (findDisplay 9500);};
@@ -128,5 +127,5 @@ params ["_kit"];
 		_ctrl lbAdd _x;
 	} forEach _selections;
 	_ctrl lbSetCurSel 0;
-	ctrlSetText [1001, (format ["%1",buildInventory])];
+	ctrlSetText [1001, (format ["%1", kitVal])];
 }, [], 99, true, true, "", "((_target distance _this) < 8)"]] remoteExec ["addAction", 0, true];

@@ -67,7 +67,6 @@ class InA_FactionBase
 			class optic_KHS_blk {};
 			class optic_LRPS {};
 			class optic_SOS {};
-			class RH_barska_rds {};
 			class RH_SFM952V {};
 			class tf_anprc152 {};
 			class tfw_ilbe_gr {};

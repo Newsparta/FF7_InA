@@ -2,4 +2,4 @@
 
 sleep 0.2;
 	
-ctrlSetText [1001, (format ["%1",buildInventory])];
+ctrlSetText [1001, (format ["%1",kitVal])];

@@ -278,7 +278,7 @@ class InA_Gear_Open_Dialog
 			w = 0.0516557 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[] spawn { ['weapons', 'cost', false] call InA_fnc_handleGearDialog;}; [] execVM 'defines\Gear\resourceUpdate.sqf';";
+			action = "[] spawn { ['weapons', 'type', false] call InA_fnc_handleGearDialog;}; [] execVM 'defines\Gear\resourceUpdate.sqf';";
 		};
 		class InA_Gear_Open_Button_2: RscButton
 		{
@@ -289,7 +289,7 @@ class InA_Gear_Open_Dialog
 			w = 0.0516557 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[] spawn { ['magazines', 'cost', false] call InA_fnc_handleGearDialog;}; [] execVM 'defines\Gear\resourceUpdate.sqf';";
+			action = "[] spawn { ['magazines', 'type', false] call InA_fnc_handleGearDialog;}; [] execVM 'defines\Gear\resourceUpdate.sqf';";
 		};
 		class InA_Gear_Open_Button_3: RscButton
 		{
@@ -300,7 +300,7 @@ class InA_Gear_Open_Dialog
 			w = 0.0516557 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[] spawn { ['miscitems', 'cost', false] call InA_fnc_handleGearDialog;}; [] execVM 'defines\Gear\resourceUpdate.sqf';";
+			action = "[] spawn { ['miscitems', 'type', false] call InA_fnc_handleGearDialog;}; [] execVM 'defines\Gear\resourceUpdate.sqf';";
 		};/*
 		class InA_Gear_Open_Button_4: RscButton
 		{

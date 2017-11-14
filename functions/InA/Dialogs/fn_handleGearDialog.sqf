@@ -88,7 +88,7 @@ if (isNil "_items") exitWith {
 	hint "ERROR #501: Dialog name not recognized.";
 	_return
 };
-if !(__sortByField == "name" or __sortByField == "cost") exitWith {
+if !(__sortByField == "name" or __sortByField == "cost" or __sortByField == "type") exitWith {
 	hint "ERROR #502: Sort field not recognized.";
 	_return
 };

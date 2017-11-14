@@ -21,4 +21,19 @@ switch (_id) do
 	{
 		ctrlSetText [1000, "1"];
 	};
+
+	case 4:
+	{
+		ctrlSetText [1000, "4"];
+	};
+
+	case 5:
+	{
+		ctrlSetText [1000, "20"];
+	};
+
+	case 6:
+	{
+		ctrlSetText [1000, "1"];
+	};
 };

@@ -23,21 +23,18 @@ class Army: blufor
         // before using them here.
 		class weapons: weapons 
 		{
+            class rhsusf_weap_m9 {};
 			class hlc_rifle_ACR68_full_tan {};
-			class hlc_rifle_ACR68_mid_tan {};
-			class hlc_rifle_ACR_Carb_tan
-			{
-				cost = 0;
-			};
+			class hlc_rifle_ACR68_Carb_tan {};
+			class hlc_rifle_ACR_Carb_tan {};
 			class hlc_rifle_ACR_full_tan {};
-			class hlc_rifle_ACR_mid_tan {};
-			class hlc_rifle_ACR_SBR_tan {};
-			class rhs_weap_fgm148 {};
-			class rhs_weap_fim92 {};
-			class rhs_weap_m240B_CAP {};
-			class rhs_weap_sr25 {};
-			class rhs_weap_XM2010_sa {};
-			class rhsusf_weap_m9 {};
+            class hlc_rifle_ACR_SBR_tan {};
+            class hlc_lmg_mk48mod1 {};
+            class rhs_weap_m240B_CAP {};
+            class rhs_weap_m32 {};
+            class rhs_weap_XM2010_sa {};
+            class rhs_weap_fgm148 {};
+            class rhs_weap_fim92 {};
 		};
 
         // Misc item classes must be defined in misc.hpp

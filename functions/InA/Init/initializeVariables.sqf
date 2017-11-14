@@ -1,4 +1,4 @@
-// ---------- missions ----------
+// ---------- Missions ----------
 
 civilian setFriend [west, 1];
 civilian setFriend [resistance, 1];
@@ -17,7 +17,12 @@ missionBank =
 	"AAAEmplacement"
 ];
 
-// ---------- base ----------
+// ---------- Utility/vehicles ----------
+
+playerVehicles = [];
+utilityVehicles = [];
+
+// ---------- Base ----------
 
 baseType = "";
 supplier = "";
@@ -28,12 +33,14 @@ InA_sitrep = true;
 InA_fob_location = [0,0,0];
 fobPlaced = false;
 
-// ---------- civilian ----------
+safehouse = [0,0,0];
+
+// ---------- Civilian ----------
 
 civTol = 1;
 responded = false;
 
-// ---------- resources ----------
+// ---------- Resources ----------
 
 LogV = 0;
 LogF = 0;

@@ -199,7 +199,7 @@ themeSelect =
 	supplier = themeSupplier;
 	publicVariable "supplier";
 	LogV = 4;
-	LogM = 150 + (5 * (count (call BIS_fnc_listPlayers)));
+	LogM = 200;
 	LogF = 400;
 
 	["HQ", "Headquarters", "Base Theme Selected."] remoteExec ["FF7_fnc_globalHintStruct", 0];

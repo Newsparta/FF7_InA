@@ -6,6 +6,7 @@ player createDiarySubject ["missionMechanics","Mission Mechanics"];
 player createDiaryRecord	[
 								"missionMechanics",
 								[
+<<<<<<< HEAD
 									"FOB's",
 									"FOB's can be disignated by squad leaders. Only one FOB may be active at one time, and you must abandon any operational FOB's before declaring a new one. You can place an FOB by using the 'ace self interaction --> interaction --> FOB'. Once the FOB location is set, new build options will be available while you are near it, and a passive garrison of friendly troops will occupy the area."
 								]
@@ -13,6 +14,8 @@ player createDiaryRecord	[
 player createDiaryRecord	[
 								"missionMechanics",
 								[
+=======
+>>>>>>> ccd72f724973ba085207ac300677a30afb49a940
 									"Vehicle Service",
 									"There are vehicle service stations located next to the garage and at each helipad.<br/><br/>Use these locations to repair and refuel friendly vehicles. Keep in mind that they will require fuel and supplies to do so."
 								]

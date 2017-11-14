@@ -30,7 +30,11 @@
 - stealing vehicles has slightly increased negative tolerance effect.
 - difficulty tweak for small squad sizes to make it more manageable.
 - Autosave changed to save every time the last person leaves the server.
+<<<<<<< HEAD
 - safehouses added for defence missions to allow for building without a utility vehicle.
+=======
+- safehouses added for defence missions to allow for building without a utility vehicle or kit.
+>>>>>>> ccd72f724973ba085207ac300677a30afb49a940
     - more build options when near an FOB or safehouse.
 - (Bliss) major rework to item/vehicle configuration
     - more ammo types added

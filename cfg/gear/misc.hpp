@@ -191,11 +191,7 @@ class InA_MiscItems
 	};
 	class tfw_ilbe_gr
 	{
-<<<<<<< HEAD
 		cost = 60;
-=======
-		cost = 50;
->>>>>>> 4b8cf2404fdd63f995dfcbb7da756095d27ac7c1
 		name = "RT-1523G Radio";
 		type = "other";
 	};
@@ -204,31 +200,19 @@ class InA_MiscItems
 
 	class VSM_OGA_OD_Backpack_Compact
 	{
-<<<<<<< HEAD
 		cost = 5;
-=======
-		cost = 10;
->>>>>>> 4b8cf2404fdd63f995dfcbb7da756095d27ac7c1
 		name = "[Backpack] Compact";
 		type = "backpack";
 	};
 	class VSM_OGA_OD_Backpack_Kitbag
 	{
-<<<<<<< HEAD
 		cost = 10;
-=======
-		cost = 20;
->>>>>>> 4b8cf2404fdd63f995dfcbb7da756095d27ac7c1
 		name = "[Backpack] Kitbag";
 		type = "backpack";
 	};
 	class VSM_OGA_OD_carryall
 	{
-<<<<<<< HEAD
 		cost = 20;
-=======
-		cost = 30;
->>>>>>> 4b8cf2404fdd63f995dfcbb7da756095d27ac7c1
 		name = "[Backpack] Carryall";
 		type = "backpack";
 	};

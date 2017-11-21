@@ -12,13 +12,9 @@ class Nato: blufor
 			class mag_16Rnd_9x21_Mag {};
 			class mag_20Rnd_762x51_Mag {};
 			class mag_rhs_200rnd_556x45_M_SAW {};
-<<<<<<< HEAD
             class mag_rhsusf_100Rnd_556x45_soft_pouch {};
             class mag_rhsusf_100Rnd_762x51_m80a1epr {};
             class mag_rhsusf_50Rnd_762x51_m80a1epr {};
-=======
-			class mag_rhsusf_100Rnd_556x45_soft_pouch {};
->>>>>>> 4b8cf2404fdd63f995dfcbb7da756095d27ac7c1
 			class mag_rhsusf_10Rnd_762x51_m118_special_Mag {};
 			class mag_Titan_AA {};
 			class mag_Titan_AP {};
@@ -33,10 +29,7 @@ class Nato: blufor
             class rhs_weap_m16a4_pmag {};
             class rhs_weap_m4a1 {};
             class rhs_weap_mk18 {};
-<<<<<<< HEAD
             class rhs_weap_m4a1_m320 {};
-=======
->>>>>>> 4b8cf2404fdd63f995dfcbb7da756095d27ac7c1
             class rhs_weap_mk18_m320 {};
             class hlc_lmg_mk48mod1 {};
             class rhs_weap_m240B_CAP {};

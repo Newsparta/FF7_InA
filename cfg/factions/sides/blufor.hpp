@@ -15,7 +15,6 @@ class blufor: InA_FactionBase
 			class RHS_Mk19_Tripod_Bag {};
 			class rhs_Tow_Gun_Bag {};
 			class rhs_TOW_Tripod_Bag {};
-			class rhs_weap_m4a1_m320 {};
 			class rhs_weap_M107_w {};
 			class hlc_rifle_m14sopmod {};
 			class srifle_DMR_03_F {};

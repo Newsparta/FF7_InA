@@ -32,7 +32,6 @@ class InA_Magazines
 		type = "magazine";
 	};
 	class mag_ACE_30Rnd_556x45_Stanag_M995_AP_mag
-<<<<<<< HEAD
 	{
 		cost = 0.5;
 		name = "[5.56mm] EPR 30Rnd Magazine";
@@ -66,40 +65,17 @@ class InA_Magazines
 	{
 		cost = 0;
 		name = "[5.56mm] 30Rnd (G36)";
-=======
-	{
-		cost = 1;
-		name = "[5.56mm] EPR 30Rnd Magazine";
-		type = "magazine";
-	};
-	class mag_ACE_30Rnd_556x45_Stanag_Mk262_mag
-	{
-		cost = 1;
-		name = "[5.56mm] SPR 30Rnd Magazine";
-		type = "magazine";
-	};
-	class mag_ACE_30Rnd_556x45_Stanag_Mk318_mag
-	{
-		cost = 1.25;
-		name = "[5.56mm] SOST 30Rnd Magazine";
->>>>>>> 4b8cf2404fdd63f995dfcbb7da756095d27ac7c1
 		type = "magazine";
 	};
 	class mag_hlc_30rnd_556x45_SOST_G36
 	{
-<<<<<<< HEAD
 		cost = 0.5;
 		name = "[5.56mm] SOST 30Rnd (G36)";
-=======
-		cost = 0;
-		name = "[5.56mm] 30Rnd Tracer";
->>>>>>> 4b8cf2404fdd63f995dfcbb7da756095d27ac7c1
 		type = "magazine";
 	};
 	class mag_hlc_30rnd_556x45_Tracers_G36
 	{
 		cost = 0;
-<<<<<<< HEAD
 		name = "[5.56mm] 30Rnd Tracer (G36)";
 		type = "magazine";
 	};
@@ -169,77 +145,6 @@ class InA_Magazines
 		name = "[7.62mm] 20Rnd Magazine";
 		type = "magazine";
 	};
-=======
-		name = "[5.56mm] 30Rnd Tracer";
-		type = "magazine";
-	};
-	class mag_rhs_200rnd_556x45_M_SAW
-	{
-		cost = 4;
-		name = "[5.56mm] 200Rnd Belt";
-		type = "magazine";
-	};
-	class mag_rhsusf_100Rnd_556x45_soft_pouch
-	{
-		cost = 2;
-		name = "[5.56mm] 100Rnd Belt";
-		type = "magazine";
-	};
-
-	// 6.5mm and 6.8mm
-
-	class mag_hlc_30rnd_68x43_FMJ
-	{
-		cost = 1;
-		name = "[6.8mm] 30Rnd Magazine";
-		type = "magazine";
-	};
-	class mag_hlc_30rnd_68x43_Tracer
-	{
-		cost = 1;
-		name = "[6.8mm] 30Rnd Tracer";
-		type = "magazine";
-	};
-	class mag_200Rnd_65x39_cased_Box
-	{
-		cost = 5;
-		name = "[6.5mm] 200Rnd Belt";
-		type = "magazine";
-	};
-	class mag_200Rnd_65x39_cased_Box_Tracer
-	{
-		cost = 5;
-		name = "[6.5mm] 200Rnd Tracer";
-		type = "magazine";
-	};
-
-	// 7.62mm
-
-	class mag_rhs_10Rnd_762x54mmR_7N1
-	{
-		cost = 0.5;
-		name = "[7.62mm] 10Rnd Magazine";
-		type = "magazine";
-	};
-	class mag_rhsusf_5Rnd_762x51_m118_special_Mag
-	{
-		cost = 0.25;
-		name = "[7.62mm] 5Rnd Magazine";
-		type = "magazine";
-	};
-	class mag_rhsusf_10Rnd_762x51_m118_special_Mag
-	{
-		cost = 0.5;
-		name = "[7.62mm] 10Rnd Magazine";
-		type = "magazine";
-	};
-	class mag_20Rnd_762x51_Mag
-	{
-		cost = 1;
-		name = "[7.62mm] 20Rnd Magazine";
-		type = "magazine";
-	};
->>>>>>> 4b8cf2404fdd63f995dfcbb7da756095d27ac7c1
 	class mag_ACE_20Rnd_762x51_Mk319_Mod_0_Mag
 	{
 		cost = 1.5;
@@ -252,7 +157,6 @@ class InA_Magazines
 		name = "[7.62mm] AP 20Rnd Magazine";
 		type = "magazine";
 	};
-<<<<<<< HEAD
 	class mag_hlc_20rnd_762x51_b_G3
 	{
 		cost = 1;
@@ -304,47 +208,6 @@ class InA_Magazines
 		name = "[9.3mm] 150Rnd Belt";
 		type = "magazine";
 	};
-=======
-	class mag_rhsusf_100Rnd_762x51_m80a1epr
-	{
-		cost = 4;
-		name = "[7.62mm] 100Rnd Belt";
-		type = "magazine";
-	};
-	class mag_rhsusf_50Rnd_762x51_m80a1epr
-	{
-		cost = 2;
-		name = "[7.62mm] 50Rnd Belt";
-		type = "magazine";
-	};
-	class mag_rhs_100Rnd_762x54mmR
-	{
-		cost = 4;
-		name = "[7.62mm] 100Rnd Belt";
-		type = "magazine";
-	};
-	class mag_rhs_100Rnd_762x54mmR_green
-	{
-		cost = 4;
-		name = "[7.62mm] 100Rnd Tracer";
-		type = "magazine";
-	};
-
-	// Misc special ammo
-
-	class mag_130Rnd_338_Mag
-	{
-		cost = 6.5;
-		name = "[.338] 130Rnd Belt";
-		type = "magazine";
-	};
-	class mag_150Rnd_93x64_Mag
-	{
-		cost = 12;
-		name = "[9.3mm] 150Rnd Belt";
-		type = "magazine";
-	};
->>>>>>> 4b8cf2404fdd63f995dfcbb7da756095d27ac7c1
 	class mag_16Rnd_9x21_Mag
 	{
 		cost = 0;
@@ -404,7 +267,6 @@ class InA_Magazines
 		type = "grenade";
 	};
 	class mag_ACE_HuntIR_M203
-<<<<<<< HEAD
 	{
 		cost = 1;
 		name = "[40mm] HuntIR";
@@ -413,26 +275,12 @@ class InA_Magazines
 	class mag_HandGrenade
 	{
 		cost = 0;
-=======
-	{
-		cost = 1;
-		name = "[40mm] HuntIR";
-		type = "grenade";
-	};
-	class mag_HandGrenade
-	{
-		cost = 1;
->>>>>>> 4b8cf2404fdd63f995dfcbb7da756095d27ac7c1
 		name = "M67 Frag Grenade";
 		type = "grenade";
 	};
 	class mag_MiniGrenade
 	{
-<<<<<<< HEAD
 		cost = 0;
-=======
-		cost = 0.5;
->>>>>>> 4b8cf2404fdd63f995dfcbb7da756095d27ac7c1
 		name = "RGN Grenade";
 		type = "grenade";
 	};
@@ -456,21 +304,13 @@ class InA_Magazines
 	};
 	class mag_rhs_mag_rgn
 	{
-<<<<<<< HEAD
 		cost = 0;
-=======
-		cost = 0.5;
->>>>>>> 4b8cf2404fdd63f995dfcbb7da756095d27ac7c1
 		name = "RGN Grenade";
 		type = "grenade";
 	};
 	class mag_rhs_mag_rgo
 	{
-<<<<<<< HEAD
 		cost = 0;
-=======
-		cost = 0.5;
->>>>>>> 4b8cf2404fdd63f995dfcbb7da756095d27ac7c1
 		name = "RGO Grenade";
 		type = "grenade";
 	};
@@ -545,11 +385,7 @@ class InA_Magazines
 	};
 	class mag_DemoCharge_Remote_Mag
 	{
-<<<<<<< HEAD
 		cost = 0.1;
-=======
-		cost = 0.25;
->>>>>>> 4b8cf2404fdd63f995dfcbb7da756095d27ac7c1
 		name = "M112 Demolition Block";
 		type = "explosive";
 	};

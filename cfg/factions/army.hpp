@@ -24,19 +24,11 @@ class Army: blufor
 		class weapons: weapons 
 		{
             class rhsusf_weap_m9 {};
-<<<<<<< HEAD
 			class hlc_rifle_ACR68_full_black {};
 			class hlc_rifle_ACR68_Carb_black {};
 			class hlc_rifle_ACR_Carb_black {};
 			class hlc_rifle_ACR_full_black {};
             class hlc_rifle_ACR_SBR_black {};
-=======
-			class hlc_rifle_ACR68_full_tan {};
-			class hlc_rifle_ACR68_Carb_tan {};
-			class hlc_rifle_ACR_Carb_tan {};
-			class hlc_rifle_ACR_full_tan {};
-            class hlc_rifle_ACR_SBR_tan {};
->>>>>>> 4b8cf2404fdd63f995dfcbb7da756095d27ac7c1
             class hlc_lmg_mk48mod1 {};
             class rhs_weap_m240B_CAP {};
             class rhs_weap_m32 {};

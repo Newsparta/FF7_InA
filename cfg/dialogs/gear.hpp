@@ -249,131 +249,78 @@ class InA_Gear_Open_Dialog
 	{
 		class InA_Gear_Open_Background: RscFrame
 		{
-			idc = -1;
-			x = 0.324371 * safezoneW + safezoneX;
-			y = 0.423007 * safezoneH + safezoneY;
-			w = 0.340928 * safezoneW;
-			h = 0.10999 * safezoneH;
+			idc = 1800;
+			x = 0.45875 * safezoneW + safezoneX;
+			y = 0.378989 * safezoneH + safezoneY;
+			w = 0.0721875 * safezoneW;
+			h = 0.286026 * safezoneH;
 			type = CT_STATIC;
 			style = ST_CENTER;
 			colorBackground[] = {0.25,0.25,0.25,0.6};
-		};/*
-		class InA_Gear_Open_Frame_1: RscFrame
+		};
+		class InA_Gear_Open_Header: RscFrame
 		{
-			idc = -1;
-			x = 0.334702 * safezoneW + safezoneX;
-			y = 0.467003 * safezoneH + safezoneY;
-			w = 0.072318 * safezoneW;
-			h = 0.043996 * safezoneH;
+			idc = 1801;
+			x = 0.45875 * safezoneW + safezoneX;
+			y = 0.356987 * safezoneH + safezoneY;
+			w = 0.0721875 * safezoneW;
+			h = 0.022002 * safezoneH;
 			type = CT_STATIC;
 			style = ST_CENTER;
-			colorBackground[] = {0,0.5,1,0.1};
-		};*/
+			colorBackground[] = {0,0.5,1,0.8};
+		};
 		class InA_Gear_Open_Button_1: RscButton
 		{
 			idc = 1600;
 			text = "Weapons";
-			x = 0.417351 * safezoneW + safezoneX;
-			y = 0.467003 * safezoneH + safezoneY;
-			w = 0.0516557 * safezoneW;
-			h = 0.043996 * safezoneH;
+			x = 0.469062 * safezoneW + safezoneX;
+			y = 0.400991 * safezoneH + safezoneY;
+			w = 0.0515625 * safezoneW;
+			h = 0.044004 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[] spawn { ['weapons', 'cost', false] call InA_fnc_handleGearDialog;}; [] execVM 'defines\Gear\resourceUpdate.sqf';";
+			action = "['weapons', 'type', false] spawn InA_fnc_handleGearDialog; [] execVM 'defines\Gear\resourceUpdate.sqf';";
 		};
 		class InA_Gear_Open_Button_2: RscButton
 		{
 			idc = 1601;
 			text = "Munitions";
-			x = 0.479338 * safezoneW + safezoneX;
-			y = 0.467003 * safezoneH + safezoneY;
-			w = 0.0516557 * safezoneW;
-			h = 0.043996 * safezoneH;
+			x = 0.469062 * safezoneW + safezoneX;
+			y = 0.455996 * safezoneH + safezoneY;
+			w = 0.0515625 * safezoneW;
+			h = 0.044004 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[] spawn { ['magazines', 'cost', false] call InA_fnc_handleGearDialog;}; [] execVM 'defines\Gear\resourceUpdate.sqf';";
+			action = "['magazines', 'type', false] spawn InA_fnc_handleGearDialog; [] execVM 'defines\Gear\resourceUpdate.sqf';";
 		};
 		class InA_Gear_Open_Button_3: RscButton
 		{
 			idc = 1602;
 			text = "Misc.";
-			x = 0.541324 * safezoneW + safezoneX;
-			y = 0.467003 * safezoneH + safezoneY;
-			w = 0.0516557 * safezoneW;
-			h = 0.043996 * safezoneH;
+			x = 0.469062 * safezoneW + safezoneX;
+			y = 0.511001 * safezoneH + safezoneY;
+			w = 0.0515625 * safezoneW;
+			h = 0.044004 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[] spawn { ['miscitems', 'cost', false] call InA_fnc_handleGearDialog;}; [] execVM 'defines\Gear\resourceUpdate.sqf';";
-		};/*
+			action = "['miscitems', 'type', false] spawn InA_fnc_handleGearDialog; [] execVM 'defines\Gear\resourceUpdate.sqf';";
+		};
 		class InA_Gear_Open_Button_4: RscButton
 		{
 			idc = 1603;
-			text = "Yes";
-			x = 0.334702 * safezoneW + safezoneX;
-			y = 0.478002 * safezoneH + safezoneY;
-			w = 0.0309934 * safezoneW;
-			h = 0.021998 * safezoneH;
-			colorBackground[] = {0,0,0,0.8};
-			action = "gearRestricted = true;publicVariableServer 'gearRestricted';['Headquarters', 'Gear access is now restricted.'] call FF7_fnc_formatHint;";
-		};
-		class InA_Gear_Open_Button_5: RscButton
-		{
-			idc = 1604;
-			text = "No";
-			x = 0.376026 * safezoneW + safezoneX;
-			y = 0.478002 * safezoneH + safezoneY;
-			w = 0.0309934 * safezoneW;
-			h = 0.021998 * safezoneH;
-			colorBackground[] = {0,0,0,0.8};
-			action = "gearRestricted = false;publicVariableServer 'gearRestricted';['Headquarters', 'Gear access is now unrestricted.'] call FF7_fnc_formatHint;";
-		};*/
-		class InA_Gear_Open_Button_6: RscButton
-		{
-			idc = 1605;
 			text = "Close";
-			x = 0.603311 * safezoneW + safezoneX;
-			y = 0.467003 * safezoneH + safezoneY;
-			w = 0.0516557 * safezoneW;
-			h = 0.043996 * safezoneH;
+			x = 0.469062 * safezoneW + safezoneX;
+			y = 0.599009 * safezoneH + safezoneY;
+			w = 0.0515625 * safezoneW;
+			h = 0.044004 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
 			action = "closeDialog 0";
 		};
-		class InA_Gear_Open_Header: RscFrame
+		class InA_Gear_Open_HeaderText: RscText
 		{
-			idc = -1;
-			x = 0.324371 * safezoneW + safezoneX;
-			y = 0.401009 * safezoneH + safezoneY;
-			w = 0.340928 * safezoneW;
-			h = 0.021998 * safezoneH;
-			type = CT_STATIC;
-			style = ST_CENTER;
-			colorBackground[] = {0,0.5,1,0.8};
-		};/*
-		class InA_Gear_Open_SubHeader_1: RscFrame
-		{
-			idc = -1;
-			x = 0.334702 * safezoneW + safezoneX;
-			y = 0.445005 * safezoneH + safezoneY;
-			w = 0.072318 * safezoneW;
-			h = 0.021998 * safezoneH;
-			type = CT_STATIC;
-			style = ST_CENTER;
-			colorBackground[] = {0,0.5,1,0.8};
-		};*/
-		class InA_Gear_Open_Text_1: RscText
-		{
-			idc = -1;
+			idc = 1000;
 			text = "Gear Menu";
-			x = 0.324371 * safezoneW + safezoneX;
-			y = 0.401009 * safezoneH + safezoneY;
-			w = 0.0516557 * safezoneW;
-			h = 0.021998 * safezoneH;
-		};/*
-		class InA_Gear_Open_Text_2: RscText
-		{
-			idc = -1;
-			text = "Restrict Access?";
-			x = 0.334702 * safezoneW + safezoneX;
-			y = 0.445005 * safezoneH + safezoneY;
-			w = 0.072318 * safezoneW;
-			h = 0.021998 * safezoneH;
-		};*/
+			x = 0.45875 * safezoneW + safezoneX;
+			y = 0.356987 * safezoneH + safezoneY;
+			w = 0.0515625 * safezoneW;
+			h = 0.022002 * safezoneH;
+		};
 	};
 };

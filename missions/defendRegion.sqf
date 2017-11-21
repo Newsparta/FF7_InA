@@ -40,9 +40,7 @@ if (_i == 720) exitWith {
 
 safehouse = selectRandom (nearestTerrainObjects [_loc, ["HOUSE"], 400]);
 
-buildInventory = 100;
-
-[safehouse] call InA_fnc_buildKit;
+utilityVehicles pushBack [safehouse, 100, 100, false];
 
 _mkr = createMarker ["safehouse", safehouse];
 "safehouse" setMarkerColor "ColorWest";
@@ -56,11 +54,11 @@ sleep 10;
 
 ["HQ", "Headquarters", format ["A safehouse in %1 has been marked, use this as a base of operations to make preparations.", _location]] remoteExec ["FF7_fnc_globalHintStruct", 0];
 
-sleep 290;
+sleep 590;
 
 ["HQ", "Headquarters", format ["Maintain control of %1 until enemy activity subsides.", _location]] remoteExec ["FF7_fnc_globalHintStruct", 0];
 
-spawnCenter = _loc;
+spawnCenter = (getPosATL safehouse);
 spawnBorderLand = _rad;
 spawnWaypointMax = 250;
 
@@ -105,7 +103,7 @@ while {_i = _i + 60; _i <= 900} do {
 		_wp setWaypointType "GUARD";
 		_wp setWaypointCompletionRadius 25;
 		_group setSpeedMode "FULL";
-		_group setBehaviour "COMBAT";
+		_group setBehaviour "AWARE";
 		[units _group] call InA_fnc_insCustomize;
 	};
 	
@@ -118,14 +116,16 @@ while {_i = _i + 60; _i <= 900} do {
 	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.25)) then {
 		[spawnCenter, spawnBorderLand, spawnWaypointMax, 1, 0,"COMBAT","FULL"] spawn InA_fnc_insMediumTruckTransport;
 	};
-	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.1)) then {
-		[spawnCenter, spawnBorderLand, spawnWaypointMax, 1, 0,"COMBAT","FULL"] spawn InA_fnc_insApcTransport;
+	if (count (call BIS_fnc_listPlayers) > 7) then {
+		if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.1)) then {
+			[spawnCenter, spawnBorderLand, spawnWaypointMax, 1, 0,"COMBAT","FULL"] spawn InA_fnc_insApcTransport;
+		};
+		if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.0625)) then {
+			[spawnCenter, spawnBorderLand, spawnWaypointMax, 1, 0,"COMBAT","FULL"] spawn InA_fnc_insIfvTransport;
+		};
 	};
 	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.0625)) then {
 		[spawnCenter, spawnBorderLand, spawnWaypointMax, 1, 0,"COMBAT","FULL"] spawn InA_fnc_insTankAttack;
-	};
-	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.0625)) then {
-		[spawnCenter, spawnBorderLand, spawnWaypointMax, 1, 0,"COMBAT","FULL"] spawn InA_fnc_insIfvTransport;
 	};
 	if (random 100 < random ((count (call BIS_fnc_listPlayers)) * 0.0625)) then {
 		[spawnCenter, spawnBorderLand, spawnWaypointMax, 1, 0,"COMBAT","FULL"] spawn InA_fnc_insLightHeliAttack;
@@ -149,7 +149,7 @@ while {_i = _i + 60; _i <= 900} do {
 		
 		compObj = compObj + 1;
 
-		LogV = LogV + 1;
+		LogV = LogV + 3;
 
 		civTol = civTol + 0.1;
 
@@ -160,3 +160,20 @@ while {_i = _i + 60; _i <= 900} do {
 	
 	sleep 60;
 };
+
+{
+	
+	if (safehouse in _x) then {
+
+		_index = utilityVehicles find _x;
+
+		utilityVehicles set [_index, -1];
+
+		utilityVehicles = utilityVehicles - [-1];
+	};
+
+} forEach utilityVehicles;
+
+[safehouse] remoteExec ["removeAllActions", 0];
+
+safehouse = [0,0,0];

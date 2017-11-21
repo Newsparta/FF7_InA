@@ -13,42 +13,42 @@ equipUniform =
 			
 				case 0:
 				{
-					player addVest "VSM_FAPC_Breacher_Multicam";
+					player addVest "VSM_FAPC_Breacher_MulticamTropic";
 				};
 				
 				case 1:
 				{
-					player addVest "VSM_FAPC_MG_Multicam";
+					player addVest "VSM_FAPC_MG_MulticamTropic";
 				};
 				
 				case 2:
 				{
-					player addVest "VSM_FAPC_Operator_Multicam";
+					player addVest "VSM_FAPC_Operator_MulticamTropic";
 				};
 				
 				case 3:
 				{
-					player addVest "VSM_LBT6094_breacher_multicam";
+					player addVest "VSM_LBT6094_breacher_multicamTropic";
 				};
 				
 				case 4:
 				{
-					player addVest "VSM_LBT6094_operator_multicam";
+					player addVest "VSM_LBT6094_operator_multicamTropic";
 				};
 				
 				case 5:
 				{
-					player addVest "VSM_RAV_Breacher_Multicam";
+					player addVest "VSM_RAV_Breacher_MulticamTropic";
 				};
 				
 				case 6:
 				{
-					player addVest "VSM_RAV_MG_Multicam";
+					player addVest "VSM_RAV_MG_MulticamTropic";
 				};
 				
 				case 7:
 				{
-					player addVest "VSM_RAV_operator_Multicam";
+					player addVest "VSM_RAV_operator_MulticamTropic";
 				};
 			};
 		};
@@ -59,27 +59,12 @@ equipUniform =
 			
 				case 0:
 				{
-					player addVest "rhsusf_spc_corpsman";
+					player addVest "MNP_Vest_USMC";
 				};
 				
 				case 1:
 				{
-					player addVest "rhsusf_spc_iar";
-				};
-				
-				case 2:
-				{
-					player addVest "rhsusf_spc_light";
-				};
-				
-				case 3:
-				{
-					player addVest "rhsusf_spc_mg";
-				};
-				
-				case 4:
-				{
-					player addVest "rhsusf_spc_rifleman";
+					player addVest "MNP_Vest_USMC_2";
 				};
 			};
 		};
@@ -90,72 +75,17 @@ equipUniform =
 			
 				case 0:
 				{
-					player addVest "MNP_Vest_Scorpion_1";
+					player addVest "V_PlateCarrier1_tna_F";
 				};
 				
 				case 1:
 				{
-					player addVest "MNP_Vest_Scorpion_2";
+					player addVest "V_PlateCarrier2_tna_F";
 				};
 				
 				case 2:
 				{
-					player addVest "V_PlateCarrierL_CTRG";
-				};
-				
-				case 3:
-				{
-					player addVest "V_PlateCarrierH_CTRG";
-				};
-
-				case 4:
-				{
-					player addVest "MNP_Vest_Germany";
-				};
-
-				case 5:
-				{
-					player addVest "MNP_Vest_Germany_2";
-				};
-
-				case 6:
-				{
-					player addVest "MNP_Vest_Canada_T";
-				};
-
-				case 7:
-				{
-					player addVest "MNP_Vest_Canada_T2";
-				};
-
-				case 8:
-				{
-					player addVest "MNP_Vest_NOR_1";
-				};
-
-				case 9:
-				{
-					player addVest "MNP_Vest_NOR_2";
-				};
-
-				case 10:
-				{
-					player addVest "MNP_Vest_FIN_1";
-				};
-
-				case 11:
-				{
-					player addVest "MNP_Vest_FIN_2";
-				};
-
-				case 12:
-				{
-					player addVest "MNP_Vest_Australia";
-				};
-
-				case 13:
-				{
-					player addVest "MNP_Vest_Australia_B";
+					player addVest "V_PlateCarrierGL_tna_F";
 				};
 			};
 		};
@@ -234,38 +164,24 @@ switch (baseType) do {
 	case "Marines":
 	{
 		_items = [
-			"SPC (corpsman)",
-			"SPC (iar)",
-			"SPC (light)",
-			"SPC (mg)",
-			"SPC (rifleman)"
+			"Carrier Rig lite",
+			"Carrier Rig"
 		];
 	};
 	case "Nato":
 	{
 		_items = [
-			"United States Army (1)",
-			"United States Army (2)",
-			"British Army (1)",
-			"British Army (2)",
-			"Bundeswehr (1)",
-			"Bundeswehr (2)",
-			"Canadian Army (1)",
-			"Canadian Army (2)",
-			"Norwegian Army (1)",
-			"Norwegian Army (2)",
-			"Finnish Army (1)",
-			"Finnish Army (2)",
-			"Australian Army (1)",
-			"Australian Army (2)"
+			"Carrier Rig lite",
+			"Carrier Rig",
+			"Carrier Rig heavy"
 		];
 	};
 	case "AAF":
 	{
 		_items = [
-			"Carrier Lite",
+			"Carrier lite",
 			"Carrier Rig",
-			"Carrier GL"
+			"Carrier heavy"
 		];
 	};
 	case "Russia":

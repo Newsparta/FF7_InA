@@ -13,17 +13,17 @@ equipUniform =
 			
 				case 0:
 				{
-					player forceAddUniform "VSM_Multicam_Crye_Camo";
+					player forceAddUniform "VSM_MulticamTropic_Camo";
 				};
 				
 				case 1:
 				{
-					player forceAddUniform "VSM_Multicam_Crye_od_shirt_Camo";
+					player forceAddUniform "VSM_MulticamTropic_od_shirt_Camo";
 				};
 				
 				case 2:
 				{
-					player forceAddUniform "VSM_Multicam_Crye_od_pants_Camo";
+					player forceAddUniform "VSM_MulticamTropic_od_pants_Camo";
 				};
 			};
 		};
@@ -34,7 +34,12 @@ equipUniform =
 			
 				case 0:
 				{
-					player forceAddUniform "rhs_uniform_FROG01_wd";
+					player forceAddUniform "TRYK_U_B_MARPAT_Wood_Tshirt";
+				};
+
+				case 1:
+				{
+					player forceAddUniform "TRYK_U_B_MARPAT_Wood";
 				};
 			};
 		};
@@ -45,72 +50,17 @@ equipUniform =
 			
 				case 0:
 				{
-					player forceAddUniform "MNP_CombatUniform_Scorpion_A";
+					player forceAddUniform "U_B_T_Soldier_F";
 				};
 
 				case 1:
 				{
-					player forceAddUniform "MNP_CombatUniform_Scorpion_B";
+					player forceAddUniform "U_B_T_Soldier_SL_F";
 				};
 				
 				case 2:
 				{
-					player forceAddUniform "U_B_CTRG_1";
-				};
-
-				case 3:
-				{
-					player forceAddUniform "U_B_CTRG_3";
-				};
-
-				case 4:
-				{
-					player forceAddUniform "MNP_CombatUniform_Germany";
-				};
-
-				case 5:
-				{
-					player forceAddUniform "MNP_CombatUniform_Germany_S";
-				};
-
-				case 6:
-				{
-					player forceAddUniform "MNP_CombatUniform_Canada";
-				};
-
-				case 7:
-				{
-					player forceAddUniform "MNP_CombatUniform_Canada_S";
-				};
-
-				case 8:
-				{
-					player forceAddUniform "MNP_CombatUniform_NOR_A";
-				};
-
-				case 9:
-				{
-					player forceAddUniform "MNP_CombatUniform_NOR_B";
-				};
-
-				case 10:
-				{
-					player forceAddUniform "MNP_CombatUniform_Fin_A";
-				};
-
-				case 11:
-				{
-					player forceAddUniform "MNP_CombatUniform_Fin_B";
-				};
-
-				case 12:
-				{
-					player forceAddUniform "MNP_CombatUniform_Australia";
-				};
-
-				case 13:
-				{
-					player forceAddUniform "MNP_CombatUniform_Australia_S";
+					player forceAddUniform "U_B_T_Soldier_AR_F";
 				};
 			};
 		};
@@ -151,34 +101,24 @@ switch (baseType) do {
 	case "Army":
 	{
 		_items = [
-			"OCP",
-			"OCP (OD Shirt)",
-			"OCP (OD Pants)"
+			"OCP Tropic",
+			"OCP Tropic (OD Shirt)",
+			"OCP Tropic (OD Pants)"
 		];
 	};
 	case "Marines":
 	{
 		_items = [
-			"MARPAT"
+			"MARPAT",
+			"MARPAT (rolled)"
 		];
 	};
 	case "Nato":
 	{
 		_items = [
-			"United States Army (normal)",
-			"United States Army (rolled)",
-			"British Army (normal)",
-			"British Army (rolled)",
-			"Bundeswehr (normal)",
-			"Bundeswehr (rolled)",
-			"Canadian Army (normal)",
-			"Canadian Army (rolled)",
-			"Norwegian Army (normal)",
-			"Norwegian Army (rolled)",
-			"Finnish Army (normal)",
-			"Finnish Army (rolled)",
-			"Australian Army (normal)",
-			"Australian Army (rolled)"
+			"Tropic",
+			"Tropic (rolled)",
+			"Tropic (Tee)"
 		];
 	};
 	case "AAF":

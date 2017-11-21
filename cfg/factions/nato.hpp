@@ -11,14 +11,10 @@ class Nato: blufor
 			class mag_130Rnd_338_Mag {};
 			class mag_16Rnd_9x21_Mag {};
 			class mag_20Rnd_762x51_Mag {};
-			class mag_rhs_200rnd_556x45_M_SAW
-			{
-				cost = 6;
-			};
-			class mag_rhsusf_100Rnd_556x45_soft_pouch
-			{
-				cost = 6;
-			};
+			class mag_rhs_200rnd_556x45_M_SAW {};
+            class mag_rhsusf_100Rnd_556x45_soft_pouch {};
+            class mag_rhsusf_100Rnd_762x51_m80a1epr {};
+            class mag_rhsusf_50Rnd_762x51_m80a1epr {};
 			class mag_rhsusf_10Rnd_762x51_m118_special_Mag {};
 			class mag_Titan_AA {};
 			class mag_Titan_AP {};
@@ -30,17 +26,17 @@ class Nato: blufor
 		class weapons: weapons 
 		{
 			class hgun_P07_F {};
-			class hlc_rifle_ACR_Carb_tan {};
-			class hlc_rifle_ACR_full_tan {};
-			class hlc_rifle_ACR_mid_tan {};
-			class launch_B_Titan_short_tna_F {};
-			class launch_B_Titan_tna_F {};
-			class MMG_02_sand_F {};
-			class rhs_weap_hk416d10 {};
-			class rhs_weap_hk416d145 {};
-			class rhs_weap_hk416d145_m320 {};
-			class rhs_weap_m40a5_wd {};
-			class rhs_weap_m4a1_carryhandle_pmag {};
+            class rhs_weap_m16a4_pmag {};
+            class rhs_weap_m4a1 {};
+            class rhs_weap_mk18 {};
+            class rhs_weap_m4a1_m320 {};
+            class rhs_weap_mk18_m320 {};
+            class hlc_lmg_mk48mod1 {};
+            class rhs_weap_m240B_CAP {};
+            class rhs_weap_M320 {};
+            class rhs_weap_XM2010_sa {};
+            class rhs_weap_fgm148 {};
+            class rhs_weap_fim92 {};
 		};
 
         // Misc item classes must be defined in misc.hpp

@@ -7,7 +7,7 @@ while {true} do {
 	sleep 60;
 	
 	// basic increase
-	civTol = civTol + (1/2880);
+	civTol = civTol + (1/10080);
 	
 	if (civTol > 1) then {
 		civTol = 1;

@@ -1,4 +1,4 @@
-class AAF: opfor
+class AAF: blufor
 {
     name = "Altis Armed Forces";
 
@@ -8,28 +8,12 @@ class AAF: opfor
         // before using them here.
 		class magazines: magazines 
 		{
-			class mag_150Rnd_93x64_Mag {};
 			class mag_16Rnd_9x21_Mag {};
-			class mag_1Rnd_HE_Grenade_shell {};
-			class mag_1Rnd_Smoke_Grenade_shell {};
-			class mag_200Rnd_65x39_cased_Box {};
-			class mag_200Rnd_65x39_cased_Box_Tracer {};
-			class mag_20Rnd_762x51_Mag {};
-			class mag_30Rnd_556x45_Stanag {};
-			class mag_30Rnd_556x45_Stanag_Tracer_Yellow {};
-			class mag_3Rnd_HE_Grenade_shell {};
-			class mag_ACE_HuntIR_M203 {};
-			class mag_ACE_M14 {};
-			class mag_HandGrenade {};
-			class mag_MiniGrenade {};
-			class mag_rhsusf_mag_10Rnd_STD_50BMG_M33 {};
-			class mag_SmokeShell {};
-			class mag_SmokeShellBlue {};
-			class mag_SmokeShellGreen {};
-			class mag_Titan_AA {};
-			class mag_Titan_AP {};
-			class mag_Titan_AT {};
-			class mag_UGL_FlareWhite_F {};
+            class mag_hlc_20rnd_762x51_b_G3 {};
+            class mag_hlc_20rnd_762x51_barrier_G3 {};
+			class mag_hlc_30rnd_556x45_EPR_G36 {};
+			class mag_hlc_30rnd_556x45_SOST_G36 {};
+            class mag_hlc_30rnd_556x45_Tracers_G36 {};
 		};
 
         // Weapon classes must be defined in weapons.hpp
@@ -37,33 +21,15 @@ class AAF: opfor
 		class weapons: weapons 
 		{
 			class hgun_P07_F {};
-			class launch_B_Titan_short_tna_F {};
-			class launch_B_Titan_tna_F {};
-			class LMG_Mk200_F {};
-			class MMG_01_tan_F {};
-			class rhs_M252_Bipod_Bag {};
-			class rhs_M252_Gun_Bag {};
-			class RHS_M2_Gun_Bag {};
-			class RHS_M2_Tripod_Bag {};
-			class RHS_Mk19_Gun_Bag {};
-			class RHS_Mk19_Tripod_Bag {};
-			class rhs_Tow_Gun_Bag {};
-			class rhs_TOW_Tripod_Bag {};
-			class rhs_weap_hk416d10
-			{
-				cost = 0;
-			};
-			class rhs_weap_hk416d145 {};
-			class rhs_weap_hk416d145_m320
-			{
-				cost = 10;
-			};
-			class rhs_weap_M107_w {};
-			class rhs_weap_m72a7 {};
-			class srifle_EBR_F {};
-			class tf47_at4_heat {};
-			class tf47_at4_HEDP {};
-			class tf47_at4_HP {};
+            class hlc_rifle_G36CV {};
+            class hlc_rifle_G36KV {};
+            class hlc_rifle_G36V {};
+            class hlc_rifle_G36VAG36 {};
+            class hlc_lmg_mk48mod1 {};
+            class rhs_weap_m240B_CAP {};
+            class hlc_rifle_PSG1A1_RIS {};
+            class rhs_weap_fgm148 {};
+            class rhs_weap_fim92 {};
 		};
 
         // Misc item classes must be defined in misc.hpp

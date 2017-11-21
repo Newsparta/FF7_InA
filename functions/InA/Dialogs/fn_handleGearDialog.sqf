@@ -43,6 +43,12 @@ private     _ctrl_itemContainer    = nil;
 private     _ctrl_slider           = nil;
 private     _return                = false;
 
+// Update client global value with server global value
+[clientOwner, "LogM"] remoteExec ["publicVariableClient", 2, false];
+[clientOwner, "baseType"] remoteExec ["publicVariableClient", 2, false];
+	
+sleep 0.2;
+
 if (isNil "baseType") exitWith {
 	["Headquarters", "No theme selected. Equipment unavailable."] call FF7_fnc_formatHint;
 	nil;
@@ -60,6 +66,8 @@ if (__sortDesc) then {
 } else {
 	_sortByTag = "ASCEND";
 };
+
+//["success"] remoteExec ["hint", 0];
 
 // Get list of available items
 switch (__name) do
@@ -88,7 +96,7 @@ if (isNil "_items") exitWith {
 	hint "ERROR #501: Dialog name not recognized.";
 	_return
 };
-if !(__sortByField == "name" or __sortByField == "cost") exitWith {
+if !(__sortByField == "name" or __sortByField == "cost" or __sortByField == "type") exitWith {
 	hint "ERROR #502: Sort field not recognized.";
 	_return
 };
@@ -182,12 +190,6 @@ g_dialog_handler_gear_item_purchase = {
 
 	// Get item from selected index
 	_item = g_dialog_gear_item_list select _itemID;
-
-	// Update client global value with server global value
-	[clientOwner, "LogM"] remoteExec ["publicVariableClient", 2, false];
-	
-	// Necessary?
-	sleep 0.2;
 	
 	// SANITY CHECK - Exit here if necessary
 	if (LogM < g_dialog_gear_selection_cost) exitWith {
@@ -340,6 +342,9 @@ _ctrl_itemContainer lbSetCurSel 0;
 _ctrl_slider = (findDisplay 9200) displayCtrl 1900;
 _ctrl_slider sliderSetRange [1, 10];
 _ctrl_slider slidersetSpeed [1, 1];
+
+// Update current supplies
+ctrlSetText [1002, (format ["%1",LogM])];
 
 _return = true;
 _return

@@ -8,22 +8,22 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=687;
+		nextID=704;
 	};
 	class MarkerIDProvider
 	{
-		nextID=17;
+		nextID=19;
 	};
 	class LayerIndexProvider
 	{
-		nextID=90;
+		nextID=225;
 	};
 	class Camera
 	{
-		pos[]={10971.92,380.14301,11530.598};
-		dir[]={-0.46530503,-0.5757786,-0.67242569};
-		up[]={-0.32763356,0.81757814,-0.47347268};
-		aside[]={-0.82241416,-3.7008431e-007,0.56909174};
+		pos[]={10968.437,361.86188,11449.996};
+		dir[]={-0.35704049,-0.43847391,0.82491165};
+		up[]={-0.17417593,0.89872962,0.4024179};
+		aside[]={0.91782498,-7.5864955e-007,0.39726207};
 	};
 };
 binarizationWanted=0;
@@ -72,13 +72,14 @@ addons[]=
 	"A3_Structures_F_EPB_Furniture",
 	"A3_Structures_F_Ind_Shed",
 	"A3_Structures_F_Exp_Infrastructure_Airports",
-	"A3_Props_F_Argo_Civilian_InfoBoards"
+	"A3_Props_F_Argo_Civilian_InfoBoards",
+	"A3_Signs_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=30;
+		items=31;
 		class Item0
 		{
 			className="A3_Modules_F_Curator";
@@ -289,6 +290,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item30
+		{
+			className="A3_Signs_F";
+			name="Arma 3 - Signs";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=2398574;
@@ -379,7 +387,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=498;
+		items=502;
 		class Item0
 		{
 			dataType="Logic";
@@ -26537,6 +26545,7 @@ class Mission
 			flags=5;
 			class Attributes
 			{
+				name="barracks";
 			};
 			id=531;
 			type="Land_Barracks_01_camo_F";
@@ -29040,6 +29049,170 @@ class Mission
 			};
 			id=641;
 			type="Item_Binocular";
+		};
+		class Item498
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10934.811,350.64801,11460.816};
+				angles[]={0,3.0579562,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				createAsSimpleObject=1;
+				disableSimulation=1;
+			};
+			id=700;
+			type="RoadCone_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item499
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10926.803,350.64801,11460.025};
+				angles[]={0,3.0579562,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				createAsSimpleObject=1;
+				disableSimulation=1;
+			};
+			id=701;
+			type="RoadCone_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item500
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10926.033,350.64801,11471.58};
+				angles[]={0,3.0579562,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				createAsSimpleObject=1;
+				disableSimulation=1;
+			};
+			id=702;
+			type="RoadCone_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item501
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10933.34,350.64801,11472.592};
+				angles[]={-0,3.0579562,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				createAsSimpleObject=1;
+				disableSimulation=1;
+			};
+			id=703;
+			type="RoadCone_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };

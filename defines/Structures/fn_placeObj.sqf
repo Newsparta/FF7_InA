@@ -22,10 +22,26 @@ Author:
 
 // ---------- MAIN ----------
 
-detach obj;
-buildInventory = buildInventory - objCost;
-publicVariableServer "buildInventory";
+ {
 
-removeAllActions player;
+	if (kitVeh in _x) then {
 
-closeDialog 0;
+		veh = _x;
+		kitVal = _x select 1;
+
+	};
+
+} forEach utilityVehicles;
+
+if (kitVal >= objCost) then {
+
+    detach obj;
+    veh set [1,(kitVal - objCost)];
+    publicVariableServer "utilityVehicles";
+
+    removeAllActions player;
+
+    closeDialog 0;
+} else {
+    ["Headquarters", "You do not have the logistical supplies to construct this fortification (someone has built after you selected and before you placed)."] call FF7_fnc_formatHint;
+};

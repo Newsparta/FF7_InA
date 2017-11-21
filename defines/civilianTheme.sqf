@@ -71,3 +71,15 @@ idap_cars = [
 	"C_IDAP_Truck_02_water_F",
 	"C_IDAP_Truck_02_F"
 ];
+
+idap_men = [
+	"C_IDAP_Man_AidWorker_01_F",
+	"C_IDAP_Man_AidWorker_02_F",
+	"C_IDAP_Man_AidWorker_03_F",
+	"C_IDAP_Man_AidWorker_04_F",
+	"C_IDAP_Man_AidWorker_05_F",
+	"C_IDAP_Man_AidWorker_06_F",
+	"C_IDAP_Man_AidWorker_07_F",
+	"C_IDAP_Man_AidWorker_08_F",
+	"C_IDAP_Man_AidWorker_09_F"
+];

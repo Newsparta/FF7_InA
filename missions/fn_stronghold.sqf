@@ -6,18 +6,14 @@ private ["_accepted","_pos","_blacklist"];
 Select location.
 */
 
-// BUG: Gets stuck in infinite loop durign placement sometimes - tested on Malden
-// Disable for now
-if (true) exitWith {};
-
 _loc = [];
+_candidates = [];
+_choice = [];
+_mark = [];
 
 if !(InA_stronghold) then {
 
 	_regions = [] call InA_fnc_regionCheck;
-	_candidates = [];
-	_choice = [];
-	_mark = [];
 
 	{
 		if ((_x select 1) >= 0.9) then {
@@ -32,7 +28,7 @@ if !(InA_stronghold) then {
 
 	};
 
-	if (count _choice < 1) exitWith {}; 
+	if (count _candidates < 1) exitWith {}; 
 
 	_accepted = false;
 	_towns = nearestLocations [
@@ -84,15 +80,9 @@ if !(InA_stronghold) then {
 	_loc = InA_stronghold_Loc;
 
 };
+if (count _candidates < 1 && {!InA_stronghold}) exitWith {};
 
 concentrations pushBack _loc;
-
-_num = random 1;
-_mkr = createMarker [format ["%1",_num], _loc];
-					format ["%1",_num] setMarkerColor "ColorGUER";
-					format ["%1",_num] setMarkerShape "ELLIPSE";
-					format ["%1",_num] setMarkerBrush "Border";
-					format ["%1",_num] setMarkerSize [250, 250];
 
 /*
 Loop for spawning AO when players are near.
@@ -117,6 +107,16 @@ while {!_cleared} do {
 			_pos = [_loc, 0, 500, 5, 0, 0.2, 0] call BIS_fnc_findSafePos;
 
 			[_pos] spawn InA_fnc_MGNest;
+
+		};
+
+		// ---------- Flags ----------
+
+		for "_i" from 1 to (2 + (round random 5)) do {
+
+			_pos = [_loc, 0, 500, 5, 0, 0.2, 0] call BIS_fnc_findSafePos;
+
+			_obj = createVehicle [INS_FLAG, _pos, [], 0, "CAN_COLLIDE"];
 
 		};
 
@@ -620,42 +620,45 @@ while {!_cleared} do {
 
 			sleep (2 + (random 2));
 
-			if (count list _nme < 20) then {
+			if ({_x distance _loc < mainLimit} count (allPlayers - entities "HeadlessClient_F") > 0) then {
 
-				deleteVehicle _nme;
-				_cleared = true;
-				compObj = compObj + 1;
-				LogV = LogV + 6;
-				LogM = LogM + (50 + (round random 100));
-				concentrations = concentrations - _loc;
-
-				[] spawn {
-
-					sleep 172800;
-
-					InA_stronghold = false;
-
-				};
-			
-				["INSURGENT STRONGHOLD", "The insurgents concentrated here have been mostly routed."] remoteExec ["FF7_fnc_formatHint", 0];
-
-				breakOut "activity";
-
-				sleep 10;
-
-				["INSURGENT STRONGHOLD", "Supplies have been appropriated from the insurgent stronghold."] remoteExec ["FF7_fnc_formatHint", 0];
-			};
-
-			if ({_x distance _loc < 500} count (allPlayers - entities "HeadlessClient_F") > 0) then {
 				if ((spotted) && {!_called}) then {
 					[_loc] call InA_fnc_reinforcementCall;
 					_called = true;
+				};
+
+				if (count list _nme < 20) then {
+
+					deleteVehicle _nme;
+					_cleared = true;
+					compObj = compObj + 1;
+					LogV = LogV + 6;
+					LogM = LogM + (50 + (round random 100));
+					concentrations = concentrations - _loc;
+
+					[] spawn {
+
+						sleep 172800;
+
+						InA_stronghold = false;
+
+					};
+				
+					["INSURGENT STRONGHOLD", "The insurgents concentrated here have been mostly routed."] remoteExec ["FF7_fnc_formatHint", 0];
+
+					breakOut "activity";
+
+					sleep 10;
+
+					["INSURGENT STRONGHOLD", "Supplies have been appropriated from the insurgent stronghold."] remoteExec ["FF7_fnc_formatHint", 0];
 				};
 			};
 
 			if ({_x distance _loc < mainLimit} count (allPlayers - entities "HeadlessClient_F") < 1) then {
 
 				[_loc, (mainLimit - 500)] spawn InA_fnc_cleanup;
+
+				deleteVehicle _nme;
 
 				_active = false;
 

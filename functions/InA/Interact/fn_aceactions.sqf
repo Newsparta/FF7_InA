@@ -91,7 +91,7 @@ if (_type in ["B_Soldier_SL_F", "B_Soldier_TL_F", "B_spotter_F", "B_recon_JTAC_F
 		_cond
 	] call ace_interact_menu_fnc_createAction;
 
-	[_unit, 1, ["ACE_SelfActions","FF7_Interaction","FF7_Interaction_Environment"], _action] call ace_interact_menu_fnc_addActionToObject;
+	[_unit, 1, ["ACE_SelfActions","FF7_Interaction"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 	// ---------- FOB set ----------
 	_action =
@@ -103,7 +103,7 @@ if (_type in ["B_Soldier_SL_F", "B_Soldier_TL_F", "B_spotter_F", "B_recon_JTAC_F
 		_cond
 	] call ace_interact_menu_fnc_createAction;
 
-	[_unit, 1, ["ACE_SelfActions","FF7_Interaction","FF7_Interaction_Environment","FF7_Interaction_Environment_FOB"], _action] call ace_interact_menu_fnc_addActionToObject;
+	[_unit, 1, ["ACE_SelfActions","FF7_Interaction","FF7_Interaction_Environment_FOB"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 	// ---------- FOB cancel ----------
 	_action =
@@ -115,7 +115,7 @@ if (_type in ["B_Soldier_SL_F", "B_Soldier_TL_F", "B_spotter_F", "B_recon_JTAC_F
 		_cond
 	] call ace_interact_menu_fnc_createAction;
 
-	[_unit, 1, ["ACE_SelfActions","FF7_Interaction","FF7_Interaction_Environment","FF7_Interaction_Environment_FOB"], _action] call ace_interact_menu_fnc_addActionToObject;
+	[_unit, 1, ["ACE_SelfActions","FF7_Interaction","FF7_Interaction_Environment_FOB"], _action] call ace_interact_menu_fnc_addActionToObject;
 	
 	// ---------- Base Restrictions ----------
 	_action =
@@ -216,7 +216,7 @@ else
 		_cond
 	] call ace_interact_menu_fnc_createAction;
 
-	[_unit, 1, ["ACE_SelfActions","FF7_Interaction","FF7_Interaction_Environment"], _action] call ace_interact_menu_fnc_addActionToObject;
+	[_unit, 1, ["ACE_SelfActions","FF7_Interaction"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 	// ---------- FOB set ----------
 	_action =
@@ -228,7 +228,7 @@ else
 		_cond
 	] call ace_interact_menu_fnc_createAction;
 
-	[_unit, 1, ["ACE_SelfActions","FF7_Interaction","FF7_Interaction_Environment","FF7_Interaction_Environment_FOB"], _action] call ace_interact_menu_fnc_addActionToObject;
+	[_unit, 1, ["ACE_SelfActions","FF7_Interaction","FF7_Interaction_Environment_FOB"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 	// ---------- FOB cancel ----------
 	_action =
@@ -240,7 +240,7 @@ else
 		_cond
 	] call ace_interact_menu_fnc_createAction;
 
-	[_unit, 1, ["ACE_SelfActions","FF7_Interaction","FF7_Interaction_Environment","FF7_Interaction_Environment_FOB"], _action] call ace_interact_menu_fnc_addActionToObject;
+	[_unit, 1, ["ACE_SelfActions","FF7_Interaction","FF7_Interaction_Environment_FOB"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 	// ---------- Base Restrictions ----------
 	_action =
@@ -335,62 +335,26 @@ _action =
 
 [_unit, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
-// Environment parent
+// Unlock Door
 _action =
 [
-	"FF7_Interaction_Environment",
-	"Environment",
+	"FF7_Interaction_Environment_unlockDoor",
+	"Unlock Door",
 	"",
-	{},
+	{[] spawn InA_fnc_unlockDoor;},
 	_cond
 ] call ace_interact_menu_fnc_createAction;
 
 [_unit, 1, ["ACE_SelfActions","FF7_Interaction"], _action] call ace_interact_menu_fnc_addActionToObject;
 
-	// Unlock Door
-	_action =
-	[
-		"FF7_Interaction_Environment_unlockDoor",
-		"Unlock Door",
-		"",
-		{[] spawn InA_fnc_unlockDoor;},
-		_cond
-	] call ace_interact_menu_fnc_createAction;
-
-	[_unit, 1, ["ACE_SelfActions","FF7_Interaction","FF7_Interaction_Environment"], _action] call ace_interact_menu_fnc_addActionToObject;
-
-	// ---------- Target Confirmation ----------
-	_action =
-	[
-		"FF7_Interaction_Environment_unlockDoor",
-		"Confirm Target",
-		"",
-		{[] spawn InA_fnc_confirmTarget;},
-		_cond
-	] call ace_interact_menu_fnc_createAction;
-
-	[_unit, 1, ["ACE_SelfActions","FF7_Interaction","FF7_Interaction_Environment"], _action] call ace_interact_menu_fnc_addActionToObject;
-	
-// Self parent
+// Unfold map
 _action =
 [
-	"FF7_Interaction_Self",
-	"Self",
+	"FF7_Interaction_Self_unfoldMap",
+	"Unfold Map",
 	"",
-	{},
-	_cond
+	{[] spawn InA_fnc_unfoldMap;},
+	{"ItemMap" in (assignedItems player);}
 ] call ace_interact_menu_fnc_createAction;
 
 [_unit, 1, ["ACE_SelfActions","FF7_Interaction"], _action] call ace_interact_menu_fnc_addActionToObject;
-
-	// Unfold map
-	_action =
-	[
-		"FF7_Interaction_Self_unfoldMap",
-		"Unfold Map",
-		"",
-		{[] spawn InA_fnc_unfoldMap;},
-		{"ItemMap" in (assignedItems player);}
-	] call ace_interact_menu_fnc_createAction;
-
-	[_unit, 1, ["ACE_SelfActions","FF7_Interaction","FF7_Interaction_Self"], _action] call ace_interact_menu_fnc_addActionToObject;

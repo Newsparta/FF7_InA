@@ -63,7 +63,7 @@ volatileRate = 2;
 
 // ---------- Location references ----------
 
-ambientSitrep1 = 
+ambientSitrep = 
 [
 	["BluePearlIndustrial",1000],
 	["Ba",500],
@@ -88,11 +88,7 @@ ambientSitrep1 =
 	["Savu",600],
 	["SaintPaul",600],
 	["Tanouka",1000],
-	["Vagalala",850]
-];
-
-ambientSitrep2 = 
-[
+	["Vagalala",850],
 	["BuaBua",500],
 	["Cerebu",500],
 	["Doodstil",750],
@@ -110,11 +106,7 @@ ambientSitrep2 =
 	["Rereki",600],
 	["Taga",500],
 	["Savaka",500],
-	["Yanukka",750]
-];
-
-ambientSitrep3 = 
-[
+	["Yanukka",750],
 	["Balavu",750],
 	["Belfort",750],
 	["Laikoro",600],

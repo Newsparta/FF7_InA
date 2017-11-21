@@ -12,9 +12,9 @@ class Army: blufor
 			class mag_hlc_30rnd_68x43_Tracer {};
 			class mag_rhs_fgm148_magazine_AT {};
 			class mag_rhs_fim92_mag {};
-			class mag_rhsusf_100Rnd_762x51_m80a1epr {};
+            class mag_rhsusf_100Rnd_762x51_m80a1epr {};
+            class mag_rhsusf_50Rnd_762x51_m80a1epr {};
 			class mag_rhsusf_20Rnd_762x51_m118_special_Mag {};
-			class mag_rhsusf_50Rnd_762x51_m80a1epr {};
 			class mag_rhsusf_5Rnd_300winmag_xm2010 {};
 			class mag_rhsusf_mag_15Rnd_9x19_JHP {};
 		};
@@ -23,21 +23,18 @@ class Army: blufor
         // before using them here.
 		class weapons: weapons 
 		{
-			class hlc_rifle_ACR68_full_tan {};
-			class hlc_rifle_ACR68_mid_tan {};
-			class hlc_rifle_ACR_Carb_tan
-			{
-				cost = 0;
-			};
-			class hlc_rifle_ACR_full_tan {};
-			class hlc_rifle_ACR_mid_tan {};
-			class hlc_rifle_ACR_SBR_tan {};
-			class rhs_weap_fgm148 {};
-			class rhs_weap_fim92 {};
-			class rhs_weap_m240B_CAP {};
-			class rhs_weap_sr25 {};
-			class rhs_weap_XM2010_sa {};
-			class rhsusf_weap_m9 {};
+            class rhsusf_weap_m9 {};
+			class hlc_rifle_ACR68_full_black {};
+			class hlc_rifle_ACR68_Carb_black {};
+			class hlc_rifle_ACR_Carb_black {};
+			class hlc_rifle_ACR_full_black {};
+            class hlc_rifle_ACR_SBR_black {};
+            class hlc_lmg_mk48mod1 {};
+            class rhs_weap_m240B_CAP {};
+            class rhs_weap_m32 {};
+            class rhs_weap_XM2010_sa {};
+            class rhs_weap_fgm148 {};
+            class rhs_weap_fim92 {};
 		};
 
         // Misc item classes must be defined in misc.hpp

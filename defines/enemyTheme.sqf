@@ -319,6 +319,8 @@
 	];
 	
 // ---------- Buildings ----------
+
+	INS_FLAG = "Flag_Syndikat_F";
 	
 	INS_SANDBAG_LONG = "Land_BagFence_01_long_green_F";
 	INS_SANDBAG_SHORT = "Land_BagFence_01_short_green_F";

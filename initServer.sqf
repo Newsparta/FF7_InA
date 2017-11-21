@@ -84,7 +84,6 @@ call compile preprocessFileLineNumbers "defines\enemyTheme.sqf";
 
 _null = execVM "missions\missionControl.sqf";
 _null = execVM "missions\eventsHandler.sqf";
-//_null = execVM "functions\InA\Init\baseAttack.sqf";
 
 // ---------- Map wipe ----------
 
@@ -96,10 +95,6 @@ vehicleSpawn =
 {
 	if (vehicleParked) exitWith {
 		["Headquarters", "Please clear the garage before requisitioning more vehicles."] remoteExec ["FF7_fnc_formatHint", ID, false];
-	};
-
-	if (count (nearestObjects [mapCenter, idap_cars, mapSize]) > 0) exitWith {
-		["Headquarters", "There is already an aid vehicle deployed."] remoteExec ["FF7_fnc_formatHint", ID, false];
 	};
 
 	_afford = false;
@@ -129,8 +124,9 @@ vehicleSpawn =
 		clearItemCargoGlobal _veh;
 			
 		playerVehicles pushBack _veh;
+		
 		if (isUtility) then {
-			utilityVehicles pushBack _veh;
+			utilityVehicles pushBack [_veh, capacity, capacity, false];
 		};
 			
 		LogV = LogV - vCost;
@@ -202,7 +198,7 @@ themeSelect =
 	supplier = themeSupplier;
 	publicVariable "supplier";
 	LogV = 4;
-	LogM = 150 + (5 * (count (call BIS_fnc_listPlayers)));
+	LogM = 200;
 	LogF = 400;
 
 	["HQ", "Headquarters", "Base Theme Selected."] remoteExec ["FF7_fnc_globalHintStruct", 0];

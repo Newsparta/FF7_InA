@@ -1,4 +1,4 @@
-// ---------- missions ----------
+// ---------- Missions ----------
 
 civilian setFriend [west, 1];
 civilian setFriend [resistance, 1];
@@ -8,16 +8,28 @@ activeLocations = 0;
 concentrations = [];
 InA_stronghold = false;
 InA_stronghold_Loc = [];
-mainLimit = 2500;
+mainLimit = 2000;
 givenLoc = "";
 
 compObj = 0;
 missionBank = 
 [
-	"AAAEmplacement"
+	"AAAEmplacement",
+	"commOutpost",
+	"Eliminate",
+	"fuelDepot",
+	"HVTOfficer",
+	"weaponsCache"
 ];
 
-// ---------- base ----------
+// ---------- Utility/vehicles ----------
+
+playerVehicles = [];
+utilityVehicles = [];
+aidDeployed = false;
+fortifiedRegions = [];
+
+// ---------- Base ----------
 
 baseType = "";
 supplier = "";
@@ -28,12 +40,14 @@ InA_sitrep = true;
 InA_fob_location = [0,0,0];
 fobPlaced = false;
 
-// ---------- civilian ----------
+safehouse = [0,0,0];
+
+// ---------- Civilian ----------
 
 civTol = 1;
 responded = false;
 
-// ---------- resources ----------
+// ---------- Resources ----------
 
 LogV = 0;
 LogF = 0;

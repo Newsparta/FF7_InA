@@ -21,16 +21,19 @@ class Marines: blufor
         // before using them here.
 		class weapons: weapons 
 		{
-			class rhs_weap_fgm148 {};
-			class rhs_weap_fim92 {};
-			class rhs_weap_m16a4_carryhandle_M203 {};
 			class rhs_weap_m16a4_pmag {};
-			class rhs_weap_m240B_CAP {};
-			class rhs_weap_m27iar {};
-			class rhs_weap_m40a5_wd {};
-			class rhs_weap_m4a1_carryhandle_pmag {};
-			class rhs_weap_sr25 {};
-			class rhsusf_weap_m9 {};
+            class rhs_weap_m4a1 {};
+            class rhs_weap_mk18 {};
+            class rhs_weap_m4a1_m320 {};
+            class rhs_weap_mk18_m320 {};
+            class hlc_lmg_mk48mod1 {};
+            class rhs_weap_m240B_CAP {};
+            class rhs_weap_m32 {};
+            class rhs_weap_M320 {};
+            class rhs_weap_m40a5_wd {};
+            class rhs_weap_sr25 {};
+            class rhs_weap_fgm148 {};
+			class rhs_weap_fim92 {};
 		};
 
         // Misc item classes must be defined in misc.hpp

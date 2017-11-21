@@ -5,18 +5,11 @@ private ["_mkr"];
 InA_sitrep = false;
 publicVariable "InA_sitrep";
 
-_list = [];
-if (_region == "1") then {
-	_list = ambientSitrep1;
-};
-if (_region == "2") then {
-	_list = ambientSitrep2;
-};
-if (_region == "3") then {
-	_list = ambientSitrep3;
-};
+/*
+All regions.
+*/
 
-for [{_i = 0}, {_i < (count _list)}, {_i = _i + 1}] do {
+for [{_i = 0}, {_i < (count ambientSitrep)}, {_i = _i + 1}] do {
 
 	call compile format 
 	[
@@ -77,9 +70,47 @@ for [{_i = 0}, {_i < (count _list)}, {_i = _i + 1}] do {
 				deleteMarker 'text%1';
 			};
 		",
-		_list select _i select 0,
-		_list select _i select 1
+		ambientSitrep select _i select 0,
+		ambientSitrep select _i select 1
 	];
+};
+
+/*
+Any fortified regions.
+*/
+if (count fortifiedRegions > 0) then {
+	for [{_i = 0}, {_i < (count fortifiedRegions)}, {_i = _i + 1}] do {
+
+		call compile format 
+		[
+			"
+				_mkr = createMarker ['fText%2', [%1 select 0, ((%1 select 1) + 100), %1 select 2]];
+				'fText%2' setMarkerColor 'ColorWEST';
+				'fText%2' setMarkerShape 'ICON';
+				'fText%2' setMarkerType 'mil_dot';
+				'fText%2' setMarkerText 'Fortified';
+				
+				[] spawn {
+					private ['_x'];
+					_x = 1;
+					while {_x = _x - (1/120); _x > 0} do {
+						
+						'fBorder%2' setMarkerAlpha _x;
+						'fText%2' setMarkerAlpha _x;
+						
+						sleep 1;
+					};
+
+					sleep 120;
+
+					deleteMarker 'fBorder%2';
+					deleteMarker 'fText%2';
+				};
+			",
+			fortifiedRegions select _i,
+			_i
+		];
+	};
 };
 
 sleep (params_sitrepDelay - 120);

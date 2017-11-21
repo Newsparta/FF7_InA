@@ -46,13 +46,6 @@ while {!_accepted} do {
 activeLocations = activeLocations + 1;
 concentrations pushBack _loc;
 
-_num = random 1;
-_mkr = createMarker [format ["%1",_num], _loc];
-					format ["%1",_num] setMarkerColor "ColorGUER";
-					format ["%1",_num] setMarkerShape "ELLIPSE";
-					format ["%1",_num] setMarkerBrush "Border";
-					format ["%1",_num] setMarkerSize [250, 250];
-
 /*
 Loop for spawning AO when players are near.
 */
@@ -413,23 +406,28 @@ while {!_cleared} do {
 
 			sleep (2 + (random 2));
 
-			if (count list _nme < 20) then {
+			if ({_x distance _loc < mainLimit} count (allPlayers - entities "HeadlessClient_F") > 0) then {
 
-				deleteVehicle _nme;
-				_cleared = true;
-				activeLocations = activeLocations - 1;
-				compObj = compObj + 1;
-				LogV = LogV + 3;
-				concentrations = concentrations - _loc;
-			
-				["INSURGENT HIDEOUT", "The insurgents concentrated here have been mostly routed."] remoteExec ["FF7_fnc_formatHint", 0];
+				if (count list _nme < 20) then {
 
-				breakOut "activity";
+					deleteVehicle _nme;
+					_cleared = true;
+					activeLocations = activeLocations - 1;
+					compObj = compObj + 1;
+					LogV = LogV + 3;
+					concentrations = concentrations - _loc;
+				
+					["INSURGENT HIDEOUT", "The insurgents concentrated here have been mostly routed."] remoteExec ["FF7_fnc_formatHint", 0];
+
+					breakOut "activity";
+				};
 			};
 
 			if ({_x distance _loc < mainLimit} count (allPlayers - entities "HeadlessClient_F") < 1) then {
 
 				[_loc, (mainLimit - 500)] spawn InA_fnc_cleanup;
+
+				deleteVehicle _nme;
 
 				_active = false;
 

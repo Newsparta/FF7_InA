@@ -173,6 +173,7 @@
 								vehiclePaint = ["Blufor",1];
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -189,6 +190,7 @@
 								vehiclePaint = ["Olive",1];
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -204,7 +206,8 @@
 								vehicleType = "rhsusf_m1025_w_m2";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -220,7 +223,8 @@
 								vehicleType = "rhsusf_m1025_w_mk19";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -236,7 +240,8 @@
 								vehicleType = "rhsusf_m1025_w";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -252,7 +257,8 @@
 								vehicleType = "rhsusf_M1232_M2_usarmy_wd";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -268,7 +274,8 @@
 								vehicleType = "rhsusf_M1232_MK19_usarmy_wd";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -284,7 +291,8 @@
 								vehicleType = "rhsusf_M1232_usarmy_wd";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -300,7 +308,8 @@
 								vehicleType = "rhsusf_M1083A1P2_B_M2_wd_fmtv_usarmy";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -316,7 +325,8 @@
 								vehicleType = "rhsusf_M1083A1P2_B_wd_fmtv_usarmy";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -333,6 +343,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -349,6 +360,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -365,6 +377,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -381,6 +394,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -397,6 +411,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -413,6 +428,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -429,6 +445,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -445,6 +462,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = true;
+								capacity = 50;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -460,7 +478,8 @@
 								vehicleType = selectRandom idap_cars;
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = true;
+								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -627,6 +646,7 @@
 								vehiclePaint = ["Blufor",1];
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -643,6 +663,7 @@
 								vehiclePaint = ["Olive",1];
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -658,7 +679,8 @@
 								vehicleType = "rhsusf_m1025_w_m2";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -674,7 +696,8 @@
 								vehicleType = "rhsusf_m1025_w_mk19";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -690,7 +713,8 @@
 								vehicleType = "rhsusf_m1025_w";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -706,7 +730,8 @@
 								vehicleType = "rhsusf_rg33_m2_usmc_wd";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -722,7 +747,8 @@
 								vehicleType = "rhsusf_rg33_usmc_wd";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -738,7 +764,8 @@
 								vehicleType = "rhsusf_M1083A1P2_B_M2_wd_fmtv_usarmy";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -754,7 +781,8 @@
 								vehicleType = "rhsusf_M1083A1P2_B_wd_fmtv_usarmy";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -771,6 +799,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -787,6 +816,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -803,6 +833,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -819,6 +850,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -835,6 +867,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -851,6 +884,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -867,6 +901,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -883,6 +918,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = true;
+								capacity = 50;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -898,7 +934,8 @@
 								vehicleType = selectRandom idap_cars;
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = true;
+								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1023,6 +1060,7 @@
 								vehiclePaint = ["Blufor",1];
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1039,6 +1077,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1070,7 +1109,8 @@
 								vehicleType = "B_MRAP_01_hmg_f";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1086,7 +1126,8 @@
 								vehicleType = "B_MRAP_01_gmg_F";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1102,7 +1143,8 @@
 								vehicleType = "B_MRAP_01_F";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1118,7 +1160,8 @@
 								vehicleType = "B_Truck_01_covered_F";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1135,6 +1178,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1151,6 +1195,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1167,6 +1212,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1183,6 +1229,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = true;
+								capacity = 50;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1198,7 +1245,8 @@
 								vehicleType = selectRandom idap_cars;
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = true;
+								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1316,6 +1364,7 @@
 								vehiclePaint = ["Indep",1];
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1332,6 +1381,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1347,7 +1397,8 @@
 								vehicleType = "I_MRAP_03_hmg_F";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1363,7 +1414,8 @@
 								vehicleType = "I_MRAP_03_gmg_F";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1379,7 +1431,8 @@
 								vehicleType = "I_MRAP_03_F";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1395,7 +1448,8 @@
 								vehicleType = "I_Truck_02_covered_F";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1412,6 +1466,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1428,6 +1483,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1444,6 +1500,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1460,6 +1517,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = true;
+								capacity = 50;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1475,7 +1533,8 @@
 								vehicleType = selectRandom idap_cars;
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = true;
+								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1620,6 +1679,7 @@
 								vehiclePaint = ["GreenHex",1];
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1636,6 +1696,7 @@
 								vehiclePaint = ["Black",1];
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1651,7 +1712,8 @@
 								vehicleType = "rhs_tigr_3camo_msv";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1667,7 +1729,8 @@
 								vehicleType = "rhs_tigr_sts_3camo_msv";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1683,7 +1746,8 @@
 								vehicleType = "rhsgref_BRDM2_msv";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1699,7 +1763,8 @@
 								vehicleType = "rhsgref_BRDM2UM_msv";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1715,7 +1780,8 @@
 								vehicleType = "rhs_kamaz5350_msv";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 3;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1732,6 +1798,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1748,6 +1815,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1764,6 +1832,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1780,6 +1849,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1796,6 +1866,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1812,6 +1883,7 @@
 								vehiclePaint = true;
 								vehicleAnim = true;
 								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1827,7 +1899,8 @@
 								vehicleType = "rhs_typhoon_vdv";
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = false;
+								isUtility = true;
+								capacity = 50;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];
@@ -1843,7 +1916,8 @@
 								vehicleType = selectRandom idap_cars;
 								vehiclePaint = true;
 								vehicleAnim = true;
-								isUtility = true;
+								isUtility = false;
+								capacity = 0;
 
 								call vehicleSpawn; 
 							} remoteExec ["BIS_fnc_call", 2];

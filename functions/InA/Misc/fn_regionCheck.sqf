@@ -10,6 +10,6 @@ _regions = [];
 		(_x select 0)
 	];
 
-} forEach (ambientSitrep1 + ambientSitrep2 + ambientSitrep3);
+} forEach ambientSitrep;
 
 _regions

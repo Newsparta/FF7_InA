@@ -13,12 +13,27 @@ equipUniform =
 			
 				case 0:
 				{
-					player addHeadGear "VSM_Mich2000_Multicam";
+					player addHeadGear "VSM_Mich2000_MulticamTropic";
 				};
 				
 				case 1:
 				{
-					player addHeadGear "VSM_OPS_multicam";
+					player addHeadGear "VSM_Mich2000_2_MulticamTropic";
+				};
+
+				case 2:
+				{
+					player addHeadGear "VSM_MulticamTropic_OPS";
+				};
+
+				case 3:
+				{
+					player addHeadGear "VSM_MulticamTropic_OPS_2";
+				};
+
+				case 4:
+				{
+					player addHeadGear "VSM_MulticamTropic_Boonie";
 				};
 			};
 		};
@@ -29,22 +44,12 @@ equipUniform =
 			
 				case 0:
 				{
-					player addHeadGear "rhsusf_mich_helmet_marpatwd_norotos_arc";
+					player addHeadGear "TRYK_H_Helmet_MARPAT_Wood";
 				};
 				
 				case 1:
 				{
-					player addHeadGear "rhsusf_mich_helmet_marpatwd_norotos";
-				};
-				
-				case 2:
-				{
-					player addHeadGear "rhsusf_mich_helmet_marpatwd";
-				};
-				
-				case 3:
-				{
-					player addHeadGear "rhsusf_mich_helmet_marpatwd_alt";
+					player addHeadGear "TRYK_H_Booniehat_MARPAT_WOOD";
 				};
 			};
 		};
@@ -55,39 +60,23 @@ equipUniform =
 
 				case 0:
 				{
-					player addHeadGear (["H_HelmetB_light_desert","H_HelmetB_light_grass","H_HelmetB_light_snakeskin"] call BIS_fnc_selectRandom);
+					player addHeadGear "H_HelmetB_Light_tna_F";
 				};
 				
 				case 1:
 				{
-					player addHeadGear (["H_HelmetSpecB_paint2","H_HelmetSpecB_paint1","H_HelmetSpecB_snakeskin"] call BIS_fnc_selectRandom);
+					player addHeadGear "H_HelmetB_tna_F";
 				};
 
 				case 2:
 				{
-					player addHeadGear "MNP_Helmet_Scorpion";
+					player addHeadGear "H_HelmetB_Enh_tna_F";
 				};
 
 				case 3:
 				{
-					player addHeadGear "MNP_Helmet_Germany";
+					player addHeadGear "H_Booniehat_tna_F";
 				};
-
-				case 4:
-				{
-					player addHeadGear "MNP_Helmet_Canada_T";
-				};
-
-				case 5:
-				{
-					player addHeadGear "MNP_Helmet_FIN_T";
-				};
-
-				case 6:
-				{
-					player addHeadGear "MNP_Helmet_Australia";
-				};
-				
 			};
 		};
 		
@@ -133,28 +122,26 @@ switch (baseType) do {
 	{
 		_items = [
 			"MICH 2000",
-			"OpsCore"
+			"MICH 2000 (2)",
+			"OpsCore",
+			"OpsCore (2)",
+			"Bonnie"
 		];
 	};
 	case "Marines":
 	{
 		_items = [
-			"MICH 2000 (1)",
-			"MICH 2000 (2)",
-			"MICH 2000 (3)",
-			"MICH 2000 (4)"
+			"MICH 2000",
+			"Bonnie"
 		];
 	};
 	case "Nato":
 	{
 		_items = [
 			"Light Combat Helmet",
+			"Combat Helmet",
 			"Enhanced Combat Helmet",
-			"United States Army (MICH camo)",
-			"Bundeswehr (MICH camo)",
-			"Canadian Army (MICH camo)",
-			"Finnish Army (MICH camo)",
-			"Australian Army (MICH camo)"
+			"Bonnie"
 		];
 	};
 	case "AAF":

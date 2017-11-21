@@ -36,6 +36,7 @@ _instability = (0.5 + (random 0.5));
 _reward = false;
 _affect = false;
 _needAid = false;
+_stabilityLock = false;
 _didSomething = false;
 _affectTimer = 1;
 _i = 0;
@@ -88,7 +89,9 @@ while {true} do {
 
 			_reward = false;
 			_affect = false;
-			_needAid = false;
+			_needAid = true;
+			aidDeployed = false;
+			_stabilityLock = false;
 			_didSomething = false;
 			_affectTimer = 0.25;
 			_ambMult = 0.25;
@@ -98,6 +101,8 @@ while {true} do {
 			_reward = false;
 			_affect = false;
 			_needAid = true;
+			aidDeployed = false;
+			_stabilityLock = false;
 			_didSomething = false;
 			_affectTimer = 0.75;
 			_ambMult = 1.25;
@@ -107,6 +112,8 @@ while {true} do {
 			_reward = true;
 			_affect = false;
 			_needAid = false;
+			aidDeployed = false;
+			_stabilityLock = false;
 			_didSomething = false;
 			_affectTimer = 1;
 			_ambMult = 1.75;
@@ -126,28 +133,28 @@ while {true} do {
 			if ({_x distance _loc < _rad} count (allPlayers - entities "HeadlessClient_F") > 0) then {
 
 				if ((_needAid) && {count (nearestObjects [_loc, idap_cars, _rad]) > 0}) then {
-					[format ["%1", _name], "Keep the aid vehicle in the region for 5 minutes to deploy the supplies."] remoteExec ["FF7_fnc_formatHint", 0, false];
+
+					if (_stabilityLock) exitWith {};
 				
 					_needAid = false;
 
-					[_loc, _rad, _name] spawn {
+					[_loc, _rad, _name] spawn InA_fnc_aidVehicle;
+				};
 
-						_loc = _this select 0;
-						_rad = _this select 1;
-						_name = _this select 2;
+				if ((aidDeployed) && {count (nearestObjects [_loc, idap_cars, _rad]) > 0}) then {
 
-						sleep 300;
+					if (_instability >= 0.5) exitWith {};
+					if (_stabilityLock) exitWith {};
+				
+					_stabilityLock = true;
 
-						if (count (nearestObjects [_loc, idap_cars, _rad]) > 0) then {
-							
-							compObj = compObj + 1;
+					fortifiedRegions pushBack _loc;
 
-							LogV = LogV + 1;
+					[_loc] spawn {
 
-							civTol = civTol + 0.1;
+						sleep 604800;
 
-							[format ["%1", _name], "Aid has been successfully deployed."] remoteExec ["FF7_fnc_formatHint", 0, false];
-						};
+						fortifiedRegions = fortifiedRegions - [(_this select 0)];
 					};
 				};
 	
@@ -191,7 +198,7 @@ while {true} do {
 						1
 					] spawn InA_fnc_insMediumTruckTransport;
 				};
-				if (count (call BIS_fnc_listPlayers) > 5) then {
+				if (count (call BIS_fnc_listPlayers) > 7) then {
 					if (random 100 < (0.01 + (0.025 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
 						[
 							_loc, 
@@ -331,18 +338,47 @@ while {true} do {
 		};
 	};
 
-	_instability = call compile format
-	[
-		"
-			if (%2 == instability%1) then {
-				%2 + (0.00000165 * (1/volatileRate));
-			} else {
-				instability%1;
-			};
-		",
-		_name,
-		_instability
-	];
+	if !(_loc in fortifiedRegions) then {
+		_stabilityLock = false;
+	};
+
+	if !(_stabilityLock) then {
+		_instability = call compile format
+		[
+			"
+				if (%2 == instability%1) then {
+					%2 + (0.00000165 * (1/volatileRate));
+				} else {
+					instability%1;
+				};
+			",
+			_name,
+			_instability
+		];
+	} else {
+		call compile format
+		[
+			"
+				if (%2 > 0.5) then {
+					fortifiedRegions = fortifiedRegions - [_loc];
+				};
+			",
+			_name,
+			_instability
+		];
+		_instability = call compile format
+		[
+			"
+				if (%2 == instability%1) then {
+					%2;
+				} else {
+					instability%1;
+				};
+			",
+			_name,
+			_instability
+		];
+	};
 	
 	if (_instability > 1) then {
 		_instability = 1;

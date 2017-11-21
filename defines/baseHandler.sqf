@@ -11,9 +11,8 @@ switch (_id) do
 		BLU_INF_SINGLE = "B_Soldier_F";
 		BLU_RIFLE =
 		[
-			["hlc_rifle_ACR_Carb_tan","30Rnd_556x45_Stanag"],
-			["hlc_rifle_ACR_mid_tan","30Rnd_556x45_Stanag"],
-			["hlc_rifle_ACR_full_tan","30Rnd_556x45_Stanag"]
+			["hlc_rifle_ACR_Carb_black","30Rnd_556x45_Stanag"],
+			["hlc_rifle_ACR_SBR_black","30Rnd_556x45_Stanag"]
 		];
 		BLU_GL =
 		[
@@ -37,25 +36,28 @@ switch (_id) do
 		];
 		BLU_UNIFORMS =
 		[
-			"VSM_Multicam_Crye_Camo",
-			"VSM_Multicam_Crye_od_shirt_Camo",
-			"VSM_Multicam_Crye_od_pants_Camo"
+			"VSM_MulticamTropic_Camo",
+			"VSM_MulticamTropic_od_shirt_Camo",
+			"VSM_MulticamTropic_od_pants_Camo"
 		];
 		BLU_VESTS =
 		[
-			"VSM_FAPC_Breacher_Multicam",
-			"VSM_FAPC_MG_Multicam",
-			"VSM_FAPC_Operator_Multicam",
-			"VSM_LBT6094_breacher_multicam",
-			"VSM_LBT6094_operator_multicam",
-			"VSM_RAV_Breacher_Multicam",
-			"VSM_RAV_MG_Multicam",
-			"VSM_RAV_operator_Multicam"
+			"VSM_FAPC_Breacher_MulticamTropic",
+			"VSM_FAPC_MG_MulticamTropic",
+			"VSM_FAPC_Operator_MulticamTropic",
+			"VSM_LBT6094_breacher_multicamTropic",
+			"VSM_LBT6094_operator_multicamTropic",
+			"VSM_RAV_Breacher_MulticamTropic",
+			"VSM_RAV_MG_MulticamTropic",
+			"VSM_RAV_operator_MulticamTropic"
 		];
 		BLU_HELMETS =
 		[
-			"VSM_Mich2000_Multicam",
-			"VSM_OPS_multicam"
+			"VSM_Mich2000_MulticamTropic",
+			"VSM_Mich2000_2_MulticamTropic",
+			"VSM_MulticamTropic_OPS",
+			"VSM_MulticamTropic_OPS_2",
+			"VSM_MulticamTropic_Boonie"
 		];
 
 		call themeSelect;
@@ -73,16 +75,19 @@ switch (_id) do
 		BLU_RIFLE =
 		[
 			["rhs_weap_m4a1_carryhandle_pmag","30Rnd_556x45_Stanag"],
+			["rhs_weap_mk18","30Rnd_556x45_Stanag"],
 			["rhs_weap_m16a4_pmag","30Rnd_556x45_Stanag"]
 		];
 		BLU_GL =
 		[
 			["rhs_weap_m4a1_m320","30Rnd_556x45_Stanag","1Rnd_HE_Grenade_shell"],
-			["rhs_weap_m16a4_carryhandle_M203","30Rnd_556x45_Stanag","1Rnd_HE_Grenade_shell"]
+			["rhs_weap_mk18_m320","30Rnd_556x45_Stanag","1Rnd_HE_Grenade_shell"]
 		];
 		BLU_MG =
 		[
-			["rhs_weap_m249_pip_S","rhs_200rnd_556x45_M_SAW"]
+			["rhs_weap_m249_pip_S","rhs_200rnd_556x45_M_SAW"],
+			["LMG_Mk200_F","200Rnd_65x39_cased_Box"],
+			["hlc_lmg_mk48mod1","rhsusf_100Rnd_762x51_m80a1epr"]
 		];
 		BLU_AT =
 		[
@@ -98,22 +103,18 @@ switch (_id) do
 		];
 		BLU_UNIFORMS =
 		[
-			"rhs_uniform_FROG01_wd"
+			"TRYK_U_B_MARPAT_Wood_Tshirt",
+			"TRYK_U_B_MARPAT_Wood"
 		];
 		BLU_VESTS =
 		[
-			"rhsusf_spc_corpsman",
-			"rhsusf_spc_iar",
-			"rhsusf_spc_light",
-			"rhsusf_spc_mg",
-			"rhsusf_spc_rifleman"
+			"MNP_Vest_USMC",
+			"MNP_Vest_USMC_2"
 		];
 		BLU_HELMETS =
 		[
-			"rhsusf_mich_helmet_marpatwd_norotos_arc",
-			"rhsusf_mich_helmet_marpatwd_norotos",
-			"rhsusf_mich_helmet_marpatwd",
-			"rhsusf_mich_helmet_marpatwd_alt"
+			"TRYK_H_Helmet_MARPAT_Wood",
+			"TRYK_H_Booniehat_MARPAT_WOOD"
 		];
 
 		call themeSelect;
@@ -130,17 +131,20 @@ switch (_id) do
 		BLU_INF_SINGLE = "B_Soldier_F";
 		BLU_RIFLE =
 		[
-			["hlc_rifle_ACR_Carb_tan","30Rnd_556x45_Stanag"],
-			["hlc_rifle_ACR_mid_tan","30Rnd_556x45_Stanag"],
-			["hlc_rifle_ACR_full_tan","30Rnd_556x45_Stanag"]
+			["rhs_weap_m4a1_carryhandle_pmag","30Rnd_556x45_Stanag"],
+			["rhs_weap_mk18","30Rnd_556x45_Stanag"],
+			["rhs_weap_m16a4_pmag","30Rnd_556x45_Stanag"]
 		];
 		BLU_GL =
 		[
-			["rhs_weap_m4a1_m320","30Rnd_556x45_Stanag","1Rnd_HE_Grenade_shell"]
+			["rhs_weap_m4a1_m320","30Rnd_556x45_Stanag","1Rnd_HE_Grenade_shell"],
+			["rhs_weap_mk18_m320","30Rnd_556x45_Stanag","1Rnd_HE_Grenade_shell"]
 		];
 		BLU_MG =
 		[
-			["rhs_weap_m249_pip_S","rhs_200rnd_556x45_M_SAW"]
+			["rhs_weap_m249_pip_S","rhs_200rnd_556x45_M_SAW"],
+			["LMG_Mk200_F","200Rnd_65x39_cased_Box"],
+			["hlc_lmg_mk48mod1","rhsusf_100Rnd_762x51_m80a1epr"]
 		];
 		BLU_AT =
 		[
@@ -156,17 +160,22 @@ switch (_id) do
 		];
 		BLU_UNIFORMS =
 		[
-			"MNP_CombatUniform_Scorpion_A",
-			"MNP_CombatUniform_Scorpion_B"
+			"U_B_T_Soldier_F",
+			"U_B_T_Soldier_SL_F",
+			"U_B_T_Soldier_AR_F"
 		];
 		BLU_VESTS =
 		[
-			"MNP_Vest_Scorpion_1",
-			"MNP_Vest_Scorpion_2"
+			"V_PlateCarrier1_tna_F",
+			"V_PlateCarrier2_tna_F",
+			"V_PlateCarrierGL_tna_F"
 		];
 		BLU_HELMETS =
 		[
-			"MNP_Helmet_Scorpion"
+			"H_HelmetB_Light_tna_F",
+			"H_HelmetB_tna_F",
+			"H_HelmetB_Enh_tna_F",
+			"H_Booniehat_tna_F"
 		];
 
 		call themeSelect;
@@ -183,24 +192,26 @@ switch (_id) do
 		BLU_INF_SINGLE = "B_Soldier_F";
 		BLU_RIFLE =
 		[
-			["rhs_weap_hk416d10","30Rnd_556x45_Stanag"],
-			["rhs_weap_hk416d145","30Rnd_556x45_Stanag"]
+			["hlc_rifle_G36CV","hlc_30rnd_556x45_EPR_G36"],
+			["hlc_rifle_G36KV","hlc_30rnd_556x45_EPR_G36"],
+			["hlc_rifle_G36V","hlc_30rnd_556x45_EPR_G36"]
 		];
 		BLU_GL =
 		[
-			["rhs_weap_hk416d145_m320","30Rnd_556x45_Stanag","1Rnd_HE_Grenade_shell"]
+			["hlc_rifle_G36VAG36","hlc_30rnd_556x45_EPR_G36","1Rnd_HE_Grenade_shell"]
 		];
 		BLU_MG =
 		[
-			["LMG_Mk200_F","200Rnd_65x39_cased_Box_Tracer"]
+			["LMG_Mk200_F","200Rnd_65x39_cased_Box_Tracer"],
+			["hlc_lmg_mk48mod1","rhsusf_100Rnd_762x51_m80a1epr"]
 		];
 		BLU_AT =
 		[
-			["launch_B_Titan_short_tna_F","Titan_AT"]
+			["tf47_m3maaws","tf47_m3maaws_HEAT"]
 		];
 		BLU_AA =
 		[
-			["launch_B_Titan_tna_F","Titan_AA"]
+			["rhs_weap_fim92","rhs_fim92_mag"]
 		];
 		BLU_BACKPACKS =
 		[

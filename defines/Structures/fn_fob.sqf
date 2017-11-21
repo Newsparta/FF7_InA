@@ -24,6 +24,10 @@ params ["_command",["_loc",[0,0,0],[[]]]];
 
 // ---------- MAIN ----------
 
+<<<<<<< HEAD
+=======
+if (fobPlaced) exitWith {["HQ", "Headquarters", "FOB cannot be designated, you must abandon the previous FOB."] remoteExec ["FF7_fnc_globalHintStruct", 0];};
+>>>>>>> 4b8cf2404fdd63f995dfcbb7da756095d27ac7c1
 if (_loc distance (getMarkerPos "respawn_west") < 1000) exitWith {["HQ", "Headquarters", "FOB cannot be designated, you are too close to the main HQ."] remoteExec ["FF7_fnc_globalHintStruct", 0];};
 
 if (_command == "build") then {

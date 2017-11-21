@@ -26,8 +26,11 @@ missionBank =
 
 playerVehicles = [];
 utilityVehicles = [];
+<<<<<<< HEAD
 aidDeployed = false;
 fortifiedRegions = [];
+=======
+>>>>>>> 4b8cf2404fdd63f995dfcbb7da756095d27ac7c1
 
 // ---------- Base ----------
 

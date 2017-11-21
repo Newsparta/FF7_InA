@@ -45,7 +45,11 @@
         - Army: ACR
         - Marines: M16
         - NATO: M16
+<<<<<<< HEAD
         - AAF: G36
+=======
+        - AAF: M16
+>>>>>>> 4b8cf2404fdd63f995dfcbb7da756095d27ac7c1
         - Russia: AK
 - cost edits
     - consumables are less expensive

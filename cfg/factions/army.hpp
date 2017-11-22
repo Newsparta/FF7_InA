@@ -14,7 +14,6 @@ class Army: blufor
 			class mag_rhs_fim92_mag {};
             class mag_rhsusf_100Rnd_762x51_m80a1epr {};
             class mag_rhsusf_50Rnd_762x51_m80a1epr {};
-			class mag_rhsusf_20Rnd_762x51_m118_special_Mag {};
 			class mag_rhsusf_5Rnd_300winmag_xm2010 {};
 			class mag_rhsusf_mag_15Rnd_9x19_JHP {};
 		};

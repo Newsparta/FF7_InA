@@ -35,7 +35,7 @@ switch (baseType) do {
 		removeUniform player;
 		removeHeadgear player;
 
-		player forceAddUniform "VSM_Multicam_Crye_Camo";
+		player forceAddUniform "VSM_MulticamTropic_Camo";
 		player addMagazine "rhsusf_mag_15Rnd_9x19_JHP";
 		player addWeapon "rhsusf_weap_m9",
 	};
@@ -49,7 +49,7 @@ switch (baseType) do {
 		removeUniform player;
 		removeHeadgear player;
 
-		player forceAddUniform "rhs_uniform_FROG01_wd";
+		player forceAddUniform "TRYK_U_B_MARPAT_Wood_Tshirt";
 		player addMagazine "rhsusf_mag_15Rnd_9x19_JHP";
 		player addWeapon "rhsusf_weap_m9",
 	};
@@ -63,7 +63,7 @@ switch (baseType) do {
 		removeUniform player;
 		removeHeadgear player;
 
-		player forceAddUniform "MNP_CombatUniform_Scorpion_A";
+		player forceAddUniform "U_B_T_Soldier_F";
 		player addMagazine "16Rnd_9x21_Mag";
 		player addWeapon "hgun_P07_F",
 	};

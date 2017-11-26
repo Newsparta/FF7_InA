@@ -54,7 +54,7 @@ _veh engineOn false;
 
 _i = 0;
 
-for "_i" from 1 to (round random 5) do {
+for "_i" from 1 to 5 do {
 
 	_pos = [_loc, 0, 10, 1, 0, 1, 0] call BIS_fnc_findSafePos;
 	_agent = createAgent [(selectRandom idap_men), _pos, [], 0, "NONE"];
@@ -79,6 +79,18 @@ while {_i <= 150} do {
 	if (_i >= 150) then {
 
 		["IDAP", "Aid has been successfully deployed."] remoteExec ["FF7_fnc_formatHint", 0, false];
+
+		{
+			_region = ["ambient",(_x select 0)] joinString "";
+			_loc = (getMarkerPos _region);
+			if ((_loc distance _veh) < 1000) then {
+				fortifiedRegions pushBack _loc;
+				[_loc] spawn {
+					sleep 604800;
+					fortifiedRegions = fortifiedRegions - [_loc];
+				};
+			};
+		} forEach ambientSitrep;
 
 		LogV = LogV + 1;
 		civTol = civTol + 0.1;

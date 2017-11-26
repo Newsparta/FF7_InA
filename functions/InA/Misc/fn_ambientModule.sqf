@@ -55,6 +55,49 @@ call compile format
 	_instability
 ];
 
+[_instability,_name] spawn {
+	_instability = _this select 0;
+	_name = _this select 1;
+	sleep (1600 + (random 400));
+	call compile format
+	[
+		"
+			if (%1 > 0.5) then {
+				fortifiedRegions = fortifiedRegions - [_loc];
+			};
+		",
+		_instability
+	];
+
+	_instability = call compile format
+	[
+		"
+			if (%2 == instability%1) then {
+				%2 + (0.001488 * (1/volatileRate));
+			} else {
+				instability%1;
+			};
+		",
+		_name,
+		_instability
+	];
+	
+	if (_instability > 1) then {
+		_instability = 1;
+	};
+	
+	if (_instability < 0) then {
+		_instability = 0;
+	};
+
+	call compile format
+	[
+		"instability%1 = %2",
+		_name,
+		_instability
+	];
+};
+
 while {true} do {
 
 	sleep (2 + (random 2));
@@ -90,7 +133,6 @@ while {true} do {
 			_reward = false;
 			_affect = false;
 			_needAid = true;
-			aidDeployed = false;
 			_stabilityLock = false;
 			_didSomething = false;
 			_affectTimer = 0.25;
@@ -101,7 +143,6 @@ while {true} do {
 			_reward = false;
 			_affect = false;
 			_needAid = true;
-			aidDeployed = false;
 			_stabilityLock = false;
 			_didSomething = false;
 			_affectTimer = 0.75;
@@ -112,7 +153,6 @@ while {true} do {
 			_reward = true;
 			_affect = false;
 			_needAid = false;
-			aidDeployed = false;
 			_stabilityLock = false;
 			_didSomething = false;
 			_affectTimer = 1;
@@ -134,28 +174,9 @@ while {true} do {
 
 				if ((_needAid) && {count (nearestObjects [_loc, idap_cars, _rad]) > 0}) then {
 
-					if (_stabilityLock) exitWith {};
-				
-					_needAid = false;
-
 					[_loc, _rad, _name] spawn InA_fnc_aidVehicle;
-				};
 
-				if ((aidDeployed) && {count (nearestObjects [_loc, idap_cars, _rad]) > 0}) then {
-
-					if (_instability >= 0.5) exitWith {};
-					if (_stabilityLock) exitWith {};
-				
-					_stabilityLock = true;
-
-					fortifiedRegions pushBack _loc;
-
-					[_loc] spawn {
-
-						sleep 604800;
-
-						fortifiedRegions = fortifiedRegions - [(_this select 0)];
-					};
+					_needAid = false;
 				};
 	
 				if (random 100 < (0.7 + (0.7 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
@@ -337,61 +358,4 @@ while {true} do {
 			};
 		};
 	};
-
-	if !(_loc in fortifiedRegions) then {
-		_stabilityLock = false;
-	};
-
-	if !(_stabilityLock) then {
-		_instability = call compile format
-		[
-			"
-				if (%2 == instability%1) then {
-					%2 + (0.00000165 * (1/volatileRate));
-				} else {
-					instability%1;
-				};
-			",
-			_name,
-			_instability
-		];
-	} else {
-		call compile format
-		[
-			"
-				if (%2 > 0.5) then {
-					fortifiedRegions = fortifiedRegions - [_loc];
-				};
-			",
-			_name,
-			_instability
-		];
-		_instability = call compile format
-		[
-			"
-				if (%2 == instability%1) then {
-					%2;
-				} else {
-					instability%1;
-				};
-			",
-			_name,
-			_instability
-		];
-	};
-	
-	if (_instability > 1) then {
-		_instability = 1;
-	};
-	
-	if (_instability < 0) then {
-		_instability = 0;
-	};
-
-	call compile format
-	[
-		"instability%1 = %2",
-		_name,
-		_instability
-	];
 };

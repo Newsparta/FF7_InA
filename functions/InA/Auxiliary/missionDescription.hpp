@@ -8,7 +8,7 @@
         
         sleep 60;
         
-        ["(4.2)<br/>2017-11-22", "Latest patch date"] call FF7_fnc_formatHint;
+        ["(4.2)<br/>2017-11-26", "Latest patch date"] call FF7_fnc_formatHint;
     };
 
 // ---------- Mission Mechanics (4.2) ----------

@@ -2,10 +2,10 @@
 // ---------- Begin server init ---------- //
 /////////////////////////////////////////////
 
-FF7_Global_Debug = true;
 initialized = false;
 
 // ---------- initialize variables ----------
+
 _null = execVM "functions\InA\Init\initConfigs.sqf";
 
 _handle = execVM "functions\InA\Init\initializeVariables.sqf";
@@ -19,6 +19,7 @@ _null = [900, 0.2] execVM "functions\FF7\Generic\fn_weatherMan.sqf";
 // ---------- Ambient modules ----------
 
 _null = execVM "defines\ambientModules.sqf";
+_null = execVM "missions\ambientControl.sqf";
 
 // ---------- TFAR setup ----------
 
@@ -55,19 +56,24 @@ _null = execVM "functions\InA\Init\supplierCheck.sqf";
 
 	while {true} do {
 
-		waitUntil {sleep 1; (count (allPlayers - entities "HeadlessClient_F") > 0)};
+		waitUntil {sleep 10; (count (allPlayers - entities "HeadlessClient_F") > 0)};
 
-		sleep (30 + (random 30));
+		while {true} do {
+		scopeName "save";
 
-		if (count (allPlayers - entities "HeadlessClient_F") < 1) then {
+			sleep (30 + (random 30));
 
-			[] call InA_fnc_save;
+			if (count (allPlayers - entities "HeadlessClient_F") < 1) then {
+
+				[] call InA_fnc_save;
+				breakOut "save";
+			};
 		};
 	};
 };
 
 // ---------- Parameters ----------
-	
+
 for [ {_i = 0}, {_i < count(paramsArray)}, {_i = _i + 1} ] do {
 	call compile format
 	[

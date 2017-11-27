@@ -187,12 +187,6 @@ class InA_Magazines
 		name = "[7.62mm] 100Rnd Belt";
 		type = "magazine";
 	};
-	class mag_rhs_100Rnd_762x54mmR_green
-	{
-		cost = 5;
-		name = "[7.62mm] 100Rnd Tracer";
-		type = "magazine";
-	};
 
 	// Misc special ammo
 

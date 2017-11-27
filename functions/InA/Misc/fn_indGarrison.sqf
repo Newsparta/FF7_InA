@@ -184,7 +184,7 @@ for "_i" from 1 to _parkedCars do {
 				_car = createVehicle [(selectRandom INS_CARU_OPF), _road, [], 0, "CAN_COLLIDE"];
 				[
 					_car,
-					missionNamespace getVariable ["INS_CARU_BLU_TEX,", nil]
+					missionNamespace getVariable ["INS_CARU_BLU_TEX", nil],
 					missionNamespace getVariable ["INS_CARU_BLU_ANI", nil]
 				] call BIS_fnc_initVehicle;
 			};

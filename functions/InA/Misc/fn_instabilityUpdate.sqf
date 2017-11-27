@@ -27,7 +27,7 @@ Author:
 params [[   "_loc"         	,[]                 ,[]               	,[]                  	], 
         [   "_name"  		,""             	,[""]               ,[]                   	],
         [   "_instability"  ,0              	,[0]             	,[]                   	],
-		[	"_period"		,10				,[0]				,[]						]];
+		[	"_period"		,1800				,[0]				,[]						]];
 
 // loop start
 while {true;} do {

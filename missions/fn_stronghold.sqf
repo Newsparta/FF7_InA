@@ -80,7 +80,13 @@ if !(InA_stronghold) then {
 	_loc = InA_stronghold_Loc;
 
 };
-if (count _candidates < 1 && {!InA_stronghold}) exitWith {};
+if (count _candidates < 1 && {!InA_stronghold}) exitWith {
+	[] spawn {
+		InA_stronghold = true;
+		sleep 3600;
+		InA_stronghold = false;
+	};
+};
 
 concentrations pushBack _loc;
 

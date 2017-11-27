@@ -12,6 +12,7 @@ _choice = [];
 _mark = [];
 
 if !(InA_stronghold) then {
+scopeName "Finder";
 
 	_regions = [] call InA_fnc_regionCheck;
 
@@ -28,7 +29,9 @@ if !(InA_stronghold) then {
 
 	};
 
-	if (count _candidates < 1) exitWith {}; 
+	if (count _candidates < 1) then {
+		breakOut "Finder";
+	}; 
 
 	_accepted = false;
 	_towns = nearestLocations [
@@ -82,6 +85,7 @@ if !(InA_stronghold) then {
 };
 if (count _candidates < 1 && {!InA_stronghold}) exitWith {
 	[] spawn {
+
 		InA_stronghold = true;
 		sleep 3600;
 		InA_stronghold = false;

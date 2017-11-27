@@ -55,48 +55,7 @@ call compile format
 	_instability
 ];
 
-[_instability,_name] spawn {
-	_instability = _this select 0;
-	_name = _this select 1;
-	sleep (1600 + (random 400));
-	call compile format
-	[
-		"
-			if (%1 > 0.5) then {
-				fortifiedRegions = fortifiedRegions - [_loc];
-			};
-		",
-		_instability
-	];
-
-	_instability = call compile format
-	[
-		"
-			if (%2 == instability%1) then {
-				%2 + (0.001488 * (1/volatileRate));
-			} else {
-				instability%1;
-			};
-		",
-		_name,
-		_instability
-	];
-	
-	if (_instability > 1) then {
-		_instability = 1;
-	};
-	
-	if (_instability < 0) then {
-		_instability = 0;
-	};
-
-	call compile format
-	[
-		"instability%1 = %2",
-		_name,
-		_instability
-	];
-};
+[_loc,_name,_instability] spawn InA_fnc_instabilityUpdate;
 
 while {true} do {
 

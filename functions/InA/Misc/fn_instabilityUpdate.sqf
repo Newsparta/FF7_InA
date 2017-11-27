@@ -23,6 +23,7 @@ Author:
     Newsparta
 ---------- */
 
+// Parameters
 //      |  Private Name     | Default Value     | Expected Types    | Expected Array Count |
 params [[   "_loc"         	,[]                 ,[]               	,[]                  	], 
         [   "_name"  		,""             	,[""]               ,[]                   	],

@@ -128,8 +128,18 @@ for "_i" from 1 to _parkedTrucks do {
 			
 			if (supplier == "BLU") then {
 				_car = createVehicle [(selectRandom INS_TRUCK_BLU), _road, [], 0, "CAN_COLLIDE"];
+				[
+					_car,
+					missionNamespace getVariable ["INS_TRUCK_BLU_TEX", nil],
+					missionNamespace getVariable ["INS_TRUCK_BLU_ANI", nil]
+				] call BIS_fnc_initVehicle;
 			} else {
 				_car = createVehicle [(selectRandom INS_TRUCK_OPF), _road, [], 0, "CAN_COLLIDE"];
+				[
+					_car,
+					missionNamespace getVariable ["INS_TRUCK_OPF_TEX", nil],
+					missionNamespace getVariable ["INS_TRUCK_OPF_ANI", nil]
+				] call BIS_fnc_initVehicle;
 			};
 			_car setDir _dir;
 			_car setPos [(getPosASL _car select 0) + 4.5, getPosASL _car select 1, 0];
@@ -167,15 +177,15 @@ for "_i" from 1 to _parkedCars do {
 				_car = createVehicle [(selectRandom INS_CARU_BLU), _road, [], 0, "CAN_COLLIDE"];
 				[
 					_car,
-					INS_CARU_OPF_TEX,
-					INS_CARU_OPF_ANI
+					missionNamespace getVariable ["INS_CARU_OPF_TEX", nil],
+					missionNamespace getVariable ["INS_CARU_OPF_ANI", nil]
 				] call BIS_fnc_initVehicle;
 			} else {
 				_car = createVehicle [(selectRandom INS_CARU_OPF), _road, [], 0, "CAN_COLLIDE"];
 				[
 					_car,
-					INS_CARU_BLU_TEX,
-					INS_CARU_BLU_ANI
+					missionNamespace getVariable ["INS_CARU_BLU_TEX,", nil]
+					missionNamespace getVariable ["INS_CARU_BLU_ANI", nil]
 				] call BIS_fnc_initVehicle;
 			};
 			_car setDir _dir;

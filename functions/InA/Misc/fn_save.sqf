@@ -138,7 +138,7 @@ _export pushBack _allVehicles;
 _buildVehicles = [];
 
 {
-	_buildVehicles pushBack (typeOf _x);
+	_buildVehicles pushBack [(typeOf (_x select 0)), _x select 1, _x select 2];
 } forEach utilityVehicles;
 
 _export pushBack _buildVehicles;

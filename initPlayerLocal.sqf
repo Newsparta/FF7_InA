@@ -1,47 +1,30 @@
-// Run only on player...
-if (!hasInterface) exitWith
-{
-	call FF7_fnc_headlessInit;
-};
+// Run only on player
+if (!hasInterface) exitWith {};
 
-//Wait until player is initialized...
+// Wait until player is initialized
 waitUntil {!isNull player};
 waitUntil{!(isNil "BIS_fnc_init")};
 
-//initialize configs
+// Initialize configs
 _null = execVM "functions\InA\Init\initConfigs.sqf";
 
-// ---------- Setup TFAR frequencies----------
-
-if ("task_force_radio" in activatedAddons) then
-{
+// Setup TFAR frequencies
+if ("task_force_radio" in activatedAddons) then {
 	call FF7_fnc_TFARsetup;
-}
-else
-{
-	["initPlayerLocal", "TFAR not active ...."] call FF7_fnc_debugLog;
 };
 
-// ---------- ACE actions ----------
-
-["initPlayerLocal", "Adding ACE actions ...."] call FF7_fnc_debugLog;
-	
+// ACE actions
 [player] call InA_fnc_aceActions;
 
-// ---------- Conversation structure ----------
-
+// Conversation structure
 call compile preprocessFileLineNumbers "functions\InA\Interact\conversationStructure.sqf";
 
-// ---------- Initialize player ----------
-
+// Mission description
 #include "functions\InA\Auxiliary\missionDescription.hpp";
 
-// ---------- Initial gear ----------
-
+// Initial gear
 [clientOwner, "baseType"] remoteExec ["publicVariableClient", 2, false];
-
 sleep 0.2;
-
 switch (baseType) do {
 	case "Army":
 	{
@@ -125,7 +108,7 @@ switch (baseType) do {
 	};
 };
 
-// ---------- Add actions to base ----------
+// Add actions to base
 
 InA_Warning_ID = 0;
 
@@ -210,7 +193,7 @@ basicGearBox addAction [["hq", "FF9900", "Equip Uniform"] call FF7_fnc_formatAdd
 	"((_target distance _this) < 4)"
 ];
 
-// ---------- Building Objects ----------
+// Building Objects
 
 buildObj = 
 {

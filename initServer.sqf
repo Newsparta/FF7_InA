@@ -14,7 +14,7 @@ waitUntil {scriptDone _handle;};
 
 // ---------- Fog/mist controller ----------
 
-_null = [900, 0.2] execVM "functions\FF7\Generic\fn_weatherMan.sqf";
+_null = [400, 0.2] execVM "functions\FF7\Generic\fn_weatherMan.sqf";
 
 // ---------- Ambient modules ----------
 

@@ -18,7 +18,6 @@ class FF7
 		class addToCurator {file = "functions\FF7\Generic\fn_addtocurator.sqf";};
 		class getMissionRoot {file = "functions\FF7\Generic\fn_getmissionroot.sqf";};
 		class getRoundDec {file = "functions\FF7\Generic\fn_getrounddec.sqf";};
-		class headlessInit {file = "functions\FF7\Generic\fn_headlessinit.sqf";};
 		class briefingHint {file = "functions\FF7\Generic\fn_briefingHint.sqf";};
 		class debugLog {file = "functions\FF7\Generic\fn_debuglog.sqf";};
 		class formatAddAction {file = "functions\FF7\Generic\fn_formataddaction.sqf";};

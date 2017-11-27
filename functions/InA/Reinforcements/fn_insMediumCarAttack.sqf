@@ -59,14 +59,14 @@ sleep _delay;
 			_car = (selectRandom INS_MRAP_BLU) createVehicle _pos;
 			[
 				_car,
-				missionNamespace getVariable ["INS_MRAP_BLU_TEX,", nil]
+				missionNamespace getVariable ["INS_MRAP_BLU_TEX", nil],
 				missionNamespace getVariable ["INS_MRAP_BLU_ANI", nil]
 			] call BIS_fnc_initVehicle;
 		} else {
 			_car = (selectRandom INS_MRAP_OPF) createVehicle _pos;
 			[
 				_car,
-				missionNamespace getVariable ["INS_MRAP_OPF_TEX,", nil]
+				missionNamespace getVariable ["INS_MRAP_OPF_TEX", nil],
 				missionNamespace getVariable ["INS_MRAP_OPF_ANI", nil]
 			] call BIS_fnc_initVehicle;
 		};

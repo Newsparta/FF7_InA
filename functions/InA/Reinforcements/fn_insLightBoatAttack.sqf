@@ -59,14 +59,14 @@ sleep _delay;
 			_boat = (selectRandom INS_BOAT_BLU) createVehicle _pos;
 			[
 				_boat,
-				missionNamespace getVariable ["INS_BOAT_BLU_TEX,", nil]
+				missionNamespace getVariable ["INS_BOAT_BLU_TEX", nil],
 				missionNamespace getVariable ["INS_BOAT_BLU_ANI", nil]
 			] call BIS_fnc_initVehicle;
 		} else {
 			_boat = (selectRandom INS_BOAT_OPF) createVehicle _pos;
 			[
 				_boat,
-				missionNamespace getVariable ["INS_BOAT_OPF_TEX,", nil]
+				missionNamespace getVariable ["INS_BOAT_OPF_TEX", nil],
 				missionNamespace getVariable ["INS_BOAT_OPF_ANI", nil]
 			] call BIS_fnc_initVehicle;
 		};

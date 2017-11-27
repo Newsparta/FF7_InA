@@ -59,14 +59,14 @@ sleep _delay;
 			_heli = createVehicle [(selectRandom INS_LIGHT_HELI_AH_BLU), _pos, [], 0, "FLY"];
 			[
 				_heli,
-				missionNamespace getVariable ["INS_LIGHT_HELI_AH_BLU_TEX,", nil]
+				missionNamespace getVariable ["INS_LIGHT_HELI_AH_BLU_TEX", nil],
 				missionNamespace getVariable ["INS_LIGHT_HELI_AH_BLU_ANI", nil]
 			] call BIS_fnc_initVehicle;
 		} else {
 			_heli = createVehicle [(selectRandom INS_LIGHT_HELI_AH_OPF), _pos, [], 0, "FLY"];
 			[
 				_heli,
-				missionNamespace getVariable ["INS_LIGHT_HELI_AH_OPF_TEX,", nil]
+				missionNamespace getVariable ["INS_LIGHT_HELI_AH_OPF_TEX", nil],
 				missionNamespace getVariable ["INS_LIGHT_HELI_AH_OPF_ANI", nil]
 			] call BIS_fnc_initVehicle;
 		};

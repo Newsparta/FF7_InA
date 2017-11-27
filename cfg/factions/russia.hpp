@@ -9,7 +9,6 @@ class Russia: opfor
 		class magazines: magazines 
 		{
 			class mag_rhs_100Rnd_762x54mmR {};
-			class mag_rhs_100Rnd_762x54mmR_green {};
 			class mag_rhs_10Rnd_762x54mmR_7N1 {};
 			class mag_rhs_30Rnd_545x39_7N10_AK {};
 			class mag_rhs_30Rnd_545x39_AK_green {};

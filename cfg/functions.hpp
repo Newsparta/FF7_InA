@@ -119,6 +119,7 @@ class InA
 		class diversity {file = "defines\fn_diversity.sqf";};
 		
 		// Misc.
+		class instabilityUpdate {file = "functions\InA\Misc\fn_instabilityUpdate.sqf";};
 		class aidProtocol {file = "functions\InA\Misc\fn_aidProtocol.sqf";};
 		class aidVehicle {file = "functions\InA\Misc\fn_aidVehicle.sqf";};
 		class placeUXO {file = "functions\InA\Misc\fn_placeUXO.sqf";};

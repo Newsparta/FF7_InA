@@ -260,6 +260,17 @@ while {true} do {
 						_name,
 						_instability
 					];
+
+					// check if region was made volatile and remove from fortified list
+					if (_loc in fortifiedRegions) then {
+						if (_instability > 0.5) then {
+
+							private _index = fortifiedRegions find _loc;
+							fortifiedRegions set [_index, -1];
+
+							fortifiedRegions = fortifiedRegions - [-1];
+						};
+					};
 				};
 				
 				[_loc,_rad,_name] spawn {

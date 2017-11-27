@@ -27,7 +27,7 @@ Author:
 params [[   "_loc"         	,[]                 ,[]               	,[]                  	], 
         [   "_name"  		,""             	,[""]               ,[]                   	],
         [   "_instability"  ,0              	,[0]             	,[]                   	],
-		[	"_period"		,1800				,[0]				,[]						]];
+		[	"_period"		,10				,[0]				,[]						]];
 
 // loop start
 while {true;} do {
@@ -36,18 +36,15 @@ while {true;} do {
 	sleep ((_period * 0.85) + (random (_period * 0.15)));
 	
 	// check if region was made volatile and remove from fortified list
-	call compile format
-	[
-		"
-			if (%1 in _loc) then {
-				if (%2 > 0.5) then {
-					fortifiedRegions = fortifiedRegions - [_loc];
-				};
-			};
-		",
-		_name,
-		_instability
-	];
+	if (_loc in fortifiedRegions) then {
+		if (_instability > 0.5) then {
+
+			private _index = fortifiedRegions find _loc;
+			fortifiedRegions set [_index, -1];
+
+			fortifiedRegions = fortifiedRegions - [-1];
+		};
+	};
 
 	// generic instability gain
 	_instability = call compile format

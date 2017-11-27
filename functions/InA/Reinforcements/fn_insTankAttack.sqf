@@ -59,15 +59,15 @@ sleep _delay;
 			_tank = (selectRandom INS_TANK_BLU) createVehicle _pos;
 			[
 				_tank,
-				INS_TANK_BLU_TEX,
-				INS_TANK_BLU_ANI
+				missionNamespace getVariable ["INS_TANK_BLU_TEX,", nil]
+				missionNamespace getVariable ["INS_TANK_BLU_ANI", nil]
 			] call BIS_fnc_initVehicle;
 		} else {
 			_tank = (selectRandom INS_TANK_OPF) createVehicle _pos;
 			[
 				_tank,
-				INS_TANK_OPF_TEX,
-				INS_TANK_OPF_ANI
+				missionNamespace getVariable ["INS_TANK_OPF_TEX,", nil]
+				missionNamespace getVariable ["INS_TANK_OPF_ANI", nil]
 			] call BIS_fnc_initVehicle;
 		};
 		_tank lock 3;

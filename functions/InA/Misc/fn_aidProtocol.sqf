@@ -68,7 +68,7 @@ for "_i" from 1 to 5 do {
 	_agent addEventHandler ["firedNear",{ambientShotsFired = true;}];
 };
 
-while {_i <= 150} do {
+while {_i <= 150;} do {
 
 	sleep 2;
 

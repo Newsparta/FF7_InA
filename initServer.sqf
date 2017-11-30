@@ -209,9 +209,9 @@ themeSelect =
 
 	["HQ", "Headquarters", "Base Theme Selected."] remoteExec ["FF7_fnc_globalHintStruct", 0];
 
-	// ---------- GEAR BASICS ----------
-
-	call compile preprocessFileLineNumbers "defines\Gear\gearWipe.sqf";
+	// gear and base wipe
+	[] remoteExec ["InA_fnc_gearWipe", 0];
+	[] call InA_fnc_baseWipe;
 };
 
 // ---------- Load database ----------

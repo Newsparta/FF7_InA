@@ -23,93 +23,9 @@ call compile preprocessFileLineNumbers "functions\InA\Interact\conversationStruc
 #include "functions\InA\Auxiliary\missionDescription.hpp";
 
 // Initial gear
-[clientOwner, "baseType"] remoteExec ["publicVariableClient", 2, false];
-sleep 0.2;
-switch (baseType) do {
-	case "Army":
-	{
-		removeAllWeapons player;
-		removeAllItems player;
-		removeBackpack player;
-		removeAllAssignedItems player;
-		removeVest player;
-		removeUniform player;
-		removeHeadgear player;
-
-		player forceAddUniform "VSM_MulticamTropic_Camo";
-		player addMagazine "rhsusf_mag_15Rnd_9x19_JHP";
-		player addWeapon "rhsusf_weap_m9";
-	};
-	case "Marines":
-	{
-		removeAllWeapons player;
-		removeAllItems player;
-		removeBackpack player;
-		removeAllAssignedItems player;
-		removeVest player;
-		removeUniform player;
-		removeHeadgear player;
-
-		player forceAddUniform "TRYK_U_B_MARPAT_Wood_Tshirt";
-		player addMagazine "rhsusf_mag_15Rnd_9x19_JHP";
-		player addWeapon "rhsusf_weap_m9";
-	};
-	case "Nato":
-	{
-		removeAllWeapons player;
-		removeAllItems player;
-		removeBackpack player;
-		removeAllAssignedItems player;
-		removeVest player;
-		removeUniform player;
-		removeHeadgear player;
-
-		player forceAddUniform "U_B_T_Soldier_F";
-		player addMagazine "16Rnd_9x21_Mag";
-		player addWeapon "hgun_P07_F";
-	};
-	case "AAF":
-	{
-		removeAllWeapons player;
-		removeAllItems player;
-		removeBackpack player;
-		removeAllAssignedItems player;
-		removeVest player;
-		removeUniform player;
-		removeHeadgear player;
-
-		player forceAddUniform "U_I_CombatUniform";
-		player addMagazine "rhsusf_mag_15Rnd_9x19_JHP";
-		player addWeapon "hgun_P07_F";
-	};
-	case "Russia":
-	{
-		removeAllWeapons player;
-		removeAllItems player;
-		removeBackpack player;
-		removeAllAssignedItems player;
-		removeVest player;
-		removeUniform player;
-		removeHeadgear player;
-
-		player forceAddUniform "rhs_uniform_emr_patchless";
-		player addMagazine "rhs_mag_9x18_8_57N181S";
-		player addWeapon "rhs_weap_makarov_pm";
-	};
-	default
-	{
-		removeAllWeapons player;
-		removeAllItems player;
-		removeBackpack player;
-		removeAllAssignedItems player;
-		removeVest player;
-		removeUniform player;
-		removeHeadgear player;
-	};
-};
+[player] call InA_fnc_gearWipe;
 
 // Add actions to base
-
 InA_Warning_ID = 0;
 
 menuHQ addAction [
@@ -194,7 +110,6 @@ basicGearBox addAction [["hq", "FF9900", "Equip Uniform"] call FF7_fnc_formatAdd
 ];
 
 // Building Objects
-
 buildObj = 
 {
 

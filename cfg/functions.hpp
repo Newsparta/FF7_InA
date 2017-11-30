@@ -173,6 +173,8 @@ class InA
 		
 		// Gear
 		class WAD {file = "defines\Gear\fn_WAD.sqf";};
+		class gearWipe {file = "defines\Gear\fn_gearWipe.sqf";};
+		class baseWipe {file = "defines\Gear\fn_baseWipe.sqf";};
 		
 		// Structures
 		class buildKit {file = "defines\Structures\fn_buildKit.sqf";};

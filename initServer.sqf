@@ -4,25 +4,18 @@
 
 initialized = false;
 
-// ---------- initialize variables ----------
-
+// initialize variables
 _null = execVM "functions\InA\Init\initConfigs.sqf";
 
 _handle = execVM "functions\InA\Init\initializeVariables.sqf";
 
 waitUntil {scriptDone _handle;};
 
-// ---------- Fog/mist controller ----------
-
-_null = [400, 0.2] execVM "functions\FF7\Generic\fn_weatherMan.sqf";
-
-// ---------- Ambient modules ----------
-
+// Ambient modules
 _null = execVM "defines\ambientModules.sqf";
 _null = execVM "missions\ambientControl.sqf";
 
-// ---------- TFAR setup ----------
-
+// TFAR setup
 if (("task_force_radio" in activatedAddons)) then
 {
 	call FF7_fnc_TFARsetup;
@@ -34,8 +27,7 @@ else
 
 #include "\task_force_radio\functions\common.sqf";
 
-// ---------- Base init ----------
-
+// Base init
 _null = execVM "functions\InA\Init\isGarageClear.sqf";
 _null = execVM "functions\InA\Init\resourceHandler.sqf";
 _null = execVM "functions\InA\Init\logisticsTransport.sqf";
@@ -50,8 +42,7 @@ _null = execVM "functions\InA\Init\supplierCheck.sqf";
 	]
 ] spawn InA_fnc_vehicleService;
 
-// ---------- Autosave ----------
-
+// Autosave
 [] spawn {
 
 	while {true} do {
@@ -72,8 +63,7 @@ _null = execVM "functions\InA\Init\supplierCheck.sqf";
 	};
 };
 
-// ---------- Parameters ----------
-
+// Parameters
 for [ {_i = 0}, {_i < count(paramsArray)}, {_i = _i + 1} ] do {
 	call compile format
 	[
@@ -86,17 +76,14 @@ for [ {_i = 0}, {_i < count(paramsArray)}, {_i = _i + 1} ] do {
 call compile preprocessFileLineNumbers "defines\civilianTheme.sqf";
 call compile preprocessFileLineNumbers "defines\enemyTheme.sqf";
 
-// ---------- Missions ----------
-
+// Missions
 _null = execVM "missions\missionControl.sqf";
 _null = execVM "missions\eventsHandler.sqf";
 
-// ---------- Map wipe ----------
-
+// Map wipe
 _null = execVM "functions\InA\Init\mapWipe.sqf";
 
-// ---------- Vehicle Spawn init ----------
-
+// Vehicle Spawn init
 vehicleSpawn = 
 {
 	if (vehicleParked) exitWith {
@@ -187,8 +174,7 @@ airSpawn =
 	};
 };
 
-// ---------- Base Theme ----------
-
+// Base Theme
 themeSelect = 
 {
 	private ["_array","_veh", "_group"];
@@ -214,8 +200,7 @@ themeSelect =
 	[] call InA_fnc_baseWipe;
 };
 
-// ---------- Load database ----------
-
+// Load database
 _null = execVM "functions\InA\Init\loadDatabase.sqf";
 
 ///////////////////////////////////////////

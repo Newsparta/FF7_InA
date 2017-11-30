@@ -146,8 +146,6 @@ class InA
 		
 		// Interaction
 		class aceActions {file = "functions\InA\Interact\fn_aceactions.sqf";};
-		class confirmTarget {file = "functions\InA\Interact\fn_confirmTarget.sqf";};
-		class intelClipboard {file = "functions\InA\Interact\fn_intelClipboard.sqf";};
 		class unfoldMap {file = "functions\InA\Interact\fn_unfoldMap.sqf";};
 		class assembleBoat {file = "functions\InA\Interact\fn_assembleBoat.sqf";};
 		class disassembleBoat {file = "functions\InA\Interact\fn_disassembleBoat.sqf";};
@@ -157,7 +155,6 @@ class InA
 		
 		// Missions
 		class intelUpdate {file = "missions\fn_intelUpdate.sqf";};
-		class afterAction {file = "missions\fn_afterAction.sqf";};
 		
 		// Objectives
 		class HVTOfficer {file = "missions\Objective Bank\fn_HVTOfficer.sqf";};

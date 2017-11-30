@@ -1,21 +1,43 @@
-_quality = "";
+/* ----------
+Function:
+	InA_fnc_intelUpdate
 
-[clientOwner, "concentrations"] remoteExec ["publicVariableClient", 2];
+Description:
+	spawn markers on the map on active AO locations
 
-sleep 0.2;
+Parameters:
 
+Optional:
+
+Example:
+	[] spawn InA_fnc_intelUpdate;
+
+Returns:
+	Nil;
+
+Author:
+	[FF7] Newsparta
+---------- */
+
+// Local declarations
+private		_quality		= "";
+private		_mention		= "";
+private		_num			= 0;
+private		_size			= 0;
+private		_pos			= [];
+private		_mkr			= nil;
+
+// Determine quality of intel
 if (random 1 <= (0.1 + (0.6 * civTol))) then {
 	_quality = "high";
 } else {
 	_quality = "low";
 };
 
-// ---------- activity Locations ----------
-
-_loc = "";
-
+// Check intel quality
 if (_quality == "high") then {
 
+	// Spawn markers on the server
 	{
 		{
 			_num = random 1;
@@ -46,17 +68,20 @@ if (_quality == "high") then {
 		} forEach concentrations;
 
 	} remoteExec ["BIS_fnc_call", 2];
-			
-	_loc = "marked on your map to show you where activity was noticed.";
-	["INTERACTION",format ["This person %1",_loc]] call FF7_fnc_formatHint;
+
+	// Inform player of intel aquired		
+	_mention = "marked on your map to show you where activity was noticed.";
+	["INTERACTION",format ["This person %1",_mention]] call FF7_fnc_formatHint;
 
 	sleep 3;
 
+	// Inform everyone who aquired intel
 	_name = name player;
 	["Intel", (format ["<t color='#30CC21'>%1</t> aquired intel from a civilian</t>", _name])] remoteExec ["FF7_fnc_formatHint", 0];
 
 } else {
 
+	// Spawn markers on server
 	{
 		{
 			_num = random 1;
@@ -88,11 +113,13 @@ if (_quality == "high") then {
 
 	} remoteExec ["BIS_fnc_call", 2];
 			
-	_loc = "marked on your map to show you where activity was noticed.";
-	["INTERACTION",format ["This person %1",_loc]] call FF7_fnc_formatHint;
+	// Inform player of intel aquired
+	_mention = "marked on your map to show you where activity was noticed.";
+	["INTERACTION",format ["This person %1",_mention]] call FF7_fnc_formatHint;
 
 	sleep 3;
 
+	// Inform everyone who aquired intel
 	_name = name player;
 	["Intel", (format ["<t color='#30CC21'>%1</t> aquired intel from a civilian</t>", _name])] remoteExec ["FF7_fnc_formatHint", 0];
 

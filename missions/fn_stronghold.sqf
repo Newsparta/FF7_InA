@@ -1,39 +1,82 @@
-// ---------- arguments ----------
+/* ----------
+Function:
+	InA_fnc_stronghold
 
-private ["_accepted","_pos","_blacklist"];
+Description:
+	spawns a stronghold AO on the map (centered around a city/town/village)
 
-/*
-Select location.
-*/
+Parameters:
 
-_loc = [];
-_candidates = [];
-_choice = [];
-_mark = [];
+Optional:
 
+Example:
+	[] spawn InA_fnc_stronghold;
+
+Returns:
+	Nil
+
+Author:
+	[FF7] Newsparta
+---------- */
+
+// Local declarations
+private		_loc			= [];
+private		_candidates		= [];
+private 	_choice			= [];
+private		_mark			= [];
+private 	_regions		= [];
+private		_accepted		= false;
+private		_towns			= [];
+private		_isNearPlayer	= false;
+private		_isNearLoc		= false;
+private		_cleared		= false;
+private		_pos			= [];
+private		_obj			= ObjNull;
+private		_allRoads		= [];
+private 	_connectedRoads	= [];
+private		_road			= nil;
+private		_dir			= 0;
+private		_car			= ObjNull;
+private		_addSome		= 0;
+private		_troops			= [];
+private		_group			= [];
+private		_wp				= nil;
+private		_buildings		= [];
+private		_array			= [];
+private		_bldg			= [];
+private		_nme			= nil;
+private		_called			= false;
+
+/////////////////////////////////////////////////
+// ---------- BEGIN LOCATION FINDER ---------- //
+/////////////////////////////////////////////////
+
+// Check for saved data
 if !(InA_stronghold) then {
 scopeName "Finder";
 
+	// Collect region data
 	_regions = [] call InA_fnc_regionCheck;
 
+	// Check for volatile regions
 	{
 		if ((_x select 1) >= 0.9) then {
 			_candidates pushBack _x
 		};
 	} forEach _regions;
 
+	// Select region location
 	if (count _candidates > 0) then {
-			
 		_choice = selectRandom _candidates;
 		_mark = getMarkerPos (_choice select 0);
-
 	};
 
+	// Exit if no locations are found
 	if (count _candidates < 1) then {
 		breakOut "Finder";
 	}; 
 
-	_accepted = false;
+	// Find the nearest city/town/village
 	_towns = nearestLocations [
 		_mark, 
 		[
@@ -44,20 +87,22 @@ scopeName "Finder";
 		500
 	];
 
-	while {!_accepted} do {
+	// Location selection loop
+	while {!_accepted;} do {
 
+		// Store location data
 		_loc = locationPosition (selectRandom _towns);
-			
+		
+		// Check if near players
 		_isNearPlayer = false;
-
 		{
 			if ((_x distance _loc) < 2000) then {
 				_isNearPlayer = true;
 			};
 		} forEach (allPlayers - entities "HeadlessClient_F");
 
+		// Check if near any other AO locations
 		_isNearLoc = false;
-
 		if (count concentrations > 0) then {
 			{
 				if ((_x distance _loc) < 2000) then {
@@ -65,7 +110,8 @@ scopeName "Finder";
 				};
 			} forEach concentrations;
 		};
-				
+
+		// Accept location if conditions are met		
 		if (((getMarkerPos "respawn_west") distance _loc) > 3000) then {
 			if !(_isNearPlayer) then {
 				if !(_isNearLoc) then {
@@ -75,65 +121,64 @@ scopeName "Finder";
 		};
 	};
 
+	// Declare AO active and set final location
 	InA_stronghold = true;
 	InA_stronghold_Loc = _loc;
 
 } else {
 
+	// Use stored data
 	_loc = InA_stronghold_Loc;
 
 };
-if (count _candidates < 1 && {!InA_stronghold}) exitWith {
-	[] spawn {
 
+///////////////////////////////////////////////
+// ---------- END LOCATION FINDER ---------- //
+///////////////////////////////////////////////
+
+// If no candidates and not stored in data, exit script
+if (count _candidates < 1 && {!InA_stronghold}) exitWith {
+
+	// Time out spawn attempts
+	[] spawn {
 		InA_stronghold = true;
 		sleep 3600;
 		InA_stronghold = false;
 	};
 };
 
+// Enter location into AO array
 concentrations pushBack _loc;
 
-/*
-Loop for spawning AO when players are near.
-*/
+/////////////////////////////////////////
+// ---------- BEGIN AO LOOP ---------- //
+/////////////////////////////////////////
 
-_cleared = false;
-
-while {!_cleared} do {
+while {!_cleared;} do {
 
 	sleep (2 + (random 2));
 
+	// Check if players are near
 	if ({_x distance _loc < mainLimit} count (allPlayers - entities "HeadlessClient_F") > 0) then {
 
 		/////////////////////////
-		// mission spawn start //
+		// BEGIN MISSION SPAWN //
 		/////////////////////////
 
-		// ---------- MG nests ----------
-
+		// MG nests
 		for "_i" from 1 to (1 + (round random 2)) do {
-
 			_pos = [_loc, 0, 500, 5, 0, 0.2, 0] call BIS_fnc_findSafePos;
-
 			[_pos] spawn InA_fnc_MGNest;
-
 		};
 
-		// ---------- Flags ----------
-
+		// Flags
 		for "_i" from 1 to (2 + (round random 5)) do {
-
 			_pos = [_loc, 0, 500, 5, 0, 0.2, 0] call BIS_fnc_findSafePos;
-
 			_obj = createVehicle [INS_FLAG, _pos, [], 0, "CAN_COLLIDE"];
-
 		};
 
-		// ---------- Find roads ----------
-
+		// Find nearby roads
 		_allRoads = _loc nearRoads 500;
-
 		{
 			_connectedRoads = roadsConnectedTo _x;
 			if ((count _connectedRoads) > 2) then {
@@ -141,14 +186,11 @@ while {!_cleared} do {
 			};
 		} forEach _allRoads;
 
-		// ---------- Ambient truck spawns ----------
-
+		// Ambient trucks
 		for "_i" from 1 to (floor random 5) do {
 			
 				_road = selectRandom _allRoads;
 				_connectedTo = ((roadsConnectedTo _road) select 0);
-				_dir = 0;
-				_car = ObjNull;
 				
 				if (random 1 < 0.5) then {
 					if (count (roadsConnectedTo _road) > 0) then {
@@ -192,14 +234,11 @@ while {!_cleared} do {
 				};
 		};
 
-		// ---------- Ambient car spawns ----------
-
+		// Ambient cars
 		for "_i" from 1 to (floor random 5) do {
 			
 				_road = selectRandom _allRoads;
 				_connectedTo = ((roadsConnectedTo _road) select 0);
-				_dir = 0;
-				_car = ObjNull;
 				
 				if (random 1 < 0.5) then {
 					if (count (roadsConnectedTo _road) > 0) then {
@@ -263,17 +302,14 @@ while {!_cleared} do {
 				};
 		};
 
-		_addSome = 0;
-
+		// Add extra spawns if there are more players
 		if (count (call BIS_fnc_listPlayers) > 10) then {
 			_addSome = 2;
 		};
 
-		// ---------- Enemies ----------
-		private ["_pos","_group","_car","_wp"];
+		// Enemies
 
-			// ---------- Generic large spawns ----------
-
+			// Large spawns
 			for "_i" from 0 to (round random (3 + _addSome)) do {
 				_pos = [_loc, 0, 500, 1, 0, 1, 0] call BIS_fnc_findSafePos;
 
@@ -311,8 +347,7 @@ while {!_cleared} do {
 				[units _group] call InA_fnc_insCustomize;
 			};
 
-			// ---------- AA ----------
-			
+			// ManPAD
 			for "_i" from 0 to ((count (call BIS_fnc_listPlayers)) * 0.05) do {
 				_pos = [_loc, 0, 500, 0, 0, -1, 0] call BIS_fnc_findSafePos;
 				_group = [
@@ -347,8 +382,7 @@ while {!_cleared} do {
 				} forEach (units _group);
 			};
 			
-			// ---------- Vehicle guards ----------
-			
+			// Car guards
 			for "_i" from 0 to ((count (call BIS_fnc_listPlayers)) * 0.1) do {
 				if (random 100 < 50) then {
 					_pos = [_loc, 0, 250, 1, 0, 1, 0] call BIS_fnc_findSafePos;
@@ -404,6 +438,7 @@ while {!_cleared} do {
 				};
 			};
 
+			// MRAP guards
 			for "_i" from 0 to ((count (call BIS_fnc_listPlayers)) * 0.067) do {
 				if (random 100 < 50) then {
 					_pos = [_loc, 0, 250, 1, 0, 1, 0] call BIS_fnc_findSafePos;
@@ -460,6 +495,7 @@ while {!_cleared} do {
 				};
 			};
 
+			// Armored guards
 			for "_i" from 0 to ((count (call BIS_fnc_listPlayers)) * 0.067) do {
 				if (random 100 < 50) then {
 					_pos = [_loc, 0, 250, 1, 0, 1, 0] call BIS_fnc_findSafePos;
@@ -551,8 +587,7 @@ while {!_cleared} do {
 				};
 			};
 
-			// ---------- Small patrols ----------
-
+			// Small patrols
 			for "_i" from 0 to (round random 4) do {
 				if (random 100 < random 50) then {
 					_pos = [_loc, 0, 500, 0, 0, 50, 0] call BIS_fnc_findSafePos;
@@ -573,8 +608,7 @@ while {!_cleared} do {
 				};
 			};
 
-			// ---------- House spawns ----------
-
+			// Find nearest houses
 			_buildings = nearestTerrainObjects [
 				_loc, 
 				[
@@ -585,8 +619,7 @@ while {!_cleared} do {
 				500
 			];
 
-			// ---------- Spawn in buildings ----------
-
+			// Garrison buildings
 			_array = [];
 			{
 				_bldg = [_x] call BIS_fnc_buildingPositions;
@@ -611,32 +644,34 @@ while {!_cleared} do {
 			} forEach _array;
 
 		///////////////////////
-		// mission spawn end //
+		// END MISSION SPAWN //
 		///////////////////////
 
-		// ---------- enemies cleared trigger ----------
-
+		// enemies cleared trigger spawn
 		_nme = createTrigger ["EmptyDetector",_loc];
 		_nme setTriggerArea [1000,1000, 0, false];
 		_nme setTriggerActivation ["GUER", "NOT PRESENT", false];
 		_nme setTriggerStatements ["this","",""];
 
-		// ---------- near mission pause loop ----------
-
+		// No reinforcements have been called yet
 		_called = false;
 
-		while {true} do {
-			scopeName "activity";
+		// near AO pause loop
+		while {true;} do {
+			scopeName "pause";
 
 			sleep (2 + (random 2));
 
+			// Check if players are in AO
 			if ({_x distance _loc < mainLimit} count (allPlayers - entities "HeadlessClient_F") > 0) then {
 
+				// Reinforcement call if spotted
 				if ((spotted) && {!_called}) then {
 					[_loc] call InA_fnc_reinforcementCall;
 					_called = true;
 				};
 
+				// Objective completion condition
 				if (count list _nme < 20) then {
 
 					deleteVehicle _nme;
@@ -656,7 +691,7 @@ while {!_cleared} do {
 				
 					["INSURGENT STRONGHOLD", "The insurgents concentrated here have been mostly routed."] remoteExec ["FF7_fnc_formatHint", 0];
 
-					breakOut "activity";
+					breakOut "pause";
 
 					sleep 10;
 
@@ -664,17 +699,19 @@ while {!_cleared} do {
 				};
 			};
 
+			// Cleanup
 			if ({_x distance _loc < mainLimit} count (allPlayers - entities "HeadlessClient_F") < 1) then {
 
 				[_loc, (mainLimit - 500)] spawn InA_fnc_cleanup;
 
 				deleteVehicle _nme;
 
-				_active = false;
-
-				breakOut "activity";
+				breakOut "pause";
 			};
-
 		};
 	};
 };
+
+///////////////////////////////////////
+// ---------- END AO LOOP ---------- //
+///////////////////////////////////////

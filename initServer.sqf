@@ -78,7 +78,7 @@ call compile preprocessFileLineNumbers "defines\enemyTheme.sqf";
 
 // Missions
 _null = execVM "missions\missionControl.sqf";
-_null = execVM "missions\eventsHandler.sqf";
+_null = execVM "missions\regionDefence.sqf";
 
 // Map wipe
 _null = execVM "functions\InA\Init\mapWipe.sqf";

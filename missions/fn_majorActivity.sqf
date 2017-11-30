@@ -1,30 +1,64 @@
-// ---------- arguments ----------
+/* ----------
+Function:
+	InA_fnc_majorActivity
 
-private ["_accepted","_pos","_blacklist"];
+Description:
+	spawns a hideout AO on the map
 
-/*
-Select location.
-*/
+Parameters:
 
-_accepted = false;
-_loc = [];
+Optional:
 
-while {!_accepted} do {
+Example:
+	[] spawn InA_fnc_majorActivity;
+
+Returns:
+	Nil
+
+Author:
+	[FF7] Newsparta
+---------- */
+
+// Local declarations
+private		_accepted		= false;
+private		_loc			= [];
+private		_pos			= [];
+private		_isNearPlayer	= false;
+private		_isNearLoc		= false;
+private		_cleared		= false;
+private		_i				= 0;
+private		_addSome		= 0;
+private 	_troops			= [];
+private		_group			= [];
+private		_choice			= nil;
+private		_car			= ObjNull;
+private		_wp				= nil;
+private		_nme			= nil;
+
+/////////////////////////////////////////////////
+// ---------- BEGIN LOCATION FINDER ---------- //
+/////////////////////////////////////////////////
+
+// Location selection loop
+while {!_accepted;} do {
+
+	// Select random position
 	_pos = [[[mapCenter,mapSize]],["water","out"]] call BIS_fnc_randomPos;
 	_loc = _pos isFlatEmpty [5, 0, 0.6, 5, 0, false];
 	
+	// Check to see if location is valid
 	if (count _loc > 2) then {
 		
+		// Check if players are near
 		_isNearPlayer = false;
-
 		{
 			if ((_x distance _loc) < 2000) then {
 				_isNearPlayer = true;
 			};
 		} forEach (allPlayers - entities "HeadlessClient_F");
 
+		// Check if near any other AO locations
 		_isNearLoc = false;
-
 		if (count concentrations > 0) then {
 			{
 				if ((_x distance _loc) < 2000) then {
@@ -33,6 +67,7 @@ while {!_accepted} do {
 			} forEach concentrations;
 		};
 			
+		// Accept location if conditions are met
 		if (((getMarkerPos "respawn_west") distance _loc) > 3000) then {
 			if !(_isNearPlayer) then {
 				if !(_isNearLoc) then {
@@ -43,52 +78,49 @@ while {!_accepted} do {
 	};
 };
 
+///////////////////////////////////////////////
+// ---------- END LOCATION FINDER ---------- //
+///////////////////////////////////////////////
+
+// Declare AO active
 activeLocations = activeLocations + 1;
+
+// Enter location into AO array
 concentrations pushBack _loc;
 
-/*
-Loop for spawning AO when players are near.
-*/
+/////////////////////////////////////////
+// ---------- BEGIN AO LOOP ---------- //
+/////////////////////////////////////////
 
-_cleared = false;
-_i = 0;
-
-while {!_cleared} do {
+while {!_cleared;} do {
 
 	sleep (2 + (random 2));
 
+	// Increment timer for automatic AO location migration
 	_i = _i + 1;
 
-	/*
-	clear the hideout after approximately 12 hours.
-	*/
-
+	// Automatic location clearing
 	if (_i >= 14400) then {
-
 		_cleared = true;
 		activeLocations = activeLocations - 1;
 		concentrations = concentrations - _loc;
-		deleteMarker _mkr;
-
 	};
 
+	// Check if players are near
 	if ({_x distance _loc < mainLimit} count (allPlayers - entities "HeadlessClient_F") > 0) then {
 
 		/////////////////////////
-		// mission spawn start //
+		// BEGIN MISSION SPAWN //
 		/////////////////////////
 
-		_addSome = 0;
-
+		// Add extra spawns if there are more players
 		if (count (call BIS_fnc_listPlayers) > 10) then {
 			_addSome = 2;
 		};
 
-		// ---------- Enemies ----------
-		private ["_pos","_group","_car","_wp"];
+		// Enemies
 
-			// ---------- Generic large spawns ----------
-
+			// Large spawns
 			for "_i" from 0 to (round random (3 + _addSome)) do {
 				_pos = [_loc, 0, 500, 1, 0, 1, 0] call BIS_fnc_findSafePos;
 
@@ -126,8 +158,7 @@ while {!_cleared} do {
 				[units _group] call InA_fnc_insCustomize;
 			};
 
-			// ---------- AA ----------
-			
+			// ManPAD
 			for "_i" from 0 to ((count (call BIS_fnc_listPlayers)) * 0.05) do {
 				_pos = [_loc, 0, 500, 0, 0, -1, 0] call BIS_fnc_findSafePos;
 				_group = [
@@ -162,8 +193,7 @@ while {!_cleared} do {
 				} forEach (units _group);
 			};
 			
-			// ---------- Vehicle guards ----------
-			
+			// Car guards
 			for "_i" from 0 to ((count (call BIS_fnc_listPlayers)) * 0.1) do {
 				if (random 100 < 50) then {
 					_pos = [_loc, 0, 250, 1, 0, 1, 0] call BIS_fnc_findSafePos;
@@ -219,6 +249,7 @@ while {!_cleared} do {
 				};
 			};
 
+			// MRAP guards
 			for "_i" from 0 to ((count (call BIS_fnc_listPlayers)) * 0.067) do {
 				if (random 100 < 50) then {
 					_pos = [_loc, 0, 250, 1, 0, 1, 0] call BIS_fnc_findSafePos;
@@ -275,6 +306,7 @@ while {!_cleared} do {
 				};
 			};
 
+			// Armored guards
 			for "_i" from 0 to ((count (call BIS_fnc_listPlayers)) * 0.067) do {
 				if (random 100 < 50) then {
 					_pos = [_loc, 0, 250, 1, 0, 1, 0] call BIS_fnc_findSafePos;
@@ -366,8 +398,7 @@ while {!_cleared} do {
 				};
 			};
 
-			// ---------- Small patrols ----------
-
+			// Small patrols
 			for "_i" from 0 to (round random 4) do {
 				if (random 100 < random 50) then {
 					_pos = [_loc, 0, 500, 0, 0, 50, 0] call BIS_fnc_findSafePos;
@@ -389,25 +420,25 @@ while {!_cleared} do {
 			};
 
 		///////////////////////
-		// mission spawn end //
+		// END MISSION SPAWN //
 		///////////////////////
 
-		// ---------- enemies cleared trigger ----------
-
+		// Enemies cleared trigger spawn
 		_nme = createTrigger ["EmptyDetector",_loc];
 		_nme setTriggerArea [1000,1000, 0, false];
 		_nme setTriggerActivation ["GUER", "NOT PRESENT", false];
 		_nme setTriggerStatements ["this","",""];
 
-		// ---------- near mission pause loop ----------
-
+		// Near AO pause loop
 		while {true} do {
 			scopeName "activity";
 
 			sleep (2 + (random 2));
 
+			// Check if players are in AO
 			if ({_x distance _loc < mainLimit} count (allPlayers - entities "HeadlessClient_F") > 0) then {
 
+				// Objection completion condition
 				if (count list _nme < 20) then {
 
 					deleteVehicle _nme;
@@ -423,6 +454,7 @@ while {!_cleared} do {
 				};
 			};
 
+			// Cleanup
 			if ({_x distance _loc < mainLimit} count (allPlayers - entities "HeadlessClient_F") < 1) then {
 
 				[_loc, (mainLimit - 500)] spawn InA_fnc_cleanup;
@@ -437,3 +469,7 @@ while {!_cleared} do {
 		};
 	};
 };
+
+///////////////////////////////////////
+// ---------- END AO LOOP ---------- //
+///////////////////////////////////////

@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=705;
+		nextID=706;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={10958.637,366.16653,11457.5};
-		dir[]={-0.061817881,-0.76362443,0.64286447};
-		up[]={-0.073089771,0.64569473,0.76008266};
-		aside[]={0.99552113,-2.6715607e-006,0.095732652};
+		pos[]={10987.066,366.16653,11529.543};
+		dir[]={-0.67943043,-0.46263602,-0.5697062};
+		up[]={-0.35451862,0.88653225,-0.29726592};
+		aside[]={-0.64259714,-1.268927e-006,0.76635414};
 	};
 };
 binarizationWanted=0;
@@ -73,13 +73,14 @@ addons[]=
 	"A3_Structures_F_Ind_Shed",
 	"A3_Structures_F_Exp_Infrastructure_Airports",
 	"A3_Props_F_Argo_Civilian_InfoBoards",
-	"A3_Signs_F"
+	"A3_Signs_F",
+	"ace_viewdistance"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=31;
+		items=32;
 		class Item0
 		{
 			className="A3_Modules_F_Curator";
@@ -297,6 +298,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item31
+		{
+			className="ace_viewdistance";
+			name="ACE3 - View Distance";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
 	};
 };
 randomSeed=2398574;
@@ -387,7 +395,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=502;
+		items=503;
 		class Item0
 		{
 			dataType="Logic";
@@ -6789,11 +6797,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={15514.596,329.04022,14951.867};
+				position[]={15514.596,329.04044,14951.867};
 			};
 			id=108;
 			type="ACE_moduleAssignMedicRoles";
-			atlOffset=393.00879;
+			atlOffset=393.009;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -15471,7 +15479,7 @@ class Mission
 			};
 			id=274;
 			type="Land_Pallet_F";
-			atlOffset=0.4598999;
+			atlOffset=0.45874023;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -29213,6 +29221,59 @@ class Mission
 					};
 				};
 				nAttributes=1;
+			};
+		};
+		class Item502
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={15514.596,-0.74583435,14751.867};
+			};
+			id=705;
+			type="ace_viewdistance_ModuleSettings";
+			atlOffset=65.639008;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_viewdistance_ModuleSettings_moduleViewDistanceLimit";
+					expression="_this setVariable ['moduleViewDistanceLimit',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=3000;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_viewdistance_ModuleSettings_moduleViewDistanceEnabled";
+					expression="_this setVariable ['moduleViewDistanceEnabled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=2;
 			};
 		};
 	};

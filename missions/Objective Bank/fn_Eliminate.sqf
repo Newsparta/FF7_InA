@@ -1,33 +1,89 @@
-// ---------- arguments ----------
+/* ----------
+Function:
+	InA_fnc_Eliminate
 
-params ["_loc"];
+Description:
+	Group of idle soldiers
 
+Parameters:
+	- center locatin to begin spawn search
+
+Optional:
+
+Example:
+	[getPosATL player] spawn InA_fnc_Eliminate;
+
+Returns:
+	Nil
+
+Author:
+	[FF7] Newsparta
+---------- */
+
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_loc"			,[]					,[]					,[]							]];
+
+// Local declarations
+private		_minDist			= 1250;
+private		_maxDist			= 2500;
+private		_objLoc				= [];
+private		_accepted			= false;
+private		_pos				= [];
+private		_roads				= nil;
+private		_isNearPlayer		= false;
+private		_mkrName			= "";
+private		_mkr				= nil;
+private		_mkrName2			= "";
+private		_i					= 0;
+private		_addSome			= 0;
+private		_troops				= [];
+private		_group				= [];
+
+// Declare side mission active
 civMissionActive = true;
 
-_minDist = 1250;
-_maxDist = 2500;
+/////////////////////////////////////////////////
+// ---------- BEGIN LOCATION FINDER ---------- //
+/////////////////////////////////////////////////
 
-_objLoc = [];
-_accepted = false;
-while {!_accepted} do {
+// Location selection loop
+while {!_accepted;} do {
+
+	// Select random position
 	_pos = [[[_loc,_maxDist]],["water","out"]] call BIS_fnc_randomPos;
-	_objLoc = _pos isFlatEmpty [1, 0, 1, 4, 0, false];
+	_objLoc = _pos isFlatEmpty [1, 0, 0.4, 4, 0, false];
 	
+	// find nearby roads
 	_roads = nearestTerrainObjects [_pos, ["ROAD","MAIN ROAD"], 30];
 
+	// Check if players are near
+	_isNearPlayer = false;
+	{
+		if ((_x distance _loc) < 1000) then {
+			_isNearPlayer = true;
+		};
+	} forEach (allPlayers - entities "HeadlessClient_F");
+
+	// Accept location if all conditions met
 	if (count _objLoc > 2) then {
 		if (count _roads < 1) then {
 			if (_loc distance _objLoc > _minDist) then {
 				if (_objLoc distance (getMarkerPos "respawn_west") > 1000) then {
-					_accepted = true;
+					if !(_isNearPlayer) then {
+						_accepted = true;
+					};
 				};
 			};
 		};
 	};
 };
 
-// ---------- marker spawn ----------
+///////////////////////////////////////////////
+// ---------- END LOCATION FINDER ---------- //
+///////////////////////////////////////////////
 
+// Marker spawn
 _mkrName = random 1;
 _mkr = createMarker [format ["%1",_mkrName], _objLoc];
 format ["%1",_mkrName] setMarkerColor "ColorBlack";
@@ -41,7 +97,8 @@ format ["%1",_mkrName2] setMarkerColor "ColorGUER";
 format ["%1",_mkrName2] setMarkerShape "ELLIPSE";
 format ["%1",_mkrName2] setMarkerBrush "Border";
 format ["%1",_mkrName2] setMarkerSize [150, 150];
-					
+
+// Spawn marker fade out		
 [_mkrName,_mkrName2] spawn {
 	private ["_i"];
 							
@@ -63,7 +120,7 @@ format ["%1",_mkrName2] setMarkerSize [150, 150];
 	deleteMarker format ["%1",_mkrName];
 };
 
-// ---------- objective spawn ----------
+// Target soldiers
 _group = [];
 if (random 1 <= 0.5) then {
 	_pos = [_objLoc, 0, 100, 1, 0, 1, 0] call BIS_fnc_findSafePos;
@@ -100,14 +157,18 @@ if (random 1 <= 0.5) then {
 	[units _group] call InA_fnc_insCustomize;
 };
 
+// Side mission notification
 ["SIDE MISSION", "This person wants you to eliminate some insurgents that have threatened them recently."] remoteExec ["FF7_fnc_formatHint", 0];
 
-// ---------- end condition ----------
+// wait timer for objective despawn
+waitUntil {
+	_i = _i + 1; 
+	if (_i == 300) exitWith {true;}; 
+	sleep (5 + (random 5)); 
+	{_x distance _objLoc < 1000} count (allPlayers - entities "HeadlessClient_F") > 0;
+};
 
-_i = 0;
-
-waitUntil {_i = _i + 1; if (_i == 300) exitWith {true;}; sleep (5 + (random 5)); {_x distance _objLoc < 1000} count (allPlayers - entities "HeadlessClient_F") > 0};
-
+// Check if objective should despawn
 if (_i == 300) exitWith {
 
 	civMissionActive = false;
@@ -119,11 +180,13 @@ if (_i == 300) exitWith {
 	[_objLoc,_minDist] spawn InA_fnc_cleanup;	
 };
 
-while {true} do {
+// End condition loop
+while {true;} do {
 	scopeName "civMission";
 
 	sleep (2 + (random 2));
 
+	// Objective completion check
 	if ({alive _x} count (units _group) < 1) then {
 
 		compObj = compObj + 1;
@@ -135,6 +198,7 @@ while {true} do {
 		breakOut "civMission";
 	};
 
+	// Despawn if players leave
 	if ({_x distance _objLoc < 1500} count (allPlayers - entities "HeadlessClient_F") < 1) then {
 
 		["SIDE MISSION", "The insurgents have moved on from their known location and are now untraceable."] remoteExec ["FF7_fnc_formatHint", 0];
@@ -143,6 +207,11 @@ while {true} do {
 	};
 };
 
-waitUntil {sleep (2 + (random 2)); {_x distance _objLoc < _maxDist} count (allPlayers - entities "HeadlessClient_F") < 1};
+// Wait until players leave area
+waitUntil {
+	sleep (2 + (random 2)); 
+	{_x distance _objLoc < _maxDist} count (allPlayers - entities "HeadlessClient_F") < 1;
+};
 
+// Clean up
 [_objLoc,_minDist] spawn InA_fnc_cleanup;

@@ -119,6 +119,7 @@ class InA
 		class diversity {file = "defines\fn_diversity.sqf";};
 		
 		// Misc.
+		class MGNest {file = "functions\InA\Misc\fn_MGNest.sqf";};
 		class instabilityUpdate {file = "functions\InA\Misc\fn_instabilityUpdate.sqf";};
 		class aidProtocol {file = "functions\InA\Misc\fn_aidProtocol.sqf";};
 		class aidVehicle {file = "functions\InA\Misc\fn_aidVehicle.sqf";};
@@ -163,7 +164,6 @@ class InA
 		class commOutpost {file = "missions\Objective Bank\fn_commOutpost.sqf";};
 		class AAAEmplacement {file = "missions\Objective Bank\fn_AAAEmplacement.sqf";};
 		class Eliminate {file = "missions\Objective Bank\fn_Eliminate.sqf";};
-		class MGNest {file = "missions\Objective Bank\fn_MGNest.sqf";};
 
 		class majorActivity {file = "missions\fn_majorActivity.sqf";};
 		class stronghold {file = "missions\fn_stronghold.sqf";};

@@ -2,7 +2,7 @@ sleep 5;
 
 // ---------- Load database ----------
 
-_data = ["load", "data"] call FF7_fnc_extSerialize;
+_data = ["load", "data"] call InA_fnc_extSerialize;
 
 if (isNil "_data") exitWith {};
 

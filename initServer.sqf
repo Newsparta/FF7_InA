@@ -18,11 +18,7 @@ _null = execVM "missions\ambientControl.sqf";
 // TFAR setup
 if (("task_force_radio" in activatedAddons)) then
 {
-	call FF7_fnc_TFARsetup;
-}
-else
-{
-	["initServer", "TFAR not active ...."] call FF7_fnc_debugLog;
+	call InA_fnc_TFARsetup;
 };
 
 #include "\task_force_radio\functions\common.sqf";

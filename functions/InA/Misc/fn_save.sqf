@@ -157,6 +157,6 @@ _export pushBack [InA_stronghold, InA_stronghold_Loc];
 
 // ---------- Save to database ----------
 
-_null = ["save", "data", _export] call FF7_fnc_extSerialize;
+_null = ["save", "data", _export] call InA_fnc_extSerialize;
 
 ["SAVED", "Map state has been saved to the database."] remoteExec ["FF7_fnc_formatHint", 0];

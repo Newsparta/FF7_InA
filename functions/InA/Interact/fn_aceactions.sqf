@@ -284,10 +284,10 @@ if (_type in ["B_medic_F", "B_recon_medic_F"]) then
 {
 	_action =
 	[
-		"FF7_MedicalStatus",
+		"MedicalStatus",
 		"Health status",
 		"img\icon\icon-health.paa",
-		{[_target] spawn FF7_fnc_aceMedicalStatus;},
+		{[_target] spawn InA_fnc_aceMedicalStatus;},
 		{([_player] call ace_medical_fnc_isMedic)}
 	] call ace_interact_menu_fnc_createAction;
 
@@ -298,30 +298,6 @@ if (_type in ["B_medic_F", "B_recon_medic_F"]) then
 //----- Common actions -----
 
 _cond = {true};
-
-// Assemble Boat
-_action =
-[
-	"FF7_Boat_Assemble",
-	"Assemble Assault Boat",
-	"",
-	{[] spawn InA_fnc_assembleBoat;},
-	_cond
-] call ace_interact_menu_fnc_createAction;
-
-["Box_NATO_Support_F", 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToClass;
-
-// disassemble Boat
-_action =
-[
-	"FF7_Boat_Disassemble",
-	"Disassemble Assault Boat",
-	"",
-	{[] spawn InA_fnc_disassembleBoat;},
-	_cond
-] call ace_interact_menu_fnc_createAction;
-
-["B_Boat_Transport_01_F", 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToClass;
 
 // Interaction parent
 _action =

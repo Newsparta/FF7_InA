@@ -14,8 +14,8 @@ removeAllActions _box;
 //Add Arsenal and Gear options
 _null = _box addAction
 [
-	["firstaid1", "DD1111", "Treat yourself"] call FF7_fnc_formatAddAction,
-	{call FF7_fnc_aceHealLocal},
+	"Treat Injuries",
+	{call InA_fnc_aceHealLocal},
 	[],
 	100,
 	true,

@@ -132,14 +132,14 @@ while {true} do {
 
 			if (compObj >= 3) then {
 				compObj = 0;
-				extraSupplies = round random 100;
+				extraSupplies = round random 200;
 				["HQ", "Headquarters", "You have been allocated additional supplies due to successful operations in the theatre."] remoteExec ["FF7_fnc_globalHintStruct", 0];
 
 				sleep 4;
 			};
 			
 			LogF = LogF + (floor random [150,200,250]);
-			LogM = LogM + (floor random [75,100,125]) + extraSupplies;
+			LogM = LogM + (floor random [100,125,150]) + extraSupplies;
 			
 			if (extraSupplies > 0) then {
 				extraSupplies = 0;

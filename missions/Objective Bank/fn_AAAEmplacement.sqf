@@ -311,13 +311,13 @@ if (count (call BIS_fnc_listPlayers) > 10) then {
 // wait timer for objective despawn
 waitUntil {
 	_i = _i + 1; 
-	if (_i == 300) exitWith {true;}; 
+	if (_i == (sideMissionTimer * 5)) exitWith {true;}; 
 	sleep (5 + (random 5)); 
 	{_x distance _objLoc < 1000} count (allPlayers - entities "HeadlessClient_F") > 0;
 };
 
 // Check if objective should despawn
-if (_i == 300) exitWith {
+if (_i == (sideMissionTimer * 5)) exitWith {
 
 	civMissionActive = false;
 

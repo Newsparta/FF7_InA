@@ -9,6 +9,7 @@ concentrations = [];
 InA_stronghold = false;
 InA_stronghold_Loc = [];
 mainLimit = 2000;
+sideMissionTimer = 3600;
 givenLoc = "";
 
 compObj = 0;

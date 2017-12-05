@@ -1,6 +1,19 @@
-params ["_loc"];
+/* ----------
+Script:
+	reinforcement call
+Description:
+	call for reinforcements
 
-_rad = 500;
+Author:
+	[FF7] Newsparta
+---------- */
+
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_loc"			,[]					,[]					,[]							]];
+
+// Local declarations
+private		_rad			= 500;
 
 [
 	_loc, 

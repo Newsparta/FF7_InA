@@ -41,11 +41,11 @@ _null = execVM "functions\InA\Init\supplierCheck.sqf";
 // Autosave
 [] spawn {
 
-	while {true} do {
+	while {true;} do {
 
 		waitUntil {sleep 10; (count (allPlayers - entities "HeadlessClient_F") > 0)};
 
-		while {true} do {
+		while {true;} do {
 		scopeName "save";
 
 			sleep (30 + (random 30));
@@ -54,6 +54,30 @@ _null = execVM "functions\InA\Init\supplierCheck.sqf";
 
 				[] call InA_fnc_save;
 				breakOut "save";
+			};
+		};
+	};
+};
+
+// Squad wiped indicator
+[] spawn {
+
+	while {true;} do {
+
+		waitUntil {sleep 10; (count (allPlayers - entities "HeadlessClient_F") > 0);};
+
+		while {true;} do {
+		scopeName "allDead";
+
+			sleep (15 + (random 15));
+
+			if (({alive _x} count (allPlayers - entities "HeadlessClient_F")) < 1) then {
+
+				[false, "all players have been killed"] call InA_fnc_formatHint;
+				
+				waitUntil {sleep 5; ({alive _x} count (allPlayers - entities "HeadlessClient_F")) > 0;};
+
+				breakOut "allDead";
 			};
 		};
 	};
@@ -83,7 +107,7 @@ _null = execVM "functions\InA\Init\mapWipe.sqf";
 vehicleSpawn = 
 {
 	if (vehicleParked) exitWith {
-		["Headquarters", "Please clear the garage before requisitioning more vehicles."] remoteExec ["FF7_fnc_formatHint", ID, false];
+		[false, "Please clear the garage before requisitioning more vehicles."] remoteExec ["InA_fnc_formatHint", ID, false];
 	};
 
 	_afford = false;
@@ -98,7 +122,7 @@ vehicleSpawn =
 
 	if (_afford) then {
 
-		["VEHICLE REQUSITIONED", ""] remoteExec ["FF7_fnc_formatHint", ID, false];
+		[false, "VEHICLE REQUSITIONED"] remoteExec ["InA_fnc_formatHint", ID, false];
 
 		_veh = createVehicle [vehicleType, getMarkerPos "garageSpawn", [], 0, "CAN_COLLIDE"];
 		[
@@ -123,14 +147,14 @@ vehicleSpawn =
 		LogF = LogF - fCost;
 
 	} else {
-		["Headquarters", "You do not have the logistical supplies to field this vehicle."] remoteExec ["FF7_fnc_formatHint", ID, false];
+		[false, "You do not have the logistical supplies to field this vehicle."] remoteExec ["InA_fnc_formatHint", ID, false];
 	};
 };
 
 airSpawn = 
 {
 	if (vehicleAirParked) exitWith {
-		["Headquarters", "Please clear the hangar before requisitioning more vehicles."] remoteExec ["FF7_fnc_formatHint", ID, false];
+		[false, "Please clear the hangar before requisitioning more vehicles."] remoteExec ["InA_fnc_formatHint", ID, false];
 	};
 
 	_afford = false;
@@ -145,7 +169,7 @@ airSpawn =
 
 	if (_afford) then {
 
-		["VEHICLE REQUSITIONED", ""] remoteExec ["FF7_fnc_formatHint", ID, false];
+		[false, "VEHICLE REQUSITIONED"] remoteExec ["InA_fnc_formatHint", ID, false];
 
 		_veh = createVehicle [vehicleType, getMarkerPos "hangarSpawn", [], 0, "CAN_COLLIDE"];
 		[
@@ -166,7 +190,7 @@ airSpawn =
 		LogF = LogF - fCost;
 
 	} else {
-		["Headquarters", "You do not have the logistical supplies to field this vehicle."] remoteExec ["FF7_fnc_formatHint", ID, false];
+		[false, "You do not have the logistical supplies to field this vehicle."] remoteExec ["InA_fnc_formatHint", ID, false];
 	};
 };
 
@@ -189,7 +213,7 @@ themeSelect =
 	LogM = 200;
 	LogF = 400;
 
-	["HQ", "Headquarters", "Base Theme Selected."] remoteExec ["FF7_fnc_globalHintStruct", 0];
+	[true, "Base Theme Selected.", "Headquarters"] remoteExec ["InA_fnc_formatHint", 0];
 
 	// gear and base wipe
 	[] remoteExec ["InA_fnc_gearWipe", 0];

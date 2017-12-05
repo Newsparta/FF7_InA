@@ -135,7 +135,7 @@ if (_type in ["B_Soldier_SL_F", "B_Soldier_TL_F", "B_spotter_F", "B_recon_JTAC_F
 			"InA_Restrict_Yes",
 			"Yes",
 			"",
-			{gearRestricted = true;publicVariableServer "gearRestricted";["Headquarters", "Gear access is now restricted."] call FF7_fnc_formatHint;},
+			{gearRestricted = true;publicVariableServer "gearRestricted";[false, "Gear access is now restricted."] call InA_fnc_formatHint;},
 			_cond
 		] call ace_interact_menu_fnc_createAction;
 
@@ -147,7 +147,7 @@ if (_type in ["B_Soldier_SL_F", "B_Soldier_TL_F", "B_spotter_F", "B_recon_JTAC_F
 			"InA_Restrict_No",
 			"No",
 			"",
-			{gearRestricted = false;publicVariableServer "gearRestricted";["Headquarters", "Gear access is now unrestricted."] call FF7_fnc_formatHint;},
+			{gearRestricted = false;publicVariableServer "gearRestricted";[false, "Gear access is now unrestricted."] call InA_fnc_formatHint;},
 			_cond
 		] call ace_interact_menu_fnc_createAction;
 
@@ -260,7 +260,7 @@ else
 			"InA_Restrict_Yes",
 			"Yes",
 			"",
-			{gearRestricted = true;publicVariableServer "gearRestricted";["Headquarters", "Gear access is now restricted."] call FF7_fnc_formatHint;},
+			{gearRestricted = true;publicVariableServer "gearRestricted";[false, "Gear access is now restricted."] call InA_fnc_formatHint;},
 			_cond
 		] call ace_interact_menu_fnc_createAction;
 
@@ -272,7 +272,7 @@ else
 			"InA_Restrict_No",
 			"No",
 			"",
-			{gearRestricted = false;publicVariableServer "gearRestricted";["Headquarters", "Gear access is now unrestricted."] call FF7_fnc_formatHint;},
+			{gearRestricted = false;publicVariableServer "gearRestricted";[false, "Gear access is now unrestricted."] call InA_fnc_formatHint;},
 			_cond
 		] call ace_interact_menu_fnc_createAction;
 

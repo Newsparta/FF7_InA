@@ -14,7 +14,7 @@ while {true} do {
 	_vehiclesAtBase = nearestObjects [getMarkerPos "respawn_west", _opforVehicles, 750];
 	
 	if (count _vehiclesAtBase > 0) then {
-		["HQ", "Headquarters", "Your superiors have instructed you to decommission any opfor vehicles at base."] remoteExec ["FF7_fnc_globalHintStruct", 0];
+		[true, "Your superiors have instructed you to decommission any opfor vehicles at base.", "Headquarters"] remoteExec ["InA_fnc_formatHint", 0];
 		
 		sleep 300;
 	
@@ -24,7 +24,7 @@ while {true} do {
 			{
 				deleteVehicle _x;
 			} forEach _vehiclesAtBase;
-			["HQ", "Headquarters", "Your superiors have decommissioned the vehicles for you."] remoteExec ["FF7_fnc_globalHintStruct", 0];
+			[true, "Your superiors have decommissioned the vehicles for you.", "Headquarters"] remoteExec ["InA_fnc_formatHint", 0];
 		};
 	};
 	

@@ -1,11 +1,25 @@
-private ["_con"];
-_con = count (call BIS_fnc_listPlayers);
-	
+/* ----------
+Script:
+	Evac
+
+Description:
+	Emergency evac helicopter transport
+
+Author:
+	[FF7] Newsparta
+---------- */
+
+// Local declarations
+private		_con			= count (call BIS_fnc_listPlayers);
+private		_pilots			= "";
+private		_wp				= nil;
+private		_mkr			= nil;
+
+// Set evac unavailable
 FF7_playerEvac = false;
 publicVariable "FF7_playerEvac";
 
-// ---------- Helicopter spawns ----------
-
+// Spawn helicopter(s)
 switch (baseType) do 
 {
 	case "Army":
@@ -104,9 +118,7 @@ if ((_con > 6) and (_con <= 12)) then {
 	clearItemCargoGlobal evac;
 };
 
-// ---------- TEAM ASSIGNMENTS ----------
-private ["_wp","_pilots"];
-
+// Select pilots
 switch (baseType) do
 {
 	case "Army":
@@ -156,6 +168,7 @@ evacTeam =
 ((units evacTeam) select 2) moveInTurret [evac, [1]];
 ((units evacTeam) select 3) moveInTurret [evac, [2]];
 
+// Set landing waypoint
 _wp = evacTeam addWaypoint [evacLZ, 0];
 _wp setWaypointStatements ["true","evac land 'GET IN'"];
 ((units evacTeam) select 0) setBehaviour "CARELESS";
@@ -164,6 +177,7 @@ _wp setWaypointStatements ["true","evac land 'GET IN'"];
 evacTeam setGroupIdGlobal ["GHOST - 1"];
 publicVariable "evacTeam";
 
+// Set landing waypoint if secondary helicopter
 if ((_con > 6) and (_con <= 12)) then {
 
 	evacTeam2 = 
@@ -197,20 +211,17 @@ if ((_con > 6) and (_con <= 12)) then {
 	((units evacTeam2) select 1) setBehaviour "CARELESS";
 };
 
-// ---------- Marker ----------
-private ["_mkr"];
-
+// Landing zone marker
 _mkr = createMarker ["LZ", evacLZ];
 "LZ" setMarkerColor "ColorWest";
 "LZ" setMarkerShape "ICON";
 "LZ" setMarkerType "mil_pickup";
 "LZ" setMarkerText "Evac LZ";
 
-// ---------- TRAVEL TIME ----------
-private ["_wp"];
-
+// set return order
 return = false;
 
+// once order given, return to base
 waitUntil {sleep 3; if !(alive evac) exitWith {true}; evac distance evacLZ < 500};
 
 if (alive evac) then {
@@ -240,8 +251,7 @@ if (alive evac) then {
 
 deleteMarker "LZ";
 	
-// ---------- DESPAWN ----------
-
+// Despawn
 if ((_con > 6) and (_con <= 12)) then {
 	waitUntil {sleep 3; if ((!alive evac) && {!alive evac2}) exitWith {true}; (evac distance (getMarkerPos "heliSpawn_1")) < 300;(evac2 distance (getMarkerPos "heliSpawn_2")) < 300};
 } else {
@@ -272,18 +282,19 @@ if ((_con > 6) and (_con <= 12)) then {
 if ((_con > 6) and (_con <= 12)) then {
 
 	if ((!alive evac) && {!alive evac2}) then {
-		["HQ", "Headquarters", "Air transport has been destroyed ..."] remoteExec ["FF7_fnc_globalHintStruct", 0];
+		[true, "Air transport has been destroyed ...", "Headquarters"] remoteExec ["InA_fnc_formatHint", 0];
 	};
 } else {
 
 	if !(alive evac) then {
-		["HQ", "Headquarters", "Air transport has been destroyed ..."] remoteExec ["FF7_fnc_globalHintStruct", 0];
+		[true, "Headquarters", "Air transport has been destroyed ...", "Headquarters"] remoteExec ["InA_fnc_formatHint", 0];
 	};
 };
 
+// Pause until available next
 sleep (params_evacDelay);
 	
-["HQ", "Headquarters", "Air transport is now available ..."] remoteExec ["FF7_fnc_globalHintStruct", 0];
+[true, "Headquarters", "Air transport is now available ...", "Headquarters"] remoteExec ["InA_fnc_formatHint", 0];
 
 FF7_playerEvac = true;
 publicVariable "FF7_playerEvac";

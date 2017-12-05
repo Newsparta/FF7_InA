@@ -24,12 +24,22 @@ Author:
     Newsparta
 ---------- */
 
-// ---------- PARAMETERS ----------
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_center"		,[]					,[]					,[]							],
+		[	"_min"			,1500				,[0]				,[]							],
+		[	"_wpMax"		,250				,[0]				,[]							],
+		[	"_s"			,1					,[0]				,[]							],
+		[	"_delay"		,0					,[0]				,[]							],
+		[	"_awareness"	,"SAFE"				,[""]				,[]							],
+		[	"_speed"		,"LIMITED"			,[""]				,[]							]];
 
-params ["_center",["_min", 1500, [0]], ["_wpMax", 250, [0]], ["_s", 1, [0]], ["_delay", 0, [0]],["_awareness", "STEALTH", [""]],["_speed", "FULL", [""]]];
-
-// ---------- MAIN ----------
-private ["_pos","_group","_wp"];
+// Local declarations
+private		_accepted		= false;
+private		_pos			= [];
+private		_isNear			= false;
+private		_group			= [];
+private		_wp				= nil;
 
 sleep _delay;
 

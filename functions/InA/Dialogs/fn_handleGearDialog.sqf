@@ -50,11 +50,11 @@ private     _return                = false;
 sleep 0.2;
 
 if (isNil "baseType") exitWith {
-	["Headquarters", "No theme selected. Equipment unavailable."] call FF7_fnc_formatHint;
+	[false, "no theme selected, Equipment unavailable."] call InA_fnc_formatHint;
 	nil;
 };
 if (baseType == "") exitWith {
-	["Headquarters", "No theme selected. Equipment unavailable."] call FF7_fnc_formatHint;
+	[false, "no theme selected, Equipment unavailable."] call FF7_fnc_formatHint;
 	nil;
 };
 
@@ -193,7 +193,7 @@ g_dialog_handler_gear_item_purchase = {
 	
 	// SANITY CHECK - Exit here if necessary
 	if (LogM < g_dialog_gear_selection_cost) exitWith {
-		["Headquarters", "Not enough supplies."] call FF7_fnc_formatHint;
+		[false, "not enough supplies."] call FF7_fnc_formatHint;
 	};
 
 	// Get item type
@@ -301,7 +301,7 @@ g_dialog_handler_gear_item_purchase = {
 	ctrlSetText [1002, (format ["%1",LogM])];	
 
 	// Notify user of success
-	["Headquarters", "item(s) Requisitioned."] call FF7_fnc_formatHint;
+	[false, "item(s) requisitioned."] call InA_fnc_formatHint;
 };
 g_dialog_handler_gear_slider_change = {
 	private    _numItemsSelected    = nil;

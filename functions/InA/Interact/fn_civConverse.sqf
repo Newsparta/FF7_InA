@@ -403,9 +403,9 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 								deleteMarker format ["%1",_mkrName];
 							};
 							
-							["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
+							[false,"This person saw some enemies moving around in the immediate area."] call InA_fnc_formatHint;
 						} else {
-							["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+							[false,"This person has not seen any insurgents recently."] call InA_fnc_formatHint;
 						};
 					};
 				};
@@ -460,9 +460,9 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 								deleteMarker format ["%1",_mkrName];
 							};
 							
-							["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
+							[false,"This person saw some enemies moving around in the immediate area."] call InA_fnc_formatHint;
 						} else {
-							["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+							[false,"This person has not seen any insurgents recently."] call InA_fnc_formatHint;
 						};
 					};
 			};
@@ -471,7 +471,7 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 		
 			closeDialog 0;
 			
-			["INTERACTION","This person is taken aback at your behavior."] call FF7_fnc_formatHint;
+			[false,"This person is taken aback at your behavior."] call InA_fnc_formatHint;
 		};
 		
 		responded = false;
@@ -542,9 +542,9 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 								deleteMarker format ["%1",_mkrName];
 							};
 							
-							["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
+							[false,"This person saw some enemies moving around in the immediate area."] call InA_fnc_formatHint;
 						} else {
-							["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+							[false,"This person has not seen any insurgents recently."] call InA_fnc_formatHint;
 						};
 					};
 				};
@@ -599,9 +599,9 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 								deleteMarker format ["%1",_mkrName];
 							};
 							
-							["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
+							[false,"This person saw some enemies moving around in the immediate area."] call InA_fnc_formatHint;
 						} else {
-							["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+							[false,"This person has not seen any insurgents recently."] call InA_fnc_formatHint;
 						};
 					};
 			};
@@ -610,7 +610,7 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 		
 			closeDialog 0;
 			
-			["INTERACTION","This person is taken aback at your behavior."] call FF7_fnc_formatHint;
+			[false,"This person is taken aback at your behavior."] call InA_fnc_formatHint;
 		};
 		
 		responded = false;
@@ -681,9 +681,9 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 								deleteMarker format ["%1",_mkrName];
 							};
 							
-							["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
+							[false,"This person saw some enemies moving around in the immediate area."] call InA_fnc_formatHint;
 						} else {
-							["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+							[false,"This person has not seen any insurgents recently."] call InA_fnc_formatHint;
 						};
 					};
 				};
@@ -738,9 +738,9 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 								deleteMarker format ["%1",_mkrName];
 							};
 							
-							["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
+							[false,"This person saw some enemies moving around in the immediate area."] call InA_fnc_formatHint;
 						} else {
-							["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+							[false,"This person has not seen any insurgents recently."] call InA_fnc_formatHint;
 						};
 					};
 			};
@@ -749,7 +749,7 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 		
 			closeDialog 0;
 			
-			["INTERACTION","This person is taken aback at your behavior."] call FF7_fnc_formatHint;
+			[false,"This person is taken aback at your behavior."] call InA_fnc_formatHint;
 		};
 		
 		responded = false;
@@ -820,9 +820,9 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 								deleteMarker format ["%1",_mkrName];
 							};
 							
-							["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
+							[false,"This person saw some enemies moving around in the immediate area."] call InA_fnc_formatHint;
 						} else {
-							["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+							[false,"This person has not seen any insurgents recently."] call InA_fnc_formatHint;
 						};
 					};
 				};
@@ -877,9 +877,9 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 								deleteMarker format ["%1",_mkrName];
 							};
 							
-							["INTERACTION","This person saw some enemies moving around in the immediate area."] call FF7_fnc_formatHint;
+							[false,"This person saw some enemies moving around in the immediate area."] call InA_fnc_formatHint;
 						} else {
-							["INTERACTION","This person has not seen any insurgents recently."] call FF7_fnc_formatHint;
+							[false,"This person has not seen any insurgents recently."] call InA_fnc_formatHint;
 						};
 					};
 			};
@@ -888,7 +888,7 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 		
 			closeDialog 0;
 			
-			["INTERACTION","This person is taken aback at your behavior."] call FF7_fnc_formatHint;
+			[false,"This person is taken aback at your behavior."] call InA_fnc_formatHint;
 		};
 
 	[_civ,"MOVE"] remoteExec ["enableAI", 2];
@@ -901,6 +901,6 @@ if ((_num >= 0) && {_num <= (0.1 + (0.8 * civTol))}) then {
 
 	[_civ,"MOVE"] remoteExec ["enableAI", 2];
 
-	["INTERACTION","This person does not wish to converse with you."] call FF7_fnc_formatHint;
+	[false,"This person does not wish to converse with you."] call InA_fnc_formatHint;
 };
 

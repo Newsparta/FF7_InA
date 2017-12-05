@@ -24,12 +24,23 @@ Author:
     Newsparta
 ---------- */
 
-// ---------- PARAMETERS ----------
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_center"		,[]					,[]					,[]							],
+		[	"_min"			,1500				,[0]				,[]							],
+		[	"_wpMax"		,250				,[0]				,[]							],
+		[	"_s"			,1					,[0]				,[]							],
+		[	"_delay"		,0					,[0]				,[]							],
+		[	"_awareness"	,"SAFE"				,[""]				,[]							],
+		[	"_speed"		,"LIMITED"			,[""]				,[]							]];
 
-params ["_center",["_min", 1500, [0]], ["_wpMax", 250, [0]], ["_s", 1, [0]], ["_delay", 0, [0]],["_awareness", "SAFE", [""]],["_speed", "LIMITED", [""]]];
-
-// ---------- MAIN ----------
-private ["_accepted","_isNear","_pos","_truck","_group","_wp"];
+// Local declarations
+private		_accepted		= false;
+private		_pos			= [];
+private		_isNear			= false;
+private		_obj			= ObjNull;
+private		_group			= [];
+private		_wp				= nil;
 
 sleep _delay;
 
@@ -54,26 +65,26 @@ sleep _delay;
 		};
 		
 		if (count _pos > 2) exitWith {};
-		_truck = objNull;
+		_obj = objNull;
 		if (supplier == "BLU") then {
-			_truck = (selectRandom INS_TRUCK_BLU) createVehicle _pos;
+			_obj = (selectRandom INS_TRUCK_BLU) createVehicle _pos;
 			[
-				_truck,
+				_obj,
 				missionNamespace getVariable ["INS_TRUCK_BLU_TEX", nil],
 				missionNamespace getVariable ["INS_TRUCK_BLU_ANI", nil]
 			] call BIS_fnc_initVehicle;
 		} else {
-			_truck = (selectRandom INS_TRUCK_OPF) createVehicle _pos;
+			_obj = (selectRandom INS_TRUCK_OPF) createVehicle _pos;
 			[
-				_truck,
+				_obj,
 				missionNamespace getVariable ["INS_TRUCK_OPF_TEX", nil],
 				missionNamespace getVariable ["INS_TRUCK_OPF_ANI", nil]
 			] call BIS_fnc_initVehicle;
 		};
-		clearBackpackCargoGlobal _truck;
-		clearMagazineCargoGlobal _truck;
-		clearWeaponCargoGlobal _truck;
-		clearItemCargoGlobal _truck;
+		clearBackpackCargoGlobal _obj;
+		clearMagazineCargoGlobal _obj;
+		clearWeaponCargoGlobal _obj;
+		clearItemCargoGlobal _obj;
 		
 		_group = [
 			_pos, 
@@ -82,8 +93,8 @@ sleep _delay;
 				(selectRandom INS_INF_SINGLE)
 			]
 		] call BIS_fnc_spawnGroup;
-			((units _group) select 0) assignAsDriver _truck;
-			((units _group) select 0) moveInDriver _truck;
+			((units _group) select 0) assignAsDriver _obj;
+			((units _group) select 0) moveInDriver _obj;
 
 		_wp = _group addWaypoint [_center, _wpMax];
 		_wp setWaypointType "TR UNLOAD";
@@ -106,22 +117,22 @@ sleep _delay;
 				(selectRandom INS_INF_SINGLE)
 			]
 		] call BIS_fnc_spawnGroup;
-			((units _group) select 0) assignAsCargo _truck;
-			((units _group) select 1) assignAsCargo _truck;
-			((units _group) select 2) assignAsCargo _truck;
-			((units _group) select 3) assignAsCargo _truck;
-			((units _group) select 4) assignAsCargo _truck;
-			((units _group) select 5) assignAsCargo _truck;
-			((units _group) select 6) assignAsCargo _truck;
-			((units _group) select 7) assignAsCargo _truck;
-			((units _group) select 0) moveInCargo _truck;
-			((units _group) select 1) moveInCargo _truck;
-			((units _group) select 2) moveInCargo _truck;
-			((units _group) select 3) moveInCargo _truck;
-			((units _group) select 4) moveInCargo _truck;
-			((units _group) select 5) moveInCargo _truck;
-			((units _group) select 6) moveInCargo _truck;
-			((units _group) select 7) moveInCargo _truck;
+			((units _group) select 0) assignAsCargo _obj;
+			((units _group) select 1) assignAsCargo _obj;
+			((units _group) select 2) assignAsCargo _obj;
+			((units _group) select 3) assignAsCargo _obj;
+			((units _group) select 4) assignAsCargo _obj;
+			((units _group) select 5) assignAsCargo _obj;
+			((units _group) select 6) assignAsCargo _obj;
+			((units _group) select 7) assignAsCargo _obj;
+			((units _group) select 0) moveInCargo _obj;
+			((units _group) select 1) moveInCargo _obj;
+			((units _group) select 2) moveInCargo _obj;
+			((units _group) select 3) moveInCargo _obj;
+			((units _group) select 4) moveInCargo _obj;
+			((units _group) select 5) moveInCargo _obj;
+			((units _group) select 6) moveInCargo _obj;
+			((units _group) select 7) moveInCargo _obj;
 		_wp = _group addWaypoint [_center, _wpMax];
 		_wp setWaypointType "GUARD";
 		_wp setWaypointSpeed _speed;

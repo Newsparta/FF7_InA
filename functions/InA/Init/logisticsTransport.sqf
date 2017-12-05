@@ -112,7 +112,7 @@ while {true} do {
 		
 		_team setGroupIdGlobal ["DEVIL - 1"];
 		
-		["HQ", "Headquarters", "A Logistics transport has been dispatched with supplies."] remoteExec ["FF7_fnc_globalHintStruct", 0];
+		[true, "A Logistics transport has been dispatched with supplies.", "Headquarters"] remoteExec ["InA_fnc_formatHint", 0];
 		
 		waitUntil {sleep 3; if !(alive logiVeh) exitWith {true}; ((getPosATL logiVeh) select 2) < 3};
 		
@@ -123,7 +123,7 @@ while {true} do {
 			logiVeh animateSource [_door, 1];
 		};
 		if !(alive logiVeh) then {
-			["HQ", "Headquarters", "Logistics transport has been destroyed ..."] remoteExec ["FF7_fnc_globalHintStruct", 0];
+			[true, "Logistics transport has been destroyed ...", "Headquarters"] remoteExec ["InA_fnc_formatHint", 0];
 		};
 		
 		if (alive logiVeh) then {
@@ -133,7 +133,7 @@ while {true} do {
 			if (compObj >= 3) then {
 				compObj = 0;
 				extraSupplies = round random 200;
-				["HQ", "Headquarters", "You have been allocated additional supplies due to successful operations in the theatre."] remoteExec ["FF7_fnc_globalHintStruct", 0];
+				[true, "You have been allocated additional supplies due to successful operations in the theatre.", "Headquarters"] remoteExec ["InA_fnc_formatHint", 0];
 
 				sleep 4;
 			};

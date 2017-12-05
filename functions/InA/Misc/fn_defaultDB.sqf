@@ -65,6 +65,6 @@ _export pushBack [false, [0,0,0]];
 
 // ---------- End ----------
 
-_null = ["save", "data", _export] call FF7_fnc_extSerialize;
+_null = ["save", "data", _export] call InA_fnc_extSerialize;
 
-["SAVE", "Database has been reset."] remoteExec ["FF7_fnc_formatHint", 0];
+[true, "Reset.", "Database"] remoteExec ["InA_fnc_formatHint", 0];

@@ -155,7 +155,7 @@ if (_data select 7 select 0) then {
 // end //
 /////////
 
-["LOADED", "Data loaded"] remoteExec ["FF7_fnc_formatHint", 0];
+[true, "loaded", "Database"] remoteExec ["InA_fnc_formatHint", 0];
 
 sleep 4;
 

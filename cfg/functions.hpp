@@ -1,31 +1,3 @@
-class FF7
-{
-	tag = "FF7";
-	class functions
-	{
-		// ACE
-		
-		
-		// GENERIC
-		class weatherMan {file = "functions\FF7\Generic\fn_weatherMan.sqf";};
-		class tfarSetup {file = "functions\FF7\Generic\fn_tfarsetup.sqf";};
-		class addGlobalAction {file = "functions\FF7\Generic\fn_addglobalaction.sqf";};
-		class addToCurator {file = "functions\FF7\Generic\fn_addtocurator.sqf";};
-		class getMissionRoot {file = "functions\FF7\Generic\fn_getmissionroot.sqf";};
-		class getRoundDec {file = "functions\FF7\Generic\fn_getrounddec.sqf";};
-		class briefingHint {file = "functions\FF7\Generic\fn_briefingHint.sqf";};
-		class debugLog {file = "functions\FF7\Generic\fn_debuglog.sqf";};
-		class formatAddAction {file = "functions\FF7\Generic\fn_formataddaction.sqf";};
-		class formatText {file = "functions\FF7\Generic\fn_formatText.sqf";};
-		class formatHint {file = "functions\FF7\Generic\fn_formatHint.sqf";};
-		class globalHint {file = "functions\FF7\Generic\fn_globalhint.sqf";};
-		class globalHintStruct {file = "functions\FF7\Generic\fn_globalhintstruct.sqf";};
-		class globalNotify {file = "functions\FF7\Generic\fn_globalnotify.sqf";};
-		class globalSideChat {file = "functions\FF7\Generic\fn_globalsidechat.sqf";};
-		class remAllActions {file = "functions\FF7\Generic\fn_remallactions.sqf";};
-	};
-};
-
 class Helpers
 {
 	tag = "Helpers";
@@ -78,10 +50,10 @@ class InA
 	class functions
 	{
 		// ACE
-		class aceHealLocal {file = "functions\InA\Ace\fn_aceheallocal.sqf";};
-		class aceMedicalStatus {file = "functions\InA\Ace\fn_acemedicalstatus.sqf";};
-		class disableAceInteractions {file = "functions\InA\Ace\fn_disableaceinteractions.sqf";};
-		class setupMedicalCrate {file = "functions\FF7\InA\fn_setupmedicalcrate.sqf";};
+		class aceHealLocal {file = "functions\InA\ACE\fn_aceheallocal.sqf";};
+		class aceMedicalStatus {file = "functions\InA\ACE\fn_acemedicalstatus.sqf";};
+		class disableAceInteractions {file = "functions\InA\ACE\fn_disableaceinteractions.sqf";};
+		class setupMedicalCrate {file = "functions\InA\ACE\fn_setupmedicalcrate.sqf";};
 
 		// Actions
 		class actionGarageRequisition {file = "functions\InA\Actions\fn_actionGarageRequisition.sqf";};
@@ -124,7 +96,7 @@ class InA
 		class civConverse {file = "functions\InA\Interact\fn_civConverse.sqf";};
 
 		// Misc.
-		class extSerialize {file = "functions\FF7\Generic\extSerialize.sqf";};
+		class extSerialize {file = "functions\InA\Misc\extSerialize.sqf";};
 		class pst_registerStaticContainer {file = "functions\InA\Misc\fn_pst_registerStaticContainer.sqf";};
 		class MGNest {file = "functions\InA\Misc\fn_MGNest.sqf";};
 		class aidProtocol {file = "functions\InA\Misc\fn_aidProtocol.sqf";};
@@ -164,7 +136,6 @@ class InA
 		// Reinforcements
 		class reinforcementCall {file = "functions\InA\Reinforcements\fn_reinforcementCall.sqf";};
 		class insSniperAttack {file = "functions\InA\Reinforcements\fn_insSniperAttack.sqf";};
-		class genLightCarAttack {file = "functions\InA\Reinforcements\fn_genLightCarAttack.sqf";};
 		class insLightCarAttack {file = "functions\InA\Reinforcements\fn_insLightCarAttack.sqf";};
 		class insMediumCarAttack {file = "functions\InA\Reinforcements\fn_insMediumCarAttack.sqf";};
 		class insMediumTruckTransport {file = "functions\InA\Reinforcements\fn_insMediumTruckTransport.sqf";};

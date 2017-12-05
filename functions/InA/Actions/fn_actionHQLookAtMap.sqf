@@ -1,5 +1,5 @@
 if ("ItemMap" in (assignedItems player)) exitWith {
-	["HQ", "Headquarters", "You already have a map to look at silly."] call FF7_fnc_globalHintStruct;
+	[false, "you already have a map to look at."] call InA_fnc_formatHint;
 };
 
 (_this select 1) linkItem "ItemMap";

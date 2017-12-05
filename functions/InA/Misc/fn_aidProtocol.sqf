@@ -37,7 +37,7 @@ _vehicles = nearestObjects [getPosATL _veh, idap_cars, 1250];
 _loc = getPosATL _veh;
 _rad = 500;
 
-["IDAP", "Keep the aid vehicle in the region for 5 minutes to deploy the supplies."] remoteExec ["FF7_fnc_formatHint", 0, false];
+[true, "Keep the aid vehicle in the region for 5 minutes to deploy the supplies.", "IDAP"] remoteExec ["InA_fnc_formatHint", 0, false];
 
 _veh engineOn false;
 [_veh] spawn {
@@ -73,12 +73,12 @@ while {_i <= 150;} do {
 	sleep 2;
 
 	if !(alive _veh) exitWith {
-		["IDAP", "The aid vehicle has been destroyed."] remoteExec ["FF7_fnc_formatHint", 0, false];
+		[true, "The aid vehicle has been destroyed.", "IDAP"] remoteExec ["InA_fnc_formatHint", 0, false];
 	};
 
 	if (_i >= 150) then {
 
-		["IDAP", "Aid has been successfully deployed."] remoteExec ["FF7_fnc_formatHint", 0, false];
+		[true, "Aid has been successfully deployed.", "IDAP"] remoteExec ["InA_fnc_formatHint", 0, false];
 
 		{
 			_region = ["ambient",(_x select 0)] joinString "";

@@ -11,7 +11,7 @@ _houses = nearestTerrainObjects [getPosATL player, ["HOUSE"], 20];
 _house = (_houses select 0);
 
 if (count _houses < 1) exitWith {
-	["INTERACTION","There is no door nearby to unlock."] call FF7_fnc_formatHint;
+	[false,"There is no door nearby to unlock."] call InA_fnc_formatHint;
 };
 
 // ---------- Check what player is looking at ----------
@@ -33,7 +33,7 @@ _door = "";
 } forEach _optionalDoors;
 
 if (_door == "") exitWith {
-	["INTERACTION","There is no door nearby to unlock."] call FF7_fnc_formatHint;
+	[false,"There is no door nearby to unlock."] call InA_fnc_formatHint;
 };
 
 // ---------- Get animation phase of door ----------
@@ -43,7 +43,7 @@ _animation = _door + "_rot";
 _phase = if ((_obj animationPhase _animation) > 0) then {0} else {1};
 
 if (_phase == 0) exitWith {
-	["INTERACTION","This door is already opened."] call FF7_fnc_formatHint;
+	[false,"This door is already opened."] call InA_fnc_formatHint;
 };
 
 // ---------- Initiate unlock sequence ----------

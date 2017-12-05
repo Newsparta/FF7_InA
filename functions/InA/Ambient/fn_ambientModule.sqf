@@ -305,7 +305,7 @@ while {true} do {
 				
 				if !(_affect) then {
 				
-					[format ["%1", _name], "The region has been affected by your presence."] remoteExec ["FF7_fnc_formatHint", 0, false];
+					[true, "The region has been affected by your presence.", format ["%1", _name]] remoteExec ["InA_fnc_formatHint", 0, false];
 					_affect = true;
 					
 					if (_reward) then {
@@ -323,7 +323,7 @@ while {true} do {
 					
 					sleep 3;
 					
-					[format ["%1", _name], "The region appears to be pacified."] remoteExec ["FF7_fnc_formatHint", 0, false];
+					[true, "The region appears to be pacified.", format ["%1", _name]] remoteExec ["InA_fnc_formatHint", 0, false];
 				};
 			};
 		};

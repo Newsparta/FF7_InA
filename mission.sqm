@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=261;
+		nextID=276;
 	};
 	class Camera
 	{
-		pos[]={10968.799,366.16653,11514.223};
-		dir[]={-0.66986471,-0.43130705,-0.60454881};
-		up[]={-0.32020903,0.90218741,-0.28898677};
-		aside[]={-0.6700666,-1.1228258e-006,0.7424556};
+		pos[]={10959.241,356.15131,11511.88};
+		dir[]={-0.38771826,-0.38440791,-0.83782148};
+		up[]={-0.16144812,0.92315656,-0.34887475};
+		aside[]={-0.90754741,1.4551915e-010,0.41998208};
 	};
 };
 binarizationWanted=0;
@@ -746,13 +746,13 @@ class Mission
 			class PositionInfo
 			{
 				position[]={10943.84,351.73914,11506.068};
-				angles[]={0,4.7218828,0};
+				angles[]={0,4.7218838,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="[this] call FF7_fnc_setupMedicalCrate;";
+				init="call{[this] call InA_fnc_setupMedicalCrate;}";
 				disableSimulation=1;
 			};
 			id=4;
@@ -1165,14 +1165,15 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={10945.563,354.35681,11460.575};
-				angles[]={0,1.5120038,0};
+				position[]={10956.634,354.35681,11480.643};
+				angles[]={0,1.5119962,0};
 			};
 			side="Empty";
 			flags=5;
 			class Attributes
 			{
 				init="this setFlagTexture ""img\foxforce_flag.jpg"";";
+				name="teleportFlag";
 			};
 			id=23;
 			type="Flag_White_F";

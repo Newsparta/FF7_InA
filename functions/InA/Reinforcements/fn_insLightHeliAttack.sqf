@@ -24,12 +24,23 @@ Author:
     Newsparta
 ---------- */
 
-// ---------- PARAMETERS ----------
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_center"		,[]					,[]					,[]							],
+		[	"_min"			,3000				,[0]				,[]							],
+		[	"_wpMax"		,250				,[0]				,[]							],
+		[	"_s"			,1					,[0]				,[]							],
+		[	"_delay"		,0					,[0]				,[]							],
+		[	"_awareness"	,"SAFE"				,[""]				,[]							],
+		[	"_speed"		,"LIMITED"			,[""]				,[]							]];
 
-params ["_center",["_min", 3000, [0]], ["_wpMax", 250, [0]], ["_s", 1, [0]], ["_delay", 0, [0]],["_awareness", "SAFE", [""]],["_speed", "LIMITED", [""]]];
-
-// ---------- MAIN ----------
-private ["_pos","_heli","_group","_wp"];
+// Local declarations
+private		_accepted		= false;
+private		_pos			= [];
+private		_isNear			= false;
+private		_obj			= ObjNull;
+private		_group			= [];
+private		_wp				= nil;
 
 sleep _delay;
 
@@ -54,18 +65,18 @@ sleep _delay;
 		};
 		
 		if (count _pos > 2) exitWith {};
-		_heli = objNull;
+		_obj = objNull;
 		if (supplier == "BLU") then {
-			_heli = createVehicle [(selectRandom INS_LIGHT_HELI_AH_BLU), _pos, [], 0, "FLY"];
+			_obj = createVehicle [(selectRandom INS_LIGHT_HELI_AH_BLU), _pos, [], 0, "FLY"];
 			[
-				_heli,
+				_obj,
 				missionNamespace getVariable ["INS_LIGHT_HELI_AH_BLU_TEX", nil],
 				missionNamespace getVariable ["INS_LIGHT_HELI_AH_BLU_ANI", nil]
 			] call BIS_fnc_initVehicle;
 		} else {
-			_heli = createVehicle [(selectRandom INS_LIGHT_HELI_AH_OPF), _pos, [], 0, "FLY"];
+			_obj = createVehicle [(selectRandom INS_LIGHT_HELI_AH_OPF), _pos, [], 0, "FLY"];
 			[
-				_heli,
+				_obj,
 				missionNamespace getVariable ["INS_LIGHT_HELI_AH_OPF_TEX", nil],
 				missionNamespace getVariable ["INS_LIGHT_HELI_AH_OPF_ANI", nil]
 			] call BIS_fnc_initVehicle;
@@ -81,10 +92,10 @@ sleep _delay;
 				(selectRandom INS_INF_SINGLE)
 			]
 		] call BIS_fnc_spawnGroup;
-		((units _group) select 0) moveInAny _heli;
-		((units _group) select 1) moveInAny _heli;
-		((units _group) select 2) moveInAny _heli;
-		((units _group) select 3) moveInAny _heli;
+		((units _group) select 0) moveInAny _obj;
+		((units _group) select 1) moveInAny _obj;
+		((units _group) select 2) moveInAny _obj;
+		((units _group) select 3) moveInAny _obj;
 	
 		_wp = _group addWaypoint [_center, _wpMax];
 		_wp setWaypointType "GUARD";

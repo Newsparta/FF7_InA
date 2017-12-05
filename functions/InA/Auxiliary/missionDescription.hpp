@@ -2,13 +2,10 @@
 
 [] spawn {
     
-        sleep 5;
+        sleep 10;
         
-        ["BASICS", "Press 'M' look on the left, find 'Mission Mechanics' and please read the 'Basic Tenets'."] call FF7_fnc_formatHint;
+        [true, "Press 'M' look on the left, find 'Mission Mechanics' and please read the 'Basic Tenets'.","BASICS"] call InA_fnc_formatHint;
         
-        sleep 60;
-        
-        ["(4.2)<br/>2017-11-26", "Latest patch date"] call FF7_fnc_formatHint;
     };
 
 // ---------- Mission Mechanics (4.2) ----------

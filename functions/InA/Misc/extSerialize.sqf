@@ -46,7 +46,7 @@ private     _return         = nil;
 if (__func == "save") then {
 
 	if (0 == count __data) exitWith {
-		["ERROR", "Error saving to database"] remoteExec ["FF7_fnc_formatHint", 0];
+		[true, "Error saving to database", "ERROR"] remoteExec ["InA_fnc_formatHint", 0];
 		diag_log format ["ERROR (extSerialize.sqf/save): __data array was empty."];
 	};
 
@@ -55,7 +55,7 @@ if (__func == "save") then {
 	_response = "extSerialize" callExtension _call_string;
 
 	if (_response == "ERROR") exitWith {
-		["ERROR", "Error saving to database"] remoteExec ["FF7_fnc_formatHint", 0];
+		[true, "Error saving to database", "ERROR"] remoteExec ["InA_fnc_formatHint", 0];
 		diag_log format ["ERROR (extSerialize.sqf/save): _response was ""ERROR""."];
 	};
 
@@ -72,7 +72,7 @@ if (__func == "save") then {
 		_response = "extSerialize" callExtension _call_string;
 
 		if (_response == "ERROR") exitWith {
-			["ERROR", "Error loading from database"] remoteExec ["FF7_fnc_formatHint", 0];
+			[true, "Error loading from database", "ERROR"] remoteExec ["InA_fnc_formatHint", 0];
 			diag_log format ["ERROR (extSerialize.sqf/load): _response was ""ERROR""."];
 
 			sleep 2;
@@ -90,7 +90,7 @@ if (__func == "save") then {
 // ---------- Unknown Func ----------
 
 } else {
-    ["ERROR", "Unknown function passed to extSerialize"] remoteExec ["FF7_fnc_formatHint", 0];
+    [true, "Unknown function passed to extSerialize", "ERROR"] remoteExec ["InA_fnc_formatHint", 0];
 	diag_log format ["ERROR (extSerialize.sqf): Unknown function ""%1"" called with key ""%2"".", __func, __key];
 }; };
 

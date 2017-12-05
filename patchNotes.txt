@@ -2,3 +2,5 @@
 
 - bug fixes
 - code cleaning
+
+- check radios

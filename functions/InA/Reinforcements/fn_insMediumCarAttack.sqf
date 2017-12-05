@@ -24,12 +24,23 @@ Author:
     Newsparta
 ---------- */
 
-// ---------- PARAMETERS ----------
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_center"		,[]					,[]					,[]							],
+		[	"_min"			,1500				,[0]				,[]							],
+		[	"_wpMax"		,250				,[0]				,[]							],
+		[	"_s"			,1					,[0]				,[]							],
+		[	"_delay"		,0					,[0]				,[]							],
+		[	"_awareness"	,"SAFE"				,[""]				,[]							],
+		[	"_speed"		,"LIMITED"			,[""]				,[]							]];
 
-params ["_center",["_min", 1500, [0]], ["_wpMax", 250, [0]], ["_s", 1, [0]], ["_delay", 0, [0]],["_awareness", "SAFE", [""]],["_speed", "LIMITED", [""]]];
-
-// ---------- MAIN ----------
-private ["_accepted","_isNear","_pos","_car","_group","_wp"];
+// Local declarations
+private		_accepted		= false;
+private		_pos			= [];
+private		_isNear			= false;
+private		_obj			= ObjNull;
+private		_group			= [];
+private		_wp				= nil;
 
 sleep _delay;
 
@@ -54,23 +65,23 @@ sleep _delay;
 		};
 		
 		if (count _pos > 2) exitWith {};
-		_car = objNull;
+		_obj = objNull;
 		if (supplier == "BLU") then {
-			_car = (selectRandom INS_MRAP_BLU) createVehicle _pos;
+			_obj = (selectRandom INS_MRAP_BLU) createVehicle _pos;
 			[
-				_car,
+				_obj,
 				missionNamespace getVariable ["INS_MRAP_BLU_TEX", nil],
 				missionNamespace getVariable ["INS_MRAP_BLU_ANI", nil]
 			] call BIS_fnc_initVehicle;
 		} else {
-			_car = (selectRandom INS_MRAP_OPF) createVehicle _pos;
+			_obj = (selectRandom INS_MRAP_OPF) createVehicle _pos;
 			[
-				_car,
+				_obj,
 				missionNamespace getVariable ["INS_MRAP_OPF_TEX", nil],
 				missionNamespace getVariable ["INS_MRAP_OPF_ANI", nil]
 			] call BIS_fnc_initVehicle;
 		};
-		_car lock 3;
+		_obj lock 3;
 		_group = [
 			_pos, 
 			INDEPENDENT, 
@@ -80,12 +91,12 @@ sleep _delay;
 				(selectRandom INS_INF_SINGLE)
 			]
 		] call BIS_fnc_spawnGroup;
-			((units _group) select 0) assignAsDriver _car;
-			((units _group) select 1) assignAsGunner _car;
-			((units _group) select 2) assignAsCargo _car;
-			((units _group) select 0) moveInDriver _car;
-			((units _group) select 1) moveInGunner _car;
-			((units _group) select 2) moveInCargo _car;
+			((units _group) select 0) assignAsDriver _obj;
+			((units _group) select 1) assignAsGunner _obj;
+			((units _group) select 2) assignAsCargo _obj;
+			((units _group) select 0) moveInDriver _obj;
+			((units _group) select 1) moveInGunner _obj;
+			((units _group) select 2) moveInCargo _obj;
 		
 	_wp = _group addWaypoint [[_center, 0, _wpMax, 1, 0, 20, 0] call BIS_fnc_findSafePos, 0];
 	_wp setWaypointType "GUARD";

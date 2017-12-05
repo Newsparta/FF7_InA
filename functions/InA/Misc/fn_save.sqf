@@ -1,11 +1,11 @@
 
 
 if (isNil "baseType") exitWith {
-	["Headquarters", "No theme selected. Nothing to save."] call FF7_fnc_formatHint;
+	[false, "No theme selected. Nothing to save."] call InA_fnc_formatHint;
 	nil;
 };
 if (baseType == "") exitWith {
-	["Headquarters", "No theme selected. Nothing to save."] call FF7_fnc_formatHint;
+	[false, "No theme selected. Nothing to save."] call InA_fnc_formatHint;
 	nil;
 };
 
@@ -159,4 +159,4 @@ _export pushBack [InA_stronghold, InA_stronghold_Loc];
 
 _null = ["save", "data", _export] call InA_fnc_extSerialize;
 
-["SAVED", "Map state has been saved to the database."] remoteExec ["FF7_fnc_formatHint", 0];
+[true, "Saved.", "Database"] remoteExec ["InA_fnc_formatHint", 0];

@@ -38,7 +38,7 @@ _vehicles = nearestObjects [_loc, idap_cars, _rad];
 		_veh = _this select 0;
 
 		if (speed _veh > 0) exitWith {
-			["IDAP", "Please stop the vehicle before deploying aid."] call FF7_fnc_formatHint;
+			[false, "Please stop the vehicle before deploying aid."] call InA_fnc_formatHint;
 		};
 
 		[_veh] remoteExec ["InA_fnc_aidProtocol", 2];

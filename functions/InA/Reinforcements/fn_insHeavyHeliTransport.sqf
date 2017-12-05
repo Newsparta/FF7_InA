@@ -24,12 +24,23 @@ Author:
     Newsparta
 ---------- */
 
-// ---------- PARAMETERS ----------
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_center"		,[]					,[]					,[]							],
+		[	"_min"			,3000				,[0]				,[]							],
+		[	"_wpMax"		,250				,[0]				,[]							],
+		[	"_s"			,1					,[0]				,[]							],
+		[	"_delay"		,0					,[0]				,[]							],
+		[	"_awareness"	,"SAFE"				,[""]				,[]							],
+		[	"_speed"		,"LIMITED"			,[""]				,[]							]];
 
-params ["_center",["_min", 3000, [0]], ["_wpMax", 250, [0]], ["_s", 1, [0]], ["_delay", 0, [0]],["_awareness", "SAFE", [""]],["_speed", "LIMITED", [""]]];
-
-// ---------- MAIN ----------
-private ["_pos","_heli","_group","_wp","_fill"];
+// Local declarations
+private		_accepted		= false;
+private		_pos			= [];
+private		_isNear			= false;
+private		_obj			= ObjNull;
+private		_group			= [];
+private		_wp				= nil;
 
 sleep _delay;
 
@@ -54,18 +65,18 @@ sleep _delay;
 		};
 		
 		if (count _pos > 2) exitWith {};
-		_heli = objNull;
+		_obj = objNull;
 		if (supplier == "BLU") then {
-			_heli = createVehicle [(selectRandom INS_HEAVY_HELI_TR_BLU), _pos, [], 0, "FLY"];
+			_obj = createVehicle [(selectRandom INS_HEAVY_HELI_TR_BLU), _pos, [], 0, "FLY"];
 			[
-				_heli,
+				_obj,
 				missionNamespace getVariable ["INS_HEAVY_HELI_TR_BLU_TEX", nil],
 				missionNamespace getVariable ["INS_HEAVY_HELI_TR_BLU_ANI", nil]
 			] call BIS_fnc_initVehicle;
 		} else {
-			_heli = createVehicle [(selectRandom INS_HEAVY_HELI_TR_OPF), _pos, [], 0, "FLY"];
+			_obj = createVehicle [(selectRandom INS_HEAVY_HELI_TR_OPF), _pos, [], 0, "FLY"];
 			[
-				_heli,
+				_obj,
 				missionNamespace getVariable ["INS_HEAVY_HELI_TR_OPF_TEX", nil],
 				missionNamespace getVariable ["INS_HEAVY_HELI_TR_OPF_ANI", nil]
 			] call BIS_fnc_initVehicle;
@@ -77,8 +88,8 @@ sleep _delay;
 				(selectRandom INS_INF_HELIPILOT)
 			]
 		] call BIS_fnc_spawnGroup;
-		((units _group) select 0) assignAsDriver _heli;
-		((units _group) select 0) moveInDriver _heli;
+		((units _group) select 0) assignAsDriver _obj;
+		((units _group) select 0) moveInDriver _obj;
 		{
 			_fill = [
 				_pos,
@@ -87,10 +98,10 @@ sleep _delay;
 					(selectRandom INS_INF_HELIPILOT)
 				]
 			] call BIS_fnc_spawnGroup;
-				((units _fill) select 0) assignAsTurret [_heli, _x];
-				((units _fill) select 0) moveInTurret [_heli, _x];
+				((units _fill) select 0) assignAsTurret [_obj, _x];
+				((units _fill) select 0) moveInTurret [_obj, _x];
 				(units _fill) join _group;
-		} forEach (allTurrets _heli);
+		} forEach (allTurrets _obj);
 
 		_wp = _group addWaypoint [_center, _wpMax];
 		_wp setWaypointType "TR UNLOAD";
@@ -114,22 +125,22 @@ sleep _delay;
 				(selectRandom INS_INF_SINGLE)
 			]
 		] call BIS_fnc_spawnGroup;
-			((units _group) select 0) assignAsCargo _heli;
-			((units _group) select 1) assignAsCargo _heli;
-			((units _group) select 2) assignAsCargo _heli;
-			((units _group) select 3) assignAsCargo _heli;
-			((units _group) select 4) assignAsCargo _heli;
-			((units _group) select 5) assignAsCargo _heli;
-			((units _group) select 6) assignAsCargo _heli;
-			((units _group) select 7) assignAsCargo _heli;
-			((units _group) select 0) moveInCargo _heli;
-			((units _group) select 1) moveInCargo _heli;
-			((units _group) select 2) moveInCargo _heli;
-			((units _group) select 3) moveInCargo _heli;
-			((units _group) select 4) moveInCargo _heli;
-			((units _group) select 5) moveInCargo _heli;
-			((units _group) select 6) moveInCargo _heli;
-			((units _group) select 7) moveInCargo _heli;
+			((units _group) select 0) assignAsCargo _obj;
+			((units _group) select 1) assignAsCargo _obj;
+			((units _group) select 2) assignAsCargo _obj;
+			((units _group) select 3) assignAsCargo _obj;
+			((units _group) select 4) assignAsCargo _obj;
+			((units _group) select 5) assignAsCargo _obj;
+			((units _group) select 6) assignAsCargo _obj;
+			((units _group) select 7) assignAsCargo _obj;
+			((units _group) select 0) moveInCargo _obj;
+			((units _group) select 1) moveInCargo _obj;
+			((units _group) select 2) moveInCargo _obj;
+			((units _group) select 3) moveInCargo _obj;
+			((units _group) select 4) moveInCargo _obj;
+			((units _group) select 5) moveInCargo _obj;
+			((units _group) select 6) moveInCargo _obj;
+			((units _group) select 7) moveInCargo _obj;
 		_wp = _group addWaypoint [_center, _wpMax];
 		_wp setWaypointType "GUARD";
 		_wp setWaypointSpeed _speed;

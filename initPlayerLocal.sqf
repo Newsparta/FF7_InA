@@ -10,7 +10,7 @@ _null = execVM "functions\InA\Init\initConfigs.sqf";
 
 // Setup TFAR frequencies
 if ("task_force_radio" in activatedAddons) then {
-	call FF7_fnc_TFARsetup;
+	call InA_fnc_TFARsetup;
 };
 
 // ACE actions
@@ -29,7 +29,7 @@ call compile preprocessFileLineNumbers "functions\InA\Interact\conversationStruc
 InA_Warning_ID = 0;
 
 menuHQ addAction [
-	["hq", "FF9900", "Headquarters"] call FF7_fnc_formatAddAction, 
+	"Headquarters", 
 	{_this call InA_fnc_actionHQMenu;},
 	[], 
 	99, 
@@ -39,7 +39,8 @@ menuHQ addAction [
 	"((_target distance _this) < 4)"
 ];
 		
-menuHQ addAction [["FF9900", "Look At Map"] call FF7_fnc_formatText,
+menuHQ addAction [
+	"Look at map",
 	{_this call InA_fnc_actionHQLookAtMap;},
 	[], 
 	99, 
@@ -49,7 +50,8 @@ menuHQ addAction [["FF9900", "Look At Map"] call FF7_fnc_formatText,
 	"((_target distance _this) < 4)"
 ];
 		
-GearOpen addAction [["hq", "FF9900", "Gear Requisition"] call FF7_fnc_formatAddAction, 
+GearOpen addAction [
+	"Gear Requisition", 
 	{_this call InA_fnc_actionGearRequisition;},
 	[], 
 	99, 
@@ -59,7 +61,8 @@ GearOpen addAction [["hq", "FF9900", "Gear Requisition"] call FF7_fnc_formatAddA
 	"((_target distance _this) < 4)"
 ];
 		
-Garage addAction [["hq", "FF9900", "Vehicle Requisition"] call FF7_fnc_formatAddAction, 
+Garage addAction [
+	"Vehicle Requisition", 
 	{_this call InA_fnc_actionGarageRequisition;},
 	[], 
 	99, 
@@ -69,7 +72,8 @@ Garage addAction [["hq", "FF9900", "Vehicle Requisition"] call FF7_fnc_formatAdd
 	"((_target distance _this) < 4)"
 ];
 		
-Hangar addAction [["hq", "FF9900", "Vehicle Requisition"] call FF7_fnc_formatAddAction,
+Hangar addAction [
+	"Vehicle Requisition",
 	{_this call InA_fnc_actionHangarRequisition;},
 	[], 
 	99, 
@@ -79,7 +83,8 @@ Hangar addAction [["hq", "FF9900", "Vehicle Requisition"] call FF7_fnc_formatAdd
 	"((_target distance _this) < 4)"
 ];
 	
-Hangar addAction [["hq", "FF9900", "Shelter helicopter"] call FF7_fnc_formatAddAction,
+Hangar addAction [
+	"Shelter helicopter",
 	{_this call InA_fnc_actionHangarShelter;},
 	[], 
 	99, 
@@ -89,7 +94,8 @@ Hangar addAction [["hq", "FF9900", "Shelter helicopter"] call FF7_fnc_formatAddA
 	"((_target distance _this) < 4)"
 ];
 	
-Hangar addAction [["hq", "FF9900", "Bring out helicopter"] call FF7_fnc_formatAddAction,
+Hangar addAction [
+	"Bring out helicopter",
 	{_this call InA_fnc_actionHangarTakeOut;},
 	[], 
 	99, 
@@ -99,7 +105,8 @@ Hangar addAction [["hq", "FF9900", "Bring out helicopter"] call FF7_fnc_formatAd
 	"((_target distance _this) < 4)"
 ];
 		
-basicGearBox addAction [["hq", "FF9900", "Equip Uniform"] call FF7_fnc_formatAddAction, 
+basicGearBox addAction [
+	"Equip Uniform", 
 	{_this call InA_fnc_actionUniformEquip;},
 	[], 
 	99, 
@@ -125,7 +132,7 @@ buildObj =
 
 	if (kitVal >= objCost) then {
 
-		["BUILDING ACTIONS ADDED", "Building is hidden by default.<br/><br/>Use the SHOW and HIDE commands to toggle the visibility of the structure (keep it hidden if you dont need to see or place it yet, as to avoid accidentally squishing people)"] call FF7_fnc_formatHint;
+		[true, "Building is hidden by default.<br/><br/>Use the SHOW and HIDE commands to toggle the visibility of the structure (keep it hidden if you dont need to see or place it yet, as to avoid accidentally squishing people)", "BUILDING ACTIONS ADDED"] call InA_fnc_formatHint;
 
 		obj = objType createVehicle [0,0,0];
 
@@ -146,11 +153,20 @@ buildObj =
 
 		disableSerialization;
 
-		player addAction [["FF9900", "(Open Action Menu)"] call FF7_fnc_formatText, 
-				{
-					createDialog "InA_Build_Action_Dialog";
-				}, [], 99, true, true, "", "",0];
+		player addAction [
+			"Building actions", 
+			{
+				createDialog "InA_Build_Action_Dialog";
+			}, 
+			[], 
+			99, 
+			true, 
+			true, 
+			"", 
+			"",
+			0
+		];
 	} else {
-		["Headquarters", "You do not have the logistical supplies to construct this fortification."] call FF7_fnc_formatHint;
+		[false, "You do not have the logistical supplies to construct this fortification."] call InA_fnc_formatHint;
 	};
 };

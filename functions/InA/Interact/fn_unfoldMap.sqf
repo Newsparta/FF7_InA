@@ -13,10 +13,11 @@ if (_hasMap) then {
 	
 	], [], 0, "CAN_COLLIDE"];
 	
-	[_map, [["FF9900", "Look At Map"] call FF7_fnc_formatText,
+	[_map, [
+		"Look at map",
 		{
 		
-			if ("ItemMap" in (assignedItems player)) exitWith {["HQ", "Headquarters", "You already have a map to look at silly."] call FF7_fnc_globalHintStruct;};
+			if ("ItemMap" in (assignedItems player)) exitWith {[false, "You already have a map to look at."] call InA_fnc_formatHint;};
 
 			(_this select 1) linkItem "ItemMap";
 			
@@ -28,7 +29,8 @@ if (_hasMap) then {
 
 		},[], 99, true, true, "", "((_target distance _this) < 4)"]] remoteExec ["addAction", 0];
 		
-		[_map, [["FF9900", "Pick Up Map"] call FF7_fnc_formatText,
+	[_map, [
+		"Pick up map",
 		{
 
 			(_this select 1) linkItem "ItemMap";
@@ -40,5 +42,5 @@ if (_hasMap) then {
 		},[], 98, true, true, "", "((_target distance _this) < 4)"]] remoteExec ["addAction", 0];
 		
 } else {
-	["INTERACTION","You have no map to unfold."] call FF7_fnc_formatHint;
+	[false,"You have no map to unfold."] call InA_fnc_formatHint;
 };

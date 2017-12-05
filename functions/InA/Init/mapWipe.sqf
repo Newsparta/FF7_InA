@@ -43,7 +43,7 @@ while {true} do {
 				};
 			} forEach (allMissionObjects "" - _excludedObjects - playerVehicles);
 			
-			["HQ", "DEBUG", "Map has been wiped."] call FF7_fnc_globalHintStruct;
+			[true, "Map has been wiped.", "DEBUG"] call InA_fnc_formatHint;
 					
 			sleep params_mapWipe;
 		};

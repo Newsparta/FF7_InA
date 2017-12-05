@@ -182,7 +182,7 @@ for "_i" from 1 to _carsParked do {
 
 							civTol = civTol - 0.2;
 
-							["Civility", (format ["<t color='#CC2222'>%1</t> just stole a civilian vehicle.</t>", _nameTheif])] remoteExec ["FF7_fnc_formatHint", 0];
+							[false, (format ["<t color='#CC2222'>%1</t> just stole a civilian vehicle.</t>", _nameTheif])] remoteExec ["InA_fnc_formatHint", 0];
 
 						};
 
@@ -224,7 +224,7 @@ for "_i" from 1 to _carsParked do {
 
 							civTol = civTol - 0.1;
 
-							["Civility", (format ["<t color='#CC2222'>%1</t> just stole a civilian vehicle.</t>", _nameTheif])] remoteExec ["FF7_fnc_formatHint", 0];
+							[false, (format ["<t color='#CC2222'>%1</t> just stole a civilian vehicle.</t>", _nameTheif])] remoteExec ["InA_fnc_formatHint", 0];
 
 						};
 

@@ -56,6 +56,7 @@ class InA
 		class setupMedicalCrate {file = "functions\InA\ACE\fn_setupmedicalcrate.sqf";};
 
 		// Actions
+		class actionTeleport {file = "functions\InA\Actions\fn_actionTeleport.sqf";};
 		class actionGarageRequisition {file = "functions\InA\Actions\fn_actionGarageRequisition.sqf";};
 		class actionGearRequisition {file = "functions\InA\Actions\fn_actionGearRequisition.sqf";};
 		class actionHangarRequisition {file = "functions\InA\Actions\fn_actionHangarRequisition.sqf";};
@@ -158,6 +159,7 @@ class InA
 
 		// Text
 		class formatHint {file = "functions\InA\Text\fn_formatHint.sqf";};
+		class formatText {file = "functions\InA\Text\fn_formatText.sqf";};
 		
 		// Vehicles
 		class vehicleService {file = "defines\Vehicles\Vehicle Service\fn_vehicleService.sqf";};

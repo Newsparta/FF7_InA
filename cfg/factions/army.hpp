@@ -23,6 +23,7 @@ class Army: blufor
 		class weapons: weapons 
 		{
             class rhsusf_weap_m9 {};
+            class rhs_weap_m4a1_m320 {};
 			class hlc_rifle_ACR68_full_black {};
 			class hlc_rifle_ACR68_Carb_black {};
 			class hlc_rifle_ACR_Carb_black {};

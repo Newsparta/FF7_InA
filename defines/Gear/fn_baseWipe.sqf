@@ -19,7 +19,10 @@ Author:
 	[FF7] Newsparta
 ---------- */
 
-// clear armory boxes
+// Local declarations
+private		_array				= [];
+
+// Clear armory boxes
 _array = nearestObjects [getMarkerPos "respawn_west", 
 [
 	"ReammoBox_F"
@@ -32,7 +35,7 @@ _array = nearestObjects [getMarkerPos "respawn_west",
 	clearItemCargoGlobal _x;
 } forEach _array;
 
-// clear vehicles
+// Clear vehicles
 _array = (getMarkerPos "respawn_west") nearEntities [["Air","LandVehicle"], 750];
 
 {

@@ -1,5 +1,55 @@
+/* ----------
+Function:
+	InA_fnc_save
+
+Description:
+	Saves map state to the database
+
+Parameters:
+
+Optional:
+
+Example:
+	[] call InA_fnc_save;
+
+Returns:
+	Nil
+
+Author:
+	[FF7] Newsparta
+---------- */
 
 
+// Local declarations
+private		_export				= [];
+private		_lI1 				= [];
+private		_lI2 				= [];
+private		_xI1 				= [];
+private		_aI1 				= [];
+private		_aI2 				= [];
+private		_wI1 				= [];
+private		_wI2 				= [];
+private		_wI3 				= [];
+private		_gI1 				= [];
+private		_gI2 				= [];
+private		_eI1 				= [];
+private		_mI1 				= [];
+private		_dI 				= [];
+private		_airArray			= [];
+private		_allItems			= [];
+private		_allVehicles		= [];
+private		_array				= [];
+private		_box				= nil;
+private		_buildingArray		= [];
+private		_buildVehicles		= [];
+private		_inventory			= [];
+private		_landArray			= [];
+private		_null				= nil;
+private		_objCamp			= [];
+private		_objFOB				= [];
+private		_temp				= [];
+
+// Check if there is no faction selected
 if (isNil "baseType") exitWith {
 	[false, "No theme selected. Nothing to save."] call InA_fnc_formatHint;
 	nil;
@@ -9,28 +59,10 @@ if (baseType == "") exitWith {
 	nil;
 };
 
-_export = [];
-
-// ---------- Region stability (0)----------
-
+// Region stability (_data select 0)
 _export pushBack ([] call InA_fnc_regionCheck);
 
-// ---------- Armory inventory (1) ----------
-
-_lI1 = [];
-_lI2 = [];
-_xI1 = [];
-_aI1 = [];
-_aI2 = [];
-_wI1 = [];
-_wI2 = [];
-_wI3 = [];
-_gI1 = [];
-_gI2 = [];
-_eI1 = [];
-_mI1 = [];
-_dI = [];
-
+// Armory inventory (_data select 1)
 _array = 
 [
 	[launcherCrate_1, _lI1],
@@ -66,8 +98,6 @@ _array =
 
 } forEach _array;
 
-_allItems = [];
-
 _allItems pushBack _lI1;
 _allItems pushBack _lI2;
 _allItems pushBack _xI1;
@@ -84,14 +114,10 @@ _allItems pushBack _dI;
 
 _export pushBack _allItems;
 
-// ---------- Logistics (2) ----------
-
+// Logistics (_data select 2)
 _export pushBack ([LogV, LogM, LogF]);
 
-// ---------- Vehicles/strategic (3) ----------
-
-_allVehicles = [];
-
+// Vehicles/strategic (_data select 3)
 _landArray = nearestObjects [getMarkerPos "respawn_west",["LandVehicle"],750];
 
 {
@@ -118,7 +144,9 @@ _airArray = nearestObjects [getMarkerPos "respawn_west",["Air"],750];
 
 } forEach _airArray;
 
-_buildingArray = nearestObjects [InA_fob_location,["Static"],100];
+_objFOB = nearestObjects [InA_fob_location,["Static"],100];
+_objCamp = nearestObjects [InA_camp_location,["Static", "Thing"],50];
+_buildingArray = _objFOB + _objCamp;
 
 {
 	_temp = [];
@@ -133,30 +161,27 @@ _buildingArray = nearestObjects [InA_fob_location,["Static"],100];
 
 _export pushBack _allVehicles;
 
-// ---------- Check build vehicles (4) ----------
-
-_buildVehicles = [];
-
+// Build vehicles (_data select 4)
 {
-	_buildVehicles pushBack [(typeOf (_x select 0)), _x select 1, _x select 2];
+	_buildVehicles pushBack [(typeOf (_x select 0)), _x select 1, _x select 2, _x select 3];
 } forEach utilityVehicles;
 
 _export pushBack _buildVehicles;
 
-// ---------- Base type (5) ----------
-
+// Faction (_data select 5)
 _export pushBack [baseType];
 
-// ---------- FOB (6) ----------
-
+// FOB (_data select 6)
 _export pushBack [fobPlaced, InA_fob_location];
 
-// ---------- Stronghold (7) ----------
-
+// Stronghold (_data select 7)
 _export pushBack [InA_stronghold, InA_stronghold_Loc];
 
-// ---------- Save to database ----------
+// Camp (_data select 8)
+_export pushBack [campPlaced, InA_camp_location];
 
+// Save to database
 _null = ["save", "data", _export] call InA_fnc_extSerialize;
 
+// Notification
 [true, "Saved.", "Database"] remoteExec ["InA_fnc_formatHint", 0];

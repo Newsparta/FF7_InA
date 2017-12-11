@@ -1,9 +1,24 @@
-private ["_id","_time"];
-// ---------- Skip time based on selection ----------
+/* ----------
+Script:
+	Timer
 
-_id = _this select 0;
-_time = nil;
+Description:
+	Skip day time based on selection
 
+Author:
+	[FF7] Newsparta
+---------- */
+
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_id"			,[]					,[]					,[]							]];
+
+// Local declarations
+private		_hour				= 0;
+private		_minute				= 0;
+private		_time				= 0;
+
+// Switch based on selection
 switch (_id) do
 {
 	case 0:
@@ -27,19 +42,22 @@ switch (_id) do
 	};
 };
 
+// Black out
 [["","BLACK OUT",4]] remoteExec ["titleCut", 0, false];
 sleep 4.5;
 
+// Set time
 logiDaytime = logiDaytime + (_time - daytime);
 (_time - daytime) remoteExec ["skipTime", 0, false];
 
+// Fade in
 sleep 0.5;
 [["","BLACK IN",4]] remoteExec ["titleCut", 0, false];
 sleep 4;
 
+// Display time to player
 _hour = floor daytime;
 _minute = floor ((daytime - _hour) * 60);
-
 if ((_minute < 10) && (_hour >= 10)) then {
 
 	//[[format ["%1:0%2", _hour, _minute], "PLAIN", 1]] remoteExec ["titleText", 0];
@@ -50,7 +68,6 @@ if ((_minute < 10) && (_hour >= 10)) then {
 	] remoteExec ["BIS_fnc_typeText", 0];
 
 };
-
 if ((_minute >= 10) && (_hour < 10)) then {
 
 	//[[format ["0%1:%2", _hour, _minute], "PLAIN", 1]] remoteExec ["titleText", 0];
@@ -61,7 +78,6 @@ if ((_minute >= 10) && (_hour < 10)) then {
 	] remoteExec ["BIS_fnc_typeText", 0];
 
 };
-
 if ((_minute < 10) && (_hour < 10)) then {
 
 	//[[format ["0%1:0%2", _hour, _minute], "PLAIN", 1]] remoteExec ["titleText", 0];
@@ -72,7 +88,6 @@ if ((_minute < 10) && (_hour < 10)) then {
 	] remoteExec ["BIS_fnc_typeText", 0];
 
 };
-
 if ((_minute >= 10) && (_hour >= 10)) then {
 
 	//[[format ["%1:%2", _hour, _minute], "PLAIN", 1]] remoteExec ["titleText", 0];

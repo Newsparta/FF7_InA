@@ -1,3 +1,7 @@
+////////////////
+// DEPRECATED //
+////////////////
+
 params ["_parkedVehicle",["_fullService", false, [false]]];
 
 _opforVehicles = INS_CAR_OPF + INS_CARU_OPF + INS_TRUCK_OPF;

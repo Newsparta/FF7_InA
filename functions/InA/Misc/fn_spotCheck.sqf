@@ -19,38 +19,44 @@ Returns:
     spotted = (true if spotted, nil if not)
 
 Author:
-    Newsparta
+    [FF7] Newsparta
 ---------- */
 
-// ---------- PARAMETERS ----------
+// Local declarations
+private		_players			= [];
+private		_val				= 0;
 
-params [];
-
-// ---------- MAIN ----------
-private ["_q"];
-
+// Set global variable
 spotted = false;
-_players = [];
 
-while {true} do {
+// Loop start
+while {true;} do {
 		
 	sleep (5 + (random 5));
 	
+	// Execute on all players
 	{
-		_q = (independent knowsAbout _x);
+		// Find out if enemy knows about 
+		_val = (independent knowsAbout _x);
 
-		if (_q > 3) then {
+		// Check if enemy knows enough
+		if (_val > 3) then {
 
+			// Set spotted
 			spotted = true;
+
+			// Reset player array
 			_players = [];
-			hint "you have been spotted"; //debug
 			
 		} else {
 
+			// Add player to array
 			_players pushBack _x;
 
+			// Check if all players are in unknown array
 			if (count _players == count (allPlayers - entities "HeadlessClient_F")) then {
 
+				// Reset spotted variable
 				spotted = false;
 
 			};

@@ -35,7 +35,7 @@ class InA_Timer_Dialog
 			w = 0.0309934 * safezoneW;
 			h = 0.043996 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[[lbCurSel 1500], 'functions\InA\Auxiliary\timer.sqf'] remoteExec ['execVM', 2]; closeDialog 0";
+			action = "[[lbCurSel 1500], 'functions\InA\Dialogs\timer.sqf'] remoteExec ['execVM', 2]; closeDialog 0";
 		};
 		class InA_Timer_Button_2: RscButton
 		{

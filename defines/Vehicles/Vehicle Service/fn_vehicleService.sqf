@@ -1,25 +1,6 @@
-/* ----------
-Function: InA_fnc_vehicleService
-
-Description:
-    A function to service or store vehicles
-
-Parameters:
-    - Marker locations for service (Array of Positions)
-
-Optional:
-
-
-Example:
-   
-    [[getMarkerPos "marker_1", getMarkerPos "marker_2"]] spawn InA_fnc_vehicleService
-
-Returns:
-    Nil
-
-Author:
-    Newsparta
----------- */
+////////////////
+// DEPRECATED //
+////////////////
 
 // ---------- PARAMETERS ----------
 
@@ -31,7 +12,7 @@ parkedVehicle = ObjNull;
 
 waitUntil {sleep 1; initialized};
 
-while {true} do {
+while {true;} do {
 	
 	sleep (2 + (random 2));
 	

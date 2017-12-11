@@ -20,34 +20,35 @@ Returns:
     Nil
 
 Author:
-    Newsparta
+    [FF7] Newsparta
 ---------- */
 
-// ---------- Parameters ----------
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_loc"			,[]					,[]					,[]							],
+		[	"_name"			,[]					,[]					,[]							],
+		[	"_rad"			,1000				,[0]				,[]							],
+		[	"_size"			,"small"			,[""]				,[]							]];
 
-params ["_loc","_name",["_rad", 1000, [0]],["_size", "small", [""]]];
-	
-// ---------- Main ----------
-private ["_instability","_reward","_affect","_didSomething","_affectTimer","_i","_ambMult","_patrols","_groups","_group","_pos","_car","_nme"];
+// Local declarations
+private		_affect				= false;
+private		_affectTimer		= 1;
+private		_ambMult			= 0.75;
+private		_didSomething		= false;
+private		_i					= 0;
+private		_instability		= (0.5 + (random 0.5));
+private		_needAid			= false;
+private		_nme				= nil;
+private		_reward				= false;
 
-sleep random 3;
-
-_instability = (0.5 + (random 0.5));
-_reward = false;
-_affect = false;
-_needAid = false;
-_stabilityLock = false;
-_didSomething = false;
-_affectTimer = 1;
-_i = 0;
-_ambMult = 0.75;
-
+// Create global variable for region spawn
 call compile format
 [
 	"%1Occupied = false",
 	_name
 ];
 
+// Create global variable for instability
 call compile format
 [
 	"instability%1 = %2",
@@ -55,23 +56,25 @@ call compile format
 	_instability
 ];
 
+// Spawn instability update function
 [_loc,_name,_instability] spawn InA_fnc_instabilityUpdate;
 
-while {true} do {
+// Main loop
+while {true;} do {
 
 	sleep (2 + (random 2));
-	
-	_i = 0;
-	
+
+	// Check if players are near enough to spawn elements
 	if ({_x distance _loc < (_rad * 1.25)} count (allPlayers - entities "HeadlessClient_F") > 0) then {
 	
+		// Execute ambient entrance and set global variable for region spawn
 		call compile format
 		[
 			"
 				
 				if (!%1Occupied) then {
 					
-					[%2,%3,'%4',%5] call InA_fnc_ambientEntrance;
+					[%2,%3,'%4',instability%1,'%1'] call InA_fnc_ambientEntrance;
 				};
 				
 				%1Occupied = true;
@@ -79,181 +82,116 @@ while {true} do {
 			_name,
 			_loc,
 			_rad,
-			_size,
-			_instability
+			_size
 		];
 	
 	};
 
+	// Check if players are close enough to have entered
 	if ({_x distance _loc < _rad} count (allPlayers - entities "HeadlessClient_F") > 0) then {
+
+		// update instability value incase edited
+		_instability = call compile format
+		[
+			"
+				instability%1;
+			",
+			_name
+		];
+
+		// Reset local timer
+		_i = 0;
 		
+		// Check if stable region
 		if (_instability < 0.5) then {
 
 			_reward = false;
 			_affect = false;
 			_needAid = true;
-			_stabilityLock = false;
 			_didSomething = false;
 			_affectTimer = 0.25;
 			_ambMult = 0.25;
 		};
+
+		// Check if destabalizing
 		if ((_instability >= 0.5) && {_instability < 0.9}) then {
 
 			_reward = false;
 			_affect = false;
 			_needAid = true;
-			_stabilityLock = false;
 			_didSomething = false;
 			_affectTimer = 0.75;
 			_ambMult = 1.25;
 		};
+
+		// Check if volatile
 		if (_instability >= 0.9) then {
 			
 			_reward = true;
 			_affect = false;
 			_needAid = false;
-			_stabilityLock = false;
 			_didSomething = false;
 			_affectTimer = 1;
 			_ambMult = 1.75;
 		};
 		
-		while {true} do {
-			scopeName "entered";
+		// Entered loop
+		while {true;} do {
+		scopeName "entered";
 			
 			sleep (2 + (random 2));
 			
+			// Increment local timer
 			_i = _i + 1;
 			
+			// Lower spawn multiplier at time
 			if (_i >= 225) then {
 				_ambMult = 0.25;
 			};
 			
+			// Check if players are actually still in the region
 			if ({_x distance _loc < _rad} count (allPlayers - entities "HeadlessClient_F") > 0) then {
 
+				// Check if the region needs aid and there are aid vehicles
 				if ((_needAid) && {count (nearestObjects [_loc, idap_cars, _rad]) > 0}) then {
 
+					// add actions to aid vehicles
 					[_loc, _rad, _name] spawn InA_fnc_aidVehicle;
 
 					_needAid = false;
 				};
-	
-				if (random 100 < (0.7 + (0.7 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
-					[
-						_loc, 
-						_rad + 500, 
-						(_rad/2), 
-						1
-					] spawn InA_fnc_insLightInfantryAttack;
-				};
-				if (random 100 < (0.01 + (0.01 * _ambMult))) then {
-					[
-						_loc, 
-						_rad + 500, 
-						(_rad/2), 
-						1
-					] spawn InA_fnc_insSniperAttack;
-				};
-				if (random 100 < (0.025 + (0.025 * _ambMult))) then {
-					[
-						_loc, 
-						_rad + 1000, 
-						(_rad/2), 
-						1
-					] spawn InA_fnc_insLightCarAttack;
-				};
-				if (random 100 < (0.02 + (0.02 * _ambMult))) then {
-					[
-						_loc, 
-						_rad + 1000, 
-						(_rad/2), 
-						1
-					] spawn InA_fnc_insMediumCarAttack;
-				};
-				if (random 100 < (0.025 + (0.025 * _ambMult))) then {
-					[
-						_loc, 
-						_rad + 1000, 
-						(_rad/2), 
-						1
-					] spawn InA_fnc_insMediumTruckTransport;
-				};
-				if (count (call BIS_fnc_listPlayers) > 7) then {
-					if (random 100 < (0.01 + (0.025 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
-						[
-							_loc, 
-							_rad + 1000, 
-							(_rad/2), 
-							1
-						] spawn InA_fnc_insApcTransport;
-					};
-					if (random 100 < (0.006250 + (0.0125 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
-						[
-							_loc, 
-							_rad + 1000, 
-							(_rad/2),  
-							1
-						] spawn InA_fnc_insIfvTransport;
-					};
-				};
-				if (random 100 < (0.008 + (0.008 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
-					[
-						_loc, 
-						_rad + 2500, 
-						(_rad/2), 
-						1
-					] spawn InA_fnc_insLightHeliAttack;
-				};
-				if (random 100 < (0.006250 + (0.006250 * _ambMult))) then {
-					[
-						_loc, 
-						_rad + 1000, 
-						(_rad/2), 
-						1
-					] spawn InA_fnc_insTankAttack;
-				};
-				if (random 100 < (0.006250 + (0.006250 * _ambMult))) then {
-					[
-						_loc, 
-						_rad + 2500, 
-						(_rad/2),  
-						1
-					] spawn InA_fnc_insMediumHeliTransport;
-				};
-				if (random 100 < (0.001562 + (0.001562 * _ambMult))) then {
-					[
-						_loc, 
-						_rad + 2500, 
-						(_rad/2), 
-						1
-					] spawn InA_fnc_insHeavyHeliTransport;
-				};
-				if (random 100 < (0.004 + (0.004 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
-					[
-						_loc, 
-						_rad + 1000, 
-						(_rad/2), 
-						1
-					] spawn InA_fnc_insLightBoatAttack;
-				};
+
+				// RNG check for enemy spawns
+				[_loc, _rad, _ambMult] call InA_fnc_ambientEnemies;
 			};
 			
+			// Check if players leave the region
 			if ({_x distance _loc < _rad} count (allPlayers - entities "HeadlessClient_F") < 1) then {
-				
-				["HQ", "DEBUG", "Exited Ambient Area."] call FF7_fnc_globalHintStruct;
 					
+				// Determine how many independent units are left inside
 				_nme = {(side _x == resistance) && ((_x distance _loc) < _rad)} count allUnits;
 					
+				// Check if the affect timer expired
 				if (_affect) then {
+
+					// Check if many insurgents were left
 					if (_nme > 15) then {
+
+						// Set instability
 						_instability = random 0.5;
+
+						// Check if very many insurgents were left
 						if (_nme > 25) then {
+
+							// Set instability
 							_instability = (0.5 + (random 0.5));
 						};
+					// Reset instability value
 					} else {
 						_instability = 0;
 					};
-						
+					
+					// Update global variable for instability
 					call compile format
 					[
 						"instability%1 = %2",
@@ -273,41 +211,57 @@ while {true} do {
 					};
 				};
 				
+				// Spawn cleanup protocol
 				[_loc,_rad,_name] spawn {
 					
 					_loc = _this select 0;
 					_rad = _this select 1;
 					_name = _this select 2;
-						
+					
+					// Wait until the players are far enough away from region
 					waitUntil {sleep (2 + (random 2)); {_x distance _loc < (_rad * 1.5)} count (allPlayers - entities "HeadlessClient_F") < 1};
-						
+					
+					// Reset the ambient spawn variable and delete any marker
 					call compile format
 					[
-						"%1Occupied = false",
+						"
+							%1Occupied = false;
+							deleteMarker 'flag%1';
+						",
 						_name
 					];
-						
+
+					// Clean up	
 					[_loc,_rad] spawn InA_fnc_cleanup;
 				};
-					
+				
+				// Unlock all house doors
 				[_loc, _rad, 1,"unlock"] spawn InA_fnc_houseLocks;
 					
+				// Set global variable
 				ambientExited = true;
-				_i = 0;
 				
+				// Break out of entered loop
 				breakOut "entered";
 			};
-			
+
+			// Increment affect timer
 			_affectTimer = _affectTimer - (0.0034 + (.0001 * ({(side _x == west) && ((_x distance _loc) < _rad)} count allUnits)));
 			
+			// Check if affect timer expired
 			if (_affectTimer < 0) then {
 				_affectTimer = 0;
 				
+				// Check if affect expiration has already been enacted
 				if !(_affect) then {
-				
+
+					// Notification
 					[true, "The region has been affected by your presence.", format ["%1", _name]] remoteExec ["InA_fnc_formatHint", 0, false];
+					
+					// Set affect variable
 					_affect = true;
 					
+					// Check if reward was possible
 					if (_reward) then {
 						LogV = LogV + 1;
 						civTol = civTol + 0.1;
@@ -315,14 +269,18 @@ while {true} do {
 					};
 				};
 				
+				// Update number of independent units inside area
 				_nme = {(side _x == resistance) && ((_x distance _loc) < _rad)} count allUnits;
 				
+				// Check if didSomething was already enacted and are few enemies
 				if ((!_didSomething) and {_nme <= 15}) then {
 				
+					// Set variable
 					_didSomething = true;
 					
 					sleep 3;
-					
+
+					// Notification
 					[true, "The region appears to be pacified.", format ["%1", _name]] remoteExec ["InA_fnc_formatHint", 0, false];
 				};
 			};

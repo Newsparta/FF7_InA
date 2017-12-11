@@ -25,9 +25,9 @@ Author:
 
 // Parameters
 //		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
-params [[	"_color"		,false				,[false]			,[]							],
-		[	"_size"			,[]					,[]					,[]							],
+params [[	"_color"		,"#fcfcfc"			,[""]				,[]							],
+		[	"_size"			,1.2				,[0]				,[]							],
 		[	"_text"			,[]					,[]					,[]							]];
 
-_format =  parseText (format ["<t font='PuristaMedium' size='%2'><t color='%1'>%3</t></t>", _color,_size,_text]);
+_format = format ["<t font='PuristaMedium' size='%2'><t color='%1'>%3</t></t>", _color,_size,_text];
 _format

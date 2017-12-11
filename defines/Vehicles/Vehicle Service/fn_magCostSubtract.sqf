@@ -1,7 +1,11 @@
-private ["_mags"];
+////////////////
+// DEPRECATED //
+////////////////
 
-_magType = _this select 0;
-_magCount = _this select 1;
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_magType"		,[]					,[]					,[]							],
+		[	"_magCount"		,[]					,[]					,[]							]];
 
 switch (_magType) do {
 

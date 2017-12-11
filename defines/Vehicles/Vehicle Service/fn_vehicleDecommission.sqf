@@ -1,3 +1,7 @@
+////////////////
+// DEPRECATED //
+////////////////
+
 params ["_parkedVehicle"];
 private ["_fMulti","_fuelReturn"];
 

@@ -1,3 +1,7 @@
+////////////////
+// DEPRECATED //
+////////////////
+
 [] spawn {
 	private ["_items","_ctrl"];
 

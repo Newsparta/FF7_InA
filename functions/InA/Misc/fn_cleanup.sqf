@@ -21,20 +21,21 @@ Author:
     Newsparta
 ---------- */
 
-// ---------- PARAMETERS ----------
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_cen"			,[]					,[]					,[]							],
+		[	"_max"			,2000				,[0]				,[]							]];
 
-params ["_cen",["_max", 2000, [0]]];
-
-// ---------- MAIN ----------
-
+// Delete all units
 { 
 	if ((_x distance _cen) < _max) then {
 		deleteVehicle _x;
 	};
 } forEach allUnits - (allPlayers - entities "HeadlessClient_F"); 
-	
+
+// Delete all objects
 { 
-	if (_x distance InA_fob_location > 100) then {
+	if ((_x distance InA_fob_location > 100) && {_x distance InA_camp_location > 50}) then {
 		deleteVehicle _x;
 	};
 } forEach ((nearestObjects [_cen, 

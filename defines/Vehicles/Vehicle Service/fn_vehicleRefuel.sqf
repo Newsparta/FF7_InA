@@ -1,3 +1,7 @@
+////////////////
+// DEPRECATED //
+////////////////
+
 params ["_parkedVehicle",["_fullService", false, [false]]];
 
 if (count crew _parkedVehicle > 0) then {

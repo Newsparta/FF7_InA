@@ -197,8 +197,6 @@ airSpawn =
 // Base Theme
 themeSelect = 
 {
-	private ["_array","_veh", "_group"];
-
 	if !(initialized) then {
 		initialized = true;
 	};

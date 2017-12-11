@@ -1,6 +1,27 @@
-private ["_obj"];
+/* ----------
+Function:
+	InA_fnc_disableAceInteractions
 
-_obj = _this select 0;
+Description:
+	Disable all ace added interactions with an object
+
+Parameters:
+	- Object to remove ace interaction from (Object)
+
+Optional:
+
+Example:
+	[_obj] call InA_fnc_disableAceInteractions;
+
+Returns:
+	Nil
+
+Author:
+	[FF7] Whigital
+---------- */
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_obj"			,[]					,[]					,[]							]];
 
 // Disable ACE dragging
 [_obj, false] call ace_dragging_fnc_setDraggable;

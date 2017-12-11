@@ -19,28 +19,41 @@ Returns:
     Nil
 
 Author:
-    Newsparta
+    [FF7] Newsparta
 ---------- */
 
-// ---------- PARAMETERS ----------
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_units"		,[]					,[]					,[]							],
+		[	"_aimMin"		,0.10				,[0]				,[]							],
+		[	"_aimMax"		,0.25				,[0]				,[]							]];
 
-params ["_units", ["_aimMin", 0.10, [0]], ["_aimMax", 0.25, [0]]];
-private ["_aimingShake","_aimingSpeed","_endurance","_spotDistance","_spotTime","_courage","_reloadSpeed",
-	"_commanding","_general","_unit","_num","_choice"];
-
-// ---------- MAIN ----------
+// Local declarations
+private		_aimingShake		= random [0.6, 0.7, 0.8];
+private		_aimingSpeed		= random [0.6, 0.7, 0.8];
+private		_endurance			= 1;
+private		_spotDistance		= 1;
+private		_spotTime			= 1;
+private		_courage			= random [0.6, 0.8, 1];
+private		_reloadSpeed		= random [0.4, 0.6, 0.8];
+private		_commanding			= 1;
+private		_general			= 1;
+private		_choice				= nil;
+private		_num				= nil;
+private		_unit				= nil;
+private		_units				= [];
 
 {
-	_aimingShake	= random [0.6, 0.7, 0.8];
-	_aimingSpeed	= random [0.6, 0.7, 0.8];
-	_endurance		= 1;
-	_spotDistance	= 1;
-	_spotTime		= 1;
-	_courage		= random [0.6, 0.8, 1];
-	_reloadSpeed	= random [0.4, 0.6, 0.8];
-	_commanding		= 1;
-	_general		= 1;
-	
+	// Define unit
+	_unit = _x;
+
+	// Random skills
+	_aimingShake = random [0.6, 0.7, 0.8];
+	_aimingSpeed = random [0.6, 0.7, 0.8];
+	_courage = random [0.6, 0.8, 1];
+	_reloadSpeed = random [0.4, 0.6, 0.8];
+
+	// Set AI skill levels
 	_x setSkill ["aimingAccuracy",(_aimMin + (random (_aimMax - _aimMin)))];
 	_x setSkill ["aimingShake",_aimingShake];
 	_x setSkill ["aimingSpeed",_aimingSpeed];
@@ -51,29 +64,32 @@ private ["_aimingShake","_aimingSpeed","_endurance","_spotDistance","_spotTime",
 	_x setSkill ["reloadSpeed",_reloadSpeed];
 	_x setSkill ["commanding",_commanding];
 	
+	// Remove all items from unit
 	removeAllAssignedItems _x;
-	
-	_unit = _x;
 	{
 		_unit removeMagazines _x;
 	} forEach magazines _unit;
-
 	removeBackpackGlobal _x;
-	
 	removeAllWeapons _x;
 
+	// Add uniforms
 	_x forceAddUniform (selectRandom BLU_UNIFORMS);
 	_x addVest (selectRandom BLU_VESTS);
 	_x addHeadgear (selectRandom BLU_HELMETS);
-	
+
+	// RNG gear assigment
 	_num = random 1;
 	
+	// Check what type of soldier it will be
+	// Rifleman/AT
 	if (_num <= 0.8) then {
 		
+		// Add rifle
 		_choice = BLU_RIFLE call BIS_fnc_selectRandom;
 		for "_i" from 1 to 6 do {_x addMagazine (_choice select 1);};
 		_x addWeapon (_choice select 0);
-			
+
+		// Check if AT	
 		if (_num <= 0.1) then {
 			_choice = BLU_AT call BIS_fnc_selectRandom;
 			_x addBackpack (BLU_BACKPACKS call BIS_fnc_selectRandom);
@@ -81,6 +97,7 @@ private ["_aimingShake","_aimingSpeed","_endurance","_spotDistance","_spotTime",
 			_x addWeapon (_choice select 0);
 		};
 	}; 
+	// Machinegunner
 	if ((_num > 0.8) && {_num <= 0.9}) then {
 		
 		_choice = BLU_MG call BIS_fnc_selectRandom;
@@ -88,6 +105,7 @@ private ["_aimingShake","_aimingSpeed","_endurance","_spotDistance","_spotTime",
 		for "_i" from 1 to 3 do {_x addMagazine (_choice select 1);};
 		_x addWeapon (_choice select 0);
 	};
+	// Grenadier
 	if ((_num > 0.9) && {_num <= 1}) then {
 		
 		_choice = BLU_GL call BIS_fnc_selectRandom;
@@ -95,7 +113,8 @@ private ["_aimingShake","_aimingSpeed","_endurance","_spotDistance","_spotTime",
 		for "_i" from 1 to 4 do {_x addMagazine (_choice select 2);};
 		_x addWeapon (_choice select 0);
 	};
-	
+
+	// Event handler for removing gear on death
 	_x addEventHandler 
 	[
 		"killed",

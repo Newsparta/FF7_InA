@@ -10,7 +10,7 @@ _delayScale = 0;
 
 // ---------- Control loop ----------
 
-while {true} do {
+while {true;} do {
 
 	if (count (allPlayers - entities "HeadlessClient_F") < 1) then {
 		_delayScale = 0;

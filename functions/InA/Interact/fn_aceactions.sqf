@@ -18,7 +18,8 @@ Returns:
     Nil
 
 Author:
-    Whigital && Newsparta
+    [FF7] Newsparta
+	[FF7] Whigital
 ---------- */
 
 params ["_unit"];
@@ -80,6 +81,18 @@ if (_type in ["B_Soldier_SL_F", "B_Soldier_TL_F", "B_spotter_F", "B_recon_JTAC_F
 	] call ace_interact_menu_fnc_createAction;
 
 	[_unit, 1, ["ACE_SelfActions", "InA_Support","InA_Support_Evac"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+	// ---------- Camp ----------
+	_action =
+	[
+		"FF7_Interaction_Environment_Camp",
+		"Camp",
+		"",
+		{[] spawn InA_fnc_camp;},
+		_cond
+	] call ace_interact_menu_fnc_createAction;
+
+	[_unit, 1, ["ACE_SelfActions","FF7_Interaction"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 	// ---------- FOB parent ----------
 	_action =
@@ -205,6 +218,18 @@ else
 	] call ace_interact_menu_fnc_createAction;
 
 	[_unit, 1, ["ACE_SelfActions", "InA_Support","InA_Support_Evac"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+	// ---------- Camp ----------
+	_action =
+	[
+		"FF7_Interaction_Environment_Camp",
+		"Camp",
+		"",
+		{[] spawn InA_fnc_camp;},
+		_cond
+	] call ace_interact_menu_fnc_createAction;
+
+	[_unit, 1, ["ACE_SelfActions","FF7_Interaction"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 	// ---------- FOB parent ----------
 	_action =

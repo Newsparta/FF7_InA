@@ -1,4 +1,15 @@
-_id = _this select 0;
+/* ----------
+Script:
+	Resource costs
+
+Description:
+	display values for the cost of structures
+
+Author:
+	[FF7] Newsparta
+---------- */
+
+private _id = _this select 0;
 
 switch (_id) do
 {

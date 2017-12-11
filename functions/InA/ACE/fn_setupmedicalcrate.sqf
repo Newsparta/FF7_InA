@@ -1,6 +1,32 @@
-private ["_box"];
+/* ----------
+Function:
+	InA_fnc_setupMedicalCrate
 
-_box = (_this select 0);
+Description:
+	Make an object able to full heal
+
+Parameters:
+	- Object to add healing action to (Object)
+
+Optional:
+
+Example:
+	[_obj] call InA_fnc_setupMedicalCrate;
+
+Returns:
+	Nil
+
+Author:
+	[FF7] Whigital
+---------- */
+
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_box"			,[]					,[]					,[]							]];
+
+// Local declarations
+private		_null				= nil;
+private		_obj				= ObjNull;
 
 // Clear inventory
 clearMagazineCargoGlobal _box;
@@ -11,7 +37,7 @@ clearBackpackCargoGlobal _box;
 // Remove all actions
 removeAllActions _box;
 
-//Add Arsenal and Gear options
+// Add Arsenal and Gear options
 _null = _box addAction
 [
 	"Treat Injuries",

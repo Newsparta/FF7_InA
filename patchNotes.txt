@@ -1,6 +1,14 @@
 *InA 4.2.1*
 
-- bug fixes
-- code cleaning
-
-- check radios
+- Camps added.
+    - can only be placed far away from regions.
+    - has very small build inventory.
+- Fast travel added ONLY between these locations.
+    - Main base.
+    - Stable regions.
+    - FOB.
+    - Camp.
+- You can ask civilians for directions.
+- fixed ambient region's knowledge about what its instability should be.
+- notification added for if everyone is killed.
+- blood is cheaper

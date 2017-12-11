@@ -20,12 +20,12 @@ Returns:
 Author:
     Newsparta
 ---------- */
-// ---------- Parameters ----------
 
-params ["_box"];
+// Parameters
+//      |   Private Name    |   Default Value   |   Expected Types  |   Expected Array Count    |
+params [[   "_box"          ,[]                 ,[]                 ,[]                         ]];
 
-// ---------- Main ----------
-
+// Clear inventory
 clearWeaponCargoGlobal _box;
 clearMagazineCargoGlobal _box;
 clearBackpackCargoGlobal _box;

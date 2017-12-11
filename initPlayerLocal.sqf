@@ -20,7 +20,10 @@ if ("task_force_radio" in activatedAddons) then {
 call compile preprocessFileLineNumbers "functions\InA\Interact\conversationStructure.sqf";
 
 // Mission description
-#include "functions\InA\Auxiliary\missionDescription.hpp";
+#include "functions\InA\Init\missionDescription.hpp";
+
+// Ambient
+[clientOwner, "ambientSitrep"] remoteExec ["publicVariableClient", 2];
 
 // Initial gear
 [player] call InA_fnc_gearWipe;
@@ -85,7 +88,7 @@ Hangar addAction [
 	
 Hangar addAction [
 	"Shelter helicopter",
-	{_this call InA_fnc_actionHangarShelter;},
+	{["shelter"] call InA_fnc_shelterHelicopter;},
 	[], 
 	99, 
 	true, 
@@ -96,7 +99,7 @@ Hangar addAction [
 	
 Hangar addAction [
 	"Bring out helicopter",
-	{_this call InA_fnc_actionHangarTakeOut;},
+	{["remove"] call InA_fnc_shelterHelicopter;},
 	[], 
 	99, 
 	true, 
@@ -108,6 +111,17 @@ Hangar addAction [
 basicGearBox addAction [
 	"Equip Uniform", 
 	{_this call InA_fnc_actionUniformEquip;},
+	[], 
+	99, 
+	true, 
+	true, 
+	"", 
+	"((_target distance _this) < 4)"
+];
+
+menuHQ addAction [
+	"Fast travel", 
+	{_this call InA_fnc_actionTeleport;},
 	[], 
 	99, 
 	true, 

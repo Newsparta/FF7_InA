@@ -22,25 +22,38 @@ Author:
     Newsparta
 ---------- */
 
-// ---------- PARAMETERS ----------
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_units"		,[]					,[]					,[]							],
+		[	"_aimMin"		,0.50				,[0]				,[]							],
+		[	"_aimMax"		,0.80				,[0]				,[]							]];
 
-params ["_units", ["_aimMin", 0.50, [0]], ["_aimMax", 0.80, [0]]];
-private ["_aimingShake","_aimingSpeed","_endurance","_spotDistance","_spotTime","_courage","_reloadSpeed",
-	"_commanding","_general","_unit","_num","_choice"];
+// Local declarations
+private		_aimingShake		= random [0.6, 0.7, 0.8];
+private		_aimingSpeed		= random [0.6, 0.7, 0.8];
+private		_endurance			= 1;
+private		_spotDistance		= 1;
+private		_spotTime			= 1;
+private		_courage			= random [0.6, 0.8, 1];
+private		_reloadSpeed		= random [0.4, 0.6, 0.8];
+private		_commanding			= 1;
+private		_general			= 1;
+private		_choice				= nil;
+private		_unit				= nil;
 
 // ---------- MAIN ----------
 
 {
-	_aimingShake	= random [0.6, 0.7, 0.8];
-	_aimingSpeed	= random [0.6, 0.7, 0.8];
-	_endurance		= 1;
-	_spotDistance	= 1;
-	_spotTime		= 1;
-	_courage		= random [0.6, 0.8, 1];
-	_reloadSpeed	= random [0.4, 0.6, 0.8];
-	_commanding		= 1;
-	_general		= 1;
+	// Define unit
+	_unit = _x;
+
+	// Random skills
+	_aimingShake = random [0.6, 0.7, 0.8];
+	_aimingSpeed = random [0.6, 0.7, 0.8];
+	_courage = random [0.6, 0.8, 1];
+	_reloadSpeed = random [0.4, 0.6, 0.8];
 	
+	// Set AI skill levels
 	_x setSkill ["aimingAccuracy",(_aimMin + (random (_aimMax - _aimMin)))];
 	_x setSkill ["aimingShake",_aimingShake];
 	_x setSkill ["aimingSpeed",_aimingSpeed];
@@ -51,34 +64,28 @@ private ["_aimingShake","_aimingSpeed","_endurance","_spotDistance","_spotTime",
 	_x setSkill ["reloadSpeed",_reloadSpeed];
 	_x setSkill ["commanding",_commanding];
 	
+	// Remove all items from unit
 	removeAllAssignedItems _x;
-	
-	_unit = _x;
 	{
 		_unit removeMagazines _x;
 	} forEach magazines _unit;
-
 	removeBackpackGlobal _x;
-	
 	removeAllWeapons _x;
 	
-	_num = random 1;
+	// Gear assigmnent
+	if (supplier == "OPF") then {	
+		_choice = INS_SNIPER_OPF call BIS_fnc_selectRandom;
+		for "_i" from 1 to 8 do {_x addMagazine (_choice select 1);};
+		_x addWeapon (_choice select 0);
+		_x addPrimaryWeaponItem "optic_LRPS";
+	} else {
+		_choice = INS_SNIPER_BLU call BIS_fnc_selectRandom;
+		for "_i" from 1 to 8 do {_x addMagazine (_choice select 1);};
+		_x addWeapon (_choice select 0);
+		_x addPrimaryWeaponItem "optic_LRPS";		
+	};	
 	
-		if (supplier == "OPF") then {
-		
-			_choice = INS_SNIPER_OPF call BIS_fnc_selectRandom;
-			for "_i" from 1 to 8 do {_x addMagazine (_choice select 1);};
-			_x addWeapon (_choice select 0);
-			_x addPrimaryWeaponItem "optic_LRPS";
-
-		} else {
-			_choice = INS_SNIPER_BLU call BIS_fnc_selectRandom;
-			for "_i" from 1 to 8 do {_x addMagazine (_choice select 1);};
-			_x addWeapon (_choice select 0);
-			_x addPrimaryWeaponItem "optic_LRPS";
-			
-		};	
-	
+	// Event handler for removing gear on death
 	_x addEventHandler 
 	[
 		"killed",

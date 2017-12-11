@@ -1,16 +1,38 @@
+/* ----------
+Function:
+	InA_fnc_sitrep
 
-params ["_region"];
-private ["_mkr"];
+Description:
+	Spawns all region markers
 
+Parameters:
+
+Optional:
+
+Example:
+	[] call InA_fnc_sitrep;
+
+Returns:
+	Nil
+
+Author:
+	[FF7] Newsparta
+---------- */
+
+// Local declarations
+private		_i					= 0;
+private		_instability		= nil;
+private		_mkr				= nil;
+private		_region				= nil;
+
+// Declare sitrep active
 InA_sitrep = false;
 publicVariable "InA_sitrep";
 
-/*
-All regions.
-*/
-
+// For all regions
 for [{_i = 0}, {_i < (count ambientSitrep)}, {_i = _i + 1}] do {
 
+	// Spawn markers
 	call compile format 
 	[
 		"
@@ -75,9 +97,7 @@ for [{_i = 0}, {_i < (count ambientSitrep)}, {_i = _i + 1}] do {
 	];
 };
 
-/*
-Any fortified regions.
-*/
+// Check if there are any fortified regions
 if (count fortifiedRegions > 0) then {
 	for [{_i = 0}, {_i < (count fortifiedRegions)}, {_i = _i + 1}] do {
 
@@ -113,7 +133,9 @@ if (count fortifiedRegions > 0) then {
 	};
 };
 
+// Delay next sitrep
 sleep (params_sitrepDelay - 120);
 
+// Reset variables
 InA_sitrep = true;
 publicVariable "InA_sitrep";

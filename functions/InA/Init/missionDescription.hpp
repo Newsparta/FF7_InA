@@ -12,7 +12,22 @@
 
 player createDiarySubject ["missionMechanics","Mission Mechanics"];
 
-
+player createDiaryRecord	
+[
+	"missionMechanics",
+	[
+"Fast Travel",
+"
+You may fast travel between specific locations around the map.
+These locations are, the main base, your FOB, and any stable regions.
+At the base you will be able to access fast travel at the HQ menu.
+At all other locations there will be a Fox Force 7 flag near the center.
+The flag will be marked with a blue dot on the map
+Use this flag to activate the fast travel.
+You may not fast travel if there are enemies nearby.
+"
+	]
+];
 player createDiaryRecord	
 [
 	"missionMechanics",

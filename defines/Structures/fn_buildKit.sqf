@@ -15,29 +15,39 @@ Returns:
     Nil
 
 Author:
-    Newsparta
+    [FF7] Newsparta
 ---------- */
 
-// ---------- PARAMETERS ----------
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_kit"			,[]					,[]					,[]							]];
 
-params ["_kit"];
+// Local declarations
+private		_ctrl				= nil;
+private		_selections			= [];
+private		_target				= nil;
 
-// ---------- MAIN ----------
-
-[_kit, [["FF9900", "Open Build Menu"] call FF7_fnc_formatText,	{
+// Add action to object
+[_kit, ["Build menu",	{
 		
+	// Allow for editing of dialogs	
 	disableSerialization;
 
+	// Update variables with server
 	[clientOwner, "InA_fob_location"] remoteExec ["publicVariableClient", 2, false];
 	[clientOwner, "safehouse"] remoteExec ["publicVariableClient", 2, false];
 	[clientOwner, "utilityVehicles"] remoteExec ["publicVariableClient", 2, false];
 
+	// Delay to allow sync
 	sleep 0.2;
 
+	// Define building object
 	kitVeh = _this select 0;
 
+	// Find vehicle in utility array
 	{
 
+		// Define vehicle and inventory
 		if (kitVeh in _x) then {
 
 			veh = _x;
@@ -49,6 +59,7 @@ params ["_kit"];
 
 	_selections = [];
 
+	// Check if players are near a safehouse or FOB
 	if ((player distance safehouse < 100) || {player distance InA_fob_location < 100}) then {
 		_selections =	[
 			"Sandbag (long)",
@@ -59,6 +70,7 @@ params ["_kit"];
 			"Tower",
 			"Camonet"
 		];
+	// Standard options
 	} else {
 		_selections =	[
 			"Sandbag (long)",
@@ -68,6 +80,7 @@ params ["_kit"];
 		];
 	};
 
+	// X translations
 	plusX = 
 	{
 		transX = transX + 0.05;
@@ -84,6 +97,8 @@ params ["_kit"];
 		};
 		obj attachTo [player, [(xPos + transX),(yPos + transY),(zPos + transZ)]];
 	};
+
+	// Y translations
 	plusY = 
 	{
 		transY = transY + 0.05;
@@ -100,6 +115,8 @@ params ["_kit"];
 		};
 		obj attachTo [player, [(xPos + transX),(yPos + transY),(zPos + transZ)]];
 	};
+
+	// Z translations
 	plusZ = 
 	{
 		transZ = transZ + 0.05;
@@ -117,12 +134,16 @@ params ["_kit"];
 		obj attachTo [player, [(xPos + transX),(yPos + transY),(zPos + transZ)]];
 	};
 
+	// Create dialog
 	createDialog "InA_Build_Dialog";
 
+	// Wait until dialog is created
 	waitUntil {!isNull (findDisplay 9500);};
 
+	// Find listbox
 	_ctrl = (findDisplay 9500) displayCtrl 1500;
 
+	// Populate listbox
 	{
 		_ctrl lbAdd _x;
 	} forEach _selections;

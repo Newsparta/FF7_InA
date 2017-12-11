@@ -1,7 +1,17 @@
-// ---------- LAND ----------
+/* ----------
+Script:
+	Enemy theme
 
-	// ---------- INFANTRY ----------
+Description:
+	Define all of the elements of the enemy
 
+Author:
+	[FF7] Newsparta
+---------- */
+
+// Land Units
+
+	// Infantry
 	INS_INF_SINGLE = [
 		"I_C_Soldier_Para_1_F",
 		"I_C_Soldier_Para_2_F",
@@ -29,8 +39,7 @@
 		"I_C_Soldier_Camo_F"
 	];
 
-	// ---------- STATICS ----------
-
+	// Statics
 	INS_STATIC_HMG_OPF = [
 		"RHS_M2StaticMG_D"
 	];
@@ -67,8 +76,7 @@
 		"rhs_zsu234_aa"
 	];
 	
-	// ---------- CAR ----------
-
+	// Cars
 	INS_CAR_OPF = [
 		"I_G_Offroad_01_armed_F"
 	];
@@ -80,8 +88,7 @@
 	INS_CAR_BLU_TEX = nil;
 	INS_CAR_BLU_ANI = nil;
 
-	// ---------- CAR UNARMED ----------
-
+	// Unarmed car
 	INS_CARU_OPF = [
 		"I_G_Offroad_01_F"
 	];
@@ -93,8 +100,7 @@
 	INS_CARU_BLU_TEX = nil;
 	INS_CARU_BLU_ANI = nil;
 
-	// ---------- MRAP ----------
-
+	// MRAP
 	INS_MRAP_OPF = [
 		"rhsgref_BRDM2"
 	];
@@ -106,8 +112,7 @@
 	INS_MRAP_BLU_TEX = nil;
 	INS_MRAP_BLU_ANI = ["hide_A2_Parts",1,"Hide_A2Bumper",1];
 	
-	// ---------- SPAAG ----------
-
+	// SPAAG
 	INS_SPAAG_OPF = [
 		"rhs_gaz66_zu23_vmf"
 	];
@@ -119,8 +124,7 @@
 	INS_SPAAG_BLU_TEX = ["camo",1];
 	INS_SPAAG_BLU_ANI = true;
 
-	// ---------- APC ----------
-
+	// APC
 	INS_APC_OPF = [
 		"rhs_btr60_vmf"
 	];
@@ -132,8 +136,7 @@
 	INS_APC_BLU_TEX = nil;
 	INS_APC_BLU_ANI = ["IFF_Panels_Hide",1];
 
-	// ---------- IFV ----------
-
+	// IFV
 	INS_IFV_OPF = [
 		"rhs_bmd2m"
 	];
@@ -145,8 +148,7 @@
 	INS_IFV_BLU_TEX = nil;
 	INS_IFV_BLU_ANI = ["IFF_Panels_Hide",1];
 
-	// ---------- TANK ----------
-
+	// Tank
 	INS_TANK_OPF = [
 		"rhs_sprut_vdv",
 		"rhs_bmd4_vdv",
@@ -160,8 +162,7 @@
 	INS_TANK_BLU_TEX = nil;
 	INS_TANK_BLU_TEX = ["IFF_Panels_Hide",1,"Miles_Hide",1];
 
-	// ---------- TRUCK ----------
-
+	// Truck
 	INS_TRUCK_OPF = [
 		"I_G_Van_01_transport_F"
 	];
@@ -173,10 +174,9 @@
 	INS_TRUCK_BLU_TEX = nil;
 	INS_TRUCK_BLU_ANI = nil;
 	
-// ---------- AIR ----------
+// Air units
 
-	// ---------- HEAVY TRANSPORT HELICOPTER ----------
-	
+	// Heavy transport helicopter
 	INS_HEAVY_HELI_TR_OPF = [
 		"RHS_Mi24P_vvs"
 	];
@@ -188,8 +188,7 @@
 	INS_HEAVY_HELI_TR_BLU_TEX = true;
 	INS_HEAVY_HELI_TR_BLU_ANI = true;
 	
-	// ---------- MEDIUM TRANSPORT HELICOPTER ----------
-	
+	// Medium transport helicopter
 	INS_MEDIUM_HELI_TR_OPF = [
 		"B_Heli_Light_01_F"
 	];
@@ -201,8 +200,7 @@
 	INS_MEDIUM_HELI_TR_BLU_TEX = true;
 	INS_MEDIUM_HELI_TR_BLU_ANI = true;
 	
-	// ---------- LIGHT ATTACK HELICOPTER ----------
-	
+	// Light attack helicopter
 	INS_LIGHT_HELI_AH_OPF = [
 		"B_Heli_Light_01_F"
 	];
@@ -214,8 +212,7 @@
 	INS_LIGHT_HELI_AH_BLU_TEX = true;
 	INS_LIGHT_HELI_AH_BLU_ANI = true;
 	
-	// ---------- HEAVY ATTACK HELICOPTER ----------
-	
+	// Heavy attack helicopter
 	INS_HEAVY_HELI_AH_OPF = [
 		"rhsgref_cdf_Mi24D"
 	];
@@ -227,10 +224,9 @@
 	INS_HEAVY_HELI_AH_BLU_TEX = ["Grey",1];
 	INS_HEAVY_HELI_AH_BLU_ANI = true;
 	
-// ---------- SEA ----------
+// Sea units
 
-	// ---------- SMALL BOAT ----------
-	
+	// Small boat
 	INS_BOAT_OPF = [
 		"I_C_Boat_Transport_02_F"
 	];
@@ -242,10 +238,9 @@
 	INS_BOAT_BLU_TEX = true;
 	INS_BOAT_BLU_ANI = true;
 	
-// ---------- Equipment ----------
+// Equipment
 	
-	// ---------- Weapons ----------
-	
+	// Weapons
 	INS_RIFLE_OPF = 
 	[
 		["arifle_AKS_F","30Rnd_545x39_Mag_F"],
@@ -308,8 +303,7 @@
 		["rhs_weap_fim92","rhs_fim92_mag"]
 	];
 	
-	// ---------- Backpacks ----------
-	
+	// Backpacks
 	INS_BACKPACKS =
 	[
 		"B_ViperHarness_oli_F",
@@ -318,16 +312,20 @@
 		"B_ViperLightHarness_oli_F"
 	];
 	
-// ---------- Buildings ----------
+// Buildings
 
+	// Flag
 	INS_FLAG = "Flag_Syndikat_F";
 	
+	// Sandbags
 	INS_SANDBAG_LONG = "Land_BagFence_01_long_green_F";
 	INS_SANDBAG_SHORT = "Land_BagFence_01_short_green_F";
 	INS_SANDBAG_ROUND = "Land_BagFence_01_round_green_F";
 	
+	// Camonet
 	INS_CAMONET = "CamoNet_ghex_open_F";
 
+	// Munition crates
 	CRATES = 
 	[
 		"Box_Syndicate_Wps_F",

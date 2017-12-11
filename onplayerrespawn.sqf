@@ -16,4 +16,4 @@ setPlayerRespawnTime _iRespawn;
 player setCustomAimCoef 0.5;
 
 // initial gear
-[player, 1] call InA_fnc_gearWipe;
+[player, 0.2] call InA_fnc_gearWipe;

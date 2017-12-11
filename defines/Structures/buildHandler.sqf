@@ -1,3 +1,14 @@
+/* ----------
+Script:
+	Build handler
+
+Description:
+	Define class names and costs for all buildings
+
+Author:
+	[FF7] Newsparta
+---------- */
+
 _id = _this select 0;
 
 switch (_id) do

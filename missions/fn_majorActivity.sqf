@@ -201,15 +201,15 @@ while {!_cleared;} do {
 						_car = (selectRandom INS_CAR_BLU) createVehicle _pos;
 						[
 							_car,
-							INS_CAR_BLU_TEX,
-							INS_CAR_BLU_ANI
+							missionNamespace getVariable ["INS_CAR_BLU_TEX", nil],
+							missionNamespace getVariable ["INS_CAR_BLU_ANI", nil]
 						] call BIS_fnc_initVehicle;
 					} else {
 						_car = (selectRandom INS_CAR_OPF) createVehicle _pos;
 						[
 							_car,
-							INS_CAR_OPF_TEX,
-							INS_CAR_OPF_ANI
+							missionNamespace getVariable ["INS_CAR_OPF_TEX", nil],
+							missionNamespace getVariable ["INS_CAR_OPF_ANI", nil]
 						] call BIS_fnc_initVehicle;
 					};
 					clearBackpackCargoGlobal _car;
@@ -257,15 +257,15 @@ while {!_cleared;} do {
 						_car = (selectRandom INS_MRAP_BLU) createVehicle _pos;
 						[
 							_car,
-							INS_MRAP_BLU_TEX,
-							INS_MRAP_BLU_ANI
+							missionNamespace getVariable ["INS_MRAP_BLU_TEX", nil],
+							missionNamespace getVariable ["INS_MRAP_BLU_ANI", nil]
 						] call BIS_fnc_initVehicle;
 					} else {
 						_car = (selectRandom INS_MRAP_OPF) createVehicle _pos;
 						[
 							_car,
-							INS_MRAP_OPF_TEX,
-							INS_MRAP_OPF_ANI
+							missionNamespace getVariable ["INS_MRAP_OPF_TEX", nil],
+							missionNamespace getVariable ["INS_MRAP_OPF_ANI", nil]
 						] call BIS_fnc_initVehicle;
 					};
 					_car lock 3;
@@ -315,22 +315,22 @@ while {!_cleared;} do {
 						if (typeOf _car in INS_APC_BLU) then {
 							[
 								_car,
-								INS_APC_BLU_TEX,
-								INS_APC_BLU_ANI
+								missionNamespace getVariable ["INS_APC_BLU_TEX", nil],
+								missionNamespace getVariable ["INS_APC_BLU_ANI", nil]
 							] call BIS_fnc_initVehicle;
 						};
 						if (typeOf _car in INS_IFV_BLU) then {
 							[
 								_car,
-								INS_IFV_BLU_TEX,
-								INS_IFV_BLU_ANI
+								missionNamespace getVariable ["INS_IFV_BLU_TEX", nil],
+								missionNamespace getVariable ["INS_IFV_BLU_ANI", nil]
 							] call BIS_fnc_initVehicle;
 						};
 						if (typeOf _car in INS_TANK_BLU) then {
 							[
 								_car,
-								INS_TANK_BLU_TEX,
-								INS_TANK_BLU_ANI
+								missionNamespace getVariable ["INS_TANK_BLU_TEX", nil],
+								missionNamespace getVariable ["INS_TANK_BLU_ANI", nil]
 							] call BIS_fnc_initVehicle;
 						};
 					} else {
@@ -338,22 +338,22 @@ while {!_cleared;} do {
 						if (typeOf _car in INS_APC_OPF) then {
 							[
 								_car,
-								INS_APC_OPF_TEX,
-								INS_APC_OPF_ANI
+								missionNamespace getVariable ["INS_APC_OPF_TEX", nil],
+								missionNamespace getVariable ["INS_APC_OPF_ANI", nil]
 							] call BIS_fnc_initVehicle;
 						};
 						if (typeOf _car in INS_IFV_OPF) then {
 							[
 								_car,
-								INS_IFV_OPF_TEX,
-								INS_IFV_OPF_ANI
+								missionNamespace getVariable ["INS_IFV_OPF_TEX", nil],
+								missionNamespace getVariable ["INS_IFV_OPF_ANI", nil]
 							] call BIS_fnc_initVehicle;
 						};
 						if (typeOf _car in INS_TANK_OPF) then {
 							[
 								_car,
-								INS_TANK_OPF_TEX,
-								INS_TANK_OPF_ANI
+								missionNamespace getVariable ["INS_TANK_OPF_TEX", nil],
+								missionNamespace getVariable ["INS_TANK_OPF_ANI", nil]
 							] call BIS_fnc_initVehicle;
 						};
 					};

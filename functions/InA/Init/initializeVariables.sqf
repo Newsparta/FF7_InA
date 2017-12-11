@@ -29,6 +29,8 @@ playerVehicles = [];
 utilityVehicles = [];
 aidDeployed = false;
 fortifiedRegions = [];
+logiETA = 0;
+logiDaytime = daytime;
 
 // ---------- Base ----------
 
@@ -41,7 +43,13 @@ InA_sitrep = true;
 InA_fob_location = [0,0,0];
 fobPlaced = false;
 
+InA_camp_location = [0,0,0];
+campPlaced = false;
+campTimeout = false;
+
 safehouse = [0,0,0];
+
+fastTravelSites = [];
 
 // ---------- Civilian ----------
 

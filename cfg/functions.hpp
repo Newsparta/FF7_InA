@@ -60,13 +60,12 @@ class InA
 		class actionGarageRequisition {file = "functions\InA\Actions\fn_actionGarageRequisition.sqf";};
 		class actionGearRequisition {file = "functions\InA\Actions\fn_actionGearRequisition.sqf";};
 		class actionHangarRequisition {file = "functions\InA\Actions\fn_actionHangarRequisition.sqf";};
-		class actionHangarShelter {file = "functions\InA\Actions\fn_actionHangarShelter.sqf";};
-		class actionHangarTakeOut {file = "functions\InA\Actions\fn_actionHangarTakeOut.sqf";};
 		class actionHQLookAtMap {file = "functions\InA\Actions\fn_actionHQLookAtMap.sqf";};
 		class actionHQMenu {file = "functions\InA\Actions\fn_actionHQMenu.sqf";};
 		class actionUniformEquip {file = "functions\InA\Actions\fn_actionUniformEquip.sqf";};
 
 		// Ambient
+		class ambientEnemies {file = "functions\InA\Ambient\fn_ambientEnemies.sqf";};
 		class instabilityUpdate {file = "functions\InA\Ambient\fn_instabilityUpdate.sqf";};
 		class ambientModule {file = "functions\InA\Ambient\fn_ambientModule.sqf";};
 		class ambientEntrance {file = "functions\InA\Ambient\fn_ambientEntrance.sqf";};
@@ -153,6 +152,8 @@ class InA
 		class reqEvac {file = "functions\InA\Support\fn_reqEvac.sqf";};
 		
 		// Structures
+		class packUpCamp {file = "defines\Structures\fn_packUpCamp.sqf";};
+		class camp {file = "defines\Structures\fn_camp.sqf";};
 		class buildKit {file = "defines\Structures\fn_buildKit.sqf";};
 		class fob {file = "defines\Structures\fn_fob.sqf";};
 		class placeObj {file = "defines\Structures\fn_placeObj.sqf";};
@@ -162,6 +163,7 @@ class InA
 		class formatText {file = "functions\InA\Text\fn_formatText.sqf";};
 		
 		// Vehicles
+		class shelterHelicopter {file = "defines\Vehicles\fn_shelterHelicopter.sqf";};
 		class vehicleService {file = "defines\Vehicles\Vehicle Service\fn_vehicleService.sqf";};
 		class serviceCost {file = "defines\Vehicles\Vehicle Service\fn_serviceCost.sqf";};
 		class vehicleDecommission {file = "defines\Vehicles\Vehicle Service\fn_vehicleDecommission.sqf";};

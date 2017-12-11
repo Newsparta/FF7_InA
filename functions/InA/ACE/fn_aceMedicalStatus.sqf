@@ -1,28 +1,73 @@
-params ["_unit", "_caller"];
+/* ----------
+Function:
+	InA_fnc_aceMedicalStatus
 
-private ["_bloodVolume", "_painLevel", "_bleedingState", "_ivBags", "_bloodLossPct", "_bloodLossVol", "_painPct", "_unconscious"];
+Description:
+	Determine vital statistics of soldier
 
-private ["_patient", "_text", "_textBlood", "_textBleeding", "_textPain", "_textBags", "_textConscious"];
+Parameters:
+	- Unit to check (Unit)
+	- Medic (Unit)
 
+Optional:
+
+Example:
+	[player1, player2] call InA_fnc_aceMedicalStatus;
+
+Returns:
+	Nil
+
+Author:
+	[FF7] Whigital
+---------- */
+
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_unit"			,[]					,[]					,[]							],
+		[	"_caller"		,[]					,[]					,[]							]];
+
+// Local declarations
+private		_bags				= nil;
+private		_bagsText			= nil;
+private		_bleeding			= nil;
+private		_bleedingState		= nil;
+private		_bloodLossPct		= nil;
+private		_bloodLossVol		= nil;
+private		_bloodVolume		= nil;
+private		_ivBags				= nil;
+private		_msg				= nil;
+private		_painLevel			= nil;
+private		_painPct			= nil;
+private		_patient			= nil;
+private		_ret				= nil;
+private		_text				= nil;
+private		_textBags			= nil;
+private		_textBleeding		= nil;
+private		_textBlood			= nil;
+private		_textConscious		= nil;
+private		_textPain			= nil;
+private		_unconscious		= nil;
+
+// Local scope to call
 private _round =
 {
 	params ["_num", "_n"];
-
-	private ["_ret"];
 
 	_ret = ((round (_num * (10 ^ _n))) / (10 ^ _n));
 
 	_ret;
 };
 
+// Get patient name
 _patient = (name _unit);
 
+// Check if player is alive
 if (!alive _unit) then
 {
 	hintSilent (format ["%1 is dead, beyond all hope", _patient]);
-}
-else
-{
+
+} else {
+
 	// Retrieve medical data first
 	_bloodVolume	= (_unit getVariable "ace_medical_bloodVolume");
 	_painLevel		= (_unit getVariable "ace_medical_pain");
@@ -30,38 +75,29 @@ else
 	_ivBags			= (_unit getVariable ["ace_medical_ivBags", 0]);
 	_unconscious	= (_unit getVariable "ACE_isUnconscious");
 
-	// Contious
-	if (_unconscious) then
-	{
+	// Check if conscious
+	if (_unconscious) then {
 		_textConscious = "Conscious: No";
-	}
-	else
-	{
+	} else {
 		_textConscious = "Conscious: Yes";
 	};
 
-	// Bleeding
-	if (_bleedingState) then
-	{
+	// Check if bleeding
+	if (_bleedingState) then {
 		_bleeding = "Yes";
-	}
-	else
-	{
+	} else {
 		_bleeding = "No";
 	};
 
-	// Bloodlevel
-	if (_bloodVolume < 100) then
-	{
+	// Check bloodlevel
+	if (_bloodVolume < 100) then {
 		_bloodLossPct = (100 - _bloodVolume);
 		_bloodLossVol = (7000 - (7000 * (_bloodVolume / 100)));
 		_bloodLossPct = [_bloodLossPct, 1] call _round;
 		_bloodLossVol = (round _bloodLossVol);
 
 		_textBlood = (format ["Bloodloss: %1%2 / %3ml", _bloodLossPct, "%", _bloodLossVol]);
-	}
-	else
-	{
+	} else {
 		_bloodLossPct = 0;
 		_bloodLossVol = 0;
 
@@ -76,26 +112,19 @@ else
 
 		_textPain = (format ["Painlevel: %1%2", _painPct, "%"]);
 		//_textPain = (str _painLevel + "/" + str _painPct);
-	}
-	else
-	{
+	} else {
 		_painPct = 0;
 
 		_textPain = "Pain: None";
 	};
 
-	if (_bleedingState) then
-	{
+	if (_bleedingState) then {
 		_textBleeding = "Bleeding: Yes";
-	}
-	else
-	{
+	} else {
 		_textBleeding = "Bleeding: No";
 	};
 
-	if (typeName _ivBags == "ARRAY") then
-	{
-		private ["_bagsText", "_bags"];
+	if (typeName _ivBags == "ARRAY") then {
 
 		_bags = [];
 
@@ -103,12 +132,10 @@ else
 			_bags pushBack (str (_x select 0) + "ml");
 		} forEach _ivBags;
 
-		private _bagsText = (_bags joinString " / ");
+		_bagsText = (_bags joinString " / ");
 
 		_textBags = (format ["IVs: %1", _bagsText]);
-	}
-	else
-	{
+	} else {
 		_textBags = "IVs: None";
 	};
 

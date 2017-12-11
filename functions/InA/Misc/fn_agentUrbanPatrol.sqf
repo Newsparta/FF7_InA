@@ -19,20 +19,26 @@ Returns:
     Nil
 
 Author:
-    Newsparta
+    [FF7] Newsparta
 ---------- */
-// ---------- PARAMETERS ----------
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_agent"		,[]					,[]					,[]							],
+		[	"_loc"			,[]					,[]					,[]							],
+		[	"_rad"			,500				,[0]				,[]							]];
 
-params ["_agent", "_loc", ["_rad", 500, [0]]];
+// Local declarations
+private		_accepted			= false;
+private		_pos				= [];
+private		_wp					= [];
 
-// ---------- MAIN ----------
-private ["_wp","_accepted","_pos"];
+// Run only if alive and not running away
+while {(alive _agent) && (!ambientShotsFired);} do {
 
-while {(alive _agent) && (!ambientShotsFired)} do {
+	sleep (5 + (random 5));
 
-	_wp = [];
-	_accepted = false;
-	while {!_accepted} do {
+	// Find a valid waypoint location
+	while {!_accepted;} do {
 		_pos = [[[_loc,_rad]],["water","out"]] call BIS_fnc_randomPos;
 		_wp = _pos isFlatEmpty [1, 0, 1, 1, 0, false];
 		
@@ -43,7 +49,10 @@ while {(alive _agent) && (!ambientShotsFired)} do {
 		};
 	};
 	
+	// Move to location
 	_agent moveTo _wp;
 	_agent forceSpeed (_agent getSpeed "SLOW");
-	sleep (5 + (random 5));
+
+	// wait until at location
+	waitUntil {sleep 5; _agent distance _wp < 10;};
 };

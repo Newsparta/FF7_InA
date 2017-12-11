@@ -1,26 +1,46 @@
-_export = [];
+/* ----------
+Function:
+	InA_fnc_defaultDB
 
-// ---------- Region stability ----------
+Description:
+	Resets database to default values.
 
+Parameters:
+
+Optional:
+
+Example:
+	[] call InA_fnc_defaultDB;
+
+Returns:
+	Nil
+
+Author:
+	[FF7] Newsparta
+---------- */
+
+// Local declarations
+private		_export				= [];
+private		_lI1 				= [];
+private 	_lI2 				= [];
+private		_aI1 				= [];
+private		_aI2 				= [];
+private 	_wI1 				= [];
+private 	_wI2 				= [];
+private 	_wI3 				= [];
+private 	_gI1 				= [];
+private 	_gI2 				= [];
+private 	_eI1 				= [];
+private 	_mI1 				= [];
+private 	_dI 				= [];
+private 	_allItems 			= [];
+private 	_allVehicles 		= [];
+private		_null				= nil;
+
+// Region Stability
 _export pushBack ([]);
 
-// ---------- Armory inventory ----------
-
-_lI1 = [];
-_lI2 = [];
-_aI1 = [];
-_aI2 = [];
-_wI1 = [];
-_wI2 = [];
-_wI3 = [];
-_gI1 = [];
-_gI2 = [];
-_eI1 = [];
-_mI1 = [];
-_dI = [];
-
-_allItems = [];
-
+// Armory Inventory
 _allItems pushBack _lI1;
 _allItems pushBack _lI2;
 _allItems pushBack _eI1;
@@ -37,34 +57,24 @@ _allItems pushBack _dI;
 
 _export pushBack _allItems;
 
-// ---------- Logistics ----------
-
+// Logistics
 _export pushBack [];
 
-// ---------- Vehicles ----------
-
-_allVehicles = [];
-
+// Vehicles
 _export pushBack _allVehicles;
 
-// ---------- Check build vehicles ----------
-
+// Check build vehicles
 _export pushBack [];
 
-// ---------- Base type ----------
-
+// Base type
 _export pushBack [];
 
-// ---------- FOB (6) ----------
-
+// FOB
 _export pushBack [false, [0,0,0]];
 
-// ---------- Stronghold (7) ----------
-
+// Stronghold
 _export pushBack [false, [0,0,0]];
 
-// ---------- End ----------
-
+// Save data
 _null = ["save", "data", _export] call InA_fnc_extSerialize;
-
 [true, "Reset.", "Database"] remoteExec ["InA_fnc_formatHint", 0];

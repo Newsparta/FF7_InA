@@ -1,31 +1,51 @@
+////////////////
+// DEPRECATED //
+////////////////
+
+// Delay for variable updates
 sleep 0.2;
 
-params ["_parkedVehicle"];
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_veh"			,[]					,[]					,[]							]];
 
-_fMulti = nil;
-_rMulti = nil;
+// Local declarations
+private		_config				= nil;
+private		_fMulti				= nil;
+private		_magCount			= nil;
+private		_mags				= nil;
+private		_magType			= nil;
+private		_obj				= ObjNull;
+private		_rMulti				= nil;
+private		_turrets			= nil;
 
-if (_parkedVehicle isKindOf "Helicopter") then {
+// Determine kind of vehicle
+if (_veh isKindOf "Helicopter") then {
 	_fMulti = 4;
 	_rMulti = 300;
 };
-if (_parkedVehicle isKindOf "Tank") then {
+if (_veh isKindOf "Tank") then {
 	_fMulti = 3;
 	_rMulti = 300;
 };
-if (_parkedVehicle isKindOf "Car") then {
+if (_veh isKindOf "Car") then {
 	_fMulti = 1;
 	_rMulti = 50;
 };
+
+// Determine repair cost
+repairCost = round ((damage _veh) * _rMulti);
 	
-repairCost = round ((damage _parkedVehicle) * _rMulti);
-	
-fuelCost = ((100 - (fuel _parkedVehicle) * 100) * _fMulti);
-	
+// Determine fuel cost
+fuelCost = ((100 - (fuel _veh) * 100) * _fMulti);
+
+// Reset munition cost
 munitionCost = 0;
 
-_mags = magazinesAllTurrets _parkedVehicle;
+// Find all magazines
+_mags = magazinesAllTurrets _veh;
 
+// Subtract cost based on current ammo
 {
 	_magType = _x select 0;
 	_magCount = _x select 2;
@@ -33,11 +53,15 @@ _mags = magazinesAllTurrets _parkedVehicle;
 	[_magType,_magCount] call InA_fnc_magCostSubtract;
 } forEach _mags;
 
-_turrets = count (configFile >> "CfgVehicles" >> (typeOf _parkedVehicle) >> "Turrets");
+// Find number of turrets
+_turrets = count (configFile >> "CfgVehicles" >> (typeOf _veh) >> "Turrets");
 
+// Check if vehicle has turrets
 if (_turrets > 0) then {
+
+	// Add magazine costs for each turret
 	for "_i" from 0 to (_turrets - 1) do {
-		_config = (configFile >> "CfgVehicles" >> (typeOf _parkedVehicle) >> "Turrets") select _i;
+		_config = (configFile >> "CfgVehicles" >> (typeOf _veh) >> "Turrets") select _i;
 		_mags = getArray(_config >> "magazines");
 		
 		{
@@ -46,30 +70,35 @@ if (_turrets > 0) then {
 	};
 };
 
+// Bug fix for tanks that have wierd inventories
 if (
-		(typeOf _parkedVehicle == "rhsusf_m1a2sep1tuskiwd_usarmy") || 
-		{typeOf _parkedVehicle == "rhsusf_m1a2sep1tuskiiwd_usarmy"} || 
-		{typeOf _parkedVehicle == "rhsusf_m1a1hc_wd"} || 
-		{typeOf _parkedVehicle == "rhsusf_m1a1fep_wd"} ||
-		{typeOf _parkedVehicle == "I_MBT_03_cannon_F"}
+		(typeOf _veh == "rhsusf_m1a2sep1tuskiwd_usarmy") || 
+		{typeOf _veh == "rhsusf_m1a2sep1tuskiiwd_usarmy"} || 
+		{typeOf _veh == "rhsusf_m1a1hc_wd"} || 
+		{typeOf _veh == "rhsusf_m1a1fep_wd"} ||
+		{typeOf _veh == "I_MBT_03_cannon_F"}
 	) then {
 	munitionCost = munitionCost + 100;
 };
 
+// Bug fix for helicopters
 if (
-		(typeOf _parkedVehicle == "I_Heli_light_03_dynamicLoadout_F") ||
-		{typeOf _parkedVehicle == "B_Heli_Attack_01_dynamicLoadout_F"} ||
-		{typeOf _parkedVehicle == "B_Heli_Light_01_dynamicLoadout_F"}
+		(typeOf _veh == "I_Heli_light_03_dynamicLoadout_F") ||
+		{typeOf _veh == "B_Heli_Attack_01_dynamicLoadout_F"} ||
+		{typeOf _veh == "B_Heli_Light_01_dynamicLoadout_F"}
 	) then {
 	munitionCost = munitionCost + 200;
 };
 
+// Send cost values to player
 [ID, "repairCost"] remoteExec ["publicVariableClient", 2, false];
 [ID, "fuelCost"] remoteExec ["publicVariableClient", 2, false];
 [ID, "munitionCost"] remoteExec ["publicVariableClient", 2, false];
 
+// Delay to allow sync
 sleep 0.2;
 
+// Set dialog text
 {	
 
 	if (munitionCost < 0) then {

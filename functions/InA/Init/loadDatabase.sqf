@@ -118,6 +118,7 @@ LogF = (_logisticsData select 2);
 
 _vehicleData = _data select 3;
 _utilityVehicles = _data select 4;
+_veh = ObjNull;
 
 {
 	_veh = createVehicle [(_x select 0), (_x select 2), [], 0, "CAN_COLLIDE"];
@@ -126,12 +127,14 @@ _utilityVehicles = _data select 4;
 	clearMagazineCargoGlobal _veh;
 	clearWeaponCargoGlobal _veh;
 	clearItemCargoGlobal _veh;
-
-	if ((_x select 0) in _utilityVehicles) then {
-		utilityVehicles pushBack _veh;
-	};
 	
 	playerVehicles pushBack _veh;
+
+	{
+		if ((typeOf _veh) in _x) then {
+			utilityVehicles pushBack [_veh, _x select 1, _x select 2, false];
+		};
+	} forEach _utilityVehicles;
 } forEach _vehicleData;
 
 // ---------- FOB (6) ----------
@@ -139,6 +142,16 @@ _utilityVehicles = _data select 4;
 if (_data select 6 select 0) then {
 
 	["build", _data select 6 select 1] call InA_fnc_fob;
+	_obj = (nearestObjects [InA_fob_location,["Flag_White_F"],100] select 0);
+	[_obj, ["Fast travel",	
+		{_this call InA_fnc_actionTeleport;}, 
+		[], 
+		99,
+		true, 
+		true, 
+		"", 
+		"((_target distance _this) < 8)"
+	]] remoteExec ["addAction", 0, true];
 
 };
 
@@ -148,6 +161,58 @@ if (_data select 7 select 0) then {
 
 	InA_stronghold = true;
 	InA_stronghold_Loc = _data select 7 select 1;
+
+};
+
+// ---------- Camp (8) ----------
+
+if (_data select 8 select 0) then {
+
+	campPlaced = true;
+	InA_camp_location = _data select 8 select 1;
+
+	private _mkr = createMarker ["camp_mark", InA_camp_location];
+	"camp_mark" setMarkerColor "ColorWest";
+	"camp_mark" setMarkerShape "ICON";
+	"camp_mark" setMarkerType "b_installation";
+	"camp_mark" setMarkerText "Camp";
+
+	_obj = (nearestObjects [InA_camp_location,["Land_TentDome_F"],50] select 0);
+	[_obj, ["Fast travel",	
+		{_this call InA_fnc_actionTeleport;}, 
+		[], 
+		99,
+		true, 
+		true, 
+		"", 
+		"((_target distance _this) < 8)"
+	]] remoteExec ["addAction", 0, true];
+		[_obj, [
+		"Pack up camp",
+		{_this call InA_fnc_packUpCamp;},
+		[], 
+		97, 
+		true, 
+		true, 
+		"", 
+		"((_target distance _this) < 8)"
+	]] remoteExec ["addAction", 0, true];
+	{
+		if ((typeOf _obj) in _x) then {
+			_x set [0, _obj];
+		};
+	} forEach utilityVehicles;
+
+	_obj = (nearestObjects [InA_camp_location,["Land_Map_blank_F"],50] select 0);
+	[_obj, ["Look at map",	
+		{_this call InA_fnc_actionHQLookAtMap;}, 
+		[], 
+		99,
+		true, 
+		true, 
+		"", 
+		"((_target distance _this) < 8)"
+	]] remoteExec ["addAction", 0, true];
 
 };
 

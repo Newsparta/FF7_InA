@@ -1,5 +1,17 @@
-private ["_id","_ctrl","_items"];
-// ---------- Item information ----------
+/* ----------
+Script:
+	Helmet dialog
+
+Description:
+	All headgear information
+
+Author:
+	[FF7] Newsparta
+---------- */
+
+// Local declarations
+private		_ctrl				= nil;
+private		_items				= [];
 
 equipUniform = 
 {

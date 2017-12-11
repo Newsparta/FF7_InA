@@ -20,20 +20,25 @@ Returns:
     Nil
 
 Author:
-    Newsparta
+    [FF7] Newsparta
 ---------- */
 
-// ---------- Parameters ----------
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_loc"			,[]					,[]					,[]							],
+		[	"_rad"			,1000				,[0]				,[]							]];
 
-params ["_loc",["_rad", 1000, [0]]];
-	
-// ---------- Main ----------
+// Local declarations
+private		_veh 				= ObjNull;
+private		_vehicles			= [];
 
+// Find all IDAP vehicles
 _vehicles = nearestObjects [_loc, idap_cars, _rad];
 
+// Add action to all vehicles
 {
 
-	[_x, [["FF9900", "Deploy Aid"] call FF7_fnc_formatText,	{
+	[_x, ["Deploy aid",	{
 
 		_veh = _this select 0;
 

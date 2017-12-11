@@ -115,3 +115,7 @@ switch (baseType) do {
 		removeHeadgear _unit;
 	};
 };
+
+// Sleep to remove any stray radio's
+sleep 1;
+removeAllAssignedItems _unit;

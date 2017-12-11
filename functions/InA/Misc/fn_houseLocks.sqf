@@ -23,16 +23,24 @@ Author:
     Newsparta
 ---------- */
 
-// ---------- PARAMETERS ----------
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_loc"			,[]					,[]					,[]							],
+		[	"_rad"			,1000			 	,[0]				,[]							],
+		[	"_pct"			,0.5				,[0]				,[]							],
+		[	"_state"		,"lock"				,[""]				,[]							]];
 
-params ["_loc",["_rad", 1000, [0]],["_pct", 0.5, [0]],["_state", "lock", [""]]];
+// Local declarations
+private		_houses				= [];
+private		_i					= 0;
 
-// ---------- MAIN ----------
-
+// Check if locking or unlocking
 if (_state == "lock") then {
 
+	// Find all houses
 	_houses = nearestTerrainObjects [_loc, ["HOUSE"], _rad];
 
+	// Lock all the doors
 	{
 		
 		for [{_i=1}, {_i < 11}, {_i = _i + 1}] do {
@@ -50,8 +58,10 @@ if (_state == "lock") then {
 	
 } else {
 
+	// Find all the houses
 	_houses = nearestTerrainObjects [_loc, ["HOUSE"], _rad];
 
+	// Unlock all the doors
 	{
 		for [{_i=0}, {_i < 10}, {_i = _i + 1}] do {
 			_x setVariable [format ['bis_disabled_Door_%1', _i],0,true];

@@ -19,25 +19,32 @@ Returns:
     Nil
 
 Author:
-    Newsparta
+    [FF7] Newsparta
 ---------- */
-private ["_rad","_group","_end","_restrict"];
 
-// ---------- PARAMETERS ----------
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_group"		,[]					,[]					,[]							],
+		[	"_loc"			,[]					,[]					,[]							],
+		[	"_rad"			,500				,[0]				,[]							]];
 
-params ["_group", "_loc", ["_rad", 500, [0]]];
+// Local declarations
+private		_accepted			= false;
+private		_end				= nil;
+private		_pos				= [];
+private		_restrict			= [0,0,0];
+private		_wp					= [];
+private		_wpd				= nil;
 
-// ---------- MAIN ----------
-
-_restrict = [0,0,0];
+// Set behavior and speed
 _group setBehaviour "SAFE";
 _group setSpeedMode "LIMITED";
 
+// Set waypoints
 for "_i" from 1 to 6 do {
-private ["_wp","_accepted","_pos","_wpd"];
 	_wp = [];
 	_accepted = false;
-	while {!_accepted} do {
+	while {!_accepted;} do {
 		_pos = [[[_loc,_rad]],["water","out"]] call BIS_fnc_randomPos;
 		_wp = _pos isFlatEmpty [1, 0, 1, 1, 0, false];
 		
@@ -55,6 +62,7 @@ private ["_wp","_accepted","_pos","_wpd"];
 	_restrict = _wp;
 };
 
+// End with a cycle waypoint
 _end = _group addWaypoint [_loc,0];
 _end setWaypointType "CYCLE";
 _end setWaypointCompletionRadius 15;

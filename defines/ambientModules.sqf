@@ -1,12 +1,22 @@
+/* ----------
+Script:
+	Ambient modules
+
+Description:
+	Define and initialize all ambient elements
+
+Author:
+	[FF7] Newsparta
+---------- */
+
+// Define map variables
 mapCenter = [(worldSize/2),(worldSize/2),0];
 mapSize = sqrt((worldSize/2)^2 + (worldSize/2)^2);
 
-// ---------- Volatility rate (1 = 2 weeks) ----------
-
+// Volatility rate (2 weeks)
 volatileRate = 2;
 
-// ---------- Spawn ambient modules ----------
-
+// Spawn ambient modules
 [getMarkerPos "ambientTanouka","Tanouka",1000,"medium"] spawn InA_fnc_ambientModule;
 [getMarkerPos "ambientGalili","Galili",750,"small"] spawn InA_fnc_ambientModule;
 [getMarkerPos "ambientVagalala","Vagalala",850,"small"] spawn InA_fnc_ambientModule;
@@ -61,8 +71,7 @@ volatileRate = 2;
 [getMarkerPos "ambientBelfort","Belfort",750,"medium"] spawn InA_fnc_ambientModule;
 [getMarkerPos "ambientTuvanaka","Tuvanaka",850,"medium"] spawn InA_fnc_ambientModule;
 
-// ---------- Location references ----------
-
+// Location reference
 ambientSitrep = 
 [
 	["BluePearlIndustrial",1000],
@@ -118,8 +127,8 @@ ambientSitrep =
 	["Tavu",750],
 	["Tuvanaka",850]
 ];
-// ---------- War torn region ----------
 
+// War torn effect
 _array = nearestObjects 
 [
 	mapCenter, 
@@ -161,8 +170,7 @@ _array = nearestObjects
 	_x setDamage 1;
 } forEach _array;
 
-// ---------- Spawn ambient arty controller ----------
-
+// Ambient mortars
 [] spawn {
 	while {true} do {
 	

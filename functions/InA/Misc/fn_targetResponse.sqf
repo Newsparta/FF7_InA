@@ -21,15 +21,15 @@ Author:
     Newsparta
 ---------- */
 
-// ---------- Parameters ----------
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_loc"			,[]					,[]					,[]							]];
 
-params ["_loc"];
-	
-// ---------- Main ----------
+// Local declarations
+private		_airRad				= 3000;
+private		_landRad			= 1000;
 
-_landRad = 1000;
-_airRad = 3000;
-
+// Check if spotted
 if (spotted) then {
 
 	[

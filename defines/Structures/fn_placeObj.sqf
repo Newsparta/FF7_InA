@@ -18,11 +18,14 @@ Author:
     Newsparta
 ---------- */
 
-// ---------- PARAMETERS ----------
+// Collect server variable
+[clientOwner, "utilityVehicles"] remoteExec ["publicVariableClient", 2, false];
 
-// ---------- MAIN ----------
+// Delay to allow sync
+sleep 0.2;
 
- {
+// Find utility vehicle
+{
 
 	if (kitVeh in _x) then {
 
@@ -33,6 +36,7 @@ Author:
 
 } forEach utilityVehicles;
 
+// Check if you have the resources
 if (kitVal >= objCost) then {
 
     detach obj;

@@ -4,19 +4,19 @@ class InA_MiscItems
 
 	class ACE_bloodIV
 	{
-		cost = 0.4;
+		cost = 0.2;
 		name = "Blood IV (1000mL)";
 		type = "medical";
 	};
 	class ACE_bloodIV_250
 	{
-		cost = 0.1;
+		cost = 0.05;
 		name = "Blood IV (250mL)";
 		type = "medical";
 	};
 	class ACE_bloodIV_500
 	{
-		cost = 0.2;
+		cost = 0.1;
 		name = "Blood IV (500mL)";
 		type = "medical";
 	};

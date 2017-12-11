@@ -136,7 +136,7 @@ class InA_HQ_Dialog
 			w = 0.0515625 * safezoneW;
 			h = 0.044004 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
-			action = "[]execVM 'functions\InA\Auxiliary\timerDialog.sqf';";
+			action = "[]execVM 'functions\InA\Dialogs\timerDialog.sqf';";
 		};
 		class InA_HQ_Listbox_1: RscListbox
 		{

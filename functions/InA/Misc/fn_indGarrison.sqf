@@ -24,14 +24,31 @@ Author:
     Newsparta
 ---------- */
 
-// ---------- Parameters ----------
+// Parameters
+//		|	Private Name 	|	Default Value 	|	Expected Types 	|	Expected Array Count 	|
+params [[	"_loc"			,[]					,[]					,[]							],
+		[	"_rad"			,100				,[0]				,[]							],
+		[	"_garPct"		,0.05				,[0]				,[]							],
+		[	"_staPct"		,0.05				,[0]				,[]							],
+		[	"_trucks"		,1					,[0]				,[]							],
+		[	"_cars"			,1					,[0]				,[]							]];
 
-params ["_loc", ["_rad", 100, [0]], ["_garrisonPercent", 0.05, [0]], ["_staticPercent", 0.05, [0]],
-["_parkedTrucks", 1, [0]],["_parkedCars", 1, [0]]];
+// Local declarations
+private		_allRoads			= [];
+private		_array				= [];
+private		_bldg				= [];
+private		_buildings			= [];
+private		_car				= ObjNull;
+private		_connectedRoads		= nil;
+private		_connectedTo		= nil;
+private		_dir				= 0;
+private		_group				= [];
+private		_i					= 0;
+private		_obj				= ObjNull;
+private		_pos				= [];
+private		_road				= nil;
 
-// ---------- Init ----------
-private ["_buildings","_array","_bldg","_group","_pos","_dir","_obj","_car"];
-
+// Find buildings
 _buildings = nearestTerrainObjects [
 	_loc, 
 	[
@@ -42,18 +59,19 @@ _buildings = nearestTerrainObjects [
 	_rad
 ];
 
-if ((count _buildings) < 1) exitWith {hint "no garrison buildings found";};
+// Exit if there are no buildings found
+if ((count _buildings) < 1) exitWith {};
 
-// ---------- Spawn in buildings ----------
-
+// Find all the positions in the buildings
 _array = [];
 {
 	_bldg = [_x] call BIS_fnc_buildingPositions;
 	_array = _array + _bldg;
 } forEach _buildings;
 
+// Spawn men
 {
-	if (random 100 < (_garrisonPercent * 100)) then {
+	if (random 100 < (_garPct * 100)) then {
 		
 		_group = [
 			_x, 
@@ -69,14 +87,12 @@ _array = [];
 	};
 } forEach _array;
 
-// ---------- Spawn statics ----------
-
+// Spawn statics
 {
-	if (random 100 < (_staticPercent * 100)) then {
+	if (random 100 < (_staPct * 100)) then {
 		
 		_pos = [getPosATL _x, 0, 30, 1, 0, 1, 0] call BIS_fnc_findSafePos;
 		_dir =  (getPosATL _x) getDir _pos;
-		_obj = ObjNull;
 		
 		if (supplier == "BLU") then {
 			_obj = createVehicle [(selectRandom INS_STATIC_HMG_BLU), _pos,[],0,"NONE"];
@@ -99,10 +115,10 @@ _array = [];
 	};
 } forEach _buildings;
 
-// ---------- Spawn ambient vehicles ----------
-
+// Find all roads
 _allRoads = _loc nearRoads _rad;
 
+// Remove duplicate roads
 {
 	_connectedRoads = roadsConnectedTo _x;
 	if ((count _connectedRoads) > 2) then {
@@ -110,97 +126,120 @@ _allRoads = _loc nearRoads _rad;
 	};
 } forEach _allRoads;
 
-if (count _allRoads < 3) exitWith { /*hint "no roads nearby";*/};
+// Exit if not enough roads found
+if (count _allRoads < 3) exitWith {};
 
-for "_i" from 1 to _parkedTrucks do {
+// Spawn trucks
+for "_i" from 1 to _trucks do {
 	
+		// Select a road
 		_road = selectRandom _allRoads;
 		_connectedTo = ((roadsConnectedTo _road) select 0);
-		_dir = 0;
-		_car = ObjNull;
+
+		// Spawn the truck
+		if (supplier == "BLU") then {
+			_car = createVehicle [(selectRandom INS_TRUCK_BLU), _road, [], 0, "CAN_COLLIDE"];
+			[
+				_car,
+				missionNamespace getVariable ["INS_TRUCK_BLU_TEX", nil],
+				missionNamespace getVariable ["INS_TRUCK_BLU_ANI", nil]
+			] call BIS_fnc_initVehicle;
+		} else {
+			_car = createVehicle [(selectRandom INS_TRUCK_OPF), _road, [], 0, "CAN_COLLIDE"];
+			[
+				_car,
+				missionNamespace getVariable ["INS_TRUCK_OPF_TEX", nil],
+				missionNamespace getVariable ["INS_TRUCK_OPF_ANI", nil]
+			] call BIS_fnc_initVehicle;
+		};
 		
+		// Check which direction the car will face
 		if (random 1 < 0.5) then {
+
+			// Get the road direction
 			if (count (roadsConnectedTo _road) > 0) then {
 				_dir = _road getDir _connectedTo;
 			} else {
 				_dir = random 360
 			};
-			
-			if (supplier == "BLU") then {
-				_car = createVehicle [(selectRandom INS_TRUCK_BLU), _road, [], 0, "CAN_COLLIDE"];
-				[
-					_car,
-					missionNamespace getVariable ["INS_TRUCK_BLU_TEX", nil],
-					missionNamespace getVariable ["INS_TRUCK_BLU_ANI", nil]
-				] call BIS_fnc_initVehicle;
-			} else {
-				_car = createVehicle [(selectRandom INS_TRUCK_OPF), _road, [], 0, "CAN_COLLIDE"];
-				[
-					_car,
-					missionNamespace getVariable ["INS_TRUCK_OPF_TEX", nil],
-					missionNamespace getVariable ["INS_TRUCK_OPF_ANI", nil]
-				] call BIS_fnc_initVehicle;
-			};
+
+			// Confirm position
 			_car setDir _dir;
 			_car setPos [(getPosASL _car select 0) + 4.5, getPosASL _car select 1, 0];
 		} else {
+
+			// Get the road direction
 			if (count (roadsConnectedTo _road) > 0) then {
 				_dir = _road getDir _connectedTo;
 			} else {
 				_dir = random 360
 			};
+
+			// Confirm position
 			_car setDir _dir;
 			_car setPos [(getPosASL _car select 0) + 4.5, getPosASL _car select 1, 0];		
 		};
-		
+
+		// Clear vehicle cargo
 		clearBackpackCargoGlobal _car;
 		clearMagazineCargoGlobal _car;
 		clearWeaponCargoGlobal _car;
 		clearItemCargoGlobal _car;
 };
 
-for "_i" from 1 to _parkedCars do {
+// Spawn cars
+for "_i" from 1 to _cars do {
 	
+		// Select a road
 		_road = selectRandom _allRoads;
 		_connectedTo = ((roadsConnectedTo _road) select 0);
-		_dir = 0;
-		_car = ObjNull;
 		
+		// Spawn the car
+		if (supplier == "BLU") then {
+			_car = createVehicle [(selectRandom INS_CARU_BLU), _road, [], 0, "CAN_COLLIDE"];
+			[
+				_car,
+				missionNamespace getVariable ["INS_CARU_OPF_TEX", nil],
+				missionNamespace getVariable ["INS_CARU_OPF_ANI", nil]
+			] call BIS_fnc_initVehicle;
+		} else {
+			_car = createVehicle [(selectRandom INS_CARU_OPF), _road, [], 0, "CAN_COLLIDE"];
+			[
+				_car,
+				missionNamespace getVariable ["INS_CARU_BLU_TEX", nil],
+				missionNamespace getVariable ["INS_CARU_BLU_ANI", nil]
+			] call BIS_fnc_initVehicle;
+		};
+
+		// Check which direction the car will face
 		if (random 1 < 0.5) then {
+
+			// Get the road direction
 			if (count (roadsConnectedTo _road) > 0) then {
 				_dir = _road getDir _connectedTo;
 			} else {
 				_dir = random 360
 			};
 			
-			if (supplier == "BLU") then {
-				_car = createVehicle [(selectRandom INS_CARU_BLU), _road, [], 0, "CAN_COLLIDE"];
-				[
-					_car,
-					missionNamespace getVariable ["INS_CARU_OPF_TEX", nil],
-					missionNamespace getVariable ["INS_CARU_OPF_ANI", nil]
-				] call BIS_fnc_initVehicle;
-			} else {
-				_car = createVehicle [(selectRandom INS_CARU_OPF), _road, [], 0, "CAN_COLLIDE"];
-				[
-					_car,
-					missionNamespace getVariable ["INS_CARU_BLU_TEX", nil],
-					missionNamespace getVariable ["INS_CARU_BLU_ANI", nil]
-				] call BIS_fnc_initVehicle;
-			};
+			// Confirm position
 			_car setDir _dir;
 			_car setPos [(getPosASL _car select 0) + 4.5, getPosASL _car select 1, 0];
+		
 		} else {
+
+			// Get the road direction
 			if (count (roadsConnectedTo _road) > 0) then {
 				_dir = _road getDir _connectedTo;
 			} else {
 				_dir = random 360
 			};
 
+			// Confirm position
 			_car setDir _dir;
 			_car setPos [(getPosASL _car select 0) + 4.5, getPosASL _car select 1, 0];		
 		};
 		
+		// Clear vehicle cargo
 		clearBackpackCargoGlobal _car;
 		clearMagazineCargoGlobal _car;
 		clearWeaponCargoGlobal _car;

@@ -1,8 +1,17 @@
-private ["_cars"];
+/* ----------
+Script:
+	Civilian Tolerance
+
+Description:
+	Control basic tolerance gain and min/max values
+
+Author:
+	[FF7] Newsparta
+---------- */
 
 // ---------- Control loop ----------
 
-while {true} do {
+while {true;} do {
 
 	sleep 60;
 	

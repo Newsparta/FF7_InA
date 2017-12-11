@@ -1,5 +1,4 @@
-// ---------- Notice ----------
-
+// Notice
 [] spawn {
     
         sleep 10;
@@ -8,8 +7,7 @@
         
     };
 
-// ---------- Mission Mechanics (4.2) ----------
-
+// Mission mechanics (4.2.1)
 player createDiarySubject ["missionMechanics","Mission Mechanics"];
 
 player createDiaryRecord	
@@ -25,6 +23,23 @@ At all other locations there will be a Fox Force 7 flag near the center.
 The flag will be marked with a blue dot on the map
 Use this flag to activate the fast travel.
 You may not fast travel if there are enemies nearby.
+"
+	]
+];
+player createDiaryRecord	
+[
+	"missionMechanics",
+	[
+"Camps",
+"
+Squad leaders have the ability to designate camps.
+These camps can only be placed 1050m away from regions.
+A tent and map will be at the camp for players to use.
+The tent provides a limited build inventory and the ability to fast travel.
+The map will allow players to view the AO.
+Only 1 camp may be active at a time and requires a cooldown period.
+The cooldown period is reset if the camp is packed up.
+Any attempt to place a camp after the cooldown will override the first camp placed.
 "
 	]
 ];

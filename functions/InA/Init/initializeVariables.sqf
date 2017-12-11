@@ -1,9 +1,22 @@
-// ---------- Missions ----------
+/* ----------
+Script:
+	Initialize variables
 
+Description:
+	Common location for global variables needing to be initialized
+
+Author:
+	[FF7] Newsparta
+---------- */
+
+// Civilian
 civilian setFriend [west, 1];
 civilian setFriend [resistance, 1];
 civMissionActive = false;
+civTol = 1;
+responded = false;
 
+// Missions
 activeLocations = 0;
 concentrations = [];
 InA_stronghold = false;
@@ -11,8 +24,9 @@ InA_stronghold_Loc = [];
 mainLimit = 2000;
 sideMissionTimer = 3600;
 givenLoc = "";
-
 compObj = 0;
+
+// Objectives
 missionBank = 
 [
 	"AAAEmplacement",
@@ -23,17 +37,14 @@ missionBank =
 	"weaponsCache"
 ];
 
-// ---------- Utility/vehicles ----------
 
+// Utility/vehicles
 playerVehicles = [];
 utilityVehicles = [];
 aidDeployed = false;
 fortifiedRegions = [];
-logiETA = 0;
-logiDaytime = daytime;
 
-// ---------- Base ----------
-
+// Base
 baseType = "";
 supplier = "";
 gearRestricted = false;
@@ -51,13 +62,10 @@ safehouse = [0,0,0];
 
 fastTravelSites = [];
 
-// ---------- Civilian ----------
-
-civTol = 1;
-responded = false;
-
-// ---------- Resources ----------
-
+// Resources 
 LogV = 0;
 LogF = 0;
 LogM = 0;
+logiETA = 0;
+logiDaytime = daytime;
+logiVeh = ObjNull;

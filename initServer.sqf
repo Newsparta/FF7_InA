@@ -25,7 +25,8 @@ if (("task_force_radio" in activatedAddons)) then
 
 // Base init
 _null = execVM "functions\InA\Init\isGarageClear.sqf";
-_null = execVM "functions\InA\Init\resourceHandler.sqf";
+_null = execVM "functions\InA\Init\buildHandler.sqf";
+_null = execVM "functions\InA\Init\resourceControl.sqf";
 _null = execVM "functions\InA\Init\logisticsTransport.sqf";
 _null = execVM "functions\InA\Init\civilianTolerance.sqf";
 _null = execVM "functions\InA\Init\supplierCheck.sqf";
@@ -39,49 +40,10 @@ _null = execVM "functions\InA\Init\supplierCheck.sqf";
 ] spawn InA_fnc_vehicleService;
 
 // Autosave
-[] spawn {
-
-	while {true;} do {
-
-		waitUntil {sleep 10; (count (allPlayers - entities "HeadlessClient_F") > 0)};
-
-		while {true;} do {
-		scopeName "save";
-
-			sleep (30 + (random 30));
-
-			if (count (allPlayers - entities "HeadlessClient_F") < 1) then {
-
-				[] call InA_fnc_save;
-				breakOut "save";
-			};
-		};
-	};
-};
+_null = execVM "functions\InA\Init\autoSave.sqf";
 
 // Squad wiped indicator
-[] spawn {
-
-	while {true;} do {
-
-		waitUntil {sleep 10; (count (allPlayers - entities "HeadlessClient_F") > 0);};
-
-		while {true;} do {
-		scopeName "allDead";
-
-			sleep (15 + (random 15));
-
-			if (({alive _x} count (allPlayers - entities "HeadlessClient_F")) < 1) then {
-
-				[false, "all players have been killed"] call InA_fnc_formatHint;
-				
-				waitUntil {sleep 5; ({alive _x} count (allPlayers - entities "HeadlessClient_F")) > 0;};
-
-				breakOut "allDead";
-			};
-		};
-	};
-};
+_null = execVM "functions\InA\Init\isWiped.sqf";
 
 // Parameters
 for [ {_i = 0}, {_i < count(paramsArray)}, {_i = _i + 1} ] do {

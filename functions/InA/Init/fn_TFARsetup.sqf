@@ -1,3 +1,15 @@
+/* ----------
+Script:
+	TFAR setup
+
+Description:
+	Setup TFAR variables
+
+Author:
+	[FF7] Newsparta
+	[FF7] Whigital
+---------- */
+
 // TFAR general options
 
 if ((isServer) || (isDedicated)) then

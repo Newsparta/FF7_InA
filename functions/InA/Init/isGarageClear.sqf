@@ -1,12 +1,22 @@
-private ["_landArray","_airArray"];
-// ---------- Check vehicle spawns for obstruction ----------
+/* ----------
+Script:
+	Is garage clear
 
-while {true} do {
+Description:
+	Monitors garage/hangar spawn locations and checks for obstructions
+
+Author:
+	[FF7] Newsparta
+---------- */
+
+while {true;} do {
 	
 	sleep (2 + (random 2));
 
+	// Find all land vehicles
 	_landArray = nearestObjects [getMarkerPos "garageSpawn",["LandVehicle"],5];
 	
+	// Check if spawn obstructed
 	if ((count _landArray) > 0) then {
 		vehicleParked = true; 
 		publicVariable "vehicleParked";
@@ -15,8 +25,10 @@ while {true} do {
 		publicVariable "vehicleParked";
 	};
 	
+	// Find all air vehicles
 	_airArray = nearestObjects [getMarkerPos "hangarSpawn",["Air"],10];
 	
+	// Check if spawn obstructed
 	if ((count _airArray) > 0) then {
 		vehicleAirParked = true; 
 		publicVariable "vehicleAirParked";

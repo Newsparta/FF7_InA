@@ -8,22 +8,22 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=706;
+		nextID=716;
 	};
 	class MarkerIDProvider
 	{
-		nextID=19;
+		nextID=23;
 	};
 	class LayerIndexProvider
 	{
-		nextID=276;
+		nextID=357;
 	};
 	class Camera
 	{
-		pos[]={10959.241,356.15131,11511.88};
-		dir[]={-0.38771826,-0.38440791,-0.83782148};
-		up[]={-0.16144812,0.92315656,-0.34887475};
-		aside[]={-0.90754741,1.4551915e-010,0.41998208};
+		pos[]={10959.085,360.80664,11513.253};
+		dir[]={-0.25750676,-0.49251661,-0.83134288};
+		up[]={-0.14572695,0.87030232,-0.47046885};
+		aside[]={-0.9552328,-1.2961391e-007,0.29588166};
 	};
 };
 binarizationWanted=0;
@@ -15480,7 +15480,7 @@ class Mission
 			};
 			id=274;
 			type="Land_Pallet_F";
-			atlOffset=0.45874023;
+			atlOffset=0.4598999;
 			class CustomAttributes
 			{
 				class Attribute0

@@ -77,6 +77,14 @@ sleep _delay;
 			_troops
 		] call BIS_fnc_spawnGroup;
 
+		{
+			_x setPos [
+				random [(_pos select 0) - 10,_pos select 0,(_pos select 0) + 10],
+				random [(_pos select 1) - 10,_pos select 1,(_pos select 1) + 10],
+				0
+			];
+		} forEach (units _group);
+
 		_wp = _group addWaypoint [[_center, 0, _wpMax, 1, 0, 20, 0] call BIS_fnc_findSafePos, 0];
 		_wp setWaypointType "GUARD";
 		_wp setWaypointSpeed _speed;

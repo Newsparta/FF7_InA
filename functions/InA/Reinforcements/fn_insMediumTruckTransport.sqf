@@ -97,6 +97,8 @@ sleep _delay;
 			((units _group) select 0) moveInDriver _obj;
 
 		_wp = _group addWaypoint [_center, _wpMax];
+		_wp setWaypointType "MOVE";
+		_wp = _group addWaypoint [_center, _wpMax];
 		_wp setWaypointType "TR UNLOAD";
 		_wp setWaypointSpeed _speed;
 		_wp setWaypointBehaviour _awareness;

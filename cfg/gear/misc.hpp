@@ -170,7 +170,7 @@ class InA_MiscItems
 	};
 	class MineDetector
 	{
-		cost = 100;
+		cost = 10;
 		name = "Mine Detector";
 		type = "other";
 	};

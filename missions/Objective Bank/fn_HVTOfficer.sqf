@@ -58,16 +58,17 @@ while {!_accepted;} do {
 	// find nearby roads
 	_roads = nearestTerrainObjects [_pos, ["ROAD","MAIN ROAD"], 30];
 
-	// Check if players are near
-	_isNearPlayer = false;
-	{
-		if ((_x distance _loc) < 1000) then {
-			_isNearPlayer = true;
-		};
-	} forEach (allPlayers - entities "HeadlessClient_F");
-
 	// Accept location if all conditions met
 	if (count _objLoc > 2) then {
+
+		// Check if players are near
+		_isNearPlayer = false;
+		{
+			if ((_x distance _objLoc) < 1000) then {
+				_isNearPlayer = true;
+			};
+		} forEach (allPlayers - entities "HeadlessClient_F");
+		
 		if (count _roads < 1) then {
 			if (_loc distance _objLoc > _minDist) then {
 				if (_objLoc distance (getMarkerPos "respawn_west") > 1000) then {
@@ -174,7 +175,7 @@ if (count (call BIS_fnc_listPlayers) > 10) then {
 /////////////////////////
 
 // Side mission notification
-["SIDE MISSION", "This person saw an insurgent Officer nearby that should be eliminated."] remoteExec ["FF7_fnc_formatHint", 0];
+[true, "This person saw an insurgent Officer nearby that should be eliminated.", "SIDE MISSION"] remoteExec ["InA_fnc_formatHint", 0];
 
 // wait timer for objective despawn
 waitUntil {
@@ -189,7 +190,7 @@ if (_i == (sideMissionTimer * 5)) exitWith {
 
 	civMissionActive = false;
 
-	["SIDE MISSION", "The Officer has moved from their known location and is now untraceable."] remoteExec ["FF7_fnc_formatHint", 0];
+	[true, "The Officer has moved from their known location and is now untraceable.", "SIDE MISSION"] remoteExec ["InA_fnc_formatHint", 0];
 
 	waitUntil {sleep (2 + (random 2)); {_x distance _objLoc < _maxDist} count (allPlayers - entities "HeadlessClient_F") < 1};
 
@@ -209,7 +210,7 @@ scopeName "civMission";
 
 		logV = logV + 1;
 
-		["SIDE MISSION", "The Officer has been eliminated."] remoteExec ["FF7_fnc_formatHint", 0];
+		[true, "The Officer has been eliminated.", "SIDE MISSION"] remoteExec ["InA_fnc_formatHint", 0];
 
 		breakOut "civMission";
 	};
@@ -217,11 +218,13 @@ scopeName "civMission";
 	// Despawn if players leave
 	if ({_x distance _objLoc < 1500} count (allPlayers - entities "HeadlessClient_F") < 1) then {
 
-		["SIDE MISSION", "The Officer has moved from their known location and is now untraceable."] remoteExec ["FF7_fnc_formatHint", 0];
+		[true, "The Officer has moved from their known location and is now untraceable.", "SIDE MISSION"] remoteExec ["InA_fnc_formatHint", 0];
 
 		breakOut "civMission";
 	};
 };
+
+civMissionActive = false;
 
 // Wait until players leave area
 waitUntil {

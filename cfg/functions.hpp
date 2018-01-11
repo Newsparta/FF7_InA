@@ -127,6 +127,7 @@ class InA
 		class stronghold {file = "missions\fn_stronghold.sqf";};
 
 		// Objectives
+		class UXO {file = "missions\Objective Bank\fn_UXO.sqf";};
 		class HVTOfficer {file = "missions\Objective Bank\fn_HVTOfficer.sqf";};
 		class weaponsCache {file = "missions\Objective Bank\fn_weaponsCache.sqf";};
 		class fuelDepot {file = "missions\Objective Bank\fn_fuelDepot.sqf";};

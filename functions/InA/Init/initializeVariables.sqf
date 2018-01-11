@@ -34,7 +34,8 @@ missionBank =
 	"Eliminate",
 	"fuelDepot",
 	"HVTOfficer",
-	"weaponsCache"
+	"weaponsCache",
+	"UXO"
 ];
 
 

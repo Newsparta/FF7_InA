@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=357;
+		nextID=369;
 	};
 	class Camera
 	{
-		pos[]={10974.011,364.08557,11524.671};
-		dir[]={-0.45071319,-0.40776441,-0.79420823};
-		up[]={-0.20128143,0.91306221,-0.35468337};
-		aside[]={-0.86979985,-3.0559022e-007,0.49360833};
+		pos[]={10910.896,369.35553,11495.919};
+		dir[]={0.89446026,-0.26171273,-0.36282998};
+		up[]={0.24258968,0.96512175,-0.098403141};
+		aside[]={-0.37593037,4.3248292e-008,-0.92676216};
 	};
 };
 binarizationWanted=0;
@@ -63,7 +63,6 @@ addons[]=
 	"A3_Structures_F_Walls",
 	"A3_Structures_F_Civ_Constructions",
 	"A3_Structures_F_Exp_Civilian_Sheds",
-	"ace_map",
 	"A3_Structures_F_Exp_Walls_BackAlleys",
 	"A3_Structures_F_Civ_Lamps",
 	"A3_Supplies_F_Heli_Bladders",
@@ -77,7 +76,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=32;
+		items=31;
 		class Item0
 		{
 			className="A3_Modules_F_Curator";
@@ -262,40 +261,33 @@ class AddonsMetaData
 		};
 		class Item26
 		{
-			className="ace_map";
-			name="ACE3 - Map";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item27
-		{
 			className="A3_Structures_F_Ind";
 			name="Arma 3 - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item28
+		class Item27
 		{
 			className="A3_Structures_F_Exp_Infrastructure";
 			name="Arma 3 Apex - Infrastructure Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item29
+		class Item28
 		{
 			className="A3_Props_F_Argo";
 			name="Arma 3 Malden - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item30
+		class Item29
 		{
 			className="A3_Signs_F";
 			name="Arma 3 - Signs";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item31
+		class Item30
 		{
 			className="ace_viewdistance";
 			name="ACE3 - View Distance";
@@ -4143,7 +4135,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={10954.514,350.38144,11488.605};
-						angles[]={-0,4.8320494,0};
+						angles[]={0,4.8320494,0};
 					};
 					side="West";
 					flags=6;
@@ -4564,7 +4556,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={10951.878,350.38144,11475.89};
-						angles[]={-0,0.74552339,0};
+						angles[]={0,0.74552339,0};
 					};
 					side="West";
 					flags=4;
@@ -4664,7 +4656,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={10953.324,350.38144,11475.113};
-						angles[]={-0,6.1294446,0};
+						angles[]={0,6.1294446,0};
 					};
 					side="West";
 					flags=4;
@@ -4764,7 +4756,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={10955.195,350.38144,11476.728};
-						angles[]={-0,4.6381817,0};
+						angles[]={0,4.6381817,0};
 					};
 					side="West";
 					flags=4;
@@ -4864,7 +4856,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={10954.202,350.38144,11478.604};
-						angles[]={-0,3.7128956,0};
+						angles[]={0,3.7128956,0};
 					};
 					side="West";
 					flags=4;
@@ -4964,7 +4956,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={10952.115,350.38144,11478.08};
-						angles[]={-0,2.2733116,0};
+						angles[]={0,2.2733116,0};
 					};
 					side="West";
 					flags=4;
@@ -5064,7 +5056,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={10948.74,350.38144,11463.827};
-						angles[]={-0,0.087970331,0};
+						angles[]={0,0.087970331,0};
 					};
 					side="West";
 					flags=4;
@@ -5659,7 +5651,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={10953.188,350.38144,11463.957};
-						angles[]={-0,5.4896574,0};
+						angles[]={0,5.4896574,0};
 					};
 					side="West";
 					flags=4;
@@ -6056,7 +6048,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={10949.26,350.38144,11504.921};
-						angles[]={-0,2.4026544,0};
+						angles[]={0,2.4026544,0};
 					};
 					side="West";
 					flags=4;
@@ -6176,7 +6168,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={10951.85,350.38144,11504.843};
-						angles[]={-0,3.2541533,0};
+						angles[]={0,3.2541533,0};
 					};
 					side="West";
 					flags=4;
@@ -6296,7 +6288,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={10951.471,350.38144,11471.885};
-						angles[]={-0,4.0272455,0};
+						angles[]={0,4.0272455,0};
 					};
 					side="West";
 					flags=4;
@@ -25755,6 +25747,7 @@ class Mission
 				angles[]={0,1.6442224,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				init="call{[_this, ""medicalCrate_1""] call FF7_fnc_pst_registerStaticContainer;}";
@@ -25762,7 +25755,7 @@ class Mission
 			};
 			id=512;
 			type="ACE_medicalSupplyCrate";
-			atlOffset=0.81939697;
+			atlOffset=0.17593384;
 			class CustomAttributes
 			{
 				class Attribute0

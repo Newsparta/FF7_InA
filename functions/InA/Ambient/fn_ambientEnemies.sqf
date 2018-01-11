@@ -23,6 +23,9 @@ params [[	"_loc"			,[]					,[]					,[]							],
 		[	"_rad"			,[]					,[]					,[]							],
 		[	"_ambMult"		,0.25				,[0]				,[]							]];
 
+// If too many spawns active, prevent more spawns
+if (({(side _x) == resistance} count allUnits) < 150) exitWith {};
+
 if (random 100 < (0.7 + (0.7 * _ambMult * ((count (call BIS_fnc_listPlayers)) * 0.1)))) then {
 	[
 		_loc, 

@@ -65,6 +65,7 @@ class InA
 		class actionUniformEquip {file = "functions\InA\Actions\fn_actionUniformEquip.sqf";};
 
 		// Ambient
+		class nearCheck {file = "functions\InA\Ambient\fn_nearCheck.sqf";};
 		class ambientEnemies {file = "functions\InA\Ambient\fn_ambientEnemies.sqf";};
 		class instabilityUpdate {file = "functions\InA\Ambient\fn_instabilityUpdate.sqf";};
 		class ambientModule {file = "functions\InA\Ambient\fn_ambientModule.sqf";};

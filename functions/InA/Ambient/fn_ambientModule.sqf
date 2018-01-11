@@ -64,8 +64,13 @@ while {true;} do {
 
 	sleep (2 + (random 2));
 
-	// Check if players are near enough to spawn elements
-	if ({_x distance _loc < (_rad * 1.25)} count (allPlayers - entities "HeadlessClient_F") > 0) then {
+	// Check if players are near and sleep
+	if ([_loc, _rad * 1.25, ">", 0] call InA_fnc_nearCheck) then {
+		sleep 10;
+	};
+
+	// Check if players are still near
+	if ([_loc, _rad * 1.25, ">", 0] call InA_fnc_nearCheck) then {
 	
 		// Execute ambient entrance and set global variable for region spawn
 		call compile format
@@ -88,7 +93,7 @@ while {true;} do {
 	};
 
 	// Check if players are close enough to have entered
-	if ({_x distance _loc < _rad} count (allPlayers - entities "HeadlessClient_F") > 0) then {
+	if ([_loc, _rad, ">", 0] call InA_fnc_nearCheck) then {
 
 		// update instability value incase edited
 		_instability = call compile format
@@ -150,7 +155,7 @@ while {true;} do {
 			};
 			
 			// Check if players are actually still in the region
-			if ({_x distance _loc < _rad} count (allPlayers - entities "HeadlessClient_F") > 0) then {
+			if ([_loc, _rad, ">", 0] call InA_fnc_nearCheck) then {
 
 				// Check if the region needs aid and there are aid vehicles
 				if ((_needAid) && {count (nearestObjects [_loc, idap_cars, _rad]) > 0}) then {
@@ -166,7 +171,7 @@ while {true;} do {
 			};
 			
 			// Check if players leave the region
-			if ({_x distance _loc < _rad} count (allPlayers - entities "HeadlessClient_F") < 1) then {
+			if ([_loc, _rad, "<", 1] call InA_fnc_nearCheck) then {
 					
 				// Determine how many independent units are left inside
 				_nme = {(side _x == resistance) && ((_x distance _loc) < _rad)} count allUnits;
@@ -219,7 +224,7 @@ while {true;} do {
 					_name = _this select 2;
 					
 					// Wait until the players are far enough away from region
-					waitUntil {sleep (2 + (random 2)); {_x distance _loc < (_rad * 1.5)} count (allPlayers - entities "HeadlessClient_F") < 1};
+					waitUntil {sleep (2 + (random 2)); [_loc, _rad * 1.5, "<", 1] call InA_fnc_nearCheck};
 					
 					// Reset the ambient spawn variable and delete any marker
 					call compile format

@@ -101,6 +101,9 @@ if (_instability < 0.5) then {
 	];
 };
 
+// If too many spawns active, prevent more spawns
+if (({(side _x) == resistance} count allUnits) > 150) exitWith {};
+
 // Check if destabalizing or greater
 if (_instability >= 0.5) then {
 

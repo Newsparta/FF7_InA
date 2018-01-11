@@ -12,3 +12,5 @@
 - fixed ambient region's knowledge about what its instability should be.
 - notification added for if everyone is killed.
 - blood is cheaper
+- timeout on region spawn incase passing via air
+- spawn checks added to hopefully prevent FPS tanks
